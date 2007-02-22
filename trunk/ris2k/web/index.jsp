@@ -21,9 +21,9 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 
     <h1>Estamos en obras.</h1><br>
     <center><a href="form.php">Web en pruebas</a></center><br>
-    <center><img src="./images/cutre.jpg" alt="Ris2k logo"/><center><br>
+    <center><img src="images/cutre.jpg" alt="Ris2k logo"/><center><br>
     <center><img src="images/cometelo.gif" alt="Pa ramon"/><center><br>
-    <center><a href="tablero.jpg">Web en pruebas</a></center><br>
+    <center><a href="tablero.html">Web en pruebas</a></center><br>
     
     <%--
     This example uses JSTL, uncomment the taglib directive above.
