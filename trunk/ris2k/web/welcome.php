@@ -1,8 +1,6 @@
 <html>
 <body>
 
-BIENVENIDO: <?php echo $_POST["name"];   ?> <?php echo $_POST["lastname"]; ?><br />
-SU EMAIL:  <?php echo $_POST["email"];   ?> 
 
 <?php
 
@@ -12,6 +10,10 @@ SU EMAIL:  <?php echo $_POST["email"];   ?>
 	isset($_POST['email']) && !empty($_POST['email'])) {
 
         // Si entramos es que todo se ha realizado correctamente
+
+
+        BIENVENIDO: <?php echo $_POST["name"];   ?> <?php echo $_POST["lastname"]; ?><br />
+        SU EMAIL:  <?php echo $_POST["email"];   ?> 
 
         $link = mysql_connect("localhost","prueba","prueba");
         mysql_select_db("ris2k",$link);
@@ -36,7 +38,6 @@ SU EMAIL:  <?php echo $_POST["email"];   ?>
     } else {
 		
         echo "<br>Error, no ha introducido todos los datos";
-
     }
 
 ?>
