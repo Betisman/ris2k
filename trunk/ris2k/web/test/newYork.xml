@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : newYork.xml
+    Created on : 26 de febrero de 2007, 20:16
+    Author     : Carlos
+    Description:
+        Purpose of the document follows.
+-->
+
+<root>
+    <continente id="Manhattan" nombre="Manhattan">
+        <pais id="Harlem" nombre="Harlem">
+            <limita></limita><!-- A poner -->
+        </pais>
+    </continente>
+    <continente id="Manhattan" nombre="Manhattan">
+        <pais id="Harlem" nombre="Harlem">
+            <limita></limita><!-- A poner -->
+        </pais>
+    </continente>
+
+</root>
