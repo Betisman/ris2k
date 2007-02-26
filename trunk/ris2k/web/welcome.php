@@ -15,7 +15,7 @@
         BIENVENIDO: <?php echo $_POST["name"];   ?> <?php echo $_POST["lastname"]; ?><br />
         SU EMAIL:  <?php echo $_POST["email"];   ?> 
 
-        $link = mysql_connect("localhost","prueba","prueba");
+        $link = mysql_connect("localhost:3306","prueba","prueba");
         mysql_select_db("ris2k",$link);
 
         // Con esta sentencia SQL insertaremos los datos en la base de datos
