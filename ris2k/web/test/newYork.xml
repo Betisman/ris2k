@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : newYork.xml
+    Created on : 26 de febrero de 2007, 20:16
+    Author     : Carlos Jiménez Gómez
+    Description:
+        Purpose of the document follows.
+-->
+
+<root>
+    <continente id="New Jersey" nombre="New Jersey">
+        <pais id="Harlem" nombre="Harlem">
+            <limita></limita><!-- A poner -->
+        </pais>
+    </continente>
+    <continente id="Manhattan" nombre="Manhattan">
+        <pais id="Harlem" nombre="Harlem">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="WestManhattan" nombre="West Manhattan">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="CentralPark" nombre="Central Park">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="SouthManhattan" nombre="South Manhattan">
+            <limita></limita><!-- A poner -->
+        </pais>
+    </continente>
+    <continente id="StatenIsland" nombre="Staten Island">
+        <pais id="PortRichmond" nombre="Port Richmond">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="MarinersHarbor" nombre="Mariners Harbor">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="NewSpringuille" nombre="New Springuille">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="SouthBeach" nombre="South Beach">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="LaTourettePark" nombre="La Tourette Park">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="PrincessBay" nombre="Princess Bay">
+            <limita></limita><!-- A poner -->
+        </pais>
+    </continente>
+    <continente id="Bronx" nombre="Bronx">
+        <pais id="VanCortlandtPark" nombre="Van Cortlandt Park">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="BronxRiver" nombre="Bronx River">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="PolhamBayPark" nombre="Polham Bay Park">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="ThrogsNeck" nombre="Throgs Neck">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="RiskersIsland" nombre="Riskers Island">
+            <limita></limita><!-- A poner -->
+        </pais>
+    </continente>
+    <continente id="Brooklyn" nombre="Brooklyn">
+        <pais id="LowerNewYorkBay" nombre="Lower New York Bay">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="UpperNewYorkBay" nombre="Upper New York Bay">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="BrooklynHeights" nombre="Brooklyn Heights">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="GreenPoint" nombre="Greenpoint">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="Kensington" nombre="Kensington">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="EastNewYork" nombre="East New York">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="BoroughPark" nombre="Borough Park">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="SheepsheadBay" nombre="Sheepshead Bay">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="JamaicaBay" nombre="Jamaica Bay">
+            <limita></limita><!-- A poner -->
+        </pais>
+    </continente>
+    <continente id="Queens" nombre="Queens">
+        <pais id="LaGuardiaAirport" nombre="La Guardia Airport">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="LongIslandCity" nombre="Long Island City">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="Flushing" nombre="Flushing">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="Jamaica" nombre="Jamaica">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="EastQueens" nombre="East Queens">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="QueensVillage" nombre="Queens Village">
+            <limita></limita><!-- A poner -->
+        </pais>
+        <pais id="JFK Airport" nombre="JFK Airport">
+            <limita></limita><!-- A poner -->
+        </pais> 
+    </continente>
+
+</root>

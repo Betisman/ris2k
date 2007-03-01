@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : mapa.xml
+    Created on : 26 de febrero de 2007, 19:47
+    Author     : Carlos
+    Description:
+        Purpose of the document follows.
+-->
+
+<root>
+    <continente id="AmericaDelSur" nombre="America Del Sur">
+        <pais id="Venezuela" nombre="Venezuela">
+            <limita></limita><!-- NorteAmerica -->
+            <limita>Peru</limita>
+            <limita>Argentina</limita>
+            <limita>Brasil</limita>
+        </pais>
+        <pais id="Brasil" nombre="Brasil">
+            <limita></limita><!-- NorthAfrica -->
+            <limita>Peru</limita>
+            <limita>Argentina</limita>
+            <limita>Venezuela</limita>
+        </pais>
+        <pais id="Argentina" nombre="Argentina">
+            <limita>Venezuela</limita>
+            <limita>Peru</limita>
+            <limita>Brasil</limita>
+        </pais>
+        <pais id="Peru" nombre="Peru">
+            <limita>Venezuela</limita>
+            <limita>Argentina</limita>
+            <limita>Brasil</limita>
+        </pais>
+    </continente>
+    <continente id="Oceania" nombre="Oceanía">
+        <pais id="Indonesia" nombre="Indonesia">
+            <limita>AustraliaOriental</limita>
+            <limita>NuevaZelanda</limita>
+            <limita></limita><!-- Asia -->
+        </pais>
+        <pais id="NuevaZelanda" nombre="Nueva Zelanda">
+            <limita>Indonesia</limita>
+            <limita>AustraliaOccidental</limita>
+            <limita>AustralisOriental</limita>
+        </pais>
+        <pais id="AutraliaOccidental" nombre="Australia Occidental">
+            <limita>AustraliaOriental</limita>
+            <limita>Indonesia</limita>
+            <limita>AutraliaOriental</limita>
+        </pais>
+        <pais id="AustraliaOriental" nombre="Australia Oriental">
+            <limita>NuevaZelanda</limita>
+            <limita>AustraliaOccidental</limita>
+        </pais>
+    </continente>
+        
+</root>
