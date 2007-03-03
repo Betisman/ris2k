@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.45"
+   sodipodi:docbase="C:\Documents and Settings\Carlos\Mis documentos\Mis imágenes"
+   sodipodi:docname="mapa.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   sodipodi:modified="true">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.2188235"
+     inkscape:cx="340"
+     inkscape:cy="837.14287"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="1280"
+     inkscape:window-height="714"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       y="2.7193167"
+       x="1.5000006"
+       id="image2251"
+       height="425"
+       width="677"
+       sodipodi:absref="C:\universidad\Quinto\IS2\ProyectoRis2k\ris2k\web\test\mapa.jpg"
+       xlink:href="mapa.jpg" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 68.098456,56.319712 L 81.225869,57.140175 L 93.532819,55.499248 L 105.01931,51.396932 L 112.40347,52.217395 L 124.71042,61.242491 L 135.37645,65.344808 L 142.76062,59.601565 L 147.6834,59.601565 L 151.78571,64.524345 L 150.96525,85.035928 L 147.6834,90.779171 L 68.098456,85.856391 L 64.816602,75.190368 L 64.816602,64.524345 L 68.098456,56.319712 z "
+       id="path2289" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="bicho"
+       sodipodi:cx="108.30116"
+       sodipodi:cy="104.72705"
+       sodipodi:rx="18.050194"
+       sodipodi:ry="9.8455601"
+       d="M 126.35136 104.72705 A 18.050194 9.8455601 0 1 1  90.250969,104.72705 A 18.050194 9.8455601 0 1 1  126.35136 104.72705 z" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2296"><flowRegion
+         id="flowRegion2298"><rect
+           id="rect2300"
+           width="29.53668"
+           height="18.050194"
+           x="95.173744"
+           y="117.85446" /></flowRegion><flowPara
+         id="flowPara2302">02</flowPara></flowRoot>  </g>
+</svg>

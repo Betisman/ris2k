@@ -10,112 +10,238 @@
 
 <root>
     <continente id="New Jersey" nombre="New Jersey">
-        <pais id="Harlem" nombre="Harlem">
-            <limita></limita><!-- A poner -->
-        </pais>
+        <territorio id="Ringwood" nombre="Ringwood">
+            <limita>Paterson</limita>
+            <limita>Morris</limita>
+        </territorio>
+        <territorio id="Paterson" nombre="Paterson">
+            <limita>Ringwood</limita>
+            <limita>Morris</limita>
+            <limita>Passaic</limita>
+            <limita>Bergen</limita>
+        </territorio>
+        <territorio id="Bergen" nombre="Bergen">
+            <limita>Paterson<limita>
+            <limita>Passaic</limita>
+            <limita>Hackensack</limita>
+            <limita>VanCortlandPark</limita>
+            <limita>Harlem</limita>
+        </territorio>
+        <territorio id="Morris" nombre="Morris">
+            <limita>Ringwood</limita>
+            <limita>Paterson</limita>
+            <limita>Passaic</limita>
+            <limita>Bloomfield</limita>
+            <limita>Essex</limita>
+        </territorio>
+        <territorio id="Passaic" nombre="Passaic">
+            <limita>Paterson</limita>
+            <limita>Bergen</limita>
+            <limita>Hackensack</limita>
+            <limita>Bloomfield</limita>
+            <limita>Morris</limita>
+        </territorio>
+        <territorio id="Hackensack" nombre="Hackensack">
+            <limita>Bergen</limita>
+            <limita>Passaic</limita>
+            <limita>Bloomfield</limita>
+            <limita>JerseyCity</limita>
+            <limita>Harlem</limita>
+            <limita>WestManhattan</limita>
+        </territorio>
+        <territorio id="Essex" nombre="Essex">
+            <limita>Morris</limita>
+            <limita>Bloomfield</limita>
+            <limita>NewarkAirport</limita>
+            <limita>Union</limita>
+        </territorio>
+        <territorio id="Bloomfield" nombre="Bloomfield">
+            <limita>Morris</limita>
+            <limita>Passaic</limita>
+            <limita>Hackensack</limita>
+            <limita>JerseyCity</limita>
+            <limita>Hudson</limita>
+            <limita>NewarkAirport</limita>
+            <limita>Essex</limita>
+        </territorio>
+        <territorio id="JerseyCity" nombre="Jersey City">
+            <limita>Hackensack</limita>
+            <limita>Bloomfield</limita>
+            <limita>Hudson</limita>
+            <limita>WestManhattan</limita>
+            <limita>SouthManhattan</limita>
+        </territorio>
+        <territorio id="NewarkAirport" nombre="Newark Airport">
+            <limita>Essex</limita>
+            <limita>Bloomfield</limita>
+            <limita>Hudson</limita>
+            <limita>Union</limita>
+            <limita>PortRichmond</limita>
+            <limita>JFKAirport</limita>
+            <limita>LaGuardiaAirport</limita>
+        </territorio>
+        <territorio id="Hudson" nombre="Hudson">
+            <limita>NewarkAirport</limita>
+            <limita>Bloomfield</limita>
+            <limita>JerseyCity</limita>
+            <limita>SouthManhattan</limita>
+            <limita>UpperNewYorkBay</limita>
+            <!--<limita>PortRichmond</limita>-->
+        </territorio>
+        <territorio id="Union" nombre="Union">
+            <limita>Essex</limita>
+            <limita>NewarkAirport</limita>
+            <limita>PortRichmond</limita>
+            <limita>MarinersHarbor</limita>
+        </territorio>
     </continente>
     <continente id="Manhattan" nombre="Manhattan">
-        <pais id="Harlem" nombre="Harlem">
-            <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="WestManhattan" nombre="West Manhattan">
-            <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="CentralPark" nombre="Central Park">
-            <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="SouthManhattan" nombre="South Manhattan">
-            <limita></limita><!-- A poner -->
-        </pais>
+        <territorio id="Harlem" nombre="Harlem">
+            <limita>WestManhattan</limita>
+            <limita>CentralPark</limita>
+            <limita>Bergen</limita>
+            <limita>Hackensack</limita>
+            <limita>VanCortlandPark</limita>
+            <limita>BronxRiver</limita>
+            <limita>RiskersIslands</limita>
+            <limita>LaGuardiaAirport</limita>
+        </territorio>
+        <territorio id="WestManhattan" nombre="West Manhattan">
+            <limita>Harlem</limita>
+            <limita>CentralPark</limita>
+            <limita>SouthManhattan</limita>
+            <limita>Hackensack</limita>
+            <limita>JerseyCity</limita>
+        </territorio>
+        <territorio id="CentralPark" nombre="Central Park">
+            <limita>Harlem</limita>
+            <limita>WestManhattan</limita>
+            <limita>SouthManhattan</limita>
+            <limita>LaGuardiaAirport</limita>
+            <limita>LongIslandCity</limita>
+            <limita>Greenpoint</limita>
+        </territorio>
+        <territorio id="SouthManhattan" nombre="South Manhattan">
+            <limita>WestManhattan</limita>
+            <limita>CentralPark</limita>
+            <limita>JerseyCity</limita>
+            <limita>Hudson</limita>
+            <limita>UpperNewYorkBay</limita>
+            <limita>BrooklynHeights</limita>
+            <limita>Greenpoint</limita>
+        </territorio>
     </continente>
     <continente id="StatenIsland" nombre="Staten Island">
-        <pais id="PortRichmond" nombre="Port Richmond">
-            <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="MarinersHarbor" nombre="Mariners Harbor">
-            <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="NewSpringuille" nombre="New Springuille">
-            <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="SouthBeach" nombre="South Beach">
-            <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="LaTourettePark" nombre="La Tourette Park">
-            <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="PrincessBay" nombre="Princess Bay">
-            <limita></limita><!-- A poner -->
-        </pais>
+        <territorio id="PortRichmond" nombre="Port Richmond">
+            <limita>MarinersHarbor</limita>
+            <limita>NewSpringville</limita>
+            <limita>LaTourettePark</limita>
+            <limita>SouthBeach</limita>
+            <limita>NewarkAirport</limita>
+            <limita>UpperNewYorkBay</limita>
+            <limita>LowerNewYorkBay</limita>
+            <limita>Union</limita>
+            <!--<limita>Hudson</limita>-->
+        </territorio>
+        <territorio id="MarinersHarbor" nombre="Mariners Harbor">
+            <limita>PortRichmond</limita>
+            <limita>NewSpringville</limita>
+            <limita>LaTourettePark</limita>
+            <limita>PrincessBay</limita>
+            <limita>Union</limita>
+        </territorio>
+        <territorio id="NewSpringville" nombre="New Springville">
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+        </territorio>
+        <territorio id="SouthBeach" nombre="South Beach">
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+        </territorio>
+        <territorio id="LaTourettePark" nombre="La Tourette Park">
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+        </territorio>
+        <territorio id="PrincessBay" nombre="Princess Bay">
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+            <limita></limita><!--???-->
+        </territorio>
     </continente>
     <continente id="Bronx" nombre="Bronx">
-        <pais id="VanCortlandtPark" nombre="Van Cortlandt Park">
+        <territorio id="VanCortlandtPark" nombre="Van Cortlandt Park">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="BronxRiver" nombre="Bronx River">
+        </territorio>
+        <territorio id="BronxRiver" nombre="Bronx River">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="PolhamBayPark" nombre="Polham Bay Park">
+        </territorio>
+        <territorio id="PolhamBayPark" nombre="Polham Bay Park">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="ThrogsNeck" nombre="Throgs Neck">
+        </territorio>
+        <territorio id="ThrogsNeck" nombre="Throgs Neck">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="RiskersIsland" nombre="Riskers Island">
+        </territorio>
+        <territorio id="RiskersIsland" nombre="Riskers Island">
             <limita></limita><!-- A poner -->
-        </pais>
+        </territorio>
     </continente>
     <continente id="Brooklyn" nombre="Brooklyn">
-        <pais id="LowerNewYorkBay" nombre="Lower New York Bay">
+        <territorio id="LowerNewYorkBay" nombre="Lower New York Bay">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="UpperNewYorkBay" nombre="Upper New York Bay">
+        </territorio>
+        <territorio id="UpperNewYorkBay" nombre="Upper New York Bay">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="BrooklynHeights" nombre="Brooklyn Heights">
+        </territorio>
+        <territorio id="BrooklynHeights" nombre="Brooklyn Heights">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="GreenPoint" nombre="Greenpoint">
+        </territorio>
+        <territorio id="GreenPoint" nombre="Greenpoint">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="Kensington" nombre="Kensington">
+        </territorio>
+        <territorio id="Kensington" nombre="Kensington">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="EastNewYork" nombre="East New York">
+        </territorio>
+        <territorio id="EastNewYork" nombre="East New York">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="BoroughPark" nombre="Borough Park">
+        </territorio>
+        <territorio id="BoroughPark" nombre="Borough Park">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="SheepsheadBay" nombre="Sheepshead Bay">
+        </territorio>
+        <territorio id="SheepsheadBay" nombre="Sheepshead Bay">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="JamaicaBay" nombre="Jamaica Bay">
+        </territorio>
+        <territorio id="JamaicaBay" nombre="Jamaica Bay">
             <limita></limita><!-- A poner -->
-        </pais>
+        </territorio>
     </continente>
     <continente id="Queens" nombre="Queens">
-        <pais id="LaGuardiaAirport" nombre="La Guardia Airport">
+        <territorio id="LaGuardiaAirport" nombre="La Guardia Airport">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="LongIslandCity" nombre="Long Island City">
+        </territorio>
+        <territorio id="LongIslandCity" nombre="Long Island City">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="Flushing" nombre="Flushing">
+        </territorio>
+        <territorio id="Flushing" nombre="Flushing">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="Jamaica" nombre="Jamaica">
+        </territorio>
+        <territorio id="Jamaica" nombre="Jamaica">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="EastQueens" nombre="East Queens">
+        </territorio>
+        <territorio id="EastQueens" nombre="East Queens">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="QueensVillage" nombre="Queens Village">
+        </territorio>
+        <territorio id="QueensVillage" nombre="Queens Village">
             <limita></limita><!-- A poner -->
-        </pais>
-        <pais id="JFK Airport" nombre="JFK Airport">
+        </territorio>
+        <territorio id="JFK Airport" nombre="JFK Airport">
             <limita></limita><!-- A poner -->
-        </pais> 
+        </territorio> 
     </continente>
 
 </root>
