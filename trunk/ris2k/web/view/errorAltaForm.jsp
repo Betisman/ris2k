@@ -15,12 +15,11 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>ERROR</title>
     </head>
     <body>
 
-    <h1>JSP Page</h1>
-    <h1><a href="view/altaForm.jsp">DAR DE ALTA</a></h1>
+    <h1>ERROR AL DAR DE ALTA</h1>
     
     <%--
     This example uses JSTL, uncomment the taglib directive above.
