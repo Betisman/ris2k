@@ -19,8 +19,11 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     </head>
     <body>
 
-    <h1>JSP Page</h1>
-    <h1><a href="view/altaForm.jsp">DAR DE ALTA</a></h1>
+    <center><img src="images/logo1.jpg" alt="Ris2k logo"/><center><br>
+    <center><img src="images/cometelo.gif" alt="Pa ramon"/><center><br>
+    <center><a href="tablero.html">Tablero de Juego</a></center><br>
+    <center><a href="form.php">Alta de jugador</a></center><br>
+    <center><img src="images/obras.gif" alt="Pa ramon"/><center><br>
     
     <%--
     This example uses JSTL, uncomment the taglib directive above.

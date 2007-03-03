@@ -7,6 +7,6 @@
 </head>
 
 <body>
-Has clickado en <%=request.getParameter("pais")%>.
+Has clickado en <%=request.getParameter("territorio")%>.
 </body>
 </html>
