@@ -24,7 +24,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
  <hr><p>
  <center>
  <form name="formulario" 
-   action="/Jugador/altaServlet" 
+   action="/ris2k/altaServlet" 
    method="POST" > 
  	User: <input type="text" name="user" value="" /><BR>
         Password: <input type="password" name="password" value="" /><BR>
