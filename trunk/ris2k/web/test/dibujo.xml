@@ -15,7 +15,7 @@
    sodipodi:version="0.32"
    inkscape:version="0.45"
    sodipodi:docbase="C:\universidad\Quinto\IS2\ProyectoRis2k\ris2k\web\test"
-   sodipodi:docname="dibujo.svg"
+   sodipodi:docname="dibujo.xml"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    sodipodi:modified="true">
   <defs
@@ -93,9 +93,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="115.47559"
-     inkscape:cy="697.16643"
+     inkscape:zoom="1.7190814"
+     inkscape:cx="453.8296"
+     inkscape:cy="900.26997"
      inkscape:current-layer="layer1"
      inkscape:window-width="1280"
      inkscape:window-height="714"
@@ -114,56 +114,52 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     inkscape:label="fondo"
      inkscape:groupmode="layer"
-     id="layer1">
-    <a
-       id="a4601"
-       xlink:href="click.jsp?territorio=Hackensack"
-       xlink:title="Hackensack">
-      <image
-         inkscape:label="#image3557"
-         xlink:href="newYorkCopia.jpg"
-         sodipodi:absref="newYorkCopia.jpg"
-         width="728.57141"
-         height="709.44641"
-         id="JerseyCity"
-         x="8.5714159"
-         y="238.13005" />
-    </a>
-    <a
-       id="a4596"
-       xlink:href="click.jsp?territorio=JerseyCity"
-       xlink:title="JerseyCity">
-      <path
-         id="path3603"
-         d="M 335.37065,443.2402 L 332.84526,440.71482 L 320.72343,433.64375 L 305.57115,426.57268 C 305.57115,426.57268 288.90363,426.57268 286.88332,426.57268 C 284.86302,426.57268 263.64981,426.57268 263.64981,426.57268 L 247.99245,430.61329 L 237.38585,443.74527 L 230.81986,451.82649 L 216.67772,475.06 L 219.70818,491.22244 L 216.17264,506.87981 L 214.15234,517.99149 L 220.21326,520.01179 L 230.81986,518.49656 L 234.35539,522.0321 L 234.86047,530.11332 L 249.0026,534.659 L 258.59905,532.6387 L 271.22596,530.61839 L 287.3884,530.11332 L 297.995,535.66916 L 301.53053,530.61839 L 299.00515,521.02194 C 299.00515,521.02194 303.55084,510.41534 303.55084,507.88996 C 303.55084,505.36458 314.66252,480.11077 314.66252,480.11077 L 324.76404,463.44325 L 330.31988,448.29096 L 336.3808,448.29096 L 335.37065,443.2402 z "
-         style="fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0;fill-opacity:0" />
-    </a>
-    <a
-       id="a8916"
-       xlink:href="click.jsp?territorio=Hackensack"
-       xlink:title="Hackensack">
-      <path
-         id="path4599"
-         d="M 382.84781,336.16403 L 374.26152,336.16403 L 367.69553,327.07265 L 364.15999,321.51682 L 355.5737,317.47621 L 347.49248,317.47621 L 329.81481,324.54727 L 325.7742,332.12342 L 319.71328,339.69956 L 315.16759,355.35693 L 314.15744,366.4686 L 308.09653,374.04475 L 299.00515,374.04475 L 293.95439,366.97368 L 291.42901,361.92292 L 289.91378,361.41784 L 288.90363,365.96353 L 289.4087,371.51937 L 288.90363,375.55998 L 290.41886,382.63104 L 285.87317,390.20719 L 283.85287,397.78333 L 290.41886,409.40009 L 287.89348,418.99654 L 282.84271,426.57268 L 283.85287,427.07776 L 294.96454,426.57268 L 303.04576,427.07776 L 315.67267,430.61329 L 329.81481,438.69451 L 335.87572,444.25035 L 338.4011,432.6336 L 346.9874,426.57268 L 348.50263,421.52192 L 349.51278,412.43054 L 356.58385,403.33917 L 364.66507,385.15643 L 372.74629,363.94322 L 379.81736,352.83154 L 379.81736,341.71987 L 385.87827,339.19449 L 386.38335,336.16403 L 382.84781,336.16403 z "
-         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0;fill-opacity:0" />
-    </a>
-  </g>
+     id="layer1"
+     style="display:inline">
+    <image
+       y="0.23913066"
+       x="0.4901956"
+       id="JerseyCity"
+       height="709.44641"
+       width="728.57141"
+       sodipodi:absref="newYorkCopia.jpg"
+       xlink:href="newYorkCopia.jpg"
+       inkscape:label="#image3557" />
+       <flowRoot
+           xml:space="preserve"
+           id="PRUEBA"
+           style="font-size:56;font-weight:bold;fill:#ffff00"
+           inkscape:label="#flowRoot3221">
+           <flowRegion
+               id="flowRegion3223">
+               <rect
+                   id="rect3225"
+                   width="241.9897"
+                   height="108.19732"
+                   x="424.64539"
+                   y="118.72401"
+                   style="fill-opacity:0" />
+           </flowRegion>
+           <flowPara
+               id="flowPara3227"
+       style="font-size:56;font-weight:bold;fill:#ffff00">PRUEBA</flowPara></flowRoot>  </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="ejercitos">
     <path
        sodipodi:type="arc"
-       style="fill:url(#linearGradient6553);fill-opacity:1.0;stroke:#000000;stroke-opacity:1"
+       style="fill:url(#linearGradient6553);fill-opacity:1;stroke:#000000;stroke-opacity:1"
        id="ejercitoJerseyCity"
        sodipodi:cx="257.84143"
        sodipodi:cy="460.41278"
        sodipodi:rx="11.869292"
        sodipodi:ry="9.0913725"
        d="M 269.71072 460.41278 A 11.869292 9.0913725 0 1 1  245.97214,460.41278 A 11.869292 9.0913725 0 1 1  269.71072 460.41278 z"
-       inkscape:label="#path5576" />
+       inkscape:label="#path5576"
+       transform="translate(-8.0812203,-237.89092)" />
     <path
        sodipodi:type="arc"
        style="fill:url(#linearGradient6557);fill-opacity:1;stroke:#000000;stroke-opacity:1"
@@ -174,7 +170,7 @@
        sodipodi:ry="9.0913725"
        d="M 269.71072 460.41278 A 11.869292 9.0913725 0 1 1  245.97214,460.41278 A 11.869292 9.0913725 0 1 1  269.71072 460.41278 z"
        inkscape:label="#path5576"
-       transform="translate(75.003833,-97.984787)" />
+       transform="translate(66.922613,-335.87571)" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -183,9 +179,9 @@
     <flowRoot
        xml:space="preserve"
        id="numHackensack"
-       transform="translate(9.5964492,0)"
-       inkscape:label="#flowRoot7549"
-       style="stroke:#000000;stroke-opacity:1;stroke-width:0.64488189;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:miter;stroke-linecap:butt;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero"><flowRegion
+       transform="translate(1.5152289,-237.89092)"
+       inkscape:label="#numHackensack"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.6448819;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><flowRegion
          id="flowRegion7551"
          style="stroke:url(#radialGradient8538)"><rect
            id="rect7553"
@@ -193,12 +189,12 @@
            height="14.142136"
            x="318.19806"
            y="372.52951"
-           style="stroke:#000000;stroke-opacity:1;stroke-width:0.64488189;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:miter;stroke-linecap:butt;fill:#000000;fill-opacity:1;fill-rule:nonzero" /></flowRegion><flowPara
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.6448819;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /></flowRegion><flowPara
          id="flowPara7555"
-         style="stroke:#000000;stroke-opacity:1;stroke-width:0.64488189;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:miter;stroke-linecap:butt;fill:#000000;fill-opacity:1;fill-rule:nonzero">02</flowPara></flowRoot>    <flowRoot
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.6448819;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">03</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="numJerseyCity"
-       transform="translate(-46.499849,82.093918)"
+       transform="translate(-54.581069,-155.797)"
        inkscape:label="#flowRoot7549"
        style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.6448819;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><flowRegion
          id="flowRegion8908"
@@ -211,4 +207,30 @@
            style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.6448819;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /></flowRegion><flowPara
          id="flowPara8912"
          style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.6448819;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">02</flowPara></flowRoot>  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="enlaces"
+     style="display:none">
+    <a
+       id="a8916"
+       xlink:href="click.jsp?territorio=Hackensack"
+       xlink:title="Hackensack"
+       transform="translate(-8.0812203,-237.89092)">
+      <path
+         id="path4599"
+         d="M 382.84781,336.16403 L 374.26152,336.16403 L 367.69553,327.07265 L 364.15999,321.51682 L 355.5737,317.47621 L 347.49248,317.47621 L 329.81481,324.54727 L 325.7742,332.12342 L 319.71328,339.69956 L 315.16759,355.35693 L 314.15744,366.4686 L 308.09653,374.04475 L 299.00515,374.04475 L 293.95439,366.97368 L 291.42901,361.92292 L 289.91378,361.41784 L 288.90363,365.96353 L 289.4087,371.51937 L 288.90363,375.55998 L 290.41886,382.63104 L 285.87317,390.20719 L 283.85287,397.78333 L 290.41886,409.40009 L 287.89348,418.99654 L 282.84271,426.57268 L 283.85287,427.07776 L 294.96454,426.57268 L 303.04576,427.07776 L 315.67267,430.61329 L 329.81481,438.69451 L 335.87572,444.25035 L 338.4011,432.6336 L 346.9874,426.57268 L 348.50263,421.52192 L 349.51278,412.43054 L 356.58385,403.33917 L 364.66507,385.15643 L 372.74629,363.94322 L 379.81736,352.83154 L 379.81736,341.71987 L 385.87827,339.19449 L 386.38335,336.16403 L 382.84781,336.16403 z "
+         style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0" />
+    </a>
+    <a
+       id="a4596"
+       xlink:href="click.jsp?territorio=JerseyCity"
+       xlink:title="JerseyCity"
+       transform="translate(-8.0812203,-237.89092)">
+      <path
+         id="path3603"
+         d="M 335.37065,443.2402 L 332.84526,440.71482 L 320.72343,433.64375 L 305.57115,426.57268 C 305.57115,426.57268 288.90363,426.57268 286.88332,426.57268 C 284.86302,426.57268 263.64981,426.57268 263.64981,426.57268 L 247.99245,430.61329 L 237.38585,443.74527 L 230.81986,451.82649 L 216.67772,475.06 L 219.70818,491.22244 L 216.17264,506.87981 L 214.15234,517.99149 L 220.21326,520.01179 L 230.81986,518.49656 L 234.35539,522.0321 L 234.86047,530.11332 L 249.0026,534.659 L 258.59905,532.6387 L 271.22596,530.61839 L 287.3884,530.11332 L 297.995,535.66916 L 301.53053,530.61839 L 299.00515,521.02194 C 299.00515,521.02194 303.55084,510.41534 303.55084,507.88996 C 303.55084,505.36458 314.66252,480.11077 314.66252,480.11077 L 324.76404,463.44325 L 330.31988,448.29096 L 336.3808,448.29096 L 335.37065,443.2402 z "
+         style="fill:#ff0000;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0" />
+    </a>
+  </g>
 </svg>
