@@ -15,22 +15,69 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 
 <html>
 <head>
- <title>ALTA RIS2K</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Alta Jugador</title>
+<style type="text/css">    
+<!--
+.Estilo2 {font-family: Georgia, "Times New Roman", Times, serif}
+.Estilo4 {
+	font-size: xx-large;
+	color: #000000;
+	font-weight: bold;
+}
+.Estilo6 {font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; }
+-->
+</style>
 </head>
-<body bgcolor="#33CCFF">
- <font face="Times New Roman,Times" size="+3">
-  ALTA RIS2K
- </font>
- <hr><p>
- <center>
- <form name="formulario" 
-   action="/ris2k/altaServlet" 
-   method="POST" > 
- 	User: <input type="text" name="user" value="" /><BR>
-        Password: <input type="password" name="password" value="" /><BR>
-        Email: <input type="text" name="email" value="" /><BR>    
- <input type="submit" name="Submit" value="Insertar datos">
- </form>
- </center> 
+<body background="images/Fondo.jpg">
+
+
+<table width="93%" height="399" align="center">
+    <tr>
+        <td height="79"><div align="center"><span class="Estilo4 Estilo2"><strong>Alta 
+        de un Jugador</strong> </span></div></td>
+    </tr>
+    <tr>
+        <td height="172"><p>&nbsp;</p>
+            <table width="45%" height="118" border="1" align="center" bordercolor="#FFFFFF" bgcolor="#CCCCCC">
+                <tr>
+                    <td width="44%"><p>Nombre de Usuario</p>
+                        <p>Contrase&ntilde;a</p>
+                        <p>E-mail</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                    </td> 
+                    <td width="56%"><div align="right"> 
+                            <form name="form1" id="form1" method="post" action="/ris2k/altaServlet">
+                                <p align="left">
+                                    <input name="user" type="text" id="user"/>
+                                </p>
+                                <p align="left">
+                                    <input name="password" type="password" id="password"/>
+                                </p>
+                                <p align="left">
+                                    <input name="email" type="text" id="email"/>
+                                </p>
+                                <p align="left">
+                                    <input type="submit" name="Submit" value="Enviar datos" />
+                                </p>
+                            </form>
+                    </div></td>
+                </tr>
+            </table>
+          <div align="right"></div>
+         <div align="center"></div></td>
+    </tr>  
+    <tr>
+        <!--<td bordercolor="1">
+        </td>-->
+
+
+ <!-- <p class="Estilo2">To do:</p>
+      <p class="Estilo2">Disclaimer</p>
+      <p> ...</p>
+    <p>&nbsp;</p></td> -->
+  </tr>
+</table>
 </body>
 </html>

@@ -14,12 +14,49 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>ERROR</title>
-    </head>
-    <body>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Pagina de Error al Registrarse</title>
+<style type="text/css">
+<!--
+.Estilo1 {font-family: Georgia, "Times New Roman", Times, serif}
+.Estilo2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 36px;
+	font-weight: bold;
+}
+.Estilo3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+}
+.Estilo4 {color: #0000FF}
+.Estilo5 {color: #000000}
+-->
+</style>
+</head>
 
-    <h1>ERROR AL DAR DE ALTA</h1>
+<body background="images/Fondo.jpg">
+<div align="center" class="Estilo2">
+  <p>ERROR</p>
+</div>
+<h1 align="center" class="Estilo1"><img src="images/error.jpg" alt="Error" width="97" height="102" /></h1>
+<p align="center" class="Estilo1">&nbsp;</p>
+<p align="center" class="Estilo3 Estilo5">Ha surgido un error mientras intentaba registrarse en el juego.</p>
+<p align="center" class="Estilo3">Compruebe que no est&aacute; registrado ya o int&eacute;ntelo de nuevo. </p>
+<form id="form1" name="form1" method="post" action="view/altaForm.jsp"> 
+  <div align="center" class="Estilo4"></div>
+  <span class="Estilo4">
+  <label>  </label>
+  </span>
+  <label><div align="center"><br />
+    <!-- <input name=" Volver " type="button" class="Estilo3" value="    VOLVER    " action="view/altaForm.jsp" /> -->
+    <FORM><INPUT TYPE="button" VALUE="VOLVER" onClick="history.go(-1);return true;"> </FORM>
+  </div>
+  </label>
+</form>
+
+
     
     <%--
     This example uses JSTL, uncomment the taglib directive above.
