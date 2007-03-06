@@ -14,12 +14,38 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>EXITO</title>
-    </head>
-    <body>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Alta usuario correcta</title>
+<style type="text/css">
+<!--
+.Estilo1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: large;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
 
-    <h1>EXITO AL DAR DE ALTA AL JUGADOR</h1>
+<body background="images/Fondo.jpg">
+<div align="center">
+  <p class="Estilo1">&iexcl;Bienvenido!</p>
+  <p class="Estilo1">Has accedido correctamente </p>
+  <p><img src="images/Smiley_head_happy.png" alt="Acceso correcto!!" width="152" height="151" />      </p>
+  <p>&nbsp;</p>
+  <p>TO DO:</p>
+  <p>Aqu&iacute; ir&iacute;a el men&uacute; principal...  </p>
+  <p>Pinche aqu&iacute; para ver el tablero</p>
+  <form id="form1" name="form1" method="post" action="">
+    <label>
+      <!-- <input type="submit" name="Submit" value="Ver tablero" action="/tablero.html"/> -->
+      <FORM><INPUT TYPE="BUTTON" VALUE="Ver tablero" ONCLICK="window.location.href='tablero.html'">
+      </FORM>
+    </label>
+  </form>
+  <p>&nbsp; </p>
+</div>
+
     
     <%--
     This example uses JSTL, uncomment the taglib directive above.
