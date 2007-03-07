@@ -49,20 +49,6 @@ public class TestXml {
   */    
         
         try{
-      /*
-            DocumentBuilderFactory factoryDocBuilder = DocumentBuilderFactory.newInstance();
-            factoryDocBuilder.setNamespaceAware(true);
-            DocumentBuilder builder = factoryDocBuilder.newDocumentBuilder();
-            Document doc = builder.parse("web/test/dibujo.xml");
-            
-            XPathFactory factory = XPathFactory.newInstance();
-            XPath xpath = factory.newXPath();
-            XPathExpression expr = xpath.compile("text[id='JerseyCity']/tspan");
-            
-            Object result = expr.evaluate(doc, XPathConstants.NODESET);
-            Node nodo = (Node)result;
-            System.out.println("sale: "+nodo.getNodeValue());
-            */
             File f = new File("web/test/dibujo.xml");
             if (f.exists()){
                 System.out.println("OK");
@@ -86,10 +72,9 @@ public class TestXml {
             }
             String expression = "/svg/g/text[@id='numHackensack']/tspan";
             Node nodo = (Node)xpath.evaluate(expression, document, XPathConstants.NODE);
-            System.out.println("Hackensack: " + nodo.getNodeValue());
-            System.out.println("Nombre nodo: " + nodo.getNodeName());
-            nodo.setNodeValue("06");
-            System.out.println("Hackensack: " + nodo.getNodeValue());
+            System.out.println("Hackensack: " + nodo.getTextContent());
+            nodo.setTextContent("06");
+            System.out.println("Hackensack: " + nodo.getTextContent());
             
             OutputFormat format = new OutputFormat(document);
             FileWriter fileout = new FileWriter("web/test/dibujo.xml");
