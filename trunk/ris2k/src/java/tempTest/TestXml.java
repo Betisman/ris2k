@@ -88,8 +88,6 @@ public class TestXml {
             System.out.println("Excepción generada");
             e.printStackTrace();
         }
-        
-      
     }
     
     public void cambiarOwnerTerritorio(Territorio t, Jugador j){
@@ -145,9 +143,7 @@ public class TestXml {
         t.setId("Hackensack");
         t.setNombre("Hackensack");
         t.setOwner(j);
-        test1.cambiarOwnerTerritorio(t, j);
-        
-        
+        test1.cambiarOwnerTerritorio(t, j);   
     }
     
 }
