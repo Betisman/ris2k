@@ -11,6 +11,7 @@ import persistence.Mysql;
 import model.Jugador;
 
 
+
 public class altaServlet extends MiServlet {    
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -45,7 +46,7 @@ public class altaServlet extends MiServlet {
         request.getSession().setAttribute("errorPassword1","");
         if (password.length()<6){
             contador++;
-            request.getSession().setAttribute("errorPassword1","¡ERROR! Contraseña demasiado corta (mínimo 6 caracteres)");
+            request.getSession().setAttribute("errorPassword1","¡ERROR! La contraseña es demasiado corta (mínimo 6 caracteres)");
             System.out.println("FALLO: "+password);
         }
         
