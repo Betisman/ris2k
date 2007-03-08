@@ -30,7 +30,7 @@ public class TestTablero extends TestCase {
     // public void testHello() {}
     public void testMostrar(){
         Tablero tablero = new Tablero();
-        tablero.setMapa("web/test/dibujo.xml");
+//        tablero.setMapa("web/test/dibujo.xml");
         assert(tablero.mostrar());
     }
     
