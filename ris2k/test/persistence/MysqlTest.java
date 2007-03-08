@@ -7,6 +7,7 @@
 
 package persistence;
 
+import java.util.GregorianCalendar;
 import junit.framework.*;
 import javax.servlet.RequestDispatcher;
 import model.Jugador;
@@ -30,14 +31,24 @@ public class MysqlTest extends TestCase {
 
     protected void tearDown() throws Exception {
     }
-
+/*****************************************************************************/
     /**
-     * Test of persistirJugador method, of class persistence.Mysql.
+     * Tests of persistirJugador method, of class persistence.Mysql.
      */
-    public void testPersistirJugador() {
-        System.out.println("persistirJugador");
+/*****************************************************************************/
+
+    /*prueba si un jugador válido se puede persistir*/
+    public void testPersistirJugadorValido() {
+        System.out.println("persistirJugadorValido");
+//        GregorianCalendar ahora = null;
+        Jugador jugador;
         
-        Jugador jugador = null;
+//        ahora.getTime();
+//        String userprueba = ahora.toString();
+        
+        jugador.setUser("prueba");
+        jugador.setPassword("prueba");
+        jugador.setEmail("emailvalido@dominiovalido.com");
         
         boolean expResult = true;
         boolean result = Mysql.persistirJugador(jugador);
@@ -45,6 +56,23 @@ public class MysqlTest extends TestCase {
         
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+    }
+    
+    /*prueba que un jugador nulo no se pueda persistir*/
+    public void testPersistirJugadorNulo() throws Exception{
+        System.out.println("persistirJugadorNulo");
+        try
+        {
+            Jugador jugador = null;
+            boolean expResult = true;
+            boolean result = Mysql.persistirJugador(jugador);
+            assertEquals(expResult, result);
+            fail("Debe lanzarse una excepción");
+        }
+        catch (Exception e)
+        {
+            //cogemos la excepción para que el caso no falle
+        }
     }
     
 }
