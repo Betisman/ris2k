@@ -107,15 +107,18 @@ public class TestXml {
             Document document = builder.parse(new File("web/test/dibujo.xml"));
             
             XPath xpath = XPathFactory.newInstance().newXPath();
-            Vector<String> testTerritorios = new Vector();
-            
-            String expression = "//path[@id='"+t.getId()+"']";
+            String expression = "//path[@id='ejercito"+t.getId()+"']";
             Node nodo = (Node)xpath.evaluate(expression, document, XPathConstants.NODE);
+            System.out.println("colorHackensack: " + nodo.getAttributes().getNamedItem("style").getTextContent());
             
-//            System.out.println("Hackensack: " + nodo.getAttributes().getTextContent());
-            nodo.setTextContent("06");
-            System.out.println("Hackensack: " + nodo.getTextContent());
+            String style = nodo.getAttributes().getNamedItem("style").getTextContent();
+            String cachitos[] = style.split(";");
+            cachitos[0] = "fill:"+j.getColor()+"";
+            style = cachitos[0]+";"+cachitos[1]+";"+cachitos[2]+";"+cachitos[3];
+            System.out.println(style);
             
+            nodo.getAttributes().getNamedItem("style").setTextContent(style);
+ 
             OutputFormat format = new OutputFormat(document);
             FileWriter fileout = new FileWriter("web/test/dibujo.xml");
             XMLSerializer serial = new XMLSerializer(fileout, format);
@@ -129,11 +132,22 @@ public class TestXml {
         
     }
     
-    /**coco{a|s}
+    /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         TestXml test1 = new TestXml();
+        
+        Jugador j = new Jugador();
+        j.setColor("url(#linearGradient6557)");
+        j.setUser("Mariano");
+        Territorio t = new Territorio();
+        t.setId("Hackensack");
+        t.setNombre("Hackensack");
+        t.setOwner(j);
+        test1.cambiarOwnerTerritorio(t, j);
+        
+        
     }
     
 }
