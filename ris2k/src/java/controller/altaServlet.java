@@ -34,7 +34,7 @@ public class altaServlet extends MiServlet {
         }
         
         request.getSession().setAttribute("errorUser2","");
-        if(user.matches("puta")||user.matches("cabron[a-zA-Z]*")){ 
+        if(user.matches("puta")||user.matches("cabron[a-zA-Z]*")||user.matches("mierda")){ 
          contador++;
          request.getSession().setAttribute("errorUser2","¡ERROR! Ese nombre de usuario puede resultar ofensivo, por favor cámbielo");
          System.out.println("FALLO: "+user);            

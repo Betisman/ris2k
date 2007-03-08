@@ -41,7 +41,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 -->
 </style>
 </head>
-<body background="images/Fondo.jpg" bgcolor="#FFFF66">
+<body background="images/Fondo.jpg" bgcolor="#CCCCCC">
 
 <table width="90%" height="399" align="center">
     <tr>
