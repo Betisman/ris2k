@@ -39,7 +39,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
   <form id="form1" name="form1" method="post" action="">
     <label>
       <!-- <input type="submit" name="Submit" value="Ver tablero" action="/tablero.html"/> -->
-      <FORM><INPUT TYPE="BUTTON" VALUE="Ver tablero" ONCLICK="window.location.href='tablero.html'">
+      <FORM><INPUT TYPE="BUTTON" VALUE="Ver tablero" ONCLICK="window.location.href='test/dibujo.xml'">
       </FORM>
     </label>
   </form>
