@@ -47,5 +47,54 @@ public class Mysql {
                 return false;
          }
          }
-        
-    }     
+    public static boolean validarJugador(Jugador jugador) {
+        Statement stmt_consul = null, stmt_inser =  null;
+        ResultSet rs = null;
+        Connection conn= null;
+        String user = jugador.getUser();
+        String password = jugador.getPassword();
+        //String email = jugador.getEmail();
+        String sql;
+    
+        try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver").newInstance();
+            } catch (InstantiationException ex) {
+                ex.printStackTrace();
+            } catch (IllegalAccessException ex) {
+                ex.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
+          conn =
+            DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");  
+        }catch(SQLException ex) {} 
+        try{
+                
+                sql= "SELECT * from user where user='"+user+"' and password='"+password+"'";                
+                int rows=0;
+                stmt_consul = conn.createStatement();                
+                ResultSet rset = stmt_consul.executeQuery(sql);
+                while (rset.next()) {rows++;}
+
+                //rs.next();
+                //rs = stmt_consul.getResultSet();  
+                int resultcount = 0;                
+                System.out.println("ROWCOUNT: "+rows);
+                if (rows != 0)                    
+                {
+                    System.out.println("ACCESO CORRECTO");
+                    //System.out.println("EL RESULTADO ES: "+rs.toString());
+                    return true;
+                }
+                else
+                {
+                    System.out.println("ACCESO INCORRECTO");
+                    return false;
+                }
+         } catch (SQLException ex) {               
+                System.out.println("ACCESO INCORRECTO");
+                return false;
+         }
+    }
+}
