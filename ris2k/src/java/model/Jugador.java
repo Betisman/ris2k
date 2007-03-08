@@ -16,7 +16,8 @@ import java.util.ResourceBundle;
 public class Jugador {
     private String user = null;
     private String password = null;
-    private String email = null; 
+    private String email = null;
+    private String color;
 
     
     /** Creates a new instance of Friend */
@@ -45,5 +46,13 @@ public class Jugador {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }

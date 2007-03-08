@@ -29,12 +29,6 @@ public class Tablero {
     public void setMapa(String mapa) {
         this.mapa = mapa;
     }
-    
-    public boolean mostrar(){
-        if (mapa == null){
-            return true;
-        }else return false;
-    }
 
     public Collection<Continente> getContinentes() {
         return continentes;
@@ -42,5 +36,11 @@ public class Tablero {
 
     public void setContinentes(Collection<Continente> continentes) {
         this.continentes = continentes;
+    }
+    
+    public boolean mostrar(){
+        if (mapa == null){
+            return true;
+        }else return false;
     }
 }
