@@ -9,12 +9,15 @@
 
 package model;
 
+import java.util.Collection;
+
 /**
  *
  * @author Carlos
  */
 public class Tablero {
     private String mapa;
+    private Collection<Continente> continentes;
     /** Creates a new instance of Tablero */
     public Tablero() {
     }
@@ -31,5 +34,13 @@ public class Tablero {
         if (mapa == null){
             return true;
         }else return false;
+    }
+
+    public Collection<Continente> getContinentes() {
+        return continentes;
+    }
+
+    public void setContinentes(Collection<Continente> continentes) {
+        this.continentes = continentes;
     }
 }
