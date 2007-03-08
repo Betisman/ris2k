@@ -44,6 +44,14 @@
         <param-name>persistenceMechanism</param-name>
         <param-value>JDBC</param-value>
     </context-param>
+    <context-param>
+        <param-name>accesoServlet</param-name>
+        <param-value>accesoServlet</param-value>
+    </context-param>
+    <context-param>
+        <param-name>instrucciones</param-name>
+        <param-value>/view/instrucciones.jsp</param-value>
+    </context-param>
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
@@ -72,6 +80,10 @@
             <param-value>index.jsp</param-value>
         </init-param>
         </servlet>
+    <servlet>
+        <servlet-name>accesoServlet</servlet-name>
+        <servlet-class>controller.accesoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/servlet/*</url-pattern>
@@ -83,6 +95,10 @@
     <servlet-mapping>
         <servlet-name>altaServlet</servlet-name>
         <url-pattern>/altaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>accesoServlet</servlet-name>
+        <url-pattern>/accesoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

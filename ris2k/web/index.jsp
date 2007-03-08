@@ -15,7 +15,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Ris2k</title>
+        <title>RIS2K</title>
 <style type="text/css">
 <!--
 .Estilo11 {
@@ -47,11 +47,8 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 </head>
 
 <body background="images/Fondo.jpg">
-
-
-
   
-<table width="94%" height="589" border="0" align="center" cellspacing="5">
+<table width="90%" height="90%" border="0" align="center" cellspacing="5">
   <tr>
     <td width="34%" height="120">&nbsp;</td>
     <td width="29%"><div align="center"><span class="Estilo14"><span class="Estilo15">R</span><span class="Estilo16">IS2</span><span class="Estilo18">K</span></span></div></td>
@@ -61,7 +58,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
   <tr>
     <td height="184" align="center" valign="top">
 <p class="Estilo19">&iquest;C&oacute;mo se juega al Ris2k? </p>
-      <form id="form1" name="form1" method="post" action="">
+      <form id="form1" name="form1" method="post" action="view/instrucciones.jsp">
         <label>
           <input name="Submit" type="submit" value="Reglas del juego" />
         </label>
@@ -69,18 +66,18 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
       
     </td>
     <td>&nbsp;</td>
-    <td><table width="100%" height="191" border="1">
+    <td><table width="100%" height="191" border="2">
         <tr> 
-          <td height="28"><div align="center">Acceso Jugador</div></td>
+          <td height="28" bgcolor="#CCCCCC"><div align="center" class="Estilo19">Acceso Jugador</div></td>
         </tr>
         <tr> 
           <td height="155"> 
-            <form name="form3" id="form3" method="post" action="">
-              <p align="center">Usuario 
-                <input type="text" name="textfield" />
+            <form name="form3" id="form3" method="post" action="/ris2k/accesoServlet">
+              <p align="center" class="Estilo19">Usuario 
+                <input type="text" name="user" id="user" />
               </p>
-              <p align="center">Contrase&ntilde;a 
-                <input type="text" name="textfield2" />
+              <p align="center" class="Estilo19">Contrase&ntilde;a 
+                <input type="password" name="password" id="password" />
               </p>
               <p align="center"> 
                 <input type="submit" name="Submit3" value="Enviar" />
@@ -105,19 +102,5 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     </form>    <p>&nbsp; </p></td>
   </tr>
 </table>
-
-
-    
-    <%--
-    This example uses JSTL, uncomment the taglib directive above.
-    To test, display the page like this: index.jsp?sayHello=true&name=Murphy
-    --%>
-    <%--
-    <c:if test="${param.sayHello}">
-        <!-- Let's welcome the user ${param.name} -->
-        Hello ${param.name}!
-    </c:if>
-    --%>
-    
     </body>
 </html>
