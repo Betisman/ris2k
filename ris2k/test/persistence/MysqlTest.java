@@ -40,22 +40,18 @@ public class MysqlTest extends TestCase {
     /*prueba si un jugador válido se puede persistir*/
     public void testPersistirJugadorValido() {
         System.out.println("persistirJugadorValido");
-//        GregorianCalendar ahora = null;
-        Jugador jugador;
+        Jugador jugador =new Jugador();
         
-//        ahora.getTime();
-//        String userprueba = ahora.toString();
-        
+       
         jugador.setUser("prueba");
         jugador.setPassword("prueba");
-        jugador.setEmail("emailvalido@dominiovalido.com");
+        jugador.setEmail("prueba@prueba.com");
         
         boolean expResult = true;
         boolean result = Mysql.persistirJugador(jugador);
         assertEquals(expResult, result);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+                
+        fail("Ha saltado una excepción");
     }
     
     /*prueba que un jugador nulo no se pueda persistir*/
