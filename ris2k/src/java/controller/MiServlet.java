@@ -33,6 +33,11 @@ public class MiServlet extends HttpServlet {
     protected String altaServlet = null;   
     protected String persistenceMechanism = null;
     
+    protected String accesoForm = null;
+    protected String errorAccesoForm = null;
+    protected String exitoAccesoForm = null;
+    protected String accesoServlet = null;
+    
     protected void gotoPage(String address, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext().getNamedDispatcher(address);
         dispatcher.forward(request, response);
@@ -56,6 +61,10 @@ public class MiServlet extends HttpServlet {
         mainForm = context.getInitParameter("mainForm");
         altaServlet  = context.getInitParameter("altaServlet");        
         persistenceMechanism = context.getInitParameter("persistenceMechanism");
+        accesoForm = context.getInitParameter("accesoForm");
+        errorAccesoForm = context.getInitParameter("errorAccesoForm");
+        exitoAccesoForm = context.getInitParameter("exitoAccesoForm");
+        accesoServlet  = context.getInitParameter("accesoServlet");    
         
     }
     

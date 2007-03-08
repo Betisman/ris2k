@@ -2,53 +2,80 @@
 
 package controller;
 
+import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import java.io.*;
 import java.net.*;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import persistence.Mysql;
 import model.Jugador;
 
-/**
- *
- * @author Iñigo
- * @version
- */
+
 public class altaServlet extends MiServlet {    
     
-    String error1=null; //Defino este string para saber que tipo de error de validación se produce.
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         Jugador jugador = new Jugador();               
         int contador=0;
-        //modificado para soportar validaciones        
-        String user = request.getParameter("user");        
+        string errorUser1 = null;
+        string errorUser2 = null;
+        string errorPassword1 = null;
+        string errorPassword2 = null;
+        string errorMail = null;
+            
+        String user = request.getParameter("user");  
+        
+        request.getSession().setAttribute("errorUser1","");
         if(user.length()>128 || !user.matches("[a-zA-Z0-9]+")){ 
-         //Compruebo que el nombre no tenga más de 128 caracteres y que sólo sean letras.   
-         error1="NOMBRE DE USUARIO INCORRECTO";
          contador++;
+         request.getSession().setAttribute("errorUser1","¡ERROR! Nombre de usuario incorrecto, sólo puede contener letras y dígitos");
          System.out.println("FALLO: "+user);            
         }
         
-        //modificado para soportar validaciones
+        request.getSession().setAttribute("errorUser2","");
+        if(user.matches("puta")||user.matches("cabron[a-zA-Z]*")){ 
+         contador++;
+         request.getSession().setAttribute("errorUser2","¡ERROR! Ese nombre de usuario puede resultar ofensivo, por favor cámbielo");
+         System.out.println("FALLO: "+user);            
+        }
+        
+        
         String password = request.getParameter("password");
-        if(password.length()<6 || !password.matches("[a-zA-Z0-9]+")){
-          //El teléfono sólo debe contener dígitos.  
-          error1="CONTRASEÑA INCORRECTA";
-          contador++;
-          System.out.println("FALLO: "+password);                  
-        }           
+        
+        request.getSession().setAttribute("errorPassword1","");
+        if (password.length()<6){
+            contador++;
+            request.getSession().setAttribute("errorPassword1","¡ERROR! Contraseña demasiado corta (mínimo 6 caracteres)");
+            System.out.println("FALLO: "+password);
+        }
+        
+        request.getSession().setAttribute("errorPassword2","");
+        if (!password.matches("[a-zA-Z0-9]+")){
+            contador++;
+            request.getSession().setAttribute("errorPassword2","¡ERROR! La contraseña sólo puede contener letras y dígitos");
+            System.out.println("FALLO: "+password);
+        }
        
         String email = request.getParameter("email");
-              
-        jugador.setUser(user);
-        jugador.setPassword(password);
-        jugador.setEmail(email);      
         
-        if(contador==0&Mysql.persistirJugador(jugador)==true){
-           gotoJSPPage(exitoAltaForm,request,response); 
-           //Mysql.persistirJugador(jugador);
+        request.getSession().setAttribute("errorMail","");
+        if (!email.matches("[a-zA-Z0-9._]+@[a-zA-Z0-9._]+")){
+            contador++;
+            request.getSession().setAttribute("errorMail","¡ERROR! Escriba una direccion de correo válida");
+            System.out.println("FALLO: "+email);
+        }
+             
+        request.getSession().setAttribute("errorBD","");
+        if (contador == 0){
+            jugador.setUser(user);
+            jugador.setPassword(password);
+            jugador.setEmail(email);   
+            if(Mysql.persistirJugador(jugador)==true){
+                gotoJSPPage(exitoAltaForm,request,response);
+            } else {
+                request.getSession().setAttribute("errorBD","¡ERROR! Existe algún problema con la base de datos");
+                gotoJSPPage(errorAltaForm,request,response);
+            }
         } else {            
            gotoJSPPage(errorAltaForm,request,response);
             
