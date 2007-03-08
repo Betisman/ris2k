@@ -75,7 +75,7 @@ public class TestXml {
             String expression = "/svg/g/text[@id='numHackensack']/tspan";
             Node nodo = (Node)xpath.evaluate(expression, document, XPathConstants.NODE);
             System.out.println("Hackensack: " + nodo.getTextContent());
-            nodo.setTextContent("06");
+            nodo.setTextContent("14");
             System.out.println("Hackensack: " + nodo.getTextContent());
             
             OutputFormat format = new OutputFormat(document);
