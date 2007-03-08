@@ -20,6 +20,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
+import model.Jugador;
+import model.Territorio;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -65,7 +67,7 @@ public class TestXml {
             testTerritorios.add("JerseyCity");
             testTerritorios.add("Bergen");
             for (String t : testTerritorios){
-                String expression = "/svg/g/text[@id='num"+ t +"']/tspan";
+                String expression = "//text[@id='num"+ t +"']/tspan";
                 String nameString = (String)
                 xpath.evaluate(expression, document, XPathConstants.STRING);
                 System.out.println(t + ": " + nameString + "\n");
@@ -86,7 +88,45 @@ public class TestXml {
             System.out.println("Excepción generada");
             e.printStackTrace();
         }
+        
       
+    }
+    
+    public void cambiarOwnerTerritorio(Territorio t, Jugador j){
+        System.out.println("El territorio " + t.getNombre() + ", perteneciente al jugador "
+                + t.getOwner().getUser() + ", pasa ahora a pertenecer al jugador " + j.getUser() + ".");
+        try{
+            File f = new File("web/test/dibujo.xml");
+            if (f.exists()){
+                System.out.println("existe el fichero del mapa... " + f.getPath());
+            }else{
+                System.out.println("ouch!! no existe el fichero del mapa... " + f.getPath());
+            }
+
+            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder(); 
+            Document document = builder.parse(new File("web/test/dibujo.xml"));
+            
+            XPath xpath = XPathFactory.newInstance().newXPath();
+            Vector<String> testTerritorios = new Vector();
+            
+            String expression = "//path[@id='"+t.getId()+"']";
+            Node nodo = (Node)xpath.evaluate(expression, document, XPathConstants.NODE);
+            
+//            System.out.println("Hackensack: " + nodo.getAttributes().getTextContent());
+            nodo.setTextContent("06");
+            System.out.println("Hackensack: " + nodo.getTextContent());
+            
+            OutputFormat format = new OutputFormat(document);
+            FileWriter fileout = new FileWriter("web/test/dibujo.xml");
+            XMLSerializer serial = new XMLSerializer(fileout, format);
+            serial.asDOMSerializer();
+            serial.serialize(document);
+
+        }catch(Exception e){
+            System.out.println("Excepción generada");
+            e.printStackTrace();
+        }
+        
     }
     
     /**coco{a|s}
