@@ -19,31 +19,41 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 <title>Alta Jugador</title>
 <style type="text/css">    
 <!--
-.Estilo2 {font-family: Georgia, "Times New Roman", Times, serif}
-.Estilo4 {
-	font-size: xx-large;
-	color: #000000;
-	font-weight: bold;
+.Estilo14 {
+	font-size: 36pt;
+	font-family: Georgia, "Times New Roman", Times, serif;
+        color: #FF0000
 }
-.Estilo6 {font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; }
+.Estilo15 {
+        font-size: 36pt;
+	color: #00CC00;
+	
+}
+.Estilo16 {
+        font-size: 36pt;
+	color: #0000FF;
+}
+.Estilo18 {
+        font-size: 36pt;
+        color: #FF9900
+}
+.Estilo19 {font-family: Georgia, "Times New Roman", Times, serif; font-size: large; }
 -->
 </style>
 </head>
-<body background="images/Fondo.jpg">
+<body background="images/Fondo.jpg" bgcolor="#FFFF66">
 
-
-<table width="93%" height="399" align="center">
+<table width="90%" height="399" align="center">
     <tr>
-        <td height="79"><div align="center"><span class="Estilo4 Estilo2"><strong>Alta 
-        de un Jugador</strong> </span></div></td>
+    <td height="79"><div align="center"><span class="Estilo14">Alta</span><span class="Estilo15"> de</span><span class="Estilo16"> un</span><span class="Estilo18"> Jugador </span></div></td>
     </tr>
     <tr>
         <td height="172"><p>&nbsp;</p>
             <table width="45%" height="118" border="1" align="center" bordercolor="#FFFFFF" bgcolor="#CCCCCC">
                 <tr>
-                    <td width="44%"><p>Nombre de Usuario</p>
-                        <p>Contrase&ntilde;a</p>
-                        <p>E-mail</p>
+                    <td width="44%"><p class="Estilo19">Nombre de Usuario</p>
+                        <p class="Estilo19">Contrase&ntilde;a</p>
+                        <p class="Estilo19">E-mail</p>
                         <p>&nbsp;</p>
                         <p>&nbsp;</p>
                     </td> 
@@ -69,14 +79,12 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
          <div align="center"></div></td>
     </tr>  
     <tr>
-        <!--<td bordercolor="1">
-        </td>-->
-
-
- <!-- <p class="Estilo2">To do:</p>
-      <p class="Estilo2">Disclaimer</p>
-      <p> ...</p>
-    <p>&nbsp;</p></td> -->
+        <td align="center">
+            <p class="Estilo19" align="center">Normas para darse de alta</p>
+            <p align="center">1. Introduzca un nombre de usuario (sin espacios)</p>
+            <p align="center">2. Introduzca una contraseña de al menos 6 caracteres</p>
+            <p align="center">3. Introduzca una dirección de correo electrónico válida</p>
+        </td>
   </tr>
 </table>
 </body>

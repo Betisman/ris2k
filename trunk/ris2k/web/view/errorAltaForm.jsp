@@ -42,8 +42,13 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 </div>
 <h1 align="center" class="Estilo1"><img src="images/error.jpg" alt="Error" width="97" height="102" /></h1>
 <p align="center" class="Estilo1">&nbsp;</p>
-<p align="center" class="Estilo3 Estilo5">Ha surgido un error mientras intentaba registrarse en el juego.</p>
-<p align="center" class="Estilo3">Compruebe que no est&aacute; registrado ya o int&eacute;ntelo de nuevo. </p>
+<p align="center" class="Estilo3 Estilo5">Han surgido los siguientes errores mientras intentaba registrarse en el juego:</p>
+<p align="center" class="Estilo3">${sessionScope["errorUser1"]} </p>
+<p align="center" class="Estilo3">${sessionScope["errorUser2"]} </p>
+<p align="center" class="Estilo3">${sessionScope["errorPassword1"]} </p>
+<p align="center" class="Estilo3">${sessionScope["errorPassword2"]} </p>
+<p align="center" class="Estilo3">${sessionScope["errorMail"]} </p>
+<p align="center" class="Estilo3">${sessionScope["errorBD"]} </p>
 <form id="form1" name="form1" method="post" action="view/altaForm.jsp"> 
   <div align="center" class="Estilo4"></div>
   <span class="Estilo4">
