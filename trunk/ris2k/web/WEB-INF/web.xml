@@ -53,8 +53,16 @@
         <param-value>/view/instrucciones.jsp</param-value>
     </context-param>
     <context-param>
+        <param-name>territorioAtacante</param-name>
+        <param-value>/test/dibujo.xml</param-value>
+    </context-param>
+    <context-param>
+        <param-name>territorioDefensor</param-name>
+        <param-value>/test/dibujo.xml</param-value>
+    </context-param>
+    <context-param>
         <param-name>errorAccesoForm</param-name>
-        <param-value>/view/errorAccesoForm.jsp</param-value>
+        <param-value>/view/accesoForm.jsp</param-value>
     </context-param>
     <servlet>
         <servlet-name>FrontController</servlet-name>
@@ -83,10 +91,26 @@
             <param-name>mainForm</param-name>
             <param-value>index.jsp</param-value>
         </init-param>
+        <init-param>
+            <param-name>territorioAtacante</param-name>
+            <param-value>/test/dibujo.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>territorioDefensor</param-name>
+            <param-value>/test/dibujo.xml</param-value>
+        </init-param>
         </servlet>
     <servlet>
         <servlet-name>accesoServlet</servlet-name>
         <servlet-class>controller.accesoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TerritorioAtacante</servlet-name>
+        <servlet-class>controller.TerritorioAtacante</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TerritorioDefensor</servlet-name>
+        <servlet-class>controller.TerritorioDefensor</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
@@ -103,6 +127,14 @@
     <servlet-mapping>
         <servlet-name>accesoServlet</servlet-name>
         <url-pattern>/accesoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TerritorioAtacante</servlet-name>
+        <url-pattern>/TerritorioAtacante</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TerritorioDefensor</servlet-name>
+        <url-pattern>/TerritorioDefensor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
