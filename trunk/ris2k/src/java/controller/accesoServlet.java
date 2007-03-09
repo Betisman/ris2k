@@ -48,18 +48,7 @@ public class accesoServlet extends MiServlet {
         
         
         String password = request.getParameter("password");
-        //String email = request.getParameter("email");
     
-        jugador.setUser(user);
-        jugador.setPassword(password);
-        //jugador.setEmail(email);   
-    
-        if(Mysql.validarJugador(jugador)==true)
-        {
-           request.getSession().setAttribute("jugador",", "+user.toUpperCase());
-           gotoJSPPage(exitoAltaForm,request,response);
-           //Mysql.persistirJugador(jugador);
-        
         request.getSession().setAttribute("errorPassword1","");
         if (password.length()<6){
             contador++;
