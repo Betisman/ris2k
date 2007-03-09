@@ -64,7 +64,7 @@ public class MiServlet extends HttpServlet {
         accesoForm = context.getInitParameter("accesoForm");
         errorAccesoForm = context.getInitParameter("errorAccesoForm");
         exitoAccesoForm = context.getInitParameter("exitoAccesoForm");
-        accesoServlet  = context.getInitParameter("accesoServlet");    
+        accesoServlet  = context.getInitParameter("accesoServlet");
         
     }
     

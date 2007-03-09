@@ -18,12 +18,6 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <title>RIS2K</title>
 <style type="text/css">
 <!--
-.Estilo11 {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	color: #0000FF;
-	font-weight: bold;
-}
-.Estilo12 {font-family: Georgia, "Times New Roman", Times, serif}
 .Estilo14 {
 	font-size: 36pt;
 	font-family: Georgia, "Times New Roman", Times, serif;
@@ -52,7 +46,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
   <tr>
     <td width="34%" height="120">&nbsp;</td>
     <td width="29%"><div align="center"><span class="Estilo14"><span class="Estilo15">R</span><span class="Estilo16">IS2</span><span class="Estilo18">K</span></span></div></td>
-    <td width="37%">&nbsp;</td>
+    <td width="37%" valign="top"><div align="right" id="jugador"><strong>Bienvenido${sessionScope["jugador"]}</strong></div></td>
   </tr>
   
   <tr>

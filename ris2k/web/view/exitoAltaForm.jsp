@@ -35,11 +35,11 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
   <p>&nbsp;</p>
   <p>TO DO:</p>
   <p>Aqu&iacute; ir&iacute;a el men&uacute; principal...  </p>
-  <p>Pinche aqu&iacute; para ver el tablero</p>
+  <p>Volver al menú principal</p>
   <form id="form1" name="form1" method="post" action="">
     <label>
       <!-- <input type="submit" name="Submit" value="Ver tablero" action="/tablero.html"/> -->
-      <FORM><INPUT TYPE="BUTTON" VALUE="Ver tablero" ONCLICK="window.location.href='test/dibujo.xml'">
+      <FORM><INPUT TYPE="BUTTON" VALUE="Volver al menú principal" ONCLICK="window.location.href='index.jsp'">
       </FORM>
     </label>
   </form>
