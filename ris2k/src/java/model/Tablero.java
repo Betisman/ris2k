@@ -59,7 +59,9 @@ public class Tablero {
     public void cambiarLinksTerritorios(String newLink){
         
         try{
-            File f = new File("web/test/dibujo.xml");
+            System.out.println("Bienvenido a cambiarLinksTerritorios()");
+            File f = new File(this.getMapa());
+System.out.println("ABSOLUTE ROUTA: " + f.getAbsolutePath());
             if (f.exists()){
                 System.out.println("existe el fichero del mapa... " + f.getPath());
             }else{
@@ -67,7 +69,7 @@ public class Tablero {
             }
 
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder(); 
-            Document document = builder.parse(new File("web/test/dibujo.xml"));
+            Document document = builder.parse(new File(this.getMapa()));
             
             XPath xpath = XPathFactory.newInstance().newXPath();
             String expression = "//a";
@@ -86,14 +88,14 @@ System.out.println(n.getAttributes().getNamedItem("xlink:href").getTextContent()
             }
            
             OutputFormat format = new OutputFormat(document);
-            FileWriter fileout = new FileWriter("web/test/dibujo.xml");
+            FileWriter fileout = new FileWriter(this.getMapa());
             XMLSerializer serial = new XMLSerializer(fileout, format);
             serial.asDOMSerializer();
             serial.serialize(document);
 
         }catch(Exception e){
             System.out.println("Excepción generada");
-            e.printStackTrace();
+            //e.printStackTrace();
         }        
     }
 }
