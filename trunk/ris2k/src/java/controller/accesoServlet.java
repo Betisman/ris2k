@@ -48,7 +48,6 @@ public class accesoServlet extends MiServlet {
         
         
         String password = request.getParameter("password");
-<<<<<<< .mine
         //String email = request.getParameter("email");
     
         jugador.setUser(user);
@@ -60,14 +59,12 @@ public class accesoServlet extends MiServlet {
            request.getSession().setAttribute("jugador",", "+user.toUpperCase());
            gotoJSPPage(exitoAltaForm,request,response);
            //Mysql.persistirJugador(jugador);
-=======
         
         request.getSession().setAttribute("errorPassword1","");
         if (password.length()<6){
             contador++;
             request.getSession().setAttribute("errorPassword1","¡ERROR! La contraseña es demasiado corta (mínimo 6 caracteres)");
             System.out.println("FALLO: "+password);
->>>>>>> .r107
         }
         
         request.getSession().setAttribute("errorPassword2","");

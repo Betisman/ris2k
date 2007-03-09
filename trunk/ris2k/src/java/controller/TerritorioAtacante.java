@@ -31,7 +31,7 @@ public class TerritorioAtacante extends MiServlet {
         Tablero tablero = new Tablero();
 //        tablero.setMapa("C:/universidad/Quinto/IS2/ProyectoRis2k/ris2k/ris2k/web/test/dibujo.xml");
         
-        tablero.setMapa("test/dibujo.xml");
+        tablero.setMapa(request.getParameter("pathTablero"));
         
         request.getSession().setAttribute("atacante", territorio);
         
