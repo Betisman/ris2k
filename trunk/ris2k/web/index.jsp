@@ -44,21 +44,21 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
   
 <table width="114%" height="90%" border="0" align="center" cellspacing="5">
   <tr>
-    <td width="34%" height="120"><p align="center" class="Estilo19">&iquest;C&oacute;mo se juega al Ris2k? </p>
+    <td width="34%"><p align="center" class="Estilo19">&iquest;C&oacute;mo se juega al Ris2k? </p>
       <form id="form1" name="form1" method="post" action="view/instrucciones.jsp">
         <label>
         <div align="center">
           <input name="Submit" type="submit" value="Reglas del juego" />
         </div>
         </label>
-      </form>      <p class="Estilo19">&nbsp;</p></td>
+      </form>      </td>
     <td width="29%"><div align="center"><span class="Estilo14"><span class="Estilo15">R</span><span class="Estilo16">IS2</span><span class="Estilo18">K</span></span></div></td>
     <td colspan="2" valign="top"><div align="right" id="jugador"><strong>${sessionScope["jugador"]}</strong></div></td>
   </tr>
   
   <tr>
     <td height="184" align="center" valign="middle">
-<p class="Estilo19"><img src="/ris2k/images/infanteria.gif" width="200" height="312"></p>      </td>
+<p class="Estilo19"><img src="images/infanteria.gif" width="180" height="281"></p>      </td>
     <td colspan="2"><table width="100%" height="191" border="2">
       <tr>
         <td height="28" bgcolor="#CCCCCC"><div align="center" class="Estilo19">Acceso Jugador</div></td>
