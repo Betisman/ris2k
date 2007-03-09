@@ -64,6 +64,10 @@
         <param-name>errorAccesoForm</param-name>
         <param-value>/view/accesoForm.jsp</param-value>
     </context-param>
+    <context-param>
+        <param-name>pathTablero</param-name>
+        <param-value>/test/dibujo.xml</param-value>
+    </context-param>
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
