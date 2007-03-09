@@ -83,13 +83,13 @@ public class Mysql {
                 System.out.println("ROWCOUNT: "+rows);
                 if (rows != 0)                    
                 {
-                    System.out.println("ACCESO CORRECTO");
+                    System.out.println("USUARIO ACTUALMENTE VALIDO EN BD");
                     //System.out.println("EL RESULTADO ES: "+rs.toString());
                     return true;
                 }
                 else
                 {
-                    System.out.println("ACCESO INCORRECTO");
+                    System.out.println("USUARIO ACTUALMENTE NO VALIDO EN BD");
                     return false;
                 }
          } catch (SQLException ex) {               
@@ -97,7 +97,35 @@ public class Mysql {
                 return false;
          }
     }
+
     public static boolean borrarJugador(String user) {  
-        return true;
-    }
+        Statement stmt_consul=null, stmt_inser = null; 
+        ResultSet rs = null; 	
+        Connection conn= null;
+        
+        try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver").newInstance();
+            } catch (InstantiationException ex) {
+                ex.printStackTrace();
+            } catch (IllegalAccessException ex) {
+                ex.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
+          conn =
+          DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
+        }catch(SQLException ex) {}       
+        try{
+                stmt_inser = conn.createStatement();                 
+                String strSQL = ("DELETE FROM user WHERE user='"+ user +"'");
+                stmt_inser.executeUpdate(strSQL);
+                System.out.println("SE BORRARON LOS DATOS");
+                return true;
+                		
+         } catch (SQLException ex) {                
+                System.out.println("NO SE BORRARON LOS DATOS");
+                return false;
+         }
+ }
 }
