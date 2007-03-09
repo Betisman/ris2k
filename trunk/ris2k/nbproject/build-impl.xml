@@ -394,11 +394,17 @@
     </target>
     <target name="do-dist" depends="init,compile,compile-jsps,-pre-dist,-do-dist-with-manifest,-do-dist-without-manifest"/>
     <target name="library-inclusion-in-manifest" depends="init" if="dist.ear.dir">
+        <basename property="included.lib.file.reference.mysql-connector-java-5.0.3-bin.jar" file="${file.reference.mysql-connector-java-5.0.3-bin.jar}"/>
+        <copy-ear-war file="${file.reference.mysql-connector-java-5.0.3-bin.jar}" propname="included.lib.file.reference.mysql-connector-java-5.0.3-bin.jar.X"/>
         <mkdir dir="${build.web.dir.real}/META-INF"/>
-        <manifest file="${build.web.dir.real}/META-INF/MANIFEST.MF" mode="update"/>
+        <manifest file="${build.web.dir.real}/META-INF/MANIFEST.MF" mode="update">
+            <attribute name="Class-Path" value="${included.lib.file.reference.mysql-connector-java-5.0.3-bin.jar} "/>
+        </manifest>
         <delete dir="${dist.ear.dir}/temp"/>
     </target>
-    <target name="library-inclusion-in-archive" depends="init" unless="dist.ear.dir"/>
+    <target name="library-inclusion-in-archive" depends="init" unless="dist.ear.dir">
+        <copy file="${file.reference.mysql-connector-java-5.0.3-bin.jar}" todir="${build.web.dir.real}/WEB-INF/lib"/>
+    </target>
     <target name="do-ear-dist" depends="init,compile,compile-jsps,-pre-dist,library-inclusion-in-manifest">
         <dirname property="dist.jar.dir" file="${dist.ear.war}"/>
         <mkdir dir="${dist.jar.dir}"/>
