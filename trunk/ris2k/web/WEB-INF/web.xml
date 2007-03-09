@@ -62,7 +62,7 @@
     </context-param>
     <context-param>
         <param-name>errorAccesoForm</param-name>
-        <param-value>/view/accesoForm.jsp</param-value>
+        <param-value>/view/errorAccesoForm.jsp</param-value>
     </context-param>
     <context-param>
         <param-name>pathTablero</param-name>
