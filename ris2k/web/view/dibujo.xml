@@ -23,7 +23,7 @@
     <linearGradient gradientUnits="userSpaceOnUse" id="linearGradient3217" x1="137.86433" x2="244.89824" xlink:href="#linearGradient4188" y1="108.83501" y2="175.14951"/>
   </defs>
   <g id="fondo" style="display:inline">
-    <image height="709.44641" id="fondo" width="728.57141" x="0.4901956" xlink:href="newYorkCopia.jpg" y="0.23913066"/>
+    <image height="709.44641" id="fondo" width="728.57141" x="0.4901956" xlink:href="images/newYorkCopia.jpg" y="0.23913066"/>
   </g>
   <g id="layer3" style="display:inline">
     <path d="M 269.71072 460.41278 A 11.869292 9.0913725 0 1 1  245.97214,460.41278 A 11.869292 9.0913725 0 1 1  269.71072 460.41278 z" id="ejercitoJerseyCity" style="fill:url(#linearGradient6553);fill-opacity:1;stroke:#000000;stroke-opacity:1" transform="translate(-8.0812203,-237.89092)"/>

@@ -40,6 +40,7 @@ public class MiServlet extends HttpServlet {
     
     protected String territorioAtacante = null;
     protected String territorioDefensor = null;
+    protected String pathTablero = null;
     
     protected void gotoPage(String address, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext().getNamedDispatcher(address);
@@ -70,6 +71,7 @@ public class MiServlet extends HttpServlet {
         accesoServlet  = context.getInitParameter("accesoServlet");
         territorioAtacante = context.getInitParameter("territorioAtacante");
         territorioDefensor = context.getInitParameter("territorioDefensor");
+        pathTablero = context.getInitParameter("pathTablero");
         
     }
     

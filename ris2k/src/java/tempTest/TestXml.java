@@ -96,9 +96,9 @@ public class TestXml {
         try{
             File f = new File("web/test/dibujo.xml");
             if (f.exists()){
-                System.out.println("existe el fichero del mapa... " + f.getPath());
+                System.out.println("existe el fichero del mapa... " + f.getPath() + " ______ " + f.getAbsolutePath());
             }else{
-                System.out.println("ouch!! no existe el fichero del mapa... " + f.getPath());
+                System.out.println("ouch!! no existe el fichero del mapa... " + f.getPath() + " ______ " + f.getAbsolutePath());
             }
 
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder(); 
