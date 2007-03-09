@@ -15,7 +15,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 <html>
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Error al Registrarse</title>
+<title>Error al Acceder</title>
 <style type="text/css">
 <!--
 .Estilo1 {font-family: Georgia, "Times New Roman", Times, serif}
@@ -55,7 +55,6 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
       <label>  </label>
       </span>
       <label><div align="center"><br />
-        <!-- <input name=" Volver " type="button" class="Estilo3" value="    VOLVER    " action="view/altaForm.jsp" /> -->
         <FORM><INPUT TYPE="button" VALUE="VOLVER" onClick="history.go(-1);return true;"> </FORM>
       </div>
       </label>
