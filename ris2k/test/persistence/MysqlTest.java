@@ -74,4 +74,25 @@ public class MysqlTest extends TestCase {
         }
     }
     
+
+//TODO: implementar prueba borrar jugador
+   /*prueba si un jugador existente se puede borrar*/
+    public void testBorrarJugador() {
+ /*       System.out.println(">>> persistirJugadorValido");
+        Jugador jugador = new Jugador();
+       
+        Mysql.borrarJugador("prueba");
+        
+        jugador.setUser("prueba");
+        jugador.setPassword("prueba");
+        jugador.setEmail("prueba@prueba.com");
+        
+        Mysql.persistirJugador(jugador);
+   */     
+        boolean expResult = true;
+        boolean result = Mysql.borrarJugador("prueba");
+        assertEquals(expResult, result);
+                
+    //    fail("Ha saltado una excepción");
+    }
 }
