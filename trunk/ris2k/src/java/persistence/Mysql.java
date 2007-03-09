@@ -97,4 +97,7 @@ public class Mysql {
                 return false;
          }
     }
+    public static boolean borrarJugador(String user) {  
+        return true;
+    }
 }

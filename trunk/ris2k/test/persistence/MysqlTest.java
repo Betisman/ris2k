@@ -39,24 +39,27 @@ public class MysqlTest extends TestCase {
 
     /*prueba si un jugador válido se puede persistir*/
     public void testPersistirJugadorValido() {
-        System.out.println("persistirJugadorValido");
-        Jugador jugador =new Jugador();
-        
+        System.out.println(">>> persistirJugadorValido");
+        Jugador jugador = new Jugador();
        
+        Mysql.borrarJugador("prueba");
+        
         jugador.setUser("prueba");
         jugador.setPassword("prueba");
         jugador.setEmail("prueba@prueba.com");
         
+        Mysql.persistirJugador(jugador);
+        
         boolean expResult = true;
-        boolean result = Mysql.persistirJugador(jugador);
+        boolean result = Mysql.validarJugador(jugador);
         assertEquals(expResult, result);
                 
-        fail("Ha saltado una excepción");
+    //    fail("Ha saltado una excepción");
     }
     
     /*prueba que un jugador nulo no se pueda persistir*/
     public void testPersistirJugadorNulo() throws Exception{
-        System.out.println("persistirJugadorNulo");
+        System.out.println(">>> persistirJugadorNulo");
         try
         {
             Jugador jugador = null;
