@@ -166,3 +166,9 @@ public class MysqlTest extends TestCase {
     //    fail("Ha saltado una excepción");
     }
 }
+
+/*****************************************************************************/
+    /**
+     * Tests of validarJugador method, of class persistence.Mysql.
+     */
+/*****************************************************************************/
