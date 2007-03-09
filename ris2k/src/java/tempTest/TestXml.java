@@ -137,7 +137,7 @@ public class TestXml {
         TestXml test1 = new TestXml();
         
         Jugador j = new Jugador();
-        j.setColor("url(#linearGradient6557)");
+        j.setColor("url(#linearGradient3203)");
         j.setUser("Mariano");
         Territorio t = new Territorio();
         t.setId("Hackensack");
