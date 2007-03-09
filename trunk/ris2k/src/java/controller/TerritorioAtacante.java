@@ -30,8 +30,9 @@ public class TerritorioAtacante extends MiServlet {
         System.out.println("Territorio atacante: " + territorio);
         Tablero tablero = new Tablero();
 //        tablero.setMapa("C:/universidad/Quinto/IS2/ProyectoRis2k/ris2k/ris2k/web/test/dibujo.xml");
-        
-        tablero.setMapa(request.getParameter("pathTablero"));
+        System.out.println("lo que hay en pathTablero = " + pathTablero);
+        tablero.setMapa(pathTablero);
+        System.out.println("pathTablero = " + tablero.getMapa());
         
         request.getSession().setAttribute("atacante", territorio);
         
@@ -39,9 +40,9 @@ public class TerritorioAtacante extends MiServlet {
         //System.out.println("RUTA ABSOLUTA: "+f.);
         System.out.println("en TerritorioAtacante probando lo del mapa de los huevos");
             if (f.exists()){
-                System.out.println("existe el fichero del mapa... " + f.getPath());
+                System.out.println("existe el fichero del mapa... " + f.getPath() + " ______ " + f.getAbsolutePath());
             }else{
-                System.out.println("ouch!! no existe el fichero del mapa... " + f.getPath());
+                System.out.println("ouch!! no existe el fichero del mapa... " + f.getPath() + " ______ " + f.getAbsolutePath());
             }
         
         
