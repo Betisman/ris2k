@@ -47,7 +47,6 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     <p align="center" class="Estilo3">${sessionScope["errorUser2"]} </p>
     <p align="center" class="Estilo3">${sessionScope["errorPassword1"]} </p>
     <p align="center" class="Estilo3">${sessionScope["errorPassword2"]} </p>
-    <p align="center" class="Estilo3">${sessionScope["errorMail"]} </p>
     <p align="center" class="Estilo3">${sessionScope["errorBD"]} </p>
     <form id="form1" name="form1" method="post" action="view/altaForm.jsp"> 
       <div align="center" class="Estilo4"></div>
