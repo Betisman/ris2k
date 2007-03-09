@@ -72,6 +72,7 @@ public class altaServlet extends MiServlet {
             jugador.setPassword(password);
             jugador.setEmail(email);   
             if(Mysql.persistirJugador(jugador)==true){
+                request.getSession().setAttribute("jugador","Bienvenido, "+user.toUpperCase());
                 gotoJSPPage(exitoAltaForm,request,response);
             } else {
                 request.getSession().setAttribute("errorBD","¡ERROR! Existe algún problema con la base de datos");

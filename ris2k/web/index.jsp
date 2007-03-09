@@ -53,7 +53,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         </label>
       </form>      </td>
     <td width="29%"><div align="center"><span class="Estilo14"><span class="Estilo15">R</span><span class="Estilo16">IS2</span><span class="Estilo18">K</span></span></div></td>
-    <td colspan="2" valign="top"><div align="right" id="jugador"><strong>${sessionScope["jugador"]}</strong></div></td>
+    <!--<td colspan="2" valign="top"><div align="right" id="jugador"><strong>${sessionScope["jugador"]}</strong></div></td>-->
   </tr>
   
   <tr>

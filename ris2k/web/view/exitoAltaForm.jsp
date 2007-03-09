@@ -29,18 +29,16 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 
 <body background="images/Fondo.jpg">
 <div align="center">
-  <p class="Estilo1">&iexcl;Bienvenido!</p>
+    <p class="Estilo1"><strong><div id="jugador">${sessionScope["jugador"]}!</div></strong></p>
   <p class="Estilo1">Has accedido correctamente </p>
   <p><img src="images/Smiley_head_happy.png" alt="Acceso correcto!!" width="152" height="151" />      </p>
   <p>&nbsp;</p>
   <p>TO DO:</p>
   <p>Aqu&iacute; ir&iacute;a el men&uacute; principal...  </p>
   <p>Volver al menú principal</p>
-  <form id="form1" name="form1" method="post" action="">
+  <form id="form1" name="form1" method="post" action="test/dibujo.xml">
     <label>
-      <!-- <input type="submit" name="Submit" value="Ver tablero" action="/tablero.html"/> -->
-      <FORM><INPUT TYPE="BUTTON" VALUE="Volver al menú principal" ONCLICK="window.location.href='index.jsp'">
-      </FORM>
+      <input type="submit" name="Submit" value="Ver tablero"/>
     </label>
   </form>
   <p>&nbsp; </p>
