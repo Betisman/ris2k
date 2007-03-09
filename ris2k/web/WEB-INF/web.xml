@@ -52,6 +52,10 @@
         <param-name>instrucciones</param-name>
         <param-value>/view/instrucciones.jsp</param-value>
     </context-param>
+    <context-param>
+        <param-name>errorAccesoForm</param-name>
+        <param-value>/view/errorAccesoForm.jsp</param-value>
+    </context-param>
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>

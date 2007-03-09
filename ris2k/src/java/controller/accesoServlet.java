@@ -23,26 +23,62 @@ public class accesoServlet extends MiServlet {
     String error1=null; //Defino este string para saber que tipo de error de validación se produce.
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        Jugador jugador = new Jugador();             
+        Jugador jugador = new Jugador(); 
+        int contador = 0;
+        String errorBD = null;
+        String errorUser1 = null;
+        String errorUser2 = null;
+        String Password1 = null;
+        String Password2 = null;
+        
         String user = request.getParameter("user");       
-        String password = request.getParameter("password");
-        //String email = request.getParameter("email");
-    
-        jugador.setUser(user);
-        jugador.setPassword(password);
-        //jugador.setEmail(email);   
-    
-        if(Mysql.validarJugador(jugador)==true)
-        {
-           gotoJSPPage(exitoAltaForm,request,response);
-           //Mysql.persistirJugador(jugador);
+        request.getSession().setAttribute("errorUser1","");
+        if(user.length()>128 || !user.matches("[a-zA-Z0-9]+")){ 
+         contador++;
+         request.getSession().setAttribute("errorUser1","¡ERROR! Nombre de usuario incorrecto, sólo puede contener letras y dígitos");
+         System.out.println("FALLO: "+user);            
         }
-        else
-        {         
-           gotoJSPPage(errorAltaForm,request,response);
+        
+        request.getSession().setAttribute("errorUser2","");
+        if(user.matches("puta")||user.matches("cabron[a-zA-Z]*")||user.matches("mierda")){ 
+         contador++;
+         request.getSession().setAttribute("errorUser2","¡ERROR! Ese nombre de usuario puede resultar ofensivo, no se pudo registrar con él");
+         System.out.println("FALLO: "+user);            
+        }
+        
+        
+        String password = request.getParameter("password");
+        
+        request.getSession().setAttribute("errorPassword1","");
+        if (password.length()<6){
+            contador++;
+            request.getSession().setAttribute("errorPassword1","¡ERROR! La contraseña es demasiado corta (mínimo 6 caracteres)");
+            System.out.println("FALLO: "+password);
+        }
+        
+        request.getSession().setAttribute("errorPassword2","");
+        if (!password.matches("[a-zA-Z0-9]+")){
+            contador++;
+            request.getSession().setAttribute("errorPassword2","¡ERROR! La contraseña sólo puede contener letras y dígitos");
+            System.out.println("FALLO: "+password);
+        }
+       
+        request.getSession().setAttribute("errorBD","");
+        if (contador == 0){
+            jugador.setUser(user);
+            jugador.setPassword(password);  
+            if(Mysql.validarJugador(jugador)==true){
+                gotoJSPPage(exitoAltaForm,request,response);
+            } else {
+                request.getSession().setAttribute("errorBD","¡ERROR! Usuario y/o contraseña incorrectos");
+                gotoJSPPage(errorAccesoForm,request,response);
+            }
+        } else {            
+           gotoJSPPage(errorAccesoForm,request,response);
+            
         }
     }  
-    // <editor-fold defaultstate=3D"collapsed" desc=3D"HttpServlet =methods. Click on the + sign on the left to edit the code.">
+  
     /** Handles the HTTP <code>GET</code> method.
      * @param request servlet request
      * @param response servlet response
@@ -67,5 +103,4 @@ public class accesoServlet extends MiServlet {
     public String getServletInfo() {
         return "Short description";
     }
-    // </editor-fold>
 }

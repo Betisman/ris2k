@@ -53,7 +53,6 @@ public class Mysql {
         Connection conn= null;
         String user = jugador.getUser();
         String password = jugador.getPassword();
-        //String email = jugador.getEmail();
         String sql;
     
         try {
@@ -76,15 +75,12 @@ public class Mysql {
                 stmt_consul = conn.createStatement();                
                 ResultSet rset = stmt_consul.executeQuery(sql);
                 while (rset.next()) {rows++;}
-
-                //rs.next();
-                //rs = stmt_consul.getResultSet();  
+ 
                 int resultcount = 0;                
                 System.out.println("ROWCOUNT: "+rows);
                 if (rows != 0)                    
                 {
                     System.out.println("USUARIO ACTUALMENTE VALIDO EN BD");
-                    //System.out.println("EL RESULTADO ES: "+rs.toString());
                     return true;
                 }
                 else
