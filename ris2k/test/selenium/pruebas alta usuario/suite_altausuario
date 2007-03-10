@@ -40,8 +40,8 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td></td>
 	<td>Bienvenido</td>
+	<td></td>
 </tr>
 <tr>
 	<td>open</td>
@@ -75,13 +75,8 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td></td>
 	<td>ERROR</td>
-</tr>
-<tr>
-	<td>assertTextPresent</td>
 	<td></td>
-	<td>usuario incorrecto</td>
 </tr>
 <tr>
 	<td>open</td>
@@ -115,8 +110,8 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td></td>
 	<td>ERROR</td>
+	<td></td>
 </tr>
 <tr>
 	<td>open</td>
@@ -141,7 +136,7 @@
 <tr>
 	<td>type</td>
 	<td>email</td>
-	<td>prueba@prueba.es</td>
+	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -150,8 +145,8 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td></td>
 	<td>ERROR</td>
+	<td></td>
 </tr>
 <tr>
 	<td>open</td>
@@ -176,7 +171,7 @@
 <tr>
 	<td>type</td>
 	<td>email</td>
-	<td>prueba@prueba.es.es</td>
+	<td>pruebaarrobapruebapuntoes</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
@@ -185,8 +180,8 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
+	<td>ERROR</td>
 	<td></td>
-	<td>Bienvenido</td>
 </tr>
 <tr>
 	<td>open</td>
@@ -220,13 +215,8 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td></td>
 	<td>ERROR</td>
-</tr>
-<tr>
-	<td>assertTextPresent</td>
 	<td></td>
-	<td>ofensivo</td>
 </tr>
 
 </tbody></table>
