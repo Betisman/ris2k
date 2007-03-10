@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>test04_altausuario_emailnovalido</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">test04_altausuario_emailnovalido</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>altapruebaemail</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>prueba@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td></td>
+	<td>ERROR</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
