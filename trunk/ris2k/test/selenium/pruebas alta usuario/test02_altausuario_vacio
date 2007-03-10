@@ -40,13 +40,8 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td></td>
 	<td>ERROR</td>
-</tr>
-<tr>
-	<td>assertTextPresent</td>
 	<td></td>
-	<td>usuario incorrecto</td>
 </tr>
 
 </tbody></table>
