@@ -92,7 +92,7 @@ public class Mysql {
                 System.out.println("ACCESO INCORRECTO");
                 return false;
          }
-    }
+   }
 
     public static boolean borrarJugador(String user) {  
         Statement stmt_consul=null, stmt_inser = null; 

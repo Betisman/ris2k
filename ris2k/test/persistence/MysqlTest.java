@@ -197,7 +197,7 @@ public class MysqlTest extends TestCase {
     //    fail("Ha saltado una excepción");
     }
     
-    public void testValidarJugadorInexistente() throws Exception{
+    public void testValidarJugadorInexistente()throws Exception{
         System.out.println(">>> validarrJugadorInexistente");
 
         System.out.println("NOS ASEGURAMOS DE QUE NO EXISTA UN USUARIO DE PRUEBA CONCRETO");
@@ -221,7 +221,7 @@ public class MysqlTest extends TestCase {
         }
     }
     
-    public void testValidarJugadorPasswordErroneo() throws Exception{
+    public void testValidarJugadorPasswordErroneo(){
         System.out.println(">>> validarrJugadorPasswordErroneo");
 
         Jugador jugador = new Jugador();
@@ -241,10 +241,9 @@ public class MysqlTest extends TestCase {
             jugador.setPassword("error");
             jugador.setEmail("prueba@prueba.com");
 
-            boolean expResult = true;
+            boolean expResult = false;
             boolean result = Mysql.validarJugador(jugador);
             assertEquals(expResult, result);
-            fail("Debe lanzarse una excepción");
         }
         catch (Exception e)
         {
