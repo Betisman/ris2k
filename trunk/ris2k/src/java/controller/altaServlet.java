@@ -13,6 +13,8 @@ import model.Jugador;
 
 
 public class altaServlet extends MiServlet {    
+    public altaServlet(){
+    }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {

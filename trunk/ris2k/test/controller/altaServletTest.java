@@ -2,7 +2,7 @@
  * altaServletTest.java
  * JUnit based test
  *
- * Created on 8 de marzo de 2007, 17:29
+ * Created on 10 de marzo de 2007, 19:37
  */
 
 package controller;
@@ -40,7 +40,13 @@ public class altaServletTest extends TestCase {
         
         HttpServletRequest request = null;
         HttpServletResponse response = null;
+        
         altaServlet instance = new altaServlet();
+        
+        request.setAttribute("user","pruebadealta");
+        request.setAttribute("password","password");
+        request.setAttribute("email","prueba@prueba.com");
+        
         
         instance.processRequest(request, response);
         
@@ -51,7 +57,7 @@ public class altaServletTest extends TestCase {
     /**
      * Test of doGet method, of class controller.altaServlet.
      */
-    public void testDoGet() throws Exception {
+    /*public void testDoGet() throws Exception {
         System.out.println("doGet");
         
         HttpServletRequest request = null;
@@ -67,7 +73,7 @@ public class altaServletTest extends TestCase {
     /**
      * Test of doPost method, of class controller.altaServlet.
      */
-    public void testDoPost() throws Exception {
+  /*  public void testDoPost() throws Exception {
         System.out.println("doPost");
         
         HttpServletRequest request = null;
@@ -79,11 +85,11 @@ public class altaServletTest extends TestCase {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-
+*/
     /**
      * Test of getServletInfo method, of class controller.altaServlet.
      */
-    public void testGetServletInfo() {
+/*    public void testGetServletInfo() {
         System.out.println("getServletInfo");
         
         altaServlet instance = new altaServlet();
@@ -95,5 +101,5 @@ public class altaServletTest extends TestCase {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+  */
 }
