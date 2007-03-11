@@ -373,6 +373,36 @@
 	<td>ERROR</td>
 	<td></td>
 </tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/index.jsp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>REGLAS DEL JUEGO</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/view/instrucciones.jsp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>¿Cómo se juega al Ris2k?</td>
+	<td></td>
+</tr>
 
 </tbody></table>
 </body>
