@@ -14,6 +14,36 @@
 	<td></td>
 </tr>
 <tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>acceso@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
 	<td>type</td>
 	<td>user</td>
 	<td>acceso</td>
@@ -31,6 +61,106 @@
 <tr>
 	<td>assertTextPresent</td>
 	<td>Bienvenido</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>erroneo</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>erroneo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>erroneo</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
 	<td></td>
 </tr>
 
