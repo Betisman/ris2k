@@ -1,7 +1,0 @@
-{
-    'name': 'RSS',
-    'type': 'jmaki',
-    'version':'.8',
-    'image': 'images/jmaki-rss.jpg',
-    'description': 'A RSS widget.'
-}
