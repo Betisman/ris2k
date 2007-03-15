@@ -1,0 +1,8 @@
+ {
+    'name': 'Vertical Slider',
+    'type': 'yahoo',
+    'version': '.8',
+    'jmakiVersion': '.8.3',    
+    'image': 'images/yahoo-vslider.jpg',
+    'description': 'A slider widget.',
+  }
