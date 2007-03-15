@@ -68,6 +68,10 @@
         <param-name>pathTablero</param-name>
         <param-value>/test/dibujo.xml</param-value>
     </context-param>
+    <context-param>
+        <param-name>tableroMenu</param-name>
+        <param-value>/view/tableroMenu.jsp</param-value>
+    </context-param>
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
@@ -116,6 +120,11 @@
         <servlet-name>TerritorioDefensor</servlet-name>
         <servlet-class>controller.TerritorioDefensor</servlet-class>
     </servlet>
+    <servlet><servlet-name>RSSServlet</servlet-name><servlet-class>com.sun.jmaki.rss.RssServlet</servlet-class></servlet>
+    <servlet>
+        <servlet-name>XmlHttpProxy</servlet-name>
+        <servlet-class>com.sun.jmaki.services.XmlHttpProxyServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/servlet/*</url-pattern>
@@ -139,6 +148,14 @@
     <servlet-mapping>
         <servlet-name>TerritorioDefensor</servlet-name>
         <url-pattern>/TerritorioDefensor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RSSServlet</servlet-name>
+        <url-pattern>/rssprovider</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>XmlHttpProxy</servlet-name>
+        <url-pattern>/xhp</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
