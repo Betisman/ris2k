@@ -1,7 +1,0 @@
-{
-    'name': 'Chat',
-    'type': 'jmaki',
-    'version':'.8',
-    'image': 'images/jmaki-chat.jpg',
-    'description': 'A mehatnu widget. The server needs to be a chat server.'
-}
