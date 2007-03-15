@@ -9,6 +9,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import persistence.Mysql;
 import model.Jugador;
+import mail.Correo;
 
 
 
@@ -73,7 +74,8 @@ public class altaServlet extends MiServlet {
             jugador.setUser(user);
             jugador.setPassword(password);
             jugador.setEmail(email);   
-            if(Mysql.persistirJugador(jugador)==true){
+            if(Mysql.persistirJugador(jugador)==true ){
+                Correo.enviarCorreo(jugador);
                 request.getSession().setAttribute("jugador","Bienvenido, "+user.toUpperCase());
                 gotoJSPPage(exitoAltaForm,request,response);
             } else {
