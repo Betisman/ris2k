@@ -1,0 +1,29 @@
+{'name': 'Accordion',
+         'type': 'spry',
+         'version': '.8',
+         'jmakiVersion': '.8.3',
+         'image' : 'images/spry-accordion.jpg',
+         'description': 'This widget is an accordion container which you can customize using inline conent or point to a URL for which the content including any widgets is loaded into the tab.',
+         'args': [
+            {'gradient' : {
+               'type':'STRING', 
+                'description' : 'The row gradient.',
+                'defaultValue' : 'blue',
+                 'values': [
+                    {'name' : 'Aqua', 'value' : 'aqua', 'description' : 'Aqua background.'},
+                    {'name' : 'Blue', 'value' : 'blue', 'description' : 'Aqua background.'},
+                    {'name' : 'Gray', 'value' : 'gray', 'description' : 'Gray background.'},
+                    {'name' : 'Green', 'value' : 'green', 'description' : 'Green background.'}
+                   ]
+                }
+             }
+         ],
+         'value': {'required':'false', 'type': 'OBJECT', 'defaultValue':{	
+            'rows':[
+                {'label': 'Books', 'content': 'Book content'},
+                {'label': 'Magazines', 'content': 'Magazines here'},
+                {'label': 'Newspaper', 'content': 'Newspaper content'}
+            ]
+            },
+        'description':'An object containing an array of row objects. Each object has a \'label\' property and a \'content\'  for which the content is embedded in the JSON or a \'url\'  the within the same web application where the \'url\'  contents including widgets are loaded into the row.'}
+ }

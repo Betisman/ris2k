@@ -1,0 +1,8 @@
+{
+    'name': 'Resizable Text Editor',
+    'type': 'dojo',
+    'version' : '.8.3',
+    'image': 'images/dojo-resizable-textarea.jpg',
+    'description': 'This widget is a resizable text editor component.',
+    'value': {'required':'false', 'type': 'STRING', 'defaultValue': 'Edit Me Please'}
+}
