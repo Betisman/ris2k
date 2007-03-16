@@ -21,6 +21,10 @@ public class Mysql {
         String user=jugador.getUser();
         String password=jugador.getPassword();
         String email=jugador.getEmail();
+       
+        //control de elementos nulos, los cuales no se pueden persistir
+        if ((user==null)||(password==null)||(email==null)) throw new Exception("NO INSERT");
+       
         int contador=0;
         
         try {
