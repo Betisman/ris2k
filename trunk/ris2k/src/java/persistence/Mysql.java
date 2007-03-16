@@ -48,8 +48,7 @@ public class Mysql {
                 return true;
                 		
          } catch (SQLException ex) {                
-                System.out.println("NO SE INSERTARON LOS DATOS");
-                throw new Exception("NO INSERT");
+                throw ex;
          }
    }
     public static boolean validarJugador(Jugador jugador) {

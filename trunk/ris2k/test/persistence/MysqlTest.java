@@ -351,13 +351,13 @@ public class MysqlTest extends TestCase {
         }
         catch (Exception ex)
         {
-            String expResult = "NO INSERT";
+            String expResult = "Duplicate entry 'prueba"+prueba+"' for key 1";
             String result = ex.getMessage();
             assertEquals(expResult, result);
             return;
         }
         
-        fail("Debe lanzarse una excepción NO INSERT");
+        fail("Debe lanzarse una excepción Duplicate Entry");
        
     }
     
