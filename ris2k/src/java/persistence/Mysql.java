@@ -13,7 +13,8 @@ public class Mysql {
     }
    
 
-    public static boolean persistirJugador(Jugador jugador) {  
+    public static boolean persistirJugador(Jugador jugador) 
+    throws Exception {  
         Statement stmt_consul=null, stmt_inser = null; 
         ResultSet rs = null; 	
         Connection conn= null;
@@ -44,9 +45,9 @@ public class Mysql {
                 		
          } catch (SQLException ex) {                
                 System.out.println("NO SE INSERTARON LOS DATOS");
-                return false;
+                throw new Exception("NO INSERT");
          }
-         }
+   }
     public static boolean validarJugador(Jugador jugador) {
         Statement stmt_consul = null, stmt_inser =  null;
         ResultSet rs = null;
