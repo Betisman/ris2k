@@ -73,15 +73,22 @@ public class altaServlet extends MiServlet {
         if (contador == 0){
             jugador.setUser(user);
             jugador.setPassword(password);
-            jugador.setEmail(email);   
-            if(Mysql.persistirJugador(jugador)==true ){
+            jugador.setEmail(email);
+            try {
+                Mysql.persistirJugador(jugador);
+            } catch (Exception ex) {
+                if (ex.getMessage().contains("Duplicate entry"))
+                    request.getSession().setAttribute("errorBD","¡ERROR! El usuario " + user + " ya existe.");
+                else
+                    request.getSession().setAttribute("errorBD","¡ERROR! Existe algún problema con la base de datos");
+                gotoJSPPage(errorAltaForm,request,response);
+            }
                 Correo.enviarCorreo(jugador);
                 request.getSession().setAttribute("jugador","Bienvenido, "+user.toUpperCase());
                 gotoJSPPage(exitoAltaForm,request,response);
-            } else {
-                request.getSession().setAttribute("errorBD","¡ERROR! Existe algún problema con la base de datos");
-                gotoJSPPage(errorAltaForm,request,response);
-            }
+            
+                
+            
         } else {            
            gotoJSPPage(errorAltaForm,request,response);
             
