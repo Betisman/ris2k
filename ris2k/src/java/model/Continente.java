@@ -10,6 +10,7 @@
 package model;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  *
@@ -19,7 +20,7 @@ public class Continente {
     private String id;
     private String nombre;
     private int numRefuerzos;
-    private Collection<Territorio> territorios;
+    private List<Territorio> territorios;
     
     /** Creates a new instance of Continente */
     public Continente() {
@@ -49,11 +50,11 @@ public class Continente {
         this.numRefuerzos = numRefuerzos;
     }
 
-    public Collection<Territorio> getTerritorios() {
+    public List<Territorio> getTerritorios() {
         return territorios;
     }
 
-    public void setTerritorios(Collection<Territorio> territorios) {
+    public void setTerritorios(List<Territorio> territorios) {
         this.territorios = territorios;
     }
     
