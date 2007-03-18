@@ -62,7 +62,7 @@ public class SVGTablero {
         }
     }
     
-    public Document cambiarLinks(Document document){
+    public Document cambiarLinks(Document document, String servlet){
         System.out.println("Se encuentra en cambiarLinks()");
         if (document == null) System.out.println("DOCUMENT NULL");
         try {
@@ -83,7 +83,7 @@ public class SVGTablero {
                 System.out.println(idTerritorio);
                 idTerritorio = idTerritorio.replace("link", "");
                 System.out.println(idTerritorio);
-                String link = "TerritorioDefensor" + "?territorio=" + idTerritorio;
+                String link = servlet + "?territorio=" + idTerritorio;
                 System.out.println(link);
                 n.getAttributes().getNamedItem("xlink:href").setTextContent(link);
                 System.out.println(idTerritorio);
@@ -111,26 +111,20 @@ public class SVGTablero {
             ex.printStackTrace();
         }
         String hola = strWriter.toString();
-        System.out.println("hola = "+hola);
+        //System.out.println("hola = "+hola);
         
         return hola;
     }
     
-    public void crearHtml(String str){
-/*        FileWriter html = null;
+    public void stringToSvgFile(String str, String ruta){
+        /*** temporal */
+        ruta = "C:/universidad/Quinto/IS2/temp/ris2k/web/images/tablero.svg";
+        /****/
+        FileWriter svgFile = null;
         try {
-            html = new FileWriter("C:/universidad/Quinto/IS2/ProyectoRis2k/ris2k/build/web/view/tablero.jsp");
-            html.write(str);
-            html.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
- */
-        FileWriter html = null;
-        try {
-            html = new FileWriter("C:/universidad/Quinto/IS2/ProyectoRis2k/ris2k/build/web/images/tablero.svg");
-            html.write(str);
-            html.close();
+            svgFile = new FileWriter(ruta);
+            svgFile.write(str);
+            svgFile.close();
         } catch (IOException ex) {
             ex.printStackTrace();
         }

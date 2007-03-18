@@ -8,10 +8,13 @@ package controller;
 
 import java.io.*;
 import java.net.*;
+import java.util.GregorianCalendar;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import model.Tablero;
+import org.w3c.dom.Document;
+import svgTablero.SVGTablero;
 
 /**
  *
@@ -26,30 +29,42 @@ public class TerritorioAtacante extends MiServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String territorio = request.getParameter("territorio");
-        System.out.println("Territorio atacante: " + territorio);
+        GregorianCalendar now = new GregorianCalendar();
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>TerritorioAtacante @ " + now.getTime().toString());
+        
+        System.out.println("POST: desde "+request.getRemoteAddr()+" "
+            + request.getHeader("X-Forwarded-For")+" "
+            + request.getHeader("Forwarded")+" "
+            + request.getHeader("Via")+" "
+            + request.getHeader("user-agent")+" "
+            + request.getHeader("Client-ip"));
         Tablero tablero = new Tablero();
-//        tablero.setMapa("C:/universidad/Quinto/IS2/ProyectoRis2k/ris2k/ris2k/web/test/dibujo.xml");
-        System.out.println("lo que hay en pathTablero = " + pathTablero);
-        tablero.setMapa(pathTablero);
-        System.out.println("pathTablero = " + tablero.getMapa());
-        
-        request.getSession().setAttribute("atacante", territorio);
-        
+        String rutaCarpetaTablero = request.getSession().getServletContext().getRealPath("/WEB-INF");
+        tablero.setMapa(rutaCarpetaTablero + "/tableros/newYork/newYorkMap.xml");
         File f = new File(tablero.getMapa());
-        //System.out.println("RUTA ABSOLUTA: "+f.);
-        System.out.println("en TerritorioAtacante probando lo del mapa de los huevos");
-            if (f.exists()){
-                System.out.println("existe el fichero del mapa... " + f.getPath() + " ______ " + f.getAbsolutePath());
-            }else{
-                System.out.println("ouch!! no existe el fichero del mapa... " + f.getPath() + " ______ " + f.getAbsolutePath());
-            }
+        SVGTablero svg = new SVGTablero();
+        Document document = svg.parsearFichero(f);
+         if (document == null)
+                System.out.println("DOCUMENT NULL en TerritorioDefensor tras parsearFichero");
+            else
+                System.out.println("DOCUMENT ¡¡NOT!! NULL TerritorioDefensor tras parsearFichero");
+        document = svg.cambiarLinks(document, "TerritorioDefensor");
+        document = svg.setRutaFondo(document, rutaCarpetaTablero.replaceAll("\\\\", "/") + "/tableros/newYork/newYorkBg.jpg");
+        String str;
+        str = svg.serializar(document);
+        String ruta = "no hace falta mientras probamos";
+        svg.stringToSvgFile(str, ruta);
         
+        /*******************************************/
+        //gotoJSPPage("/view/tablero.jsp",request,response);
+        /*******************************************/
+        request.getSession().setAttribute("strSvg", str);
         
-        
-        tablero.cambiarLinksTerritorios("TerritorioDefensor");
-        
-        gotoJSPPage(territorioDefensor,request,response);
+             
+        response.setContentType("image/svg+xml");
+        PrintWriter out = response.getWriter();
+        out.print(str);
+        out.close();
     }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
