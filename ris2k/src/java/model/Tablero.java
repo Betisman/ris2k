@@ -29,7 +29,9 @@ import org.w3c.dom.NodeList;
  */
 public class Tablero {
     private String mapa;
+    private String infoXml;
     private Collection<Continente> continentes;
+    
     /** Creates a new instance of Tablero */
     public Tablero() {
     }
@@ -94,8 +96,23 @@ System.out.println(n.getAttributes().getNamedItem("xlink:href").getTextContent()
             serial.serialize(document);
 
         }catch(Exception e){
-            System.out.println("Excepción generada");
+            System.out.println("Excepción generada: " + e.getMessage());
             //e.printStackTrace();
         }        
+    }
+    
+    public void cargarTerritorios(){
+        
+    }
+    
+    public Territorio getTerritorio(String idTerritorio){
+        Territorio objetivo = null;
+        for(Continente c : continentes){
+            for(Territorio t : c.getTerritorios()){
+                if (t.getId() == idTerritorio)
+                    objetivo = t;
+            }
+        }
+        return objetivo;
     }
 }
