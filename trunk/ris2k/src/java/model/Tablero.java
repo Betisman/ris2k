@@ -14,6 +14,7 @@ import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Collection;
+import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
@@ -30,7 +31,7 @@ import org.w3c.dom.NodeList;
 public class Tablero {
     private String mapa;
     private String infoXml;
-    private Collection<Continente> continentes;
+    private List<Continente> continentes;
     
     /** Creates a new instance of Tablero */
     public Tablero() {
@@ -44,11 +45,11 @@ public class Tablero {
         this.mapa = mapa;
     }
 
-    public Collection<Continente> getContinentes() {
+    public List<Continente> getContinentes() {
         return continentes;
     }
 
-    public void setContinentes(Collection<Continente> continentes) {
+    public void setContinentes(List<Continente> continentes) {
         this.continentes = continentes;
     }
     
