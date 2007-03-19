@@ -68,7 +68,8 @@
                 </div> <!-- rightSidebar -->
         
                 <div class="content" style="height:700px">
-                    <img src="Tablero1024.JPG" width="100%" height="100%" alt="Tablero1024"/>
+                    <!--<img src="Tablero1024.JPG" width="100%" height="100%" alt="Tablero1024"/>-->
+                    <EMBED SRC="../images/tablero.svg" WIDTH="100%" HEIGHT="100%">
                     
                    
                 </div> <!-- content -->

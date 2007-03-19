@@ -49,7 +49,7 @@ public class TerritorioAtacante extends MiServlet {
             else
                 System.out.println("DOCUMENT ¡¡NOT!! NULL TerritorioDefensor tras parsearFichero");
         document = svg.cambiarLinks(document, "TerritorioDefensor");
-        document = svg.setRutaFondo(document, rutaCarpetaTablero.replaceAll("\\\\", "/") + "/tableros/newYork/newYorkBg.jpg");
+//        document = svg.setRutaFondo(document, rutaCarpetaTablero.replaceAll("\\\\", "/") + "/tableros/newYork/newYorkBg.jpg");
         String str;
         str = svg.serializar(document);
         String ruta = "no hace falta mientras probamos";
