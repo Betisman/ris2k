@@ -34,7 +34,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     </tr>
     <tr>
       <td width="111">&nbsp;</td>
-      <td width="101"><div align="center"><a href="CrearPartida.java"><img src="images/canonpeq.gif" width="88" height="70" border="0"></a></div></td>
+      <td width="101"><div align="center"><a href="view/nuevaPartida.jsp"><img src="images/canonpeq.gif" width="88" height="70" border="0"></a></div></td>
       <td colspan="3"><span class="Estilo7">CREAR UNA NUEVA PARTIDA</span></td>
     </tr>
     <tr>
