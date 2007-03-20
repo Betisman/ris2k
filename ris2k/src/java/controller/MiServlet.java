@@ -36,6 +36,7 @@ public class MiServlet extends HttpServlet {
     protected String accesoForm = null;
     protected String errorAccesoForm = null;
     protected String exitoAccesoForm = null;
+    protected String menuForm = null;
     protected String accesoServlet = null;
     
     protected String territorioAtacante = null;
@@ -70,6 +71,7 @@ public class MiServlet extends HttpServlet {
         accesoForm = context.getInitParameter("accesoForm");
         errorAccesoForm = context.getInitParameter("errorAccesoForm");
         exitoAccesoForm = context.getInitParameter("exitoAccesoForm");
+        menuForm = context.getInitParameter("menuForm");
         accesoServlet  = context.getInitParameter("accesoServlet");
         territorioAtacante = context.getInitParameter("territorioAtacante");
         territorioDefensor = context.getInitParameter("territorioDefensor");

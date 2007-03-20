@@ -72,6 +72,10 @@
         <param-name>tableroMenu</param-name>
         <param-value>/view/tableroMenu.jsp</param-value>
     </context-param>
+    <context-param>
+        <param-name>menuForm</param-name>
+        <param-value>/view/menuForm.jsp</param-value>
+    </context-param>
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
