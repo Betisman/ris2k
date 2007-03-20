@@ -76,7 +76,7 @@
         <param-name>menuForm</param-name>
         <param-value>/view/menuForm.jsp</param-value>
     </context-param>
-    <servlet>
+    <context-param><param-name>partidas</param-name><param-value>/view/partidas.jsp</param-value></context-param><servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
     </servlet>
@@ -111,6 +111,10 @@
             <param-name>territorioDefensor</param-name>
             <param-value>/test/dibujo.xml</param-value>
         </init-param>
+        <init-param>
+            <param-name>partidas</param-name>
+            <param-value>/view/partidas.jsp</param-value>
+        </init-param>
         </servlet>
     <servlet>
         <servlet-name>accesoServlet</servlet-name>
@@ -128,6 +132,10 @@
     <servlet>
         <servlet-name>XmlHttpProxy</servlet-name>
         <servlet-class>com.sun.jmaki.services.XmlHttpProxyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CrearPartida</servlet-name>
+        <servlet-class>controller.CrearPartida</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
@@ -160,6 +168,10 @@
     <servlet-mapping>
         <servlet-name>XmlHttpProxy</servlet-name>
         <url-pattern>/xhp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CrearPartida</servlet-name>
+        <url-pattern>/CrearPartida</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
