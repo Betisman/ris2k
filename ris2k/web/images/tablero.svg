@@ -1,34 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="297mm" id="svg3488" version="1.0" width="210mm" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs id="defs3">
-    <linearGradient id="linearGradient4188">
-      <stop id="stop4190" offset="0" style="stop-color:#1298ff;stop-opacity:1"/>
-      <stop id="stop4192" offset="1" style="stop-color:#ff0000;stop-opacity:0"/>
-    </linearGradient>
-    <linearGradient id="linearGradient3211">
-      <stop id="stop3213" offset="0" style="stop-color:#1298ff;stop-opacity:1"/>
-      <stop id="stop3215" offset="1" style="stop-color:#ff0000;stop-opacity:0"/>
-    </linearGradient>
-    <linearGradient id="linearGradient3197">
-      <stop id="stop3199" offset="0" style="stop-color:#ff0000;stop-opacity:1"/>
-      <stop id="stop3201" offset="1" style="stop-color:#ff0000;stop-opacity:0"/>
-    </linearGradient>
-    <linearGradient id="linearGradient6547">
-      <stop id="stop6549" offset="0" style="stop-color:#00ff00;stop-opacity:1"/>
-      <stop id="stop6551" offset="1" style="stop-color:#00ff00;stop-opacity:0"/>
-    </linearGradient>
-    <linearGradient gradientUnits="userSpaceOnUse" id="linearGradient6553" x1="250.01276" x2="273.24628" xlink:href="#linearGradient6547" y1="455.8671" y2="470.00415"/>
-    <linearGradient gradientUnits="userSpaceOnUse" id="linearGradient6557" x1="250.01276" x2="273.24628" xlink:href="#linearGradient6547" y1="455.8671" y2="470.00415"/>
-    <linearGradient gradientUnits="userSpaceOnUse" id="linearGradient3203" x1="247.95244" x2="270.21072" xlink:href="#linearGradient3197" y1="454.59573" y2="466.22986"/>
-    <linearGradient gradientUnits="userSpaceOnUse" id="linearGradient3217" x1="137.86433" x2="244.89824" xlink:href="#linearGradient4188" y1="108.83501" y2="175.14951"/>
-  </defs>
   <g id="fondo" style="display:online">
     <image height="709.44641" id="fondo" width="728.57141" x="0.4901956" xlink:href="newYorkBg.jpg" y="0.23913066"/>
   </g>
   <g id="layer3" style="display:inline">
-    <path d="M 269.71072 460.41278 A 11.869292 9.0913725 0 1 1  245.97214,460.41278 A 11.869292 9.0913725 0 1 1  269.71072 460.41278 z" id="ejercitoJerseyCity" style="fill:url(#linearGradient6553);fill-opacity:1;stroke:#000000;stroke-opacity:1" transform="translate(-8.0812203,-237.89092)"/>
-    <path d="M 269.71072 460.41278 A 11.869292 9.0913725 0 1 1  245.97214,460.41278 A 11.869292 9.0913725 0 1 1  269.71072 460.41278 z" id="ejercitoHackensack" style="fill:url(#linearGradient3203);fill-opacity:1;stroke:#000000;stroke-opacity:1" transform="translate(66.922613,-335.87571)"/>
-    <path d="M 269.71072 460.41278 A 11.869292 9.0913725 0 1 1  245.97214,460.41278 A 11.869292 9.0913725 0 1 1  269.71072 460.41278 z" id="ejercitoBergen" style="fill:url(#linearGradient3203);fill-opacity:1;stroke:#000000;stroke-opacity:1;display:inline" transform="translate(69.07735,-439.99709)"/>
+    <path d="M 269.71072 460.41278 A 11.869292 9.0913725 0 1 1  245.97214,460.41278 A 11.869292 9.0913725 0 1 1  269.71072 460.41278 z" id="ejercitoJerseyCity" style="fill:red;fill-opacity:1;stroke:#000000;stroke-opacity:1" transform="translate(-8.0812203,-237.89092)"/>
+    <path d="M 269.71072 460.41278 A 11.869292 9.0913725 0 1 1  245.97214,460.41278 A 11.869292 9.0913725 0 1 1  269.71072 460.41278 z" id="ejercitoHackensack" style="fill:blue;fill-opacity:1;stroke:#000000;stroke-opacity:1" transform="translate(66.922613,-335.87571)"/>
+    <path d="M 269.71072 460.41278 A 11.869292 9.0913725 0 1 1  245.97214,460.41278 A 11.869292 9.0913725 0 1 1  269.71072 460.41278 z" id="ejercitoBergen" style="fill:green;fill-opacity:1;stroke:#000000;stroke-opacity:1;display:inline" transform="translate(69.07735,-439.99709)"/>
   </g>
   <g id="numEjercitos" style="display:inline">
     <text id="numHackensack" style="font-size:12px;font-style:normal;font-weight:bold;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" x="317.61151" xml:space="preserve" y="144.31908"><tspan id="tspan2203" x="317.61151" y="144.31908">14</tspan></text>
