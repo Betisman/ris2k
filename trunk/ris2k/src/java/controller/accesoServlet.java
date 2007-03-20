@@ -68,7 +68,7 @@ public class accesoServlet extends MiServlet {
             jugador.setUser(user);
             jugador.setPassword(password);  
             if(Mysql.validarJugador(jugador)==true){
-                request.getSession().setAttribute("jugador","Bienvenido, "+user.toUpperCase());
+                request.getSession().setAttribute("jugador","Bienvenid@, "+user.toUpperCase());
                 gotoJSPPage(menuForm,request,response);
             } else {
                 request.getSession().setAttribute("errorBD","¡ERROR! Usuario y/o contraseña incorrectos");
