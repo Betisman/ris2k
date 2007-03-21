@@ -10,7 +10,7 @@
                     <file>${file.reference.mysql-connector-java-5.0.3-bin.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
-                <library files="2">
+                <library>
                     <file>${libs.jmakilibrary.classpath}</file>
                 </library>
                 <library files="1">
