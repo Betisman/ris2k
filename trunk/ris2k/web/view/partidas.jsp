@@ -21,7 +21,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 
     <h1>Partidas Creadas</h1>
     <jsp:useBean id="partida" scope="session" class="model.Partida" />
-    <jsp:getProperty name="partida" property="nombre" />
+    <jsp:getProperty name="partida" property="nombre" />(by <jsp:getProperty name="partida" property="owner" />)
   
     
     
