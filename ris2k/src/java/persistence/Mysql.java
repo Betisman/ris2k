@@ -71,7 +71,13 @@ public class Mysql {
             }
           conn =
             DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");  
-        }catch(SQLException ex) {} 
+        }catch(SQLException ex) {
+        /*AQUÍ TENEMOS QUE CONTROLAR LOS ERRORES EN LA CONEXIÓN!!!!!!!!!!!!!
+         *
+         *
+         *
+         */
+        } 
         try{
                 
                 sql= "SELECT * from user where user='"+user+"' and password='"+password+"'";                
