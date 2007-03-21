@@ -1,0 +1,513 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>test_altausuario</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">test_altausuario</td></tr>
+</thead><tbody>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//PRUEBA OK: se espera el mensaje "Bienvenido"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>altapruebaOK</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>prueba@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bienvenido</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//SIN USUARIO: se espera el mensaje "ERROR" y el mensaje "usuario incorrecto -->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>prueba@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>usuario incorrecto</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//USUARIO CARACTERES PROHIBIDOS: se espera el mensaje "ERROR" y el mensaje "usuario incorrecto -->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>pruebausuario?</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>prueba@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>usuario incorrecto</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//PASSWORD CORTO: se espera el mensaje "ERROR" y el mensaje "mínimo 6 caracteres"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>altapruebapassword</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>corto</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>prueba@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>mínimo 6 caracteres</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//EMAIL INCORRECTO 1: se espera el mensaje "ERROR" y el mensaje "direccion de correo válida"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>altapruebaemail</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>direccion de correo válida</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//EMAIL INCORRECTO 2: se espera el mensaje "ERROR" y el mensaje "direccion de correo válida"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>altapruebaemail</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>emailnovalido</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>direccion de correo válida</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//EMAIL INCORRECTO 3: se espera el mensaje "ERROR" y el mensaje "direccion de correo válida"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>altapruebaemail</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>email@novalido</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>direccion de correo válida</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//EMAIL INCORRECTO 4: se espera el mensaje "ERROR" y el mensaje "direccion de correo válida"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>altapruebaemail</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>email@novalido..es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>direccion de correo válida</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//EMAIL INCORRECTO 5: se espera el mensaje "ERROR" y el mensaje "direccion de correo válida"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>altapruebaemail</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>email@novalido.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>direccion de correo válida</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//EMAIL INCORRECTO 6: se espera el mensaje "ERROR" y el mensaje "direccion de correo válida"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>altapruebaemail</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>.email@novalido.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>direccion de correo válida</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//EMAIL INCORRECTO 7: se espera el mensaje "ERROR" y el mensaje "direccion de correo válida"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>altapruebaemail</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>email@no@valido.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>direccion de correo válida</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//USUARIO OFENSIVO: se espera el mensaje "ERROR" y el mensaje "ofensivo"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>cabronazo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>prueba</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>prueba@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ofensivo</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
