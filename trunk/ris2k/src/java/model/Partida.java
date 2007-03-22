@@ -10,6 +10,7 @@
 package model;
 
 import Exceptions.ris2kException;
+import java.util.GregorianCalendar;
 import java.util.Vector;
 
 /**
@@ -17,6 +18,8 @@ import java.util.Vector;
  * @author Ramon
  */
 public class Partida {
+    
+    private String idPartida = null;
     private String nombre = null; 
     
     private Jugador owner = null;
@@ -44,20 +47,26 @@ public class Partida {
     throws ris2kException
     {
         try{
+        GregorianCalendar now = new GregorianCalendar();
+        String id = String.valueOf(now.getTimeInMillis());
+        this.setIdPartida("partida"+id);
+ 
         this.setNombre(nombre);
         this.setOwner(owner);
         this.setTablero(tablero);
         this.setNumJugadores(maxjugadores);
+        turno.TurnoInicial(this.getIdPartida(),this.getOwner().getUser());
         
-        
-        turno.TurnoInicial();
         return true;
+        }
+        catch (ris2kException ex)
+        {
+            throw ex;
         }
         catch (Exception ex)
         {
             throw new ris2kException("No se pudo inicializar partida");
         }
- //       return false;
     }
     /*******************************************************************/
     /**                      setter y getter                          **/
@@ -117,6 +126,14 @@ public class Partida {
 
     public void setScore(Score score) {
         this.score = score;
+    }
+
+    public String getIdPartida() {
+        return idPartida;
+    }
+
+    public void setIdPartida(String idPartida) {
+        this.idPartida = idPartida;
     }
     
     
