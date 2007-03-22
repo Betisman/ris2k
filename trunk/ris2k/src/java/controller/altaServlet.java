@@ -2,6 +2,7 @@
 
 package controller;
 
+import Exceptions.ris2kException;
 import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
 import java.io.*;
 import java.net.*;
@@ -63,7 +64,7 @@ public class altaServlet extends MiServlet {
         String email = request.getParameter("email");
         
         request.getSession().setAttribute("errorMail","");
-        if (!email.matches("[a-zA-Z0-9._]+@[a-zA-Z0-9._]+")){
+        if (!email.matches("[a-zA-Z0-9_]+@[a-zA-Z0-9_]+[.][a-zA-Z]+")){
             contador++;
             request.getSession().setAttribute("errorMail","¡ERROR! Escriba una direccion de correo válida");
             System.out.println("FALLO: "+email);
@@ -76,8 +77,8 @@ public class altaServlet extends MiServlet {
             jugador.setEmail(email);
             try {
                 Mysql.persistirJugador(jugador);
-            } catch (Exception ex) {
-                if (ex.getMessage().contains("Duplicate entry"))
+            } catch (ris2kException ex) {
+                if (ex.getMessage().contains("Usuario duplicado"))
                     request.getSession().setAttribute("errorBD","¡ERROR! El usuario " + user + " ya existe.");
                 else
                     request.getSession().setAttribute("errorBD","¡ERROR! Existe algún problema con la base de datos");

@@ -11,6 +11,7 @@ package controller;
 
 
 
+import Exceptions.ris2kException;
 import java.io.*;
 import java.net.*;
 
@@ -66,16 +67,22 @@ public class accesoServlet extends MiServlet {
         request.getSession().setAttribute("errorBD","");
         if (contador == 0){
             jugador.setUser(user);
-            jugador.setPassword(password);  
-            if(Mysql.validarJugador(jugador)==true){
+            jugador.setPassword(password);
+            try {
+                Mysql.validarJugador(jugador);
                 request.getSession().setAttribute("jugador","Bienvenid@, "+user.toUpperCase());
                 /*Al ser un jugador válido, lo metemos en el objeto session*/
                 request.getSession().setAttribute("usuario", jugador);
-                /***********************************************************/
-                gotoJSPPage(menuForm,request,response);
-            } else {
-                request.getSession().setAttribute("errorBD","¡ERROR! Usuario y/o contraseña incorrectos");
+                    /***********************************************************/
+                 gotoJSPPage(menuForm,request,response);
+                
+            } catch (ris2kException ex) {
+                request.getSession().setAttribute("errorRis2k",ex.getMessage());
                 gotoJSPPage(errorAccesoForm,request,response);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            } catch (ServletException ex) {
+                ex.printStackTrace();
             }
         } else {            
            gotoJSPPage(errorAccesoForm,request,response);
