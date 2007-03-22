@@ -76,12 +76,7 @@
         <param-name>menuForm</param-name>
         <param-value>/view/menuForm.jsp</param-value>
     </context-param>
-    <context-param><param-name>partidas</param-name><param-value>/view/partidas.jsp</param-value></context-param>
-    <context-param>
-        <param-name>partidasActivas</param-name>
-        <param-value>/view/partidasActivas.jsp</param-value>
-    </context-param>
-    <servlet>
+    <context-param><param-name>partidas</param-name><param-value>/view/partidas.jsp</param-value></context-param><servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
     </servlet>
@@ -143,8 +138,8 @@
         <servlet-class>controller.CrearPartida</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>anadirJugador</servlet-name>
-        <servlet-class>controller.anadirJugador</servlet-class>
+        <servlet-name>ListarPartidas</servlet-name>
+        <servlet-class>controller.ListarPartidas</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
@@ -183,8 +178,8 @@
         <url-pattern>/CrearPartida</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>anadirJugador</servlet-name>
-        <url-pattern>/anadirJugador</url-pattern>
+        <servlet-name>ListarPartidas</servlet-name>
+        <url-pattern>/ListarPartidas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
