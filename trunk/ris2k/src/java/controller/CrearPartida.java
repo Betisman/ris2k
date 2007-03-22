@@ -61,6 +61,7 @@ public class CrearPartida extends MiServlet {
         request.getSession().setAttribute("partida", partida);
         
         
+        
         gotoJSPPage(partidas, request, response);
 //        SafeRedirect(response, partidas+"?nombrePartida="+partida.getNombre());
         

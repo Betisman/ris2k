@@ -21,8 +21,25 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 
     <h1>Partidas Creadas</h1>
     <jsp:useBean id="partida" scope="session" class="model.Partida" />
-    <jsp:getProperty name="partida" property="nombre" />(by <jsp:getProperty name="partida" property="owner" />)
-  
+    <jsp:useBean id="creador" scope="application" class="model.Jugador" />
+    <%creador = partida.getOwner();%>
+<!-- está programado para una sola partida, NO para una colección de partidas -->        
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Nombre Partida</th>
+                    <th>Creador</th>
+                    <th>Num Jugadores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%=partida.getNombre()%></td>
+                    <td><%=creador.getUser()%> o <%=partida.getOwner().getUser()%></td>
+                    <td align="center"><%=partida.getNumJugadores()%></td>
+                </tr>
+            </tbody>
+        </table>      
     
     
     </body>
