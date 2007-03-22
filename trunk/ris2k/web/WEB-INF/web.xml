@@ -76,7 +76,12 @@
         <param-name>menuForm</param-name>
         <param-value>/view/menuForm.jsp</param-value>
     </context-param>
-    <context-param><param-name>partidas</param-name><param-value>/view/partidas.jsp</param-value></context-param><servlet>
+    <context-param><param-name>partidas</param-name><param-value>/view/partidas.jsp</param-value></context-param>
+    <context-param>
+        <param-name>errorForm</param-name>
+        <param-value>/view/errorForm.jsp</param-value>
+    </context-param>
+    <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
     </servlet>
