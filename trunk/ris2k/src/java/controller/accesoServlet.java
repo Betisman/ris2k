@@ -25,7 +25,9 @@ public class accesoServlet extends MiServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         Jugador jugador = new Jugador(); 
-        int contador = 0;
+        String user = request.getParameter("user");
+        String password = request.getParameter("password");
+        /*int contador = 0;
         String errorBD = null;
         String errorUser1 = null;
         String errorUser2 = null;
@@ -65,7 +67,7 @@ public class accesoServlet extends MiServlet {
         }
        
         request.getSession().setAttribute("errorBD","");
-        if (contador == 0){
+        if (contador == 0){*/
             jugador.setUser(user);
             jugador.setPassword(password);
             try {
@@ -78,16 +80,12 @@ public class accesoServlet extends MiServlet {
                 
             } catch (ris2kException ex) {
                 request.getSession().setAttribute("errorRis2k",ex.getMessage());
-                gotoJSPPage(errorAccesoForm,request,response);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            } catch (ServletException ex) {
-                ex.printStackTrace();
+                gotoJSPPage(errorForm,request,response);
             }
-        } else {            
-           gotoJSPPage(errorAccesoForm,request,response);
+           request.getSession().setAttribute("errorRis2k","Error Desconocido");
+           gotoJSPPage(errorForm,request,response);
             
-        }
+        
     }  
   
     /** Handles the HTTP <code>GET</code> method.
