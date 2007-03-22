@@ -19,7 +19,8 @@ public class altaServlet extends MiServlet {
     }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+    throws ServletException, IOException 
+    {
         Jugador jugador = new Jugador();               
         int contador=0;
         string errorUser1 = null;
