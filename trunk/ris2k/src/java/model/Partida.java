@@ -28,6 +28,8 @@ public class Partida {
     private int numJugadores = 0;
     private Vector <Jugador> jugadores= null;
     
+    private Vector <Jugada> jugadas = null;
+    
     private Turno turno = new Turno();
     
     private Score score = new Score();
@@ -134,6 +136,14 @@ public class Partida {
 
     public void setIdPartida(String idPartida) {
         this.idPartida = idPartida;
+    }
+
+    public Vector<Jugada> getJugadas() {
+        return jugadas;
+    }
+
+    public void setJugadas(Vector<Jugada> jugadas) {
+        this.jugadas = jugadas;
     }
     
     

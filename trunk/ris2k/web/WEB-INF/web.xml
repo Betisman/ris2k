@@ -81,6 +81,10 @@
         <param-name>errorForm</param-name>
         <param-value>/view/errorForm.jsp</param-value>
     </context-param>
+    <context-param>
+        <param-name>actualizacionJugada</param-name>
+        <param-value>actualizacionJugada</param-value>
+    </context-param>
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
@@ -146,6 +150,10 @@
         <servlet-name>ListarPartidas</servlet-name>
         <servlet-class>controller.ListarPartidas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>actualizacionJugada</servlet-name>
+        <servlet-class>controller.actualizacionJugada</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/servlet/*</url-pattern>
@@ -185,6 +193,10 @@
     <servlet-mapping>
         <servlet-name>ListarPartidas</servlet-name>
         <url-pattern>/ListarPartidas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actualizacionJugada</servlet-name>
+        <url-pattern>/actualizacionJugada</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
