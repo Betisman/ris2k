@@ -7,6 +7,7 @@
 
 package persistence;
 
+import Exceptions.ris2kException;
 import java.util.GregorianCalendar;
 import junit.framework.*;
 import javax.servlet.RequestDispatcher;
@@ -121,7 +122,6 @@ public class MysqlTest extends TestCase {
             boolean expResult = true;
             boolean result = Mysql.persistirJugador(jugador);
             assertEquals(expResult, result);
-            
         }
         catch (Exception ex)
         {
@@ -233,14 +233,14 @@ public class MysqlTest extends TestCase {
             Mysql.persistirJugador(jugador);
         }
   
-        catch (Exception ex)
+        catch (ris2kException ex)
         {
-            String expResult = "NO INSERT";
+            String expResult = "Se introdujeron valores nulos";
             String result = ex.getMessage();
             assertEquals(expResult, result);
             return;
         }
-        fail("Se esperaba una excepción NO INSERT ");
+        fail("Se esperaba una excepción Se introdujeron valores nulos ");
         
     }        
 
@@ -257,15 +257,15 @@ public class MysqlTest extends TestCase {
             Mysql.persistirJugador(jugador);
         }
   
-        catch (Exception ex)
+        catch (ris2kException ex)
         {
 
-            String expResult = "NO INSERT";
+            String expResult = "Se introdujeron valores nulos";
             String result = ex.getMessage();
             assertEquals(expResult, result);
             return;
         }
-        fail("Debe lanzarse una excepción NO INSERT");
+        fail("Debe lanzarse una excepción Se introdujeron valores nulos");
         
     }
 
@@ -284,15 +284,15 @@ public class MysqlTest extends TestCase {
             Mysql.persistirJugador(jugador);
         }
   
-        catch (Exception ex)
+        catch (ris2kException ex)
         {
 
-            String expResult = "NO INSERT";
+            String expResult = "Se introdujeron valores nulos";
             String result = ex.getMessage();
             assertEquals(expResult, result);
             return;
         }
-        fail("Debe lanzarse una excepción NO INSERT");
+        fail("Debe lanzarse una excepción Se introdujeron valores nulos");
        
     }
     
@@ -311,15 +311,15 @@ public class MysqlTest extends TestCase {
             Mysql.persistirJugador(jugador);
         }
   
-        catch (Exception ex)
+        catch (ris2kException ex)
         {
 
-            String expResult = "NO INSERT";
+            String expResult = "Se introdujeron valores nulos";
             String result = ex.getMessage();
             assertEquals(expResult, result);
             return;
         }
-        fail("Debe lanzarse una excepción NO INSERT");
+        fail("Debe lanzarse una excepción del tipo: Se introdujeron valores nulos");
        
     }
     
@@ -351,13 +351,13 @@ public class MysqlTest extends TestCase {
         }
         catch (Exception ex)
         {
-            String expResult = "Duplicate entry 'prueba"+prueba+"' for key 1";
+            String expResult = "Usuario duplicado en la Base de Datos";
             String result = ex.getMessage();
             assertEquals(expResult, result);
             return;
         }
         
-        fail("Debe lanzarse una excepción Duplicate Entry");
+        fail("Debe lanzarse una excepción del tipo: Usuario duplicado en la Base de Datos");
        
     }
     
@@ -390,18 +390,19 @@ public class MysqlTest extends TestCase {
             Mysql.borrarJugador("prueba"+prueba);
         } 
         catch (Exception ex) {
-            fail("Fallo en la llamada al método borrarJugador");
+            fail("Se ha encontrado una excepción tipo: "+ex.getMessage());
         }
         
         try {
-            boolean expResult = false;
-            boolean result = Mysql.validarJugador(jugador);
+            Mysql.validarJugador(jugador);
+        }
+        catch (ris2kException ex){
+            String expResult = "Usuario no válido en la Base de Datos";
+            String result = ex.getMessage();
             assertEquals(expResult, result);
             return;
         }
-        catch (Exception ex){
-            fail("La entrada sigue en la BD y debería haberse borrado");
-        }
+        fail("La entrada sigue en la BD y debería haberse borrado");
         
     //    fail("Ha saltado una excepción");
     }

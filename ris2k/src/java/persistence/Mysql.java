@@ -1,5 +1,6 @@
 package persistence;
 
+import Exceptions.ris2kException;
 import javax.servlet.RequestDispatcher;
 import model.Jugador;
 import java.io.*;
@@ -14,7 +15,7 @@ public class Mysql {
    
 
     public static boolean persistirJugador(Jugador jugador) 
-    throws Exception {  
+    throws ris2kException {  
         Statement stmt_consul=null, stmt_inser = null; 
         ResultSet rs = null; 	
         Connection conn= null;
@@ -23,7 +24,7 @@ public class Mysql {
         String email=jugador.getEmail();
        
         //control de elementos nulos, los cuales no se pueden persistir
-        if ((user==null)||(password==null)||(email==null)) throw new Exception("NO INSERT");
+        if ((user==null)||(password==null)||(email==null)) throw new ris2kException("Se introdujeron valores nulos");
        
         int contador=0;
         
@@ -39,7 +40,9 @@ public class Mysql {
             }
           conn =
           DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
-        }catch(SQLException ex) {}       
+        }catch(SQLException ex) {
+            throw new ris2kException("Fallo en la conexión a la base de datos");
+        }       
         try{
                 stmt_inser = conn.createStatement();                 
                 String strSQL = ("INSERT INTO user VALUES ('" + user + "','" + password + "','" + email +"') ");
@@ -48,10 +51,10 @@ public class Mysql {
                 return true;
                 		
          } catch (SQLException ex) {                
-                throw ex;
+                throw new ris2kException("Usuario duplicado en la Base de Datos");
          }
    }
-    public static boolean validarJugador(Jugador jugador) {
+    public static boolean validarJugador(Jugador jugador) throws ris2kException {
         Statement stmt_consul = null, stmt_inser =  null;
         ResultSet rs = null;
         Connection conn= null;
@@ -72,11 +75,7 @@ public class Mysql {
           conn =
             DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");  
         }catch(SQLException ex) {
-        /*AQUÍ TENEMOS QUE CONTROLAR LOS ERRORES EN LA CONEXIÓN!!!!!!!!!!!!!
-         *
-         *
-         *
-         */
+        throw new ris2kException("Fallo en la conexión a la base de datos");
         } 
         try{
                 
@@ -93,18 +92,16 @@ public class Mysql {
                     System.out.println("USUARIO ACTUALMENTE VALIDO EN BD");
                     return true;
                 }
-                else
-                {
-                    System.out.println("USUARIO ACTUALMENTE NO VALIDO EN BD");
-                    return false;
-                }
+                                
          } catch (SQLException ex) {               
                 System.out.println("ACCESO INCORRECTO");
                 return false;
-         }
+         } 
+         throw new ris2kException("Usuario no válido en la Base de Datos");
+         
    }
 
-    public static boolean borrarJugador(String user) {  
+    public static boolean borrarJugador(String user) throws ris2kException {  
         Statement stmt_consul=null, stmt_inser = null; 
         ResultSet rs = null; 	
         Connection conn= null;
@@ -121,7 +118,9 @@ public class Mysql {
             }
           conn =
           DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
-        }catch(SQLException ex) {}       
+        }catch(SQLException ex) {
+        throw new ris2kException("Fallo en la conexión a la base de datos");
+        }       
         try{
                 stmt_inser = conn.createStatement();                 
                 String strSQL = ("DELETE FROM user WHERE user='"+ user +"'");
@@ -130,8 +129,7 @@ public class Mysql {
                 return true;
                 		
          } catch (SQLException ex) {                
-                System.out.println("NO SE BORRARON LOS DATOS");
-                return false;
+                throw new ris2kException ("No se pudo borrar de la base de datos");
          }
  }
 }
