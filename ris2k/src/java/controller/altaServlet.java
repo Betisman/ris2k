@@ -78,10 +78,8 @@ public class altaServlet extends MiServlet {
             try {
                 Mysql.persistirJugador(jugador);
             } catch (ris2kException ex) {
-                if (ex.getMessage().contains("Usuario duplicado"))
-                    request.getSession().setAttribute("errorBD","¡ERROR! El usuario " + user + " ya existe.");
-                else
-                    request.getSession().setAttribute("errorBD","¡ERROR! Existe algún problema con la base de datos");
+                
+                request.getSession().setAttribute("errorRis2k",ex.getMessage());
                 gotoJSPPage(errorAltaForm,request,response);
             }
                 Correo.enviarCorreo(jugador);

@@ -35,6 +35,7 @@ public class MiServlet extends HttpServlet {
     
     protected String accesoForm = null;
     protected String errorAccesoForm = null;
+    protected String errorForm = null;
     protected String exitoAccesoForm = null;
     protected String menuForm = null;
     protected String accesoServlet = null;
@@ -81,6 +82,7 @@ public class MiServlet extends HttpServlet {
         tableroMenu = context.getInitParameter("tableroMenu");
         partidas = context.getInitParameter("partidas");
         partidasActivas = context.getInitParameter("partidasActivas");
+        errorForm = context.getInitParameter("errorForm");
         
     }
     
