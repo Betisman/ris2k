@@ -8,7 +8,7 @@
         <title>RIS2K</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     </head>
-    <body>
+    <body background="ris2k/images/Fondo.jpg">
         <div class="outerBorder">
             
             <div class="header">
@@ -16,9 +16,9 @@
                 <div class="subheader">
                     
                     <div>
-                        <a href="mailto:feedback@youraddress">Feedback</a> |
-                        <a href="#">Site Map</a> |
-                        <a href="#">Home</a>
+                        <a href="/ris2k/index.jsp">Página Inicial</a> |
+                        <a href="menuForm.jsp">Menú principal</a> |
+                        <a href="#">Logout</a>
                     </div>
                     
                 </div> <!-- subheader -->
@@ -26,39 +26,64 @@
 
             <div class="main">
                 
-                <div class="rightSidebar">
-                    <table border="1" width="100%" heigth="100%" bgcolor="#CCCCCC">
+                <div class="rightSidebar" style="height:700px">
+                    <table border="1" width="100%" heigth="700px" bgcolor="#CCCCCC">
                         <thead>
                             <tr>
                                 <th>MENÚ</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <form name="FormularioAtaque" method="POST">
-                                        <p align="center">Territorio atacante </p>
-                                        <p align="center">
-                                        <select name="ListaTerritorio">
-                                                <option> </option>
-                                                <option>Jersey City</option>
-                                                <option>Hudson</option>
-                                            </select>
-                                        </p>
-                                        <p align="center">
-                                            Territorio defensor
-                                        </p>
-                                        <p align="center">
-                                            <select name="ListaDefensor">
-                                                <option> </option>
-                                                <option>adios</option>
-                                            </select>
-                                        </p>
-                                        <p align="center">
-                                            <input type="submit" value="Enviar ataque" name="EnviarAtaque" />
-                                        </p>
-                                    </form>
-                                </td>
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>COLOCAR EJÉRCITOS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Número total de ejércitos:
+                                            <strong>${sessionScope["Ejercitos"]} </strong>
+                                           
+                                            <form name="ColocacionForm" action="/ris2k/actualizacionJugada">
+                                                Colocar en territorio
+                                                <input type="text" name="Territorio" id="territorio" />
+                                                
+                                                Número de ejércitos
+                                                <input type="text" name="NumEjercitos" id="numEjercitos" />
+                                                
+                                                <input  align="center" type="submit" value="ENVIAR" name="enviarColocacion" />
+                                                
+                                            </form> 
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>REALIZAR ATAQUE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <form name="RealizarAtaqueForm" action="actualizacionJugada">
+                                                Atacar de territorio
+                                                <input type="text" name="territorioAtacante" value="" />
+                                                
+                                                a territorio
+                                                <input type="text" name="territorioDefensor" value="" />
+                                                
+                                                con  <input type="text" name="NumEjercitos" value="" /> ejércitos
+                                                
+                                                <input type="submit" value="ENVIAR" name="enviarAtaque" />
+                                            </form> 
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>         
                         </tbody>
                     </table>
                     

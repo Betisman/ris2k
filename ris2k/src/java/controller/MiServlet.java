@@ -39,6 +39,7 @@ public class MiServlet extends HttpServlet {
     protected String exitoAccesoForm = null;
     protected String menuForm = null;
     protected String accesoServlet = null;
+    protected String actualizacionJugada = null;
     
     protected String territorioAtacante = null;
     protected String territorioDefensor = null;
@@ -83,6 +84,7 @@ public class MiServlet extends HttpServlet {
         partidas = context.getInitParameter("partidas");
         partidasActivas = context.getInitParameter("partidasActivas");
         errorForm = context.getInitParameter("errorForm");
+        actualizacionJugada = context.getInitParameter("actualizacionJugada");
         
     }
     
