@@ -9,6 +9,7 @@
 
 package model;
 
+import Exceptions.ris2kException;
 import java.util.Vector;
 
 /**
@@ -40,7 +41,7 @@ public class Partida {
     /*******************************************************************/
     
     public boolean inicializar(String nombre, Jugador owner, Tablero tablero, int maxjugadores)
-    throws Exception
+    throws ris2kException
     {
         try{
         this.setNombre(nombre);
@@ -54,9 +55,9 @@ public class Partida {
         }
         catch (Exception ex)
         {
-            System.out.println("El método ha fallado");
+            throw new ris2kException("No se pudo inicializar partida");
         }
-        return false;
+ //       return false;
     }
     /*******************************************************************/
     /**                      setter y getter                          **/
