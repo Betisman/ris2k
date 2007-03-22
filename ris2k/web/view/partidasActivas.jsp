@@ -12,7 +12,7 @@
     <body>
     <h1>Partidas activas</h1>
     <jsp:useBean id="partida" scope="session" class="model.Partida" />
-    <jsp:getProperty name="partida" property="nombre" />(by <jsp:getProperty name="partida" property="owner" />)
+    <jsp:getProperty name="partida" property="nombre" /> (by <jsp:getProperty name="partida" property="owner" />)
     
     
     
