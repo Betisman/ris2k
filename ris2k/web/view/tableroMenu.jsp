@@ -37,12 +37,12 @@
                             <table border="1">
                                 <thead>
                                     <tr>
-                                        <th>COLOCAR EJÉRCITOS</th>
+                                        <th bgcolor="#FF9933">COLOCAR EJÉRCITOS</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
+                                        <td bgcolor="#FFCC33">
                                             Número total de ejércitos:
                                             <strong>${sessionScope["Ejercitos"]} </strong>
                                            
@@ -53,7 +53,7 @@
                                                 Número de ejércitos
                                                 <input type="text" name="NumEjercitos" id="numEjercitos" />
                                                 
-                                                <input  align="center" type="submit" value="ENVIAR" name="enviarColocacion" />
+                                                <input type="submit" value="ENVIAR" name="enviarColocacion" />
                                                 
                                             </form> 
                                         </td>
@@ -63,20 +63,19 @@
                             <table border="1">
                                 <thead>
                                     <tr>
-                                        <th>REALIZAR ATAQUE</th>
+                                        <th bgcolor="#339900">REALIZAR ATAQUE</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
+                                        <td bgcolor="#33CC33">
                                             <form name="RealizarAtaqueForm" action="actualizacionJugada">
-                                                Atacar de territorio
-                                                <input type="text" name="territorioAtacante" value="" />
-                                                
-                                                a territorio
-                                                <input type="text" name="territorioDefensor" value="" />
-                                                
-                                                con  <input type="text" name="NumEjercitos" value="" /> ejércitos
+                                                <p>Atacar de territorio</p>
+                                                <input type="text" name="territorioAtacante"/>   
+                                                <p>a territorio</p>
+                                                <input type="text" name="territorioDefensor"/>
+                                                <p>con número de ejércitos</p>
+                                                <input type="text" name="NumEjercitos"/>
                                                 
                                                 <input type="submit" value="ENVIAR" name="enviarAtaque" />
                                             </form> 
@@ -86,7 +85,32 @@
                             </table>         
                         </tbody>
                     </table>
-                    
+                    <table border="1">
+                                <thead>
+                                    <tr>
+                                        <th bgcolor="#FF00FF">RECOLOCAR EJÉRCITOS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td bgcolor="#FF66FF">
+                                            <form name="RecolocacionForm" action="/ris2k/actualizacionJugada">
+                                                Mover de territorio
+                                                <input type="text" name="TerritorioA" id="territorioA" />
+                                                
+                                                 a territorio
+                                                <input type="text" name="TerritorioB" id="territorioB" />
+                                                
+                                                Número de ejércitos
+                                                <input type="text" name="NumEjercitos" id="numEjercitos" />
+                                                
+                                                <input type="submit" value="ENVIAR" name="enviarColocacion" />
+                                                
+                                            </form> 
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                     
                    
                     
