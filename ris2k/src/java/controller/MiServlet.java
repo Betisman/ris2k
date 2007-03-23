@@ -48,6 +48,7 @@ public class MiServlet extends HttpServlet {
     protected String tableroMenu = null;
     protected String partidas = null;
     protected String partidasActivas = null;
+    protected String listaPartidas = null;
     
     protected void gotoPage(String address, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext().getNamedDispatcher(address);
@@ -85,6 +86,7 @@ public class MiServlet extends HttpServlet {
         partidasActivas = context.getInitParameter("partidasActivas");
         errorForm = context.getInitParameter("errorForm");
         actualizacionJugada = context.getInitParameter("actualizacionJugada");
+        listaPartidas = context.getInitParameter("listaPartidas");
         
     }
     

@@ -8,6 +8,9 @@ package controller;
 
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Vector;
 
 import javax.servlet.*;
@@ -27,22 +30,7 @@ public class CrearPartida extends MiServlet {
      * @param response servlet response
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-/*        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
- */
-        /* TODO output your page here
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet CrearPartida</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet CrearPartida at " + request.getContextPath () + "</h1>");
-        out.println("</body>");
-        out.println("</html>");
-         */
-//        out.close();
-        
+    throws ServletException, IOException {        
         Jugador creador = new Jugador();
         creador = (Jugador)request.getSession().getAttribute("usuario");
         
@@ -57,14 +45,17 @@ public class CrearPartida extends MiServlet {
 //        partida.setScore();
 //        partida.setTablero();
 //        partida.setTurno();
-        
-        request.getSession().setAttribute("partida", partida);
-        
-        
-        
-        gotoJSPPage(partidas, request, response);
-//        SafeRedirect(response, partidas+"?nombrePartida="+partida.getNombre());
-        
+        /****************/
+        System.out.println("partida = " + partida.getNombre());
+        List<Partida> partidas = new ArrayList();
+        partidas.add(partida);
+        //partidas.persistir();
+        Collection partidasC = (Collection)partidas;
+        request.getSession().setAttribute("partidas", partidasC);
+        /****************/
+//        request.getSession().setAttribute("partida", partida);
+        gotoJSPPage("/view/partidas.jsp", request, response);
+//        gotoJSPPage(partidas, request, response);       
     }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

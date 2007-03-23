@@ -37,14 +37,15 @@ public class accesoServlet extends MiServlet {
             request.getSession().setAttribute("usuario", jugador);
                 /***********************************************************/
             gotoJSPPage(menuForm,request,response);
+            return;
 
         } catch (ris2kException ex) {
             request.getSession().setAttribute("errorRis2k",ex.getMessage());
             gotoJSPPage(errorForm,request,response);
+        }catch (Exception ex){
+            request.getSession().setAttribute("errorRis2k","Error Desconocido");
+            gotoJSPPage(errorForm,request,response); 
         }
-       request.getSession().setAttribute("errorRis2k","Error Desconocido");
-       gotoJSPPage(errorForm,request,response);
-
 
     }  
   

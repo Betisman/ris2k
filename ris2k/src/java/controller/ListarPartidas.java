@@ -6,18 +6,25 @@
 
 package controller;
 
+import Exceptions.ris2kException;
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
+import model.Jugador;
+import model.Partida;
+import model.Tablero;
 
 /**
  *
  * @author Carlos
  * @version
  */
-public class ListarPartidas extends HttpServlet {
+public class ListarPartidas extends MiServlet {
     
     /** Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
@@ -25,19 +32,27 @@ public class ListarPartidas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        /* TODO output your page here
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet ListarPartidas</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet ListarPartidas at " + request.getContextPath () + "</h1>");
-        out.println("</body>");
-        out.println("</html>");
-         */
-        out.close();
+        List<Partida> partidas = new ArrayList();
+//        partidas.getFromPersistencia();
+        Partida p1 = new Partida();
+        Partida p2 = new Partida();
+        Tablero t = new Tablero();
+        try {
+            p1.inicializar("Partida1", (Jugador) request.getSession().getAttribute("usuario"), t, 2);
+            p2.inicializar("Partida2", (Jugador) request.getSession().getAttribute("usuario"), t, 4);
+        } catch (ris2kException ex) {
+            ex.printStackTrace();
+        }
+        System.out.println("partida1 = " + p1.getNombre());
+        partidas.add(p1);
+        partidas.add(p2);
+        
+        request.getSession().setAttribute("partidas", partidas);
+        System.out.println("en request: " + partidas.iterator().next().getNombre());
+        System.out.println("en request: " + partidas.iterator().next().getNombre());
+        
+        gotoJSPPage(listaPartidas, request, response);
+        
     }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

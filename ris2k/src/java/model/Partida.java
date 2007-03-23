@@ -20,22 +20,16 @@ import java.util.Vector;
 public class Partida {
     
     private String idPartida = null;
-    private String nombre = null; 
-    
+    private String nombre = null;  
     private Jugador owner = null;
     private Tablero tablero = null;
-    
     private int numJugadores = 0;
     private Vector <Jugador> jugadores= null;
-    
     private Vector <Jugada> jugadas = null;
     
     private Turno turno = new Turno();
-    
     private Score score = new Score();
-    
-
-    
+ 
     
     /** Creates a new instance of Partida */
     public Partida() {
