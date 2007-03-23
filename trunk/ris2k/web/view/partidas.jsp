@@ -24,7 +24,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <%List<Partida> partidas = (List)request.getSession().getAttribute("partidas");%>
         
 
-    <h1>Partidas Creadas</h1>
+    <h1>Lista de partidas creadas</h1>
         <table border="2">
             <thead>
                 <tr>
