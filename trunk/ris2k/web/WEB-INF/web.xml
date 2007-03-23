@@ -85,6 +85,10 @@
         <param-name>actualizacionJugada</param-name>
         <param-value>actualizacionJugada</param-value>
     </context-param>
+    <context-param>
+        <param-name>listaPartidas</param-name>
+        <param-value>/view/partidas.jsp</param-value>
+    </context-param>
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>

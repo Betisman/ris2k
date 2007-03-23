@@ -18,12 +18,13 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <title>Partidas Creadas</title>
     </head>
     <body>
+        <%@ page import="java.util.List" %>
+        <%@ page import="model.Jugador" %>
+        <%@ page import="model.Partida" %>
+        <%List<Partida> partidas = (List)request.getSession().getAttribute("partidas");%>
+        
 
     <h1>Partidas Creadas</h1>
-    <jsp:useBean id="partida" scope="session" class="model.Partida" />
-    <jsp:useBean id="creador" scope="application" class="model.Jugador" />
-    <%creador = partida.getOwner();%>
-<!-- está programado para una sola partida, NO para una colección de partidas -->        
         <table border="2">
             <thead>
                 <tr>
@@ -33,11 +34,13 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><%=partida.getNombre()%></td>
-                    <td><%=creador.getUser()%> o <%=partida.getOwner().getUser()%></td>
-                    <td align="center"><%=partida.getNumJugadores()%></td>
-                </tr>
+                <% for(Partida partida : partidas){ %>
+                    <tr>
+                        <td><%=partida.getNombre()%></td>
+                        <td><%=partida.getOwner().getUser()%></td>
+                        <td align="center"><%=partida.getNumJugadores()%></td>
+                    </tr>
+                <%}%>
             </tbody>
         </table>      
     
