@@ -1,1 +1,27 @@
 create table user(user char(20) not null primary key, password char(20) not null, email char(20) not null);
+
+CREATE TABLE `ris2k`.`partida` (
+  `id` VARCHAR(20) NOT NULL,
+  `nombre` VARCHAR(45) NOT NULL,
+  `idcreador` VARCHAR(20),
+  `numjugadores` INTEGER UNSIGNED,
+  PRIMARY KEY(`id`),
+  CONSTRAINT `FK_partida_1` FOREIGN KEY `FK_partida_1` (`idcreador`)
+    REFERENCES `user` (`user`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT
+)
+
+CREATE TABLE `ris2k`.`partida_user` (
+  `idpartida` VARCHAR(45) NOT NULL,
+  `idjugador` VARCHAR(20) NOT NULL,
+  PRIMARY KEY(`idpartida`, `idjugador`),
+  CONSTRAINT `FK_partida_user_1` FOREIGN KEY `FK_partida_user_1` (`idpartida`)
+    REFERENCES `partida` (`id`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
+  CONSTRAINT `FK_partida_user_2` FOREIGN KEY `FK_partida_user_2` (`idjugador`)
+    REFERENCES `user` (`user`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT
+)
