@@ -41,7 +41,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 -->
 </style>
 </head>
-<body background="images/Fondo.jpg" bgcolor="#CCCCCC">
+<body background="/ris2k/images/Fondo.jpg">
 
 <table width="90%" height="399" align="center">
     <tr>
@@ -49,7 +49,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     </tr>
     <tr>
         <td height="172"><p>&nbsp;</p>
-            <table width="45%" height="118" border="1" align="center" bordercolor="#FFFFFF" bgcolor="#CCCCCC">
+            <table width="45%" height="118" border="1" align="center" bordercolor="#666666" bgcolor="#CCCCCC">
                 <tr>
                     <td width="44%"><p class="Estilo19">Nombre de Usuario</p>
                         <p class="Estilo19">Contrase&ntilde;a</p>
