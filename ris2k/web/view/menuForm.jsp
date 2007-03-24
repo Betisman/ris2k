@@ -59,10 +59,10 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td><a href="JugadoresEnLinea.java">Jugadores en l&iacute;nea </a></td>
-      <td colspan="2"><div align="right"><a href="ayuda.jsp">Ayuda</a></div></td>
-      <td width="255"><div align="right"><a href="grupo.jsp">&iquest;Qui&eacute;nes somos? </a></div></td>
-      <td width="241"><div align="right"><a href="AcercaDeRIS2K.jsp">Acerca de R<em>IS2</em>K </a></div></td>
+      <td><div align="left"><a href="JugadoresEnLinea.java">Jugadores en l&iacute;nea </a></div></td>
+      <td>&nbsp;</td>
+      <td colspan="2"><div align="rigth"><a href="ayuda.jsp">Ayuda</a></div></td>
+      <td width="241"><div align="rigth"><a href="AcercaDeRIS2K.jsp">Acerca de R<em>IS2</em>K </a></div></td>
     </tr>
   </table>
   </div>
