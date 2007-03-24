@@ -12,7 +12,7 @@
         <div class="outerBorder">
             
             <div class="header">
-                <div class="banner">RIS2K</div>
+                <div class="banner" align="rigth">RIS2K</div>
                 <div class="subheader">
                     
                     <div>
@@ -117,7 +117,6 @@
                 </div> <!-- rightSidebar -->
         
                 <div class="content" style="height:700px">
-                    <!--<img src="Tablero1024.JPG" width="100%" height="100%" alt="Tablero1024"/>-->
                     <EMBED SRC="../images/tablero.svg" WIDTH="100%" HEIGHT="100%" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
                     
                    

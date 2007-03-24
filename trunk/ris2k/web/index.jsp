@@ -83,7 +83,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
   </tr>
   <tr>
     <td height="94" align="center" valign="baseline"><p><img src="images/construccionpeq.gif" width="150" height="112"></p>    </td>
-    <td>&nbsp;</td>
+    <td width="255"><div align="center"><a href="view/grupo.jsp">&iquest;Qui&eacute;nes somos? </a></div></td>
     <td colspan="2" valign="top"><p align="center" class="Estilo19">Usuarios no registrados</p>
       <form id="form2" name="form2" method="post" action="view/altaForm.jsp">
         <label>
