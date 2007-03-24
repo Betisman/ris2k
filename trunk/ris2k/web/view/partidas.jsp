@@ -31,6 +31,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                     <th>Nombre Partida</th>
                     <th>Creador</th>
                     <th>Num Jugadores</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +40,9 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                         <td><%=partida.getNombre()%></td>
                         <td><%=partida.getOwner().getUser()%></td>
                         <td align="center"><%=partida.getNumJugadores()%></td>
+                        <form name="formAnadirJugadorPartida" action="anadirJugadorPartida?partida=<%=partida.getIdPartida()%>" method="GET">
+                        <td align="center"><input type="submit" value="Unirse a la partida" name="unirse" /></td>
+                        </form>
                     </tr>
                 <%}%>
             </tbody>
