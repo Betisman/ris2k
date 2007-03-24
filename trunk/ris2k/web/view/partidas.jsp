@@ -41,8 +41,9 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                         <td><%=partida.getOwner().getUser()%></td>
                         <td align="center"><%=partida.getNumJugadores()%></td>
                         <form name="formAnadirJugadorPartida" action="anadirJugadorPartida?partida=<%=partida.getIdPartida()%>" method="GET">
-                        <td align="center"><input type="submit" value="Unirse a la partida" name="unirse" /></td>
+                        <td align="center"><input type="submit" value="Entrar en la partida" name="unirse" /></td>
                         </form>
+                        <td><a href="view/tableroMenu.jsp">Ir a la partida</a></td>
                     </tr>
                 <%}%>
             </tbody>

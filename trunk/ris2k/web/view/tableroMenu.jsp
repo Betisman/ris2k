@@ -8,7 +8,7 @@
         <title>RIS2K</title>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     </head>
-    <body background="ris2k/images/Fondo.jpg">
+    <body background="/ris2k/images/Fondo.jpg">
         <div class="outerBorder">
             
             <div class="header">
