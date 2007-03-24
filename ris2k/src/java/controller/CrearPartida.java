@@ -56,15 +56,10 @@ public class CrearPartida extends MiServlet {
 //        partida.setTurno();
             /****************/
             System.out.println("partida = " + partida.getNombre());
-            List<Partida> partidas = new ArrayList();
-            partidas.add(partida);
             
             MySqlPartida.persistirPartida(partida);
-            
-            Collection partidasC = (Collection)partidas;
-            request.getSession().setAttribute("partidas", partidasC);
             /****************/
-//        request.getSession().setAttribute("partida", partida);
+        request.getSession().setAttribute("partida", partida);
             gotoJSPPage("/view/partidas.jsp", request, response);
 //        gotoJSPPage(partidas, request, response);
         } catch (ris2kException ex) {
