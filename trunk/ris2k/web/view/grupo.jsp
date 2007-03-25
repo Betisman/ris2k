@@ -26,25 +26,33 @@
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td><table width="100%" height="250" border="0">
+        <td><table width="100%" height="262" border="0">
             <tr>
-              <td width="18%" height="48">&nbsp;</td>
-              <td width="63%"><div align="center"><font color="#CC3399" size="+3"><strong>Gang 
+              <td width="37%" height="48">&nbsp;</td>
+              <td width="50%"><div align="center"><font color="#CC3399" size="+3"><strong>Gang 
                   Of Five</strong></font></div></td>
-              <td width="19%">&nbsp;</td>
+              <td width="13%">&nbsp;</td>
             </tr>
             <tr>
-              <td height="208">&nbsp;</td>
-              <td><p align="center">&nbsp;</p>
-                  <p align="center"><font color="#000000" size="+2"><strong>Marta Gallego V&aacute;zquez</strong></font></p>
-                  <p align="center"><font color="#000000" size="+2"><strong>Jos&eacute; Carlos Jim&eacute;nez 
-                  G&oacute;mez </strong></font></p>
-                  <p align="center"><font color="#000000" size="+2"><strong>Ram&oacute;n E. Ramos Quintans</strong></font></p>
-                  <p align="center"><font color="#000000" size="+2"><strong>Mariano S&aacute;nchez Fern&aacute;ndez</strong></font></p>
-                  <p align="center"><font color="#000000" size="+2"><strong>Juan Antonio Weil Luque</strong></font></p>
-                <p align="center">&nbsp;</p>
-                <p align="center">&nbsp;</p></td>
-              <td>&nbsp;</td>
+              <td height="40"><img src="/ris2k/images/Marta.JPG" width="150" height="150"></td>
+              <td height="40" colspan="2"><font color="#000000" size="+2"><strong>Marta Gallego Vázquez </strong></font></td>
+            </tr>
+            <tr>
+              <td height="40"><img src="/ris2k/images/Betis.jpg" width="150" height="150"></td>
+              <td height="40" colspan="2"><font color="#000000" size="+2"><strong>Jos&eacute; Carlos Jim&eacute;nez 
+              G&oacute;mez </strong></font></td>
+            </tr>
+            <tr>
+              <td height="40"><img src="/ris2k/images/Ramon.jpg" width="150" height="150"></td>
+              <td height="40" colspan="2"><font color="#000000" size="+2"><strong>Ram&oacute;n E. Ramos Quintans</strong></font></td>
+            </tr>
+            <tr>
+              <td height="40"><img src="/ris2k/images/Mariano.jpg" width="150" height="150"></td>
+              <td height="40" colspan="2"><font color="#000000" size="+2"><strong>Mariano S&aacute;nchez Fern&aacute;ndez</strong></font></td>
+            </tr>
+            <tr>
+              <td height="40"><img src="/ris2k/images/Weil.jpg" width="150" height="150"></td>
+              <td height="40" colspan="2"><font color="#000000" size="+2"><strong>Juan Antonio Weil Luque</strong></font></td>
             </tr>
           </table>
           <p>&nbsp;</p>
