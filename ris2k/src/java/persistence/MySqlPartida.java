@@ -34,6 +34,8 @@ public class MySqlPartida {
         Statement stmt=null; 
         ResultSet rs = null; 	
         Connection conn= null;
+        if (partida == null)
+            throw new ris2kException("Se introdujo null en vez de una partida válida. (MySqlPartida.java)");
         
         /*recogemos los valores de la partida a persistir*/
         String idPartida = partida.getIdPartida();
