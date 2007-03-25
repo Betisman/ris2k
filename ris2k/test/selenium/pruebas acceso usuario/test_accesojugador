@@ -162,7 +162,7 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td>Usuario y/o contraseña incorrectos</td>
+	<td>Usuario no válido en la Base de Datos</td>
 	<td></td>
 </tr>
 <!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -194,7 +194,7 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td>Usuario y/o contraseña incorrectos</td>
+	<td>Usuario no válido en la Base de Datos</td>
 	<td></td>
 </tr>
 <!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -226,7 +226,7 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td>Usuario y/o contraseña incorrectos</td>
+	<td>Usuario no válido en la Base de Datos</td>
 	<td></td>
 </tr>
 <!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -253,7 +253,7 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td>Usuario y/o contraseña incorrectos</td>
+	<td>Usuario no válido en la Base de Datos</td>
 	<td></td>
 </tr>
 <tr>
