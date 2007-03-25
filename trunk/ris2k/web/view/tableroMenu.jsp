@@ -18,7 +18,7 @@
                     <div>
                         <a href="/ris2k/index.jsp">Página Inicial</a> |
                         <a href="menuForm.jsp">Menú principal</a> |
-                        <a href="#">Logout</a>
+                        <a href="#">Abandonar la partida</a>
                     </div>
                     
                 </div> <!-- subheader -->
@@ -117,8 +117,8 @@
                 </div> <!-- rightSidebar -->
         
                 <div class="content" style="height:700px">
-                    <EMBED SRC="../images/tablero.svg" WIDTH="100%" HEIGHT="100%" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
-                    
+                    <!--<EMBED SRC="../images/tablero.svg" WIDTH="100%" HEIGHT="100%" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
+                    <EMBED SRC="../images/Zonas1024bis.svg" WIDTH="100%" HEIGHT="100%" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
                    
                 </div> <!-- content -->
 
