@@ -44,7 +44,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><div align="center"><a href="HallOfFame.java"><img src="images/caballeriapeq.gif" width="70" height="70" border="0"></a></div></td>
+      <td><div align="center"><a href="view/hallOfFame.jsp"><img src="images/caballeriapeq.gif" width="70" height="70" border="0"></a></div></td>
       <td colspan="3"><span class="Estilo7">HALL OF FAME </span></td>
     </tr>
     <tr>

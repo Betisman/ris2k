@@ -93,6 +93,10 @@
         <param-name>grupo</param-name>
         <param-value>/view/grupo.jsp</param-value>
     </context-param>
+    <context-param>
+        <param-name>hallOfFame</param-name>
+        <param-value>/view/hallOfFame.jsp</param-value>
+    </context-param>
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
