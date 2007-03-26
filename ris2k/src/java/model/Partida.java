@@ -43,24 +43,22 @@ public class Partida {
     throws ris2kException
     {
         try{
-        GregorianCalendar now = new GregorianCalendar();
-        String id = String.valueOf(now.getTimeInMillis());
-        this.setIdPartida("partida"+id);
- 
-        this.setNombre(nombre);
-        this.setOwner(owner);
-        this.setTablero(tablero);
-        this.setNumJugadores(maxjugadores);
-        turno.TurnoInicial(this.getIdPartida(),this.getOwner().getUser());
-        
-        return true;
+            GregorianCalendar now = new GregorianCalendar();
+            String id = String.valueOf(now.getTimeInMillis());
+            this.setIdPartida("partida"+id);
+            
+            this.setNombre(nombre);
+            this.setOwner(owner);
+            this.setTablero(tablero);
+            this.setNumJugadores(maxjugadores);
+            turno.TurnoInicial(this.getIdPartida(),this.getOwner().getUser());
+            
+            return true;
         }
-        catch (ris2kException ex)
-        {
+        catch (ris2kException ex){
             throw ex;
         }
-        catch (Exception ex)
-        {
+        catch (Exception ex){
             throw new ris2kException("No se pudo inicializar partida");
         }
     }
