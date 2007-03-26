@@ -48,7 +48,7 @@
                                            
                                             <form name="ColocacionForm" action="/ris2k/actualizacionJugada">
                                                 Colocar en territorio
-                                                <input type="text" name="Territorio" id="territorio" />
+                                                <input type="text" name="Territorio" id="territorio" value="${param["territorio"]}"/>
                                                 
                                                 Número de ejércitos
                                                 <input type="text" name="NumEjercitos" id="numEjercitos" />
