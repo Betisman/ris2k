@@ -13,16 +13,19 @@ import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import svgTablero.SVGTablero;
 
 /**
  *
@@ -31,7 +34,7 @@ import org.w3c.dom.NodeList;
 public class Tablero {
     private String mapa;
     private String infoXml;
-    private List<Continente> continentes;
+    private List<Continente> continentes = new ArrayList();
     
     /** Creates a new instance of Tablero */
     public Tablero() {
@@ -102,7 +105,62 @@ System.out.println(n.getAttributes().getNamedItem("xlink:href").getTextContent()
         }        
     }
     
-    public void cargarTerritorios(){
+    public void cargarTerritorios(String infoXml){
+        SVGTablero svgTablero = new SVGTablero();
+        Document document = svgTablero.parsearFichero(new File(infoXml));
+        try {
+            //creamos todos los objetos territorio
+            //creamos los continentes
+            //asignamos los territorios a sus continentes
+            //para cada territorio, buscamos los territorios con los que limita y se los asignamos
+            
+            //creamos todos los objetos territorio           
+            XPath xpath = XPathFactory.newInstance().newXPath();
+            String expression = "//continente";
+            NodeList nodos;
+            
+            nodos = (NodeList) xpath.evaluate(expression, document, XPathConstants.NODESET);
+            
+System.out.println("numero de continentes = "+String.valueOf(nodos.getLength()));
+            
+            for(int i=0; i<nodos.getLength(); i++){
+                Continente c = new Continente();
+                Node n = (Node)nodos.item(i);
+                c.setId(n.getAttributes().getNamedItem("id").getTextContent());
+                c.setNombre(n.getAttributes().getNamedItem("nombre").getTextContent());
+                c.setNumRefuerzos(Integer.parseInt(n.getAttributes().getNamedItem("numRefuerzos").getTextContent()));
+                continentes.add(c);
+            }
+
+            for(Continente c : continentes){
+                expression = "//continente[@id='"+c.getId()+"']/territorio";
+                nodos = (NodeList) xpath.evaluate(expression, document, XPathConstants.NODESET);
+                for(int i = 0; i < nodos.getLength(); i++){
+                    Territorio t = new Territorio();
+                    Node n = (Node)nodos.item(i);
+                    t.setId(n.getAttributes().getNamedItem("id").getTextContent());
+                    t.setNombre(n.getAttributes().getNamedItem("nombre").getTextContent());
+                    //añadimos el territorio a su continente
+                    c.getTerritorios().add(t);
+                }
+            }
+                        
+            for(Continente c : continentes){
+                for(Territorio t : c.getTerritorios()){
+                    expression = "//territorio[@id='"+t.getId()+"']/limita";
+                    nodos = (NodeList) xpath.evaluate(expression, document, XPathConstants.NODESET);
+                    for(int i = 0; i < nodos.getLength(); i++){
+                        Node n = (Node)nodos.item(i);
+                        Territorio conex = new Territorio();
+                        t.getConexiones().add(this.getTerritorio(n.getNodeValue()));
+                    }
+                }
+            }
+
+
+        } catch (XPathExpressionException ex) {
+            ex.printStackTrace();
+        }
         
     }
     
@@ -115,5 +173,28 @@ System.out.println(n.getAttributes().getNamedItem("xlink:href").getTextContent()
             }
         }
         return objetivo;
+    }
+    
+    public String toString(){
+        String str = null;
+        str = "mapa: " + this.getMapa() + "\n";
+        for(Continente c : this.getContinentes())
+            str = str + c.toString();
+        return str;
+    } 
+    
+    public int numTerritoriosTotal(){
+        int tmp = 0;
+        for(Continente c : this.getContinentes())
+            tmp += c.numTerritorios();
+        return tmp;
+    }
+    
+    public int numTerritoriosContinente(Continente c){
+        return c.numTerritorios();
+    }
+    
+    public int numContinentes(){
+        return this.getContinentes().size();
     }
 }

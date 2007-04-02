@@ -9,7 +9,9 @@
 
 package model;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -38,7 +40,7 @@ public class Territorio {
     @XmlTransient
     private int numEjercitos;
     @XmlTransient
-    private Collection<Territorio> conexiones;
+    private List<Territorio> conexiones = new ArrayList();
     
     /** Creates a new instance of Territorio */
     public Territorio() {
@@ -64,7 +66,7 @@ public class Territorio {
         return conexiones;
     }
 
-    public void setConexiones(Collection<Territorio> conexiones) {
+    public void setConexiones(List<Territorio> conexiones) {
         this.conexiones = conexiones;
     }
 
