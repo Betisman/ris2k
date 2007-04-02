@@ -9,7 +9,7 @@
 -->
 
 <root>
-    <continente id="New Jersey" nombre="New Jersey" numRefuerzos="1">
+    <continente id="NewJersey" nombre="New Jersey" numRefuerzos="1">
         <territorio id="Ringwood" nombre="Ringwood">
             <limita>Paterson</limita>
             <limita>Morris</limita>
@@ -21,7 +21,7 @@
             <limita>Bergen</limita>
         </territorio>
         <territorio id="Bergen" nombre="Bergen">
-            <limita>Paterson<limita>
+            <limita>Paterson</limita>
             <limita>Passaic</limita>
             <limita>Hackensack</limita>
             <limita>VanCortlandPark</limita>

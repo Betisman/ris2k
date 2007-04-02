@@ -9,6 +9,7 @@
 
 package model;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class Continente {
     private String id;
     private String nombre;
     private int numRefuerzos;
-    private List<Territorio> territorios;
+    private List<Territorio> territorios = new ArrayList();
     
     /** Creates a new instance of Continente */
     public Continente() {
@@ -56,6 +57,21 @@ public class Continente {
 
     public void setTerritorios(List<Territorio> territorios) {
         this.territorios = territorios;
+    }
+    
+    public String toString(){
+        String str = null;
+        str = "id: " + this.getId() + "\n"
+                + "continente: " + this.getNombre() + "\n"
+                + "numRefuerzos: " + String.valueOf(this.getNumRefuerzos()) + "\n"
+                + "territorios:\n";
+        for(Territorio t : this.getTerritorios())
+            str = t.toString();
+        return str;
+    }
+    
+    public int numTerritorios(){
+        return this.getTerritorios().size();
     }
     
 }

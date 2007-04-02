@@ -21,7 +21,7 @@
             <limita>Bergen</limita>
         </territorio>
         <territorio id="Bergen" nombre="Bergen">
-            <limita>Paterson<limita>
+            <limita>Paterson</limita>
             <limita>Passaic</limita>
             <limita>Hackensack</limita>
             <limita>VanCortlandPark</limita>
