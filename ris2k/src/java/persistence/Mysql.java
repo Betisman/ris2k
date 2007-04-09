@@ -7,6 +7,8 @@ import java.io.*;
 import java.net.*;
 import java.lang.*;
 import java.sql.*;
+import org.apache.log4j.Logger;
+import org.apache.log4j.BasicConfigurator;
 
 public class Mysql {
     
