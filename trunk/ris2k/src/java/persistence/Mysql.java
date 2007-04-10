@@ -8,14 +8,14 @@ import java.net.*;
 import java.lang.*;
 import java.sql.*;
 import org.apache.log4j.Logger;
-import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.PropertyConfigurator;
 
 public class Mysql {
-    
+    static Logger log = Logger.getLogger(Mysql.class);    
     public Mysql() {
     }
    
-
+    
     public static boolean persistirJugador(Jugador jugador) 
     throws ris2kException {  
         Statement stmt_consul=null, stmt_inser = null; 
@@ -24,6 +24,7 @@ public class Mysql {
         String user=jugador.getUser();
         String password=jugador.getPassword();
         String email=jugador.getEmail();
+        PropertyConfigurator.configure("log4j.properties");
        
         //control de elementos nulos, los cuales no se pueden persistir
         if ((user==null)||(password==null)||(email==null)) throw new ris2kException("Se introdujeron valores nulos");
@@ -43,17 +44,20 @@ public class Mysql {
           conn =
           DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
         }catch(SQLException ex) {
-            throw new ris2kException("Fallo en la conexión a la base de datos");
+            log.error("Fallo en la conexión a la base de datos");
+            throw new ris2kException("Fallo en la conexión a la base de datos");            
         }       
         try{
                 stmt_inser = conn.createStatement();                 
                 String strSQL = ("INSERT INTO user VALUES ('" + user + "','" + password + "','" + email +"') ");
                 stmt_inser.executeUpdate(strSQL);
                 System.out.println("SE INSERTARON LOS DATOS");
+                log.info("Se insertaron los datos");
                 return true;
                 		
          } catch (SQLException ex) {                
-                throw new ris2kException("Usuario duplicado en la Base de Datos");
+             log.fatal("Usuario duplicado en la base de datos");   
+             throw new ris2kException("Usuario duplicado en la Base de Datos");
          }
    }
     public static boolean validarJugador(Jugador jugador) throws ris2kException {
