@@ -21,7 +21,9 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <%@ page import="java.util.List" %>
         <%@ page import="model.Jugador" %>
         <%@ page import="model.Partida" %>
-        <%List<Partida> partidas = (List)request.getSession().getAttribute("partidas");%>
+        
+        <jsp:useBean id="partidasBean" scope="application" class="java.util.List" />
+        <%List<Partida> partidas = (List)partidasBean;%>
         
 
     <h1>Lista de partidas creadas</h1>

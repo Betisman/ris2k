@@ -7,6 +7,7 @@
 
 package model;
 
+import java.util.List;
 import junit.framework.*;
 import Exceptions.ris2kException;
 import java.util.GregorianCalendar;
@@ -180,8 +181,8 @@ public class PartidaTest extends TestCase {
         
         Partida instance = new Partida();
         
-        Vector<Jugador> expResult = null;
-        Vector<Jugador> result = instance.getJugadores();
+        List<Jugador> expResult = null;
+        List<Jugador> result = instance.getJugadores();
         assertEquals(expResult, result);
         
         // TODO review the generated test code and remove the default call to fail.

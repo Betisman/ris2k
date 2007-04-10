@@ -35,31 +35,47 @@ public class CrearPartida extends MiServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         try {
-            Jugador creador = new Jugador();
-            creador = (Jugador)request.getSession().getAttribute("usuario");
+            /* Recogemos los parámetros del formulario */
+            String nombrePartida = request.getParameter("nombrePartida");
+            int numJugadores = Integer.valueOf(request.getParameter("numJugadores"));
+            Tablero tablero = new Tablero();
+            //tablero.cargarTablero(request.getParameter("mapa"));
             
-            Vector<Jugador> jugadores = new Vector();
-            jugadores.add(creador);
-            
+            /* Creamos partida vacía nueva y la vamos rellenando */
             Partida partida = new Partida();
+            /* Establecemos el creador de la partida */
+            partida.setOwner((Jugador)request.getSession().getAttribute("usuario"));
+            /* Añadimos al creador de la partida como jugador de la misma */
+            partida.getJugadores().add(partida.getOwner());
+            
             /*ahora mismo tiramos con esto, pero hay que recordar que tenemos que cambia la
              *bd para adaptar las tablas a valores autonuméricos*/
-            Tablero t = new Tablero();
-            partida.inicializar("", creador, t, 0); //para ponerle el idPartida
+            tablero.setMapa("/web/test/newYork.xml"); //hay que cambiarlo para recogerlo como parámetro
+            tablero.cargarTerritorios(tablero.getMapa());
+            partida.setTablero(tablero);
+//            partida.inicializar("", creador, t, 0); //para ponerle el idPartida
             /******************************************************/
-            partida.setJugadores(jugadores);
-            partida.setNombre(request.getParameter("nombrePartida"));
-            partida.setNumJugadores(Integer.valueOf(request.getParameter("numJugadores")));
-            partida.setOwner(creador);
+            partida.setNombre(nombrePartida);
+            partida.setNumJugadores(numJugadores);
 //        partida.setScore();
 //        partida.setTablero();
 //        partida.setTurno();
             /****************/
             System.out.println("partida = " + partida.getNombre());
+            System.out.println("idPartida = " + partida.getIdPartida());
+            System.out.println("idPartida = " + String.valueOf(partida.getNumJugadores()));
             
             MySqlPartida.persistirPartida(partida);
             /****************/
-        request.getSession().setAttribute("partida", partida);
+//        request.getSession().setAttribute("partida", partida);
+        ServletConfig config = getServletConfig();
+        ServletContext context = config.getServletContext();
+        List<Partida> partidasActivas = (List)context.getAttribute("partidasActivas");
+System.out.println("partidasActivas.size() = " + partidasActivas.size());
+        partidasActivas.add(partida);
+System.out.println("partidasActivas.size() = " + partidasActivas.size());
+        context.setAttribute("partidasActivas", partidasActivas);
+        
             gotoJSPPage("/view/partidas.jsp", request, response);
 //        gotoJSPPage(partidas, request, response);
         } catch (ris2kException ex) {

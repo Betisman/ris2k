@@ -34,7 +34,7 @@ public class ListarPartidas extends MiServlet {
     throws ServletException, IOException {
         List<Partida> partidas = new ArrayList();
 //        partidas.getFromPersistencia();
-        Partida p1 = new Partida();
+/*        Partida p1 = new Partida();
         Partida p2 = new Partida();
         Tablero t = new Tablero();
         try {
@@ -50,6 +50,13 @@ public class ListarPartidas extends MiServlet {
         request.getSession().setAttribute("partidas", partidas);
         System.out.println("en request: " + partidas.iterator().next().getNombre());
         System.out.println("en request: " + partidas.iterator().next().getNombre());
+  */
+        System.out.println("partidas:");
+        ServletConfig config = getServletConfig();
+        ServletContext context = config.getServletContext();
+        partidas = (List)context.getAttribute("partidasActivas");
+        for(Partida p : partidas)
+            System.out.println("\t"+p.getNombre());
         
         gotoJSPPage(listaPartidas, request, response);
         

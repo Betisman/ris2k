@@ -1,27 +1,23 @@
 create table user(user char(20) not null primary key, password char(20) not null, email char(20) not null);
 
-CREATE TABLE `ris2k`.`partida` (
-  `id` VARCHAR(20) NOT NULL,
-  `nombre` VARCHAR(45) NOT NULL,
-  `idcreador` VARCHAR(20),
-  `numjugadores` INTEGER UNSIGNED,
-  PRIMARY KEY(`id`),
-  CONSTRAINT `FK_partida_1` FOREIGN KEY `FK_partida_1` (`idcreador`)
-    REFERENCES `user` (`user`)
-    ON DELETE RESTRICT
-    ON UPDATE RESTRICT
-)
+DROP TABLE IF EXISTS `ris2k`.`partida`;
+CREATE TABLE  `ris2k`.`partida` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `nombre` varchar(45) NOT NULL,
+  `idcreador` varchar(20) default NULL,
+  `numjugadores` int(10) unsigned default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `nombreUnique` (`nombre`),
+  KEY `FK_idcreador` (`idcreador`),
+  CONSTRAINT `FK_idcreador` FOREIGN KEY (`idcreador`) REFERENCES `user` (`user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `ris2k`.`partida_user` (
-  `idpartida` VARCHAR(45) NOT NULL,
-  `idjugador` VARCHAR(20) NOT NULL,
-  PRIMARY KEY(`idpartida`, `idjugador`),
-  CONSTRAINT `FK_partida_user_1` FOREIGN KEY `FK_partida_user_1` (`idpartida`)
-    REFERENCES `partida` (`id`)
-    ON DELETE RESTRICT
-    ON UPDATE RESTRICT,
-  CONSTRAINT `FK_partida_user_2` FOREIGN KEY `FK_partida_user_2` (`idjugador`)
-    REFERENCES `user` (`user`)
-    ON DELETE RESTRICT
-    ON UPDATE RESTRICT
-)
+DROP TABLE IF EXISTS `ris2k`.`partida_user`;
+CREATE TABLE  `ris2k`.`partida_user` (
+  `idpartida` int(10) unsigned NOT NULL,
+  `idjugador` varchar(45) NOT NULL,
+  PRIMARY KEY  (`idpartida`,`idjugador`),
+  KEY `FK_idjugador` (`idjugador`),
+  CONSTRAINT `FK_idpartida` FOREIGN KEY (`idpartida`) REFERENCES `partida` (`id`),
+  CONSTRAINT `FK_idjugador` FOREIGN KEY (`idjugador`) REFERENCES `user` (`user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

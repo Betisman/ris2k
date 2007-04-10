@@ -15,6 +15,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import java.util.Vector;
 import model.Jugador;
 import model.Partida;
@@ -43,13 +44,13 @@ public class MySqlPartida {
         Jugador owner = partida.getOwner();
 //        Tablero tablero = partida.getTablero();
         int numJugadores = partida.getNumJugadores();
-        Vector <Jugador> jugadores= partida.getJugadores();
+        List<Jugador> jugadores = partida.getJugadores();
 //        Vector <Jugada> jugadas = partida.getJugadas();
 //        Turno turno = partida.getTurno();
 //        Score score = partida.getScore();
        
         //control de elementos nulos, los cuales no se pueden persistir
-        if ((idPartida==null)||(nombre==null)||(owner==null)||(jugadores==null))
+        if ((nombre==null)||(owner==null)||(jugadores==null))
             throw new ris2kException("Se introdujeron valores nulos");
        
         int contador=0;
@@ -71,23 +72,38 @@ public class MySqlPartida {
         }       
         try{ //insertamos una nueva Partida
                 stmt = conn.createStatement();
-                
-                String strSQLPartida = ("INSERT INTO partida VALUES ('" + idPartida
-                        + "','" + nombre + "','" + owner.getUser() +"', "+partida.getNumJugadores()+") ");
+                String strSQLPartida = null;
+                if (idPartida == null){ //partida Nueva
+                    strSQLPartida = ("INSERT INTO partida VALUES (0, '" 
+                            + nombre + "','" + owner.getUser() +"', "+partida.getNumJugadores()+") ");
+                }else{ //ya existe la partida
+                    strSQLPartida = ("UPDATE partida SET "
+                            + "nombre='"+ nombre + "', "
+                            + "idcreador='" + owner.getUser() + "', "
+                            + "numjugadores='" + partida.getNumJugadores()+"' "
+                            + "WHERE idpartida = " + idPartida);
+                }
                 System.out.println("debugging: " + strSQLPartida);
                 stmt.executeUpdate(strSQLPartida);
                 System.out.println("SE INSERTARON LOS DATOS");                		
          } catch (SQLException ex) {
              if (ex.getMessage().contains("Duplicate entry"))
-                throw new ris2kException("Usuario duplicado en la Base de Datos");
+                throw new ris2kException("Ya existe una partida llamada '" + partida.getNombre()
+                    + "' en la Base de Datos");
              else
                  throw new ris2kException("Error en la consulta de inserción de una nueva partida.");
          }
         try{ //insertamos los jugadores de la Partida
                 stmt = conn.createStatement();
+                if (idPartida == null){ /*si la partida es nueva, obtenemos su id */
+                    String strSql = "SELECT MAX(id) FROM partida";
+                    rs = stmt.executeQuery(strSql);
+                    rs.next();
+                    idPartida = String.valueOf(rs.getInt(1));
+                }
                 for(Jugador j : jugadores){
-                    String strSQLPartida = ("INSERT INTO partida_user VALUES ('" + idPartida
-                            + "','" + j.getUser() +"')");
+                    String strSQLPartida = ("INSERT INTO partida_user VALUES (" + idPartida
+                            + ",'" + j.getUser() +"')");
                     System.out.println("debugging: " + strSQLPartida);
                     stmt.executeUpdate(strSQLPartida);
                 }
@@ -98,7 +114,7 @@ public class MySqlPartida {
              if (ex.getMessage().contains("Duplicate entry"))
                 throw new ris2kException("Usuario duplicado en la Base de Datos");
              else
-                 throw new ris2kException("Error en la consulta de inserción de jugadores en la partida.");
+                 throw new ris2kException("Error en la consulta de inserción de jugadores en la partida. " + ex.getMessage());
          }    
    }
     
