@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : newYork.xml
+    Created on : 26 de febrero de 2007, 20:16
+    Author     : Carlos Jiménez Gómez
+    Description:
+        Purpose of the document follows.
+-->
+
+<root>
+    <continente id="Manhattan" nombre="Manhattan" numRefuerzos="1">
+        <territorio id="Harlem" nombre="Harlem">
+            <limita>WestManhattan</limita>
+            <limita>CentralPark</limita>
+        </territorio>
+        <territorio id="WestManhattan" nombre="West Manhattan">
+            <limita>Harlem</limita>
+            <limita>CentralPark</limita>
+            <limita>SouthManhattan</limita>
+        </territorio>
+        <territorio id="CentralPark" nombre="Central Park">
+            <limita>Harlem</limita>
+            <limita>WestManhattan</limita>
+            <limita>SouthManhattan</limita>
+        </territorio>
+        <territorio id="SouthManhattan" nombre="South Manhattan">
+            <limita>WestManhattan</limita>
+            <limita>CentralPark</limita>
+        </territorio>
+    </continente>
+</root>

@@ -34,11 +34,11 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         Nombre de la partida: <input type="text" name="nombrePartida" value="" /><br>
         Numero de jugadores: <select name="numJugadores">
             <option>1</option>
-            <!--<option>2</option>
+            <option>2</option>
             <option>3</option>
             <option>4</option>
             <option>5</option>
-            <option>6</option>-->
+            <option>6</option>
         </select><br>
         Tablero: <input type="text" name="tablero" value="newYork by Weil" readonly="readonly" />
         <br><input type="submit" value="Aceptar" name="btnCrearPartida" />

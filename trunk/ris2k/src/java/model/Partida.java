@@ -10,7 +10,9 @@
 package model;
 
 import Exceptions.ris2kException;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -21,11 +23,11 @@ public class Partida {
     
     private String idPartida = null;
     private String nombre = null;  
-    private Jugador owner = null;
-    private Tablero tablero = null;
+    private Jugador owner = new Jugador();
+    private Tablero tablero = new Tablero();
     private int numJugadores = 0;
-    private Vector <Jugador> jugadores= null;
-    private Vector <Jugada> jugadas = null;
+    private List <Jugador> jugadores= new ArrayList();
+    private List <Jugada> jugadas = new ArrayList();
     
     private Turno turno = new Turno();
     private Score score = new Score();
@@ -98,7 +100,7 @@ public class Partida {
         this.numJugadores = numJugadores;
     }
 
-    public Vector<Jugador> getJugadores() {
+    public List<Jugador> getJugadores() {
         return jugadores;
     }
 
@@ -130,7 +132,7 @@ public class Partida {
         this.idPartida = idPartida;
     }
 
-    public Vector<Jugada> getJugadas() {
+    public List<Jugada> getJugadas() {
         return jugadas;
     }
 

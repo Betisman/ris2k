@@ -197,4 +197,13 @@ System.out.println("numero de continentes = "+String.valueOf(nodos.getLength()))
     public int numContinentes(){
         return this.getContinentes().size();
     }
+    
+    public List<Territorio> getTodosTerritorios(){
+        List<Territorio> territorios = new ArrayList();
+        for(Continente c : this.getContinentes()){
+            for(Territorio t : c.getTerritorios())
+                territorios.add(t);
+        }
+        return territorios;
+    }
 }

@@ -97,6 +97,11 @@
         <param-name>hallOfFame</param-name>
         <param-value>/view/hallOfFame.jsp</param-value>
     </context-param>
+    <context-param>
+        <description>Pretendo usarlo para mantener las partidas creadas que permanezcan activas.</description>
+        <param-name>partidasActivas</param-name>
+        <param-value>null</param-value>
+    </context-param>
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>controller.FrontController</servlet-class>
