@@ -18,6 +18,6 @@ CREATE TABLE  `ris2k`.`partida_user` (
   `idjugador` varchar(45) NOT NULL,
   PRIMARY KEY  (`idpartida`,`idjugador`),
   KEY `FK_idjugador` (`idjugador`),
-  CONSTRAINT `FK_idpartida` FOREIGN KEY (`idpartida`) REFERENCES `partida` (`id`),
-  CONSTRAINT `FK_idjugador` FOREIGN KEY (`idjugador`) REFERENCES `user` (`user`)
+  CONSTRAINT `FK_idjugador` FOREIGN KEY (`idjugador`) REFERENCES `user` (`user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_idpartida` FOREIGN KEY (`idpartida`) REFERENCES `partida` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
