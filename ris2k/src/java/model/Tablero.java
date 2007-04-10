@@ -9,6 +9,7 @@
 
 package model;
 
+import Exceptions.ris2kException;
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import java.io.File;
@@ -105,10 +106,11 @@ System.out.println(n.getAttributes().getNamedItem("xlink:href").getTextContent()
         }        
     }
     
-    public void cargarTerritorios(String infoXml){
-        SVGTablero svgTablero = new SVGTablero();
-        Document document = svgTablero.parsearFichero(new File(infoXml));
+    public void cargarTerritorios(String infoXml)
+    throws ris2kException{
         try {
+            SVGTablero svgTablero = new SVGTablero();
+            Document document = svgTablero.parsearFichero(new File(infoXml));
             //creamos todos los objetos territorio
             //creamos los continentes
             //asignamos los territorios a sus continentes
@@ -160,6 +162,9 @@ System.out.println("numero de continentes = "+String.valueOf(nodos.getLength()))
 
         } catch (XPathExpressionException ex) {
             ex.printStackTrace();
+        }catch (ris2kException ex){
+            System.out.println("Saltó la excepción: " + ex.getMessage());
+//            throws new ris2kException("Excepción generada al parsear fichero: " + ex.getMessage());
         }
         
     }

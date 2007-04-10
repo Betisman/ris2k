@@ -55,10 +55,14 @@ public class ListarPartidas extends MiServlet {
         ServletConfig config = getServletConfig();
         ServletContext context = config.getServletContext();
         partidas = (List)context.getAttribute("partidasActivas");
-        for(Partida p : partidas)
-            System.out.println("\t"+p.getNombre());
+        for(Partida p : partidas){
+            System.out.println("\t"+p.getNombre() + " by " + p.getOwner().getUser());
+            for(Jugador j : p.getJugadores())
+                System.out.println("\t\t"+j.getUser());
+        }
         
-        gotoJSPPage(listaPartidas, request, response);
+        //gotoJSPPage(listaPartidas, request, response);
+        System.out.println("gotojsppage");
         
     }
     
