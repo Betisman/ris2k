@@ -18,12 +18,11 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <title>Partidas Creadas</title>
     </head>
     <body>
-        <%@ page import="java.util.List" %>
+        <%@page import ="java.util.*"%>
         <%@ page import="model.Jugador" %>
         <%@ page import="model.Partida" %>
         
-        <jsp:useBean id="partidasBean" scope="application" class="java.util.List" />
-        <%List<Partida> partidas = (List)partidasBean;%>
+        <%List<Partida> partidas = (List)application.getAttribute("partidasActivas");%>
         
 
     <h1>Lista de partidas creadas</h1>

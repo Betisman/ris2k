@@ -63,7 +63,7 @@ public class CrearPartida extends MiServlet {
             /****************/
             System.out.println("partida = " + partida.getNombre());
             System.out.println("idPartida = " + partida.getIdPartida());
-            System.out.println("idPartida = " + String.valueOf(partida.getNumJugadores()));
+            System.out.println("numJugadores = " + String.valueOf(partida.getNumJugadores()));
             
             MySqlPartida.persistirPartida(partida);
             /****************/

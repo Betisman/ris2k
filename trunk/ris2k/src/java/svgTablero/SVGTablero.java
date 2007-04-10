@@ -9,6 +9,7 @@
 
 package svgTablero;
 
+import Exceptions.ris2kException;
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import java.io.File;
@@ -39,7 +40,8 @@ public class SVGTablero {
     public SVGTablero() {
     }
     
-    public Document parsearFichero(File f){ 
+    public Document parsearFichero(File f)
+    throws ris2kException{ 
         System.out.println("en parsearFichero()");
         System.out.println(f.getPath());
         try {
@@ -55,7 +57,7 @@ public class SVGTablero {
             return null;
         } catch (IOException ex) {
             ex.printStackTrace();
-            return null;
+            throw new ris2kException("IOException al parsear el fichero " + f.getName());
         } catch (SAXException ex) {
             ex.printStackTrace();
             return null;
