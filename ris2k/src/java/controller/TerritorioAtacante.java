@@ -6,6 +6,7 @@
 
 package controller;
 
+import Exceptions.ris2kException;
 import java.io.*;
 import java.net.*;
 import java.util.GregorianCalendar;
@@ -28,7 +29,7 @@ public class TerritorioAtacante extends MiServlet {
      * @param response servlet response
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+    throws ServletException, IOException, ris2kException { //Aquí lanza también una ris2kexception, porque daba fallo. Mariano
         GregorianCalendar now = new GregorianCalendar();
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>TerritorioAtacante @ " + now.getTime().toString());
         
@@ -73,8 +74,16 @@ public class TerritorioAtacante extends MiServlet {
      * @param response servlet response
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        processRequest(request, response);
+    throws ServletException, IOException {       //Hay que meter try y catch para que funcione, que daba fallo. Mariano 
+        try {
+            processRequest(request, response);
+        } catch (ris2kException ex) {
+            ex.printStackTrace();
+        } catch (ServletException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
     
     /** Handles the HTTP <code>POST</code> method.
@@ -82,8 +91,16 @@ public class TerritorioAtacante extends MiServlet {
      * @param response servlet response
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        processRequest(request, response);
+    throws ServletException, IOException {      //Hay que meter try y catch para que funcione, que daba fallo. Mariano 
+        try {
+            processRequest(request, response);
+        } catch (ris2kException ex) {
+            ex.printStackTrace();
+        } catch (ServletException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
     
     /** Returns a short description of the servlet.
