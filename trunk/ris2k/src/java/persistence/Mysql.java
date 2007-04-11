@@ -104,6 +104,7 @@ public class Mysql {
                 System.out.println("ACCESO INCORRECTO");
                 return false;
          } 
+         log.info("Usuario no valido en la Base de Datos");
          throw new ris2kException("Usuario no válido en la Base de Datos");
          
    }
@@ -126,6 +127,7 @@ public class Mysql {
           conn =
           DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
         }catch(SQLException ex) {
+        log.error("Fallo en la conexión a la base de datos");
         throw new ris2kException("Fallo en la conexión a la base de datos");
         }       
         try{
@@ -135,7 +137,8 @@ public class Mysql {
                 System.out.println("SE BORRARON LOS DATOS");
                 return true;
                 		
-         } catch (SQLException ex) {                
+         } catch (SQLException ex) {    
+                log.info("No se pudo borrar de la base de datos");
                 throw new ris2kException ("No se pudo borrar de la base de datos");
          }
  }
