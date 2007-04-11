@@ -56,7 +56,7 @@ public class Mysql {
                 return true;
                 		
          } catch (SQLException ex) {                
-             log.fatal("Usuario duplicado en la base de datos");   
+             log.info("Usuario duplicado en la base de datos");   
              throw new ris2kException("Usuario duplicado en la Base de Datos");
          }
    }
@@ -81,6 +81,7 @@ public class Mysql {
           conn =
             DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");  
         }catch(SQLException ex) {
+        log.error("Fallo en la conexión a la base de datos");
         throw new ris2kException("Fallo en la conexión a la base de datos");
         } 
         try{
