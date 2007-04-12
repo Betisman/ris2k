@@ -30,7 +30,7 @@ public class MySqlPartida {
     public MySqlPartida() {
     }
     
-    public static boolean persistirPartida(Partida partida) 
+    public static String persistirPartida(Partida partida) 
     throws ris2kException {  
         Statement stmt=null; 
         ResultSet rs = null; 	
@@ -100,6 +100,7 @@ public class MySqlPartida {
                     rs = stmt.executeQuery(strSql);
                     rs.next();
                     idPartida = String.valueOf(rs.getInt(1));
+                    partida.setIdPartida(String.valueOf(idPartida));
                 }
                 for(Jugador j : jugadores){
                     String strSQLPartida = ("INSERT INTO partida_user VALUES (" + idPartida
@@ -109,7 +110,7 @@ public class MySqlPartida {
                 }
                 System.out.println("SE INSERTARON LOS DATOS");
                 stmt.close();
-                return true;                		
+                return idPartida;                		
          } catch (SQLException ex) {
              if (ex.getMessage().contains("Duplicate entry"))
                 throw new ris2kException("Usuario duplicado en la Base de Datos");

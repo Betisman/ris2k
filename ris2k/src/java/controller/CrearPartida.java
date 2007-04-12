@@ -65,7 +65,8 @@ public class CrearPartida extends MiServlet {
             System.out.println("idPartida = " + partida.getIdPartida());
             System.out.println("numJugadores = " + String.valueOf(partida.getNumJugadores()));
             
-            MySqlPartida.persistirPartida(partida);
+            //Persistimos la partida y recogemos la id que se le da en la BD
+            partida.setIdPartida(MySqlPartida.persistirPartida(partida));
             /****************/
 //        request.getSession().setAttribute("partida", partida);
         ServletConfig config = getServletConfig();
