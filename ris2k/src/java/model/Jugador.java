@@ -55,4 +55,10 @@ public class Jugador {
     public void setColor(String color) {
         this.color = color;
     }
+    
+    public String toString(){
+        String str = "";
+        str += user + " (" + email + ")\n";
+        return str;
+    }
 }

@@ -13,12 +13,14 @@ import Exceptions.ris2kException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 import java.util.Vector;
 import model.Jugador;
 import model.Partida;
+import persistence.Mysql;
 
 /**
  *
@@ -81,7 +83,7 @@ public class MySqlPartida {
                             + "nombre='"+ nombre + "', "
                             + "idcreador='" + owner.getUser() + "', "
                             + "numjugadores='" + partida.getNumJugadores()+"' "
-                            + "WHERE idpartida = " + idPartida);
+                            + "WHERE id = " + idPartida);
                 }
                 System.out.println("debugging: " + strSQLPartida);
                 stmt.executeUpdate(strSQLPartida);
@@ -106,7 +108,13 @@ public class MySqlPartida {
                     String strSQLPartida = ("INSERT INTO partida_user VALUES (" + idPartida
                             + ",'" + j.getUser() +"')");
                     System.out.println("debugging: " + strSQLPartida);
-                    stmt.executeUpdate(strSQLPartida);
+                    try{
+                        stmt.executeUpdate(strSQLPartida);
+                    }catch(SQLException ex){
+                        if (ex.getMessage().contains("Duplicate entry"))
+                            System.out.println("Duplicación al asociar el jugador " + j.getUser() + " a la partida " + idPartida);
+                    }
+                    System.out.println("Insertado " + j.toString() + " en la partida " + partida.getIdPartida());
                 }
                 System.out.println("SE INSERTARON LOS DATOS");
                 stmt.close();
@@ -119,4 +127,84 @@ public class MySqlPartida {
          }    
    }
     
+    public static Partida getPartida(String idPartida) 
+    throws ris2kException {
+        Partida partida = new Partida();
+        //configurar conexion a la base de datos (deberíamos crear un objeto conexion para no repetir esto)
+        Statement stmt=null; 
+        ResultSet rs = null; 	
+        Connection conn= null;
+        if (idPartida == null)
+            throw new ris2kException("Se introdujo null en vez de un id de una partida válida. (MySqlPartida.getPartida())");
+        try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver").newInstance();
+            } catch (InstantiationException ex) {
+                ex.printStackTrace();
+            } catch (IllegalAccessException ex) {
+                ex.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
+          conn =
+          DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
+        }catch(SQLException ex) {
+            throw new ris2kException("Fallo en la conexión a la base de datos");
+        }
+        
+        //buscar la partida en la base de datos y recuperarla
+        try{
+            stmt = conn.createStatement();
+            String strSQLPartida = null;
+            strSQLPartida = "SELECT id, nombre, idcreador, numjugadores FROM partida WHERE id = '" + idPartida + "'";
+            rs = stmt.executeQuery(strSQLPartida);
+            rs.next();
+            partida.setIdPartida(idPartida);
+            
+            ResultSetMetaData metaDatos = rs.getMetaData();
+            // Se obtiene el número de columnas.
+            int numeroColumnas = metaDatos.getColumnCount();
+            // Se obtiene cada una de las etiquetas para cada columna
+            for (int i = 0; i < numeroColumnas; i++)
+               System.out.println(metaDatos.getColumnLabel(i + 1));
+            
+            
+            partida.setNombre(rs.getString("nombre"));
+            String idCreador = rs.getString("idcreador");
+            partida.setOwner(Mysql.getJugador(idCreador));
+            partida.setNumJugadores(rs.getInt("numjugadores"));
+            /*
+            partida.setNombre(rs.getString(2));
+            String idCreador = rs.getString(3);
+            partida.setOwner(Mysql.getJugador(idCreador));
+            partida.setNumJugadores(rs.getInt(4));
+             */
+            
+            
+            System.out.println(partida.toString());
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+            throw new ris2kException("Error al obtener la partida "+ idPartida + " de la base de datos.");
+        }catch(ris2kException ex){
+            System.out.println(ex.getMessage());
+        }
+        //buscar los jugadores que pertenecen a la partida y meterlos en el objeto partida
+        try{
+            stmt = conn.createStatement();
+            String strSQLPartida = null;
+            strSQLPartida = "SELECT idpartida, idjugador FROM partida_user WHERE idpartida = '" + idPartida + "'";
+            rs = stmt.executeQuery(strSQLPartida);
+            while(rs.next() != false){
+                partida.getJugadores().add(Mysql.getJugador(rs.getString("idjugador")));
+//                partida.getJugadores().add(Mysql.getJugador(rs.getString(2)));
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());System.out.println("falla aquí");
+            throw new ris2kException("Error al obtener los jugadores de la partida "+ idPartida + " de la base de datos.");
+        }catch(ris2kException ex){
+            System.out.println(ex.getMessage());
+        }
+        
+        return partida;
+    }
 }

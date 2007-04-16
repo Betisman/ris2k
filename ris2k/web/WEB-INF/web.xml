@@ -171,6 +171,10 @@
         <servlet-name>actualizacionJugada</servlet-name>
         <servlet-class>controller.actualizacionJugada</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AnadirJugadorAPartida</servlet-name>
+        <servlet-class>controller.AnadirJugadorAPartida</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/servlet/*</url-pattern>
@@ -214,6 +218,10 @@
     <servlet-mapping>
         <servlet-name>actualizacionJugada</servlet-name>
         <url-pattern>/actualizacionJugada</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AnadirJugadorAPartida</servlet-name>
+        <url-pattern>/AnadirJugadorAPartida</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
