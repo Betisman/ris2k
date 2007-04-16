@@ -142,4 +142,50 @@ public class Mysql {
                 throw new ris2kException ("No se pudo borrar de la base de datos");
          }
  }
+    public static Jugador getJugador(String id)
+    throws ris2kException {
+        Jugador jugador = new Jugador();
+        //configurar conexion a la base de datos (deberíamos crear un objeto conexion para no repetir esto)
+        Statement stmt=null; 
+        ResultSet rs = null; 	
+        Connection conn= null;
+        if (id == null)
+            throw new ris2kException("Se introdujo null en vez de un id de un jugador válido. (MySql.getJugador())");
+        try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver").newInstance();
+            } catch (InstantiationException ex) {
+                ex.printStackTrace();
+            } catch (IllegalAccessException ex) {
+                ex.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
+          conn =
+          DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
+        }catch(SQLException ex) {
+            throw new ris2kException("Fallo en la conexión a la base de datos");
+        }
+        try{
+            stmt = conn.createStatement();
+            String strSQL = null;
+            strSQL = "SELECT user, password, email FROM user WHERE user = '" + id + "'";
+            rs = stmt.executeQuery(strSQL);
+            rs.next();
+            jugador.setUser(id);
+            
+            jugador.setPassword(rs.getString("password"));
+            jugador.setEmail(rs.getString("email"));
+            /*
+            jugador.setPassword(rs.getString(2));
+            jugador.setEmail(rs.getString(3));
+            */
+//            jugador.setColor(rs.getString("color"));
+            return jugador;
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+            throw new ris2kException("Error al obtener el jugador "+ id + " de la base de datos.");
+        }
+    }
+    
 }

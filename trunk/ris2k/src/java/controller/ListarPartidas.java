@@ -61,7 +61,8 @@ public class ListarPartidas extends MiServlet {
                 System.out.println("\t\t"+j.getUser());
         }
         
-        //gotoJSPPage(listaPartidas, request, response);
+        gotoJSPPage("/view/partidas.jsp", request, response);
+//        gotoJSPPage(listaPartidas, request, response);
         System.out.println("gotojsppage");
         
     }

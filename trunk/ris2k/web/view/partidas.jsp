@@ -40,8 +40,8 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                     <tr>
                         <td><%=partida.getNombre()%></td>
                         <td><%=partida.getOwner().getUser()%></td>
-                        <td align="center"><%=partida.getNumJugadores()%></td>
-                        <td align="center"><a href="anadirJugadorPartida?partida=<%=partida.getIdPartida()%>">Unirse a la partida</a></td>
+                        <td align="center"><%=partida.getJugadores().size()%>/<%=partida.getNumJugadores()%></td>
+                        <td align="center"><a href="AnadirJugadorAPartida?partida=<%=partida.getIdPartida()%>">Unirse a la partida</a></td>
                         <td><a href="view/tableroMenu.jsp">Ir a la partida</a></td>
                     </tr>
                 <%}%>
