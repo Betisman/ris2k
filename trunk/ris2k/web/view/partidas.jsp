@@ -47,7 +47,5 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                 <%}%>
             </tbody>
         </table>      
-    
-    
     </body>
 </html>

@@ -140,5 +140,23 @@ public class Partida {
         this.jugadas = jugadas;
     }
     
+    public void repartirTerritorios(){
+    try{
+        List<Territorio> territorios = tablero.getTodosTerritorios();
+        int i = 0;
+        while(territorios.size()>0){
+            for(Jugador j : jugadores){
+                if (territorios.size()>0){
+                 int pos = (int)(Math.round(Math.random()*(territorios.size()-1)));
+                    Territorio t = territorios.remove(pos);
+                    tablero.getTerritorio(t.getId()).setOwner(j);
+                    i++; System.out.println(i + ". Territorio " + t.getNombre() + " asignado a " + j.getUser() + ".");
+                }
+            }
+        }
+    }catch(Exception ex){
+        System.out.println("EXCEPCIÓN: " + ex.getMessage());
+    }
+    }
     
 }

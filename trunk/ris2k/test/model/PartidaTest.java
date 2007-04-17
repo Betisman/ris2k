@@ -297,4 +297,22 @@ public class PartidaTest extends TestCase {
         fail("The test case is a prototype.");
     }
     
+    public void testRepartirTerritorios(){
+        System.out.println("repartirTerritorios");
+        Partida p = new Partida();
+        Jugador j1 = new Jugador(); j1.setUser("jugador1"); p.getJugadores().add(j1);
+        Jugador j2 = new Jugador(); j2.setUser("jugador2"); p.getJugadores().add(j2);
+        Jugador j3 = new Jugador(); j3.setUser("jugador3"); p.getJugadores().add(j3);
+        try {
+            p.getTablero().cargarTerritorios("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/test/newYork.xml");
+        } catch (ris2kException ex) {
+            ex.printStackTrace();
+        }
+        p.repartirTerritorios();
+        for(Territorio t : p.getTablero().getTodosTerritorios()){
+            if(t.getOwner() == null)
+                System.out.println("El territorio " + t.getNombre() + " es NULL.");
+        }
+    }
+    
 }
