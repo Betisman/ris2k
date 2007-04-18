@@ -72,18 +72,21 @@ public class CrearPartida extends MiServlet {
         ServletConfig config = getServletConfig();
         ServletContext context = config.getServletContext();
         List<Partida> partidasActivas = (List)context.getAttribute("partidasActivas");
-System.out.println("partidasActivas.size() = " + partidasActivas.size());
         partidasActivas.add(partida);
-System.out.println("partidasActivas.size() = " + partidasActivas.size());
         context.setAttribute("partidasActivas", partidasActivas);
         
-            gotoJSPPage("/view/partidas.jsp", request, response);
+        List<Partida> test = (List)context.getAttribute("partidasActivas");
+        System.out.println("CREAR PARTIDA, partidasActivas.size() = " + String.valueOf(test.size()));
+        
+        request.setAttribute("partida", partida);
+            gotoJSPPage("/view/esperaPartida.jsp", request, response);
 //        gotoJSPPage(partidas, request, response);
         } catch (ris2kException ex) {
             request.getSession().setAttribute("errorRis2k",ex.getMessage());
             gotoJSPPage(errorForm,request,response);
         }catch (Exception ex){
             request.getSession().setAttribute("errorRis2k","Error Desconocido");
+            ex.printStackTrace();
             gotoJSPPage(errorForm,request,response); 
         }
     }

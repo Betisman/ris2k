@@ -147,4 +147,11 @@ public class MySqlPartidaTest extends TestCase {
         
     }
     
+    public void testGetTodasPartidas() throws Exception {
+        List<Partida> partidas = MySqlPartida.getTodasPartidas();
+    }
+    
+    public void testGetPartidasAbiertas() throws Exception {
+        List<Partida> partidas = MySqlPartida.getPartidasAbiertas();
+    }
 }

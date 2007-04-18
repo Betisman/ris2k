@@ -18,6 +18,7 @@ import javax.servlet.http.*;
 import model.Jugador;
 import model.Partida;
 import model.Tablero;
+import persistence.*;
 
 /**
  *
@@ -33,38 +34,30 @@ public class ListarPartidas extends MiServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         List<Partida> partidas = new ArrayList();
-//        partidas.getFromPersistencia();
-/*        Partida p1 = new Partida();
-        Partida p2 = new Partida();
-        Tablero t = new Tablero();
+        List<Partida> partidasAbiertas;
         try {
-            p1.inicializar("Partida1", (Jugador) request.getSession().getAttribute("usuario"), t, 2);
-            p2.inicializar("Partida2", (Jugador) request.getSession().getAttribute("usuario"), t, 4);
+            partidasAbiertas = MySqlPartida.getPartidasAbiertas();
+            request.setAttribute("partidas", partidasAbiertas);
         } catch (ris2kException ex) {
             ex.printStackTrace();
         }
-        System.out.println("partida1 = " + p1.getNombre());
-        partidas.add(p1);
-        partidas.add(p2);
-        
-        request.getSession().setAttribute("partidas", partidas);
-        System.out.println("en request: " + partidas.iterator().next().getNombre());
-        System.out.println("en request: " + partidas.iterator().next().getNombre());
-  */
-        System.out.println("partidas:");
+/*        System.out.println("partidas:");
         ServletConfig config = getServletConfig();
         ServletContext context = config.getServletContext();
         partidas = (List)context.getAttribute("partidasActivas");
+        System.out.println("LISTAR PARTIDAS, partidasActivas.size() = " + String.valueOf(partidas.size()));
         for(Partida p : partidas){
             System.out.println("\t"+p.getNombre() + " by " + p.getOwner().getUser());
             for(Jugador j : p.getJugadores())
                 System.out.println("\t\t"+j.getUser());
         }
-        
-        gotoJSPPage("/view/partidas.jsp", request, response);
-//        gotoJSPPage(listaPartidas, request, response);
-        System.out.println("gotojsppage");
-        
+ */
+//        request.setAttribute("partidasActivas", partidas);
+        try{
+        gotoJSPPage("/view/partidas.jsp", request, response);        
+        }catch(Exception ex){
+            System.out.println("lo puse yo: "+ex.getMessage());ex.printStackTrace();  
+        }
     }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
