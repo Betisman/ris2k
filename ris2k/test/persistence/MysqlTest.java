@@ -565,32 +565,27 @@ public class MysqlTest extends TestCase {
             fail(ex.getMessage());
         }   
     }
-/*    
-    public void testValidarJugadorInexistente()throws Exception{
+    
+    public void testGetJugadorInexistente()throws Exception{
         System.out.println(">>> validarrJugadorInexistente");
       
         Mysql.borrarJugador("prueba00000000");
         
         try
         {
-            Jugador jugador = new Jugador();
-            jugador.setUser("prueba00000000");
-            jugador.setPassword("prueba");
-            jugador.setEmail("prueba@prueba.com");
-
-            boolean expResult = false;
-            boolean result = Mysql.validarJugador(jugador);
+            Mysql.getJugador("prueba00000000");
         }
         catch (Exception e)
         {
               System.out.println(e.getMessage());
-              assertEquals(e.getMessage(),"Usuario no válido en la Base de Datos");
+              assertEquals(e.getMessage(),"Error al obtener el jugador prueba00000000 de la base de datos.");
               return;
         }
         fail("No debería haber validado");
     }
     
-    public void testValidarJugadorPasswordErroneo(){
+/*
+ public void testValidarJugadorPasswordErroneo(){
         System.out.println(">>> validarrJugadorPasswordErroneo");
 
         Jugador jugador = new Jugador();
