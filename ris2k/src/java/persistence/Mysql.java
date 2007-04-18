@@ -176,11 +176,11 @@ public class Mysql {
             
             jugador.setPassword(rs.getString("password"));
             jugador.setEmail(rs.getString("email"));
-            /*
-            jugador.setPassword(rs.getString(2));
-            jugador.setEmail(rs.getString(3));
-            */
-//            jugador.setColor(rs.getString("color"));
+
+            //RAMON: OYE BETISMAN, EL FALLO SE ARREGLA INICIALIZANDO EL COLOR COMO NULO, 
+            //PERO NO SERÍA MEJOR QUITARLO DE LA CLASE Y PUNTO??
+            jugador.setColor(null);
+
             return jugador;
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
