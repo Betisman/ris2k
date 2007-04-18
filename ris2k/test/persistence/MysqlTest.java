@@ -527,4 +527,125 @@ public class MysqlTest extends TestCase {
     }
 
 //***************************************************************************/
+/*****************************************************************************/
+    /**
+     * Tests of getJugador method, of class persistence.Mysql.
+     */
+/*****************************************************************************/
+
+   /*prueba que un jugador existente se puede validar*/
+    public void testGetJugadorValido() {
+        System.out.println(">>> GetJugadorValido");
+ 
+        Jugador jugador = new Jugador();
+        GregorianCalendar now = new GregorianCalendar();
+        
+        String prueba = String.valueOf(now.getTimeInMillis());
+        
+        //jugador.setUser("prueba"+prueba);
+        jugador.setUser("prueba");
+        jugador.setPassword("prueba");
+        jugador.setEmail("prueba@prueba.com");
+        
+        Jugador result = new Jugador();
+
+        try {
+            Mysql.persistirJugador(jugador);
+        } 
+        catch (Exception ex) {
+            throw new Error("FALLO EN EL METODO PERSISTIR JUGADOR");
+        }
+ 
+        try {
+        result = Mysql.getJugador(jugador.getUser());
+        assertEquals(jugador.getColor(), result.getColor());
+        return;
+        }
+        catch(Exception ex){
+            fail(ex.getMessage());
+        }   
+    }
+/*    
+    public void testValidarJugadorInexistente()throws Exception{
+        System.out.println(">>> validarrJugadorInexistente");
+      
+        Mysql.borrarJugador("prueba00000000");
+        
+        try
+        {
+            Jugador jugador = new Jugador();
+            jugador.setUser("prueba00000000");
+            jugador.setPassword("prueba");
+            jugador.setEmail("prueba@prueba.com");
+
+            boolean expResult = false;
+            boolean result = Mysql.validarJugador(jugador);
+        }
+        catch (Exception e)
+        {
+              System.out.println(e.getMessage());
+              assertEquals(e.getMessage(),"Usuario no válido en la Base de Datos");
+              return;
+        }
+        fail("No debería haber validado");
+    }
+    
+    public void testValidarJugadorPasswordErroneo(){
+        System.out.println(">>> validarrJugadorPasswordErroneo");
+
+        Jugador jugador = new Jugador();
+        GregorianCalendar now = new GregorianCalendar();
+        
+        String prueba = String.valueOf(now.getTimeInMillis());
+        
+        jugador.setUser("prueba"+prueba);
+        jugador.setPassword("prueba");
+        jugador.setEmail("prueba@prueba.com");
+        
+        try {
+            Mysql.persistirJugador(jugador);
+        } 
+        catch (Exception ex) {
+            throw new Error("FALLO EN EL METODO PERSISTIR JUGADOR");
+        }
+        
+        try
+        {
+            jugador.setUser("prueba"+prueba);
+            jugador.setPassword("erroneo");
+            jugador.setEmail("prueba@prueba.com");
+
+            boolean expResult = false;
+            boolean result = Mysql.validarJugador(jugador);
+        }
+        catch (Exception e)
+        {
+              System.out.println(e.getMessage());
+              assertEquals(e.getMessage(),"Usuario no válido en la Base de Datos");
+              return;
+        }
+        fail("No debería haber validado");
+    }
+    
+    public void testValidarJugadorVacio()throws Exception{
+        System.out.println(">>> validarJugadorVacio");
+      
+        
+        try
+        {
+            Jugador jugador = new Jugador();
+
+            boolean expResult = false;
+            boolean result = Mysql.validarJugador(jugador);
+        }
+        catch (Exception e)
+        {
+              System.out.println(e.getMessage());
+              assertEquals(e.getMessage(),"Usuario no válido en la Base de Datos");
+              return;
+        }
+        fail("No debería haber validado");
+    }
+*/
+//***************************************************************************/
 }
