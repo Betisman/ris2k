@@ -8,7 +8,7 @@ import java.io.*;
 import java.net.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import persistence.Mysql;
+import persistence.MysqlJugador;
 import model.Jugador;
 import mail.Correo;
 
@@ -77,7 +77,7 @@ public class altaServlet extends MiServlet {
             jugador.setPassword(password);
             jugador.setEmail(email);
             try {
-                Mysql.persistirJugador(jugador);
+                MysqlJugador.persistirJugador(jugador);
             } catch (ris2kException ex) {
                 
                 request.getSession().setAttribute("errorRis2k",ex.getMessage());

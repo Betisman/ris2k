@@ -10,9 +10,9 @@ import java.sql.*;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-public class Mysql {
-    static Logger log = Logger.getLogger(Mysql.class);    
-    public Mysql() {
+public class MysqlJugador {
+    static Logger log = Logger.getLogger(MysqlJugador.class);    
+    public MysqlJugador() {
     }
    
     
