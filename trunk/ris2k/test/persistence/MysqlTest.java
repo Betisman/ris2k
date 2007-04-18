@@ -459,12 +459,14 @@ public class MysqlTest extends TestCase {
 
             boolean expResult = false;
             boolean result = Mysql.validarJugador(jugador);
-            assertEquals(expResult, result);
         }
         catch (Exception e)
         {
-            fail("No debería haber validado");
+              System.out.println(e.getMessage());
+              assertEquals(e.getMessage(),"Usuario no válido en la Base de Datos");
+              return;
         }
+        fail("No debería haber validado");
     }
     
     public void testValidarJugadorPasswordErroneo(){
