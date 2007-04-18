@@ -16,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 import model.Jugador;
@@ -207,4 +208,60 @@ public class MySqlPartida {
         
         return partida;
     }
+    
+    public static List<Partida> getTodasPartidas() 
+    throws ris2kException {
+        List<Partida> partidas = new ArrayList();
+        
+        //configurar conexion a la base de datos (deberíamos crear un objeto conexion para no repetir esto)
+        Statement stmt=null; 
+        ResultSet rs = null; 	
+        Connection conn= null;
+        try {
+            try {
+                Class.forName("com.mysql.jdbc.Driver").newInstance();
+            } catch (InstantiationException ex) {
+                ex.printStackTrace();
+            } catch (IllegalAccessException ex) {
+                ex.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
+          conn =
+          DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
+        }catch(SQLException ex) {
+            throw new ris2kException("Fallo en la conexión a la base de datos");
+        }
+        
+        //buscar la partida en la base de datos y recuperarla
+        try{
+            stmt = conn.createStatement();
+            String strSQLPartida = null;
+            strSQLPartida = "SELECT id FROM partida";
+            rs = stmt.executeQuery(strSQLPartida);
+            while(rs.next() != false){
+                String id = rs.getString("id");
+                Partida p = getPartida(id);
+                partidas.add(p);
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return partidas;
+    }
+    
+    public static List<Partida> getPartidasAbiertas() 
+    throws ris2kException {
+        List<Partida> partidas = getTodasPartidas();
+        System.out.println("partidas = " + String.valueOf(partidas.size()));
+        List<Partida> aux = new ArrayList();
+        for(Partida p : partidas){
+            System.out.println("num = " + p.getNumJugadores() + " - jugs = " + p.getJugadores().size());
+            if (p.getNumJugadores() > p.getJugadores().size())
+                aux.add(p);
+        }
+        System.out.println("partidas tras corte = " + String.valueOf(partidas.size()));
+        return aux;
+    }
+    
 }

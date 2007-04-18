@@ -22,10 +22,9 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <%@ page import="model.Jugador" %>
         <%@ page import="model.Partida" %>
         
-        <%List<Partida> partidas = (List)application.getAttribute("partidasActivas");%>
+        <%List<Partida> partidas = (List)request.getAttribute("partidas");%>
         
-
-    <h1>Lista de partidas creadas</h1>
+    <h1>Lista de partidas creadas</h1>(<%=partidas.size()%>)
         <table border="2">
             <thead>
                 <tr>

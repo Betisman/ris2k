@@ -91,7 +91,7 @@ public class MiServlet extends HttpServlet {
         actualizacionJugada = context.getInitParameter("actualizacionJugada");
         listaPartidas = context.getInitParameter("listaPartidas");
         
-        List<Partida> partidas = new ArrayList();
+        ArrayList<Partida> partidas = new ArrayList();
         context.setAttribute("partidasActivas", partidas);
     }
     

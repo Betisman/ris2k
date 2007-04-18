@@ -9,6 +9,7 @@ package controller;
 import Exceptions.ris2kException;
 import java.io.*;
 import java.net.*;
+import java.util.List;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -29,21 +30,39 @@ public class AnadirJugadorAPartida extends MiServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        //recuperamos el id de la partida que va implícito en el request de la petición http
         String idPartida = request.getParameter("partida");
         try {
             System.out.println("anadirJugadorAPartida");
+            Jugador jugadorActual = (Jugador)request.getSession().getAttribute("usuario");
             Partida partida = MySqlPartida.getPartida(idPartida);
-    for(Jugador j : partida.getJugadores()){ System.out.println(j.toString());}
-            partida.getJugadores().add((Jugador)request.getSession().getAttribute("usuario"));
-    for(Jugador j : partida.getJugadores()){ System.out.println(j.toString());}
+            partida.getJugadores().add(jugadorActual);
             MySqlPartida.persistirPartida(partida);
             System.out.println(partida.toString());
-//            gotoJSPPage("/view/");
+/*            int index = 0;
+            System.out.println("Empieza lo del context");
+            ServletConfig config = getServletConfig();
+            ServletContext context = config.getServletContext();
+            List<Partida> partidasActivas = (List)context.getAttribute("partidasActivas");
+            System.out.println("contextoPartidasActivas.size() = " + String.valueOf(partidasActivas.size()));
+            for(Partida p : partidasActivas){
+                System.out.println("p = " + p.getIdPartida() + " - partida = " + partida.getIdPartida());
+                if (p.getIdPartida() == partida.getIdPartida())
+                    index = partidasActivas.indexOf(p);
+            }
+            partidasActivas.remove(index);
+            partidasActivas.add(partida);
+            context.setAttribute("partidasActivas", partidasActivas);
+ */
+            
+            request.setAttribute("partida", partida);
+            gotoJSPPage("/view/esperaPartida.jsp", request, response);
         }catch (ris2kException ex) {
             request.getSession().setAttribute("errorRis2k",ex.getMessage());
             gotoJSPPage(errorForm,request,response);
         }catch (Exception ex){
             request.getSession().setAttribute("errorRis2k","Error Desconocido");
+            ex.printStackTrace();
             gotoJSPPage(errorForm,request,response); 
         }
         
