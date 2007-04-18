@@ -1,5 +1,5 @@
 /*
- * MysqlTest.java
+ * MysqlJugadorTest.java
  * JUnit based test
  *
  * Created on 7 de marzo de 2007, 19:12
@@ -21,9 +21,9 @@ import java.sql.*;
  *
  * @author Ramon
  */
-public class MysqlTest extends TestCase {
+public class MysqlJugadorTest extends TestCase {
     
-    public MysqlTest(String testName) {
+    public MysqlJugadorTest(String testName) {
         super(testName);
     }
     
@@ -120,7 +120,7 @@ public class MysqlTest extends TestCase {
         {
             System.out.println("prueba usuario valida -> insertar prueba"+prueba);
             boolean expResult = true;
-            boolean result = Mysql.persistirJugador(jugador);
+            boolean result = MysqlJugador.persistirJugador(jugador);
             assertEquals(expResult, result);
         }
         catch (Exception ex)
@@ -183,7 +183,7 @@ public class MysqlTest extends TestCase {
             try 
             {   
                 boolean expResult = true;
-                boolean result = Mysql.persistirJugador(jugador);
+                boolean result = MysqlJugador.persistirJugador(jugador);
                 assertEquals(expResult, result);
             }
             catch (Exception ex) {
@@ -230,7 +230,7 @@ public class MysqlTest extends TestCase {
  
         try
         {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         }
   
         catch (ris2kException ex)
@@ -254,7 +254,7 @@ public class MysqlTest extends TestCase {
  
         try
         {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         }
   
         catch (ris2kException ex)
@@ -281,7 +281,7 @@ public class MysqlTest extends TestCase {
  
         try
         {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         }
   
         catch (ris2kException ex)
@@ -308,7 +308,7 @@ public class MysqlTest extends TestCase {
  
         try
         {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         }
   
         catch (ris2kException ex)
@@ -338,7 +338,7 @@ public class MysqlTest extends TestCase {
  
         try
         {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         }
         catch (Exception ex)
         {
@@ -347,7 +347,7 @@ public class MysqlTest extends TestCase {
         
         try
         {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         }
         catch (Exception ex)
         {
@@ -380,21 +380,21 @@ public class MysqlTest extends TestCase {
         jugador.setEmail("prueba@prueba.com");
         
         try {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         } 
         catch (Exception ex) {
             throw new Error("FALLO EN EL METODO PERSISTIR JUGADOR");
         }
        
         try {
-            Mysql.borrarJugador("prueba"+prueba);
+            MysqlJugador.borrarJugador("prueba"+prueba);
         } 
         catch (Exception ex) {
             fail("Se ha encontrado una excepción tipo: "+ex.getMessage());
         }
         
         try {
-            Mysql.validarJugador(jugador);
+            MysqlJugador.validarJugador(jugador);
         }
         catch (ris2kException ex){
             String expResult = "Usuario no válido en la Base de Datos";
@@ -428,7 +428,7 @@ public class MysqlTest extends TestCase {
         jugador.setEmail("prueba@prueba.com");
         
         try {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         } 
         catch (Exception ex) {
             throw new Error("FALLO EN EL METODO PERSISTIR JUGADOR");
@@ -436,7 +436,7 @@ public class MysqlTest extends TestCase {
  
         try {
         boolean expResult = true;
-        boolean result = Mysql.validarJugador(jugador);
+        boolean result = MysqlJugador.validarJugador(jugador);
         assertEquals(expResult, result);
         return;
         }
@@ -448,7 +448,7 @@ public class MysqlTest extends TestCase {
     public void testValidarJugadorInexistente()throws Exception{
         System.out.println(">>> validarrJugadorInexistente");
       
-        Mysql.borrarJugador("prueba00000000");
+        MysqlJugador.borrarJugador("prueba00000000");
         
         try
         {
@@ -458,7 +458,7 @@ public class MysqlTest extends TestCase {
             jugador.setEmail("prueba@prueba.com");
 
             boolean expResult = false;
-            boolean result = Mysql.validarJugador(jugador);
+            boolean result = MysqlJugador.validarJugador(jugador);
         }
         catch (Exception e)
         {
@@ -482,7 +482,7 @@ public class MysqlTest extends TestCase {
         jugador.setEmail("prueba@prueba.com");
         
         try {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         } 
         catch (Exception ex) {
             throw new Error("FALLO EN EL METODO PERSISTIR JUGADOR");
@@ -495,7 +495,7 @@ public class MysqlTest extends TestCase {
             jugador.setEmail("prueba@prueba.com");
 
             boolean expResult = false;
-            boolean result = Mysql.validarJugador(jugador);
+            boolean result = MysqlJugador.validarJugador(jugador);
         }
         catch (Exception e)
         {
@@ -515,7 +515,7 @@ public class MysqlTest extends TestCase {
             Jugador jugador = new Jugador();
 
             boolean expResult = false;
-            boolean result = Mysql.validarJugador(jugador);
+            boolean result = MysqlJugador.validarJugador(jugador);
         }
         catch (Exception e)
         {
@@ -550,14 +550,14 @@ public class MysqlTest extends TestCase {
         Jugador result = new Jugador();
 
         try {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         } 
         catch (Exception ex) {
             throw new Error("FALLO EN EL METODO PERSISTIR JUGADOR");
         }
  
         try {
-        result = Mysql.getJugador(jugador.getUser());
+        result = MysqlJugador.getJugador(jugador.getUser());
         assertEquals(jugador.getColor(), result.getColor());
         return;
         }
@@ -569,11 +569,11 @@ public class MysqlTest extends TestCase {
     public void testGetJugadorInexistente()throws Exception{
         System.out.println(">>> validarrJugadorInexistente");
       
-        Mysql.borrarJugador("prueba00000000");
+        MysqlJugador.borrarJugador("prueba00000000");
         
         try
         {
-            Mysql.getJugador("prueba00000000");
+            MysqlJugador.getJugador("prueba00000000");
         }
         catch (Exception e)
         {
@@ -598,7 +598,7 @@ public class MysqlTest extends TestCase {
         jugador.setEmail("prueba@prueba.com");
         
         try {
-            Mysql.persistirJugador(jugador);
+            MysqlJugador.persistirJugador(jugador);
         } 
         catch (Exception ex) {
             throw new Error("FALLO EN EL METODO PERSISTIR JUGADOR");
@@ -611,7 +611,7 @@ public class MysqlTest extends TestCase {
             jugador.setEmail("prueba@prueba.com");
 
             boolean expResult = false;
-            boolean result = Mysql.validarJugador(jugador);
+            boolean result = MysqlJugador.validarJugador(jugador);
         }
         catch (Exception e)
         {
@@ -631,7 +631,7 @@ public class MysqlTest extends TestCase {
             Jugador jugador = new Jugador();
 
             boolean expResult = false;
-            boolean result = Mysql.validarJugador(jugador);
+            boolean result = MysqlJugador.validarJugador(jugador);
         }
         catch (Exception e)
         {

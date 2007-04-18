@@ -17,7 +17,7 @@ import java.net.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
-import persistence.Mysql;
+import persistence.MysqlJugador;
 import model.Jugador;
 
 public class accesoServlet extends MiServlet {   
@@ -31,7 +31,7 @@ public class accesoServlet extends MiServlet {
         jugador.setUser(user);
         jugador.setPassword(password);
         try {
-            Mysql.validarJugador(jugador);
+            MysqlJugador.validarJugador(jugador);
             request.getSession().setAttribute("jugador","Bienvenid@, "+user.toUpperCase());
             /*Al ser un jugador válido, lo metemos en el objeto session*/
             request.getSession().setAttribute("usuario", jugador);

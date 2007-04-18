@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Vector;
 import model.Jugador;
 import model.Partida;
-import persistence.Mysql;
+import persistence.MysqlJugador;
 
 /**
  *
@@ -172,12 +172,12 @@ public class MySqlPartida {
             
             partida.setNombre(rs.getString("nombre"));
             String idCreador = rs.getString("idcreador");
-            partida.setOwner(Mysql.getJugador(idCreador));
+            partida.setOwner(MysqlJugador.getJugador(idCreador));
             partida.setNumJugadores(rs.getInt("numjugadores"));
             /*
             partida.setNombre(rs.getString(2));
             String idCreador = rs.getString(3);
-            partida.setOwner(Mysql.getJugador(idCreador));
+            partida.setOwner(MysqlJugador.getJugador(idCreador));
             partida.setNumJugadores(rs.getInt(4));
              */
             
@@ -196,8 +196,8 @@ public class MySqlPartida {
             strSQLPartida = "SELECT idpartida, idjugador FROM partida_user WHERE idpartida = '" + idPartida + "'";
             rs = stmt.executeQuery(strSQLPartida);
             while(rs.next() != false){
-                partida.getJugadores().add(Mysql.getJugador(rs.getString("idjugador")));
-//                partida.getJugadores().add(Mysql.getJugador(rs.getString(2)));
+                partida.getJugadores().add(MysqlJugador.getJugador(rs.getString("idjugador")));
+//                partida.getJugadores().add(MysqlJugador.getJugador(rs.getString(2)));
             }
         }catch(SQLException ex){
             System.out.println(ex.getMessage());System.out.println("falla aquí");
