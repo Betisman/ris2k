@@ -533,7 +533,7 @@ public class MysqlJugadorTest extends TestCase {
      */
 /*****************************************************************************/
 
-   /*prueba que un jugador existente se puede validar*/
+   /*prueba que un jugador existente se puede recuperar*/
     public void testGetJugadorValido() {
         System.out.println(">>> GetJugadorValido");
  
@@ -584,63 +584,5 @@ public class MysqlJugadorTest extends TestCase {
         fail("No debería haber validado");
     }
     
-/*
- public void testValidarJugadorPasswordErroneo(){
-        System.out.println(">>> validarrJugadorPasswordErroneo");
-
-        Jugador jugador = new Jugador();
-        GregorianCalendar now = new GregorianCalendar();
-        
-        String prueba = String.valueOf(now.getTimeInMillis());
-        
-        jugador.setUser("prueba"+prueba);
-        jugador.setPassword("prueba");
-        jugador.setEmail("prueba@prueba.com");
-        
-        try {
-            MysqlJugador.persistirJugador(jugador);
-        } 
-        catch (Exception ex) {
-            throw new Error("FALLO EN EL METODO PERSISTIR JUGADOR");
-        }
-        
-        try
-        {
-            jugador.setUser("prueba"+prueba);
-            jugador.setPassword("erroneo");
-            jugador.setEmail("prueba@prueba.com");
-
-            boolean expResult = false;
-            boolean result = MysqlJugador.validarJugador(jugador);
-        }
-        catch (Exception e)
-        {
-              System.out.println(e.getMessage());
-              assertEquals(e.getMessage(),"Usuario no válido en la Base de Datos");
-              return;
-        }
-        fail("No debería haber validado");
-    }
-    
-    public void testValidarJugadorVacio()throws Exception{
-        System.out.println(">>> validarJugadorVacio");
-      
-        
-        try
-        {
-            Jugador jugador = new Jugador();
-
-            boolean expResult = false;
-            boolean result = MysqlJugador.validarJugador(jugador);
-        }
-        catch (Exception e)
-        {
-              System.out.println(e.getMessage());
-              assertEquals(e.getMessage(),"Usuario no válido en la Base de Datos");
-              return;
-        }
-        fail("No debería haber validado");
-    }
-*/
 //***************************************************************************/
 }
