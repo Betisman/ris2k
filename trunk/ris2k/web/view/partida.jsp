@@ -24,7 +24,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         
         <%Partida partida = (Partida)request.getAttribute("partida");%>
 
-    <h1>Partida <%=partida.getNombre()%></h1>
+    <h1>Partida <%=partida.getNombre()%> (ver partida)</h1>
         <p>Nombre: <%=partida.getNombre()%></p>
         <p>Creador: <%=partida.getOwner().getUser()%></p>
         <p>Mapa: <%=partida.getTablero().getMapa()%></p>

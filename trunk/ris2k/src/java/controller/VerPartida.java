@@ -1,15 +1,10 @@
 /*
- * accesoServlet.java
+ * VerPartida.java
  *
- * Created on 4 de marzo de 2007, 12:27
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
+ * Created on 19 de abril de 2007, 19:30
  */
 
 package controller;
-
-
 
 import Exceptions.ris2kException;
 import java.io.*;
@@ -17,49 +12,49 @@ import java.net.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
-import persistence.MysqlJugador;
-import model.Jugador;
+import model.Partida;
+import persistence.MySqlPartida;
 
-public class accesoServlet extends MiServlet {   
-    String error1=null; //Defino este string para saber que tipo de error de validación se produce.
+/**
+ *
+ * @author Carlos
+ * @version
+ */
+public class VerPartida extends MiServlet {
+    
+    /** Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * @param request servlet request
+     * @param response servlet response
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException 
-    {
-        Jugador jugador = new Jugador(); 
-        String user = request.getParameter("user");
-        String password = request.getParameter("password");
-        jugador.setUser(user);
-        jugador.setPassword(password);
+    throws ServletException, IOException {
+        System.out.println("VerPartida");
+        //recuperamos el id de la partida que va implícito en el request de la petición http
+        String idPartida = request.getParameter("partida");
         try {
-            MysqlJugador.validarJugador(jugador);
-            request.getSession().setAttribute("jugador","Bienvenid@, "+user.toUpperCase());
-            /*Al ser un jugador válido, lo metemos en el objeto session*/
-            jugador = MysqlJugador.getJugador(jugador.getUser());
-            request.getSession().setAttribute("usuario", jugador);
-                /***********************************************************/
-            gotoJSPPage(menuForm,request,response);
-            return;
-
-        } catch (ris2kException ex) {
+            Partida partida = MySqlPartida.getPartida(idPartida);
+            request.setAttribute("partida", partida);
+            gotoJSPPage("/view/partida.jsp", request, response);
+        }catch (ris2kException ex) {
             request.getSession().setAttribute("errorRis2k",ex.getMessage());
             gotoJSPPage(errorForm,request,response);
         }catch (Exception ex){
             request.getSession().setAttribute("errorRis2k","Error Desconocido");
+            ex.printStackTrace();
             gotoJSPPage(errorForm,request,response); 
-        }
-
-    }  
-  
+        }        
+    }
+    
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** Handles the HTTP <code>GET</code> method.
      * @param request servlet request
      * @param response servlet response
      */
-  
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         processRequest(request, response);
     }
-   
+    
     /** Handles the HTTP <code>POST</code> method.
      * @param request servlet request
      * @param response servlet response
@@ -68,10 +63,11 @@ public class accesoServlet extends MiServlet {
     throws ServletException, IOException {
         processRequest(request, response);
     }
-  
+    
     /** Returns a short description of the servlet.
      */
     public String getServletInfo() {
         return "Short description";
     }
+    // </editor-fold>
 }

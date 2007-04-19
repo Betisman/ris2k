@@ -35,10 +35,10 @@ public class AnadirJugadorAPartida extends MiServlet {
         try {
             System.out.println("anadirJugadorAPartida");
             Jugador jugadorActual = (Jugador)request.getSession().getAttribute("usuario");
+            System.out.println(jugadorActual.getUser() + " (" + jugadorActual.getPassword() + ") - " + jugadorActual.getEmail());
             Partida partida = MySqlPartida.getPartida(idPartida);
             partida.getJugadores().add(jugadorActual);
             MySqlPartida.persistirPartida(partida);
-            System.out.println(partida.toString());
 /*            int index = 0;
             System.out.println("Empieza lo del context");
             ServletConfig config = getServletConfig();
