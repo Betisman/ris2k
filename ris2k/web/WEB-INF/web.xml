@@ -175,6 +175,10 @@
         <servlet-name>AnadirJugadorAPartida</servlet-name>
         <servlet-class>controller.AnadirJugadorAPartida</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VerPartida</servlet-name>
+        <servlet-class>controller.VerPartida</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/servlet/*</url-pattern>
@@ -222,6 +226,10 @@
     <servlet-mapping>
         <servlet-name>AnadirJugadorAPartida</servlet-name>
         <url-pattern>/AnadirJugadorAPartida</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerPartida</servlet-name>
+        <url-pattern>/VerPartida</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

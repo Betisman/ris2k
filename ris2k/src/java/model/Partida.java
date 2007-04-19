@@ -157,6 +157,5 @@ public class Partida {
     }catch(Exception ex){
         System.out.println("EXCEPCIÓN: " + ex.getMessage());
     }
-    }
-    
+    }   
 }
