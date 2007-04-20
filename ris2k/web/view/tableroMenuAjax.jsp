@@ -9,23 +9,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     </head>
     <body background="/ris2k/images/Fondo.jpg">
-        <SCRIPT LANGUAGE=JavaScript>
-            function objetus() {
-                 try {
-                         objetus = new ActiveXObject("Msxml2.XMLHTTP");
-                } catch ( e) {
-                         try {
-                                 objetus= new ActiveXObject ("Microsoft.XMLHTTP");
-                         } catch (E) {
-                                  objetus= false;
-                        }
-                }
-                if (! objetus && typeof XMLHttpRequest!= 'undefined') {
-                         objetus = new XMLHttpRequest();
-                }
-                return objetus
-            }
-        </SCRIPT>
+        <%@page import ="java.util.*"%>
+        <%@page import="model.Jugador" %>
+        <%@page import="model.Partida" %>
+        <%@page import="svgTablero.*"%>
+        
+        
         <div class="outerBorder">
             
             <div class="header">
@@ -135,7 +124,7 @@
         
                 <div class="content" style="height:700px">
                     <!--<EMBED SRC="../images/tablero.svg" WIDTH="100%" HEIGHT="100%" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
-                    <EMBED SRC="../images/Zonas1024bis.svg" WIDTH="100%" HEIGHT="100%" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
+                    <EMBED SRC="../images/Zonas1024bisAjax.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
                    
                 </div> <!-- content -->
 
