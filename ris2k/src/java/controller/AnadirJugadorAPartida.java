@@ -37,23 +37,13 @@ public class AnadirJugadorAPartida extends MiServlet {
             Jugador jugadorActual = (Jugador)request.getSession().getAttribute("usuario");
             System.out.println(jugadorActual.getUser() + " (" + jugadorActual.getPassword() + ") - " + jugadorActual.getEmail());
             Partida partida = MySqlPartida.getPartida(idPartida);
-            partida.getJugadores().add(jugadorActual);
-            MySqlPartida.persistirPartida(partida);
-/*            int index = 0;
-            System.out.println("Empieza lo del context");
-            ServletConfig config = getServletConfig();
-            ServletContext context = config.getServletContext();
-            List<Partida> partidasActivas = (List)context.getAttribute("partidasActivas");
-            System.out.println("contextoPartidasActivas.size() = " + String.valueOf(partidasActivas.size()));
-            for(Partida p : partidasActivas){
-                System.out.println("p = " + p.getIdPartida() + " - partida = " + partida.getIdPartida());
-                if (p.getIdPartida() == partida.getIdPartida())
-                    index = partidasActivas.indexOf(p);
-            }
-            partidasActivas.remove(index);
-            partidasActivas.add(partida);
-            context.setAttribute("partidasActivas", partidasActivas);
- */
+            if (partida.estaJugador(jugadorActual)){
+                System.out.println("La partida " + partida.getNombre() + " ya contiene al jugador " + jugadorActual.getUser());
+            }else{
+                partida.getJugadores().add(jugadorActual);
+                System.out.println("Añadimos a la partida " + partida.getNombre() + " el jugador " + jugadorActual.getUser());
+                MySqlPartida.persistirPartida(partida);
+            }                
             
             request.setAttribute("partida", partida);
             gotoJSPPage("/view/esperaPartida.jsp", request, response);
