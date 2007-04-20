@@ -23,33 +23,33 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 </style>
 </head>
 
-<body background="images/Fondo.jpg">
+<body background="/ris2k/images/Fondo.jpg">
 <div align="center"><strong></strong>
   <table width="777" border="0">
     <tr>
       <td colspan="5"><div align="right"><strong>${sessionScope["jugador"]} </strong><a href="Logout.java">logout</a></div></td>
     </tr>
     <tr>
-      <td colspan="5"><div align="center"><img src="images/titulo.gif" width="259" height="180"></div></td>
+      <td colspan="5"><div align="center"><img src="/ris2k/images/titulo.gif" width="259" height="180"></div></td>
     </tr>
     <tr>
       <td width="111">&nbsp;</td>
-      <td width="101"><div align="center"><a href="view/nuevaPartida.jsp"><img src="images/canonpeq.gif" width="88" height="70" border="0"></a></div></td>
+      <td width="101"><div align="center"><a href="/ris2k/view/nuevaPartida.jsp"><img src="/ris2k/images/canonpeq.gif" width="88" height="70" border="0"></a></div></td>
       <td colspan="3"><span class="Estilo7">CREAR UNA NUEVA PARTIDA</span></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><div align="center"><a href="ListarPartidas"><img src="images/infanteriapeq.gif" width="70" height="70" border="0"></a></div></td>
+      <td><div align="center"><a href="/ris2k/ListarPartidas"><img src="/ris2k/images/infanteriapeq.gif" width="70" height="70" border="0"></a></div></td>
       <td colspan="3"><span class="Estilo7">ENTRAR EN UNA PARTIDA</span></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><div align="center"><a href="view/hallOfFame.jsp"><img src="images/caballeriapeq.gif" width="70" height="70" border="0"></a></div></td>
+      <td><div align="center"><a href="/ris2k/view/hallOfFame.jsp"><img src="/ris2k/images/caballeriapeq.gif" width="70" height="70" border="0"></a></div></td>
       <td colspan="3"><span class="Estilo7">HALL OF FAME </span></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><div align="center"><a href="view/instrucciones.jsp"><img src="images/reglas.gif" width="70" height="70" border="0"></a></div></td>
+      <td><div align="center"><a href="/ris2k/view/instrucciones.jsp"><img src="/ris2k/images/reglas.gif" width="70" height="70" border="0"></a></div></td>
       <td colspan="3"><span class="Estilo7">REGLAS DE R<em>IS2</em>K</span></td>
     </tr>
     <tr>
