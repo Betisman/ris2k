@@ -7,6 +7,7 @@
 
 package model;
 
+import Exceptions.ris2kException;
 import java.util.ArrayList;
 import junit.framework.*;
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
@@ -144,8 +145,11 @@ public class TableroTest extends TestCase {
         
         String infoXml = "web/test/newYorkInfoTest1.xml";
         Tablero instance = new Tablero();
-        
-        instance.cargarTerritorios(infoXml);
+        try {
+            instance.cargarTerritorios(infoXml);
+        } catch (ris2kException ex) {
+            ex.printStackTrace();
+        }
         
         Tablero expected = new Tablero();
         Continente c = new Continente();

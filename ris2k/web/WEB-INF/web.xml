@@ -179,6 +179,10 @@
         <servlet-name>VerPartida</servlet-name>
         <servlet-class>controller.VerPartida</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>IrAMenu</servlet-name>
+        <servlet-class>controller.IrAMenu</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/servlet/*</url-pattern>
@@ -230,6 +234,10 @@
     <servlet-mapping>
         <servlet-name>VerPartida</servlet-name>
         <url-pattern>/VerPartida</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IrAMenu</servlet-name>
+        <url-pattern>/IrAMenu</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
