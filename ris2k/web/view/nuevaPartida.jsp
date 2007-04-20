@@ -19,10 +19,13 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <style type="text/css">
 <!--
 .Estilo4 {font-size: 36px; font-weight: bold; color: #990000; }
+.Estilo5 {font-size: 34px}
+.Estilo6 {font-size: 34px; font-weight: bold; color: #990000; }
 -->
         </style>
 </head>
     <body background="/ris2k/images/Fondo.jpg">
+    <div align="right"><strong>${sessionScope["jugador"]} </strong><a href="Logout.java">logout</a></div>
     <p align="center"><img src="/ris2k/images/nuevapartida.jpg" width="510" height="159"></p>
     <p align="center">
       <%--
@@ -37,11 +40,11 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         --%>
     </p>
     <form name="nuevaPartida" action="/ris2k/CrearPartida" method="POST">
-        <p align="center" class="Estilo4">Nombre de la partida</p>
+        <p align="center" class="Estilo4 Estilo5">Nombre de la partida</p>
         <p align="center">
           <input type="text" name="nombrePartida" value="" />
         </p>
-        <p align="center"><span class="Estilo4">Número de jugadores</span>  
+        <p align="center"><span class="Estilo6">Número de jugadores</span>  
           <select name="numJugadores">
             <option>1</option>
             <option>2</option>
@@ -51,7 +54,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
             <option>6</option>
           </select>
         </p>
-        <p align="center" class="Estilo4">Tablero</p>
+        <p align="center" class="Estilo6">Tablero</p>
         <p align="center">
           <input type="text" name="tablero" value="newYork by Weil" readonly="readonly" />
       </p>
