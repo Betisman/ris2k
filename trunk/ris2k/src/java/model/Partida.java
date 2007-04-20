@@ -161,8 +161,8 @@ public class Partida {
     
     public boolean estaJugador(Jugador jugador){
         boolean esta = false;
-        for(Jugador j : getJugadores()){
-            if (j.getUser() == jugador.getUser())
+        for(Jugador j : jugadores){
+            if (j.getUser().equals(jugador.getUser()))
                 esta = true;
         }
         return esta;

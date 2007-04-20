@@ -12,6 +12,7 @@ import junit.framework.*;
 import Exceptions.ris2kException;
 import java.util.GregorianCalendar;
 import java.util.Vector;
+import persistence.MySqlPartida;
 
 /**
  *
@@ -312,6 +313,19 @@ public class PartidaTest extends TestCase {
         for(Territorio t : p.getTablero().getTodosTerritorios()){
             if(t.getOwner() == null)
                 System.out.println("El territorio " + t.getNombre() + " es NULL.");
+        }
+    }
+    
+    public void testEstaJugador(){
+        Partida partida;
+        try {
+            partida = MySqlPartida.getPartida("89");
+            Jugador j = new Jugador();
+            j.setUser("odonkor");
+            boolean esta = partida.estaJugador(j);
+            assertEquals(true, esta);
+        } catch (ris2kException ex) {
+            ex.printStackTrace();
         }
     }
     

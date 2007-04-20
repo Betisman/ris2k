@@ -40,5 +40,12 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
           </tr>
           <%i++;}%>
         </table>
+        <% Jugador j = (Jugador)request.getSession().getAttribute("usuario");%>
+        <%=j.getUser()%>
+        <%if (partida.estaJugador((Jugador)request.getSession().getAttribute("usuario"))){%>true
+        <%}else{%>false<%}%>
+        <%if ((partida.estaJugador((Jugador)request.getSession().getAttribute("usuario"))) && (partida.getNumJugadores()==partida.getJugadores().size())){ %>
+        <input type="submit" value="Jugar!!" name="btnJugar" />
+        <%}%>
     </body>
 </html>
