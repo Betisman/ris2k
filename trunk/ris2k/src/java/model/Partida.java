@@ -157,5 +157,14 @@ public class Partida {
     }catch(Exception ex){
         System.out.println("EXCEPCIÓN: " + ex.getMessage());
     }
-    }   
+    } 
+    
+    public boolean estaJugador(Jugador jugador){
+        boolean esta = false;
+        for(Jugador j : getJugadores()){
+            if (j.getUser() == jugador.getUser())
+                esta = true;
+        }
+        return esta;
+    }
 }
