@@ -85,7 +85,7 @@ public class altaServlet extends MiServlet {
             }
                 Correo.enviarCorreo(jugador);
                 request.getSession().setAttribute("jugador","Bienvenido, "+user.toUpperCase());
-                gotoJSPPage(exitoAltaForm,request,response);
+                gotoJSPPage(menuForm,request,response);
             
                 
             
