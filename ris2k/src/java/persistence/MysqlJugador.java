@@ -38,10 +38,13 @@ public class MysqlJugador {
             try {
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
             } catch (InstantiationException ex) {
-                ex.printStackTrace();
+                log.error(ex.toString());
+                ex.printStackTrace();                
             } catch (IllegalAccessException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             } catch (ClassNotFoundException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             }
           conn =
@@ -75,10 +78,13 @@ public class MysqlJugador {
             try {
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
             } catch (InstantiationException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             } catch (IllegalAccessException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             } catch (ClassNotFoundException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             }
           conn =
@@ -123,10 +129,13 @@ public class MysqlJugador {
             try {
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
             } catch (InstantiationException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             } catch (IllegalAccessException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             } catch (ClassNotFoundException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             }
           conn =
@@ -161,10 +170,13 @@ public class MysqlJugador {
             try {
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
             } catch (InstantiationException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             } catch (IllegalAccessException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             } catch (ClassNotFoundException ex) {
+                log.error(ex.toString());
                 ex.printStackTrace();
             }
           conn =
