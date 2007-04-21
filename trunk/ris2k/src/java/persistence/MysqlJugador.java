@@ -27,7 +27,10 @@ public class MysqlJugador {
         PropertyConfigurator.configure("log4j.properties");
        
         //control de elementos nulos, los cuales no se pueden persistir
-        if ((user==null)||(password==null)||(email==null)) throw new ris2kException("Se introdujeron valores nulos");
+        if ((user==null)||(password==null)||(email==null)){ 
+            log.info("Se introdujeron valores nulos");
+            throw new ris2kException("Se introdujeron valores nulos");
+        }
        
         int contador=0;
         
@@ -96,12 +99,14 @@ public class MysqlJugador {
                 System.out.println("ROWCOUNT: "+rows);
                 if (rows != 0)                    
                 {
-                    System.out.println("USUARIO ACTUALMENTE VALIDO EN BD");
+                    //System.out.println("USUARIO ACTUALMENTE VALIDO EN BD");
+                    log.info("Usuario actualmente válido en Base de Datos");
                     return true;
                 }
                                 
          } catch (SQLException ex) {               
-                System.out.println("ACCESO INCORRECTO");
+                //System.out.println("ACCESO INCORRECTO");
+                log.info("Acceso incorrecto");
                 return false;
          } 
          log.info("Usuario no valido en la Base de Datos");
@@ -134,7 +139,8 @@ public class MysqlJugador {
                 stmt_inser = conn.createStatement();                 
                 String strSQL = ("DELETE FROM user WHERE user='"+ user +"'");
                 stmt_inser.executeUpdate(strSQL);
-                System.out.println("SE BORRARON LOS DATOS");
+                //System.out.println("SE BORRARON LOS DATOS");
+                log.info("Se borraron los datos del usuario: "+user);
                 return true;
                 		
          } catch (SQLException ex) {    
