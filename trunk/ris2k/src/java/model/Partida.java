@@ -167,4 +167,16 @@ public class Partida {
         }
         return esta;
     }
+    
+    public String getColorJugador(Jugador jugador)
+    throws ris2kException{
+        String color = null;
+        for(Jugador j : jugadores){
+            if (j.getUser().equals(jugador.getUser()))
+                color = j.getColor();
+        }
+        if (color == null)
+            throw new ris2kException("No se ha podido recoger el color del jugador " + jugador.getUser());
+        return color;
+    }
 }
