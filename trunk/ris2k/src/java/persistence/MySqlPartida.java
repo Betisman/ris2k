@@ -138,7 +138,7 @@ public class MySqlPartida {
                  throw new ris2kException("Usuario duplicado en la Base de Datos");
              }
              else{
-                 log.info("Error en la consulta de inserción de jugadores en la partida. " + ex.getMessage());
+                 log.info("Error en la consulta de inserción de jugadores en la partida. ");
                  throw new ris2kException("Error en la consulta de inserción de jugadores en la partida. " + ex.getMessage());
              }
          }    
@@ -166,6 +166,7 @@ public class MySqlPartida {
           conn =
           DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
         }catch(SQLException ex) {
+            log.error("Fallo en la conexión a la base de datos.");
             throw new ris2kException("Fallo en la conexión a la base de datos");
         }
         
@@ -201,6 +202,7 @@ public class MySqlPartida {
             System.out.println(partida.toString());
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
+            log.warn("Error al obtener la partida de la base de datos");
             throw new ris2kException("Error al obtener la partida "+ idPartida + " de la base de datos.");
         }catch(ris2kException ex){
             System.out.println(ex.getMessage());
@@ -217,6 +219,7 @@ public class MySqlPartida {
             }
         }catch(SQLException ex){
             System.out.println(ex.getMessage());System.out.println("falla aquí");
+            log.error("Error al obtener los jugadores de la partida");
             throw new ris2kException("Error al obtener los jugadores de la partida "+ idPartida + " de la base de datos.");
         }catch(ris2kException ex){
             System.out.println(ex.getMessage());
@@ -246,6 +249,7 @@ public class MySqlPartida {
           conn =
           DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
         }catch(SQLException ex) {
+            log.error("Fallo en la conexión a la base de datos.");
             throw new ris2kException("Fallo en la conexión a la base de datos");
         }
         
@@ -276,7 +280,8 @@ public class MySqlPartida {
             if (p.getNumJugadores() > p.getJugadores().size())
                 aux.add(p);
         }
-        System.out.println("partidas tras corte = " + String.valueOf(partidas.size()));
+        log.debug("partidas tras corte = " + String.valueOf(partidas.size()));
+        //System.out.println("partidas tras corte = " + String.valueOf(partidas.size()));
         return aux;
     }
     
