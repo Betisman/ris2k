@@ -14,13 +14,15 @@ package controller;
 import Exceptions.ris2kException;
 import java.io.*;
 import java.net.*;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import persistence.MysqlJugador;
 import model.Jugador;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 public class accesoServlet extends MiServlet {   
+    static Logger log = Logger.getLogger(accesoServlet.class);    
     String error1=null; //Defino este string para saber que tipo de error de validación se produce.
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException 
@@ -38,6 +40,7 @@ public class accesoServlet extends MiServlet {
             request.getSession().setAttribute("usuario", jugador);
                 /***********************************************************/
             gotoJSPPage(menuForm,request,response);
+            log.info("Acceso a RIS2K");
             return;
 
         } catch (ris2kException ex) {

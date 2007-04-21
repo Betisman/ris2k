@@ -6,9 +6,11 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
 import model.Jugador;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 public class Correo{
-    
+    static Logger log = Logger.getLogger(Correo.class);    
     public Correo(){        
     }
     
@@ -33,9 +35,11 @@ public class Correo{
             System.out.println("SE ENVIO EL CORREO DE REGISTRO.");
             return true;
         } catch (AddressException ex) {
+            log.warn("Se produjo un error con la dirección de correo al enviar el correo de registro");
             ex.printStackTrace();
             return false;
         } catch (MessagingException ex) {
+            log.warn("No se pudo enviar el correo de registro");
             ex.printStackTrace();
             return false;
         }
