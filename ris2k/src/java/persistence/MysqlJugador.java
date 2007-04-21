@@ -164,6 +164,7 @@ public class MysqlJugador {
           conn =
           DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
         }catch(SQLException ex) {
+            log.error("Fallo en la conexión a la base de datos");
             throw new ris2kException("Fallo en la conexión a la base de datos");
         }
         try{
@@ -184,6 +185,7 @@ public class MysqlJugador {
             return jugador;
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
+            log.error("Error al obtener el jugador "+ id + " de la base de datos.");
             throw new ris2kException("Error al obtener el jugador "+ id + " de la base de datos.");
         }
     }
