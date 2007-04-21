@@ -17,6 +17,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -25,6 +26,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import model.Tablero;
+import model.Territorio;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -164,4 +166,52 @@ public class SVGTablero {
             return null;
         }
     }
+    
+        public void setNumEjercitosTerritorio(Document document, Territorio territorio){
+        XPath xpath = XPathFactory.newInstance().newXPath();
+        String expression = "/svg/g/text[@id='num"+territorio.getId()+"']/tspan";
+        Node nodo = null;
+        try {
+            nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
+        } catch (XPathExpressionException ex) {
+            ex.printStackTrace();
+        }
+        System.out.println(territorio.getId()+": " + nodo.getTextContent());
+        nodo.setTextContent(String.valueOf(territorio.getNumEjercitos()));
+        System.out.println(territorio.getId()+": " + nodo.getTextContent());
+    }
+    
+    public void setOwnerTerritorio(Document document, Territorio territorio){
+        XPath xpath = XPathFactory.newInstance().newXPath();
+        String expression = "//path[@id='ejercito"+territorio.getId()+"']";
+        Node nodo = null;
+        try {
+            nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
+        } catch (XPathExpressionException ex) {
+            ex.printStackTrace();
+        }
+        System.out.println("color"+territorio.getId()+": " + nodo.getAttributes().getNamedItem("style").getTextContent());
+        String style = nodo.getAttributes().getNamedItem("style").getTextContent();
+        String cachitos[] = style.split(";");
+        cachitos[0] = "fill:"+territorio.getOwner().getColor()+"";
+        style = cachitos[0]+";"+cachitos[1]+";"+cachitos[2]+";"+cachitos[3];
+        System.out.println(style);
+        nodo.getAttributes().getNamedItem("style").setTextContent(style);
+    }
+    
+    public Document situarTodosEjercitos(Document document, List<Territorio> territorios)
+    throws ris2kException{
+        try{
+            XPath xpath = XPathFactory.newInstance().newXPath();
+            for (Territorio t : territorios){
+                setNumEjercitosTerritorio(document, t);
+                setOwnerTerritorio(document, t);
+            }
+            return document;
+        }catch(Exception e){
+            System.out.println("Excepción generada");
+            e.printStackTrace();
+        }
+    }
+    
 }
