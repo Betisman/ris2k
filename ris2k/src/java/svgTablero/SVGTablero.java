@@ -207,11 +207,11 @@ public class SVGTablero {
                 setNumEjercitosTerritorio(document, t);
                 setOwnerTerritorio(document, t);
             }
-            return document;
         }catch(Exception e){
             System.out.println("Excepción generada");
             e.printStackTrace();
         }
+        return document;
     }
     
 }
