@@ -30,7 +30,7 @@ import org.apache.log4j.PropertyConfigurator;
  * @author Carlos
  */
 public class MySqlPartida {
-    static Logger log = Logger.getLogger(MysqlJugador.class);    
+    static Logger log = Logger.getLogger(MySqlPartida.class);    
     /** Creates a new instance of MySqlPartida */
     public MySqlPartida() {
     }

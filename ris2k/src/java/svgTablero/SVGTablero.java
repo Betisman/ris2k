@@ -30,34 +30,40 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 /**
  *
  * @author Carlos
  */
 public class SVGTablero {
-    
+    static Logger log = Logger.getLogger(SVGTablero.class);    
     /** Creates a new instance of SVGTablero */
     public SVGTablero() {
     }
     
     public Document parsearFichero(File f)
     throws ris2kException{ 
-        System.out.println("en parsearFichero()");
-        System.out.println(f.getPath());
+        log.error("Problema al parsear el fichero SVG: "+f.getPath());
+        //System.out.println("en parsearFichero()");
+        //System.out.println(f.getPath());
         try {
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document document = builder.parse(new InputSource(new FileInputStream(f.getPath())));
             if (document == null)
-                System.out.println("DOCUMENT NULL en parsearFichero()");
+                log.error("No existe el documento a parsear");
+                //System.out.println("DOCUMENT NULL en parsearFichero()");
             else
-                System.out.println("DOCUMENT ¡¡NOT!! NULL en parsearFichero()");
+                log.info("Documento válido a parsear");
+                //System.out.println("DOCUMENT ¡¡NOT!! NULL en parsearFichero()");
             return document;
         } catch (ParserConfigurationException ex) {
             ex.printStackTrace();
             return null;
         } catch (IOException ex) {
             ex.printStackTrace();
+            log.error("Excepción al pasear el fichero");
             throw new ris2kException("IOException al parsear el fichero " + f.getName());
         } catch (SAXException ex) {
             ex.printStackTrace();
@@ -67,10 +73,11 @@ public class SVGTablero {
     
     public Document cambiarLinks(Document document, String servlet){
         System.out.println("Se encuentra en cambiarLinks()");
-        if (document == null) System.out.println("DOCUMENT NULL");
+        if (document == null) //System.out.println("DOCUMENT NULL"); 
+            log.info("Document NULL");
         try {
-            System.out.println("Bienvenido a cambiarLinks() EN TERRITORIOATACANTE");
-            
+            //System.out.println("Bienvenido a cambiarLinks() EN TERRITORIOATACANTE");
+            log.info("cambiarLinks en TerritorioAtacante");
             XPath xpath = XPathFactory.newInstance().newXPath();
 //            String expression = "//a";
             String expression = "//a";
@@ -78,8 +85,8 @@ public class SVGTablero {
             
             nodos = (NodeList) xpath.evaluate(expression, document, XPathConstants.NODESET);
             
-            System.out.println("numero de nodos = "+String.valueOf(nodos.getLength()));
-            
+            //System.out.println("numero de nodos = "+String.valueOf(nodos.getLength()));
+            log.info("numero de nodos = "+String.valueOf(nodos.getLength()));
             for(int i=0; i<nodos.getLength(); i++){
                 Node n = (Node)nodos.item(i);
                 String idTerritorio = n.getAttributes().getNamedItem("id").getTextContent();
@@ -134,11 +141,12 @@ public class SVGTablero {
     }
     
     public Document setRutaFondo(Document document, String ruta){
-        System.out.println("Se encuentra en setRutaFondo()");
+        //System.out.println("Se encuentra en setRutaFondo()");
+        log.info("setRutaFondo()");
         if (document == null) System.out.println("DOCUMENT NULL en setRutaFondo()");
         try {
-            System.out.println("Bienvenido a setRutaFondo() EN TERRITORIOATACANTE");
-            
+            //System.out.println("Bienvenido a setRutaFondo() EN TERRITORIOATACANTE");
+            log.info("Bienvenido a setRutaFondo() EN TERRITORIOATACANTE");
             XPath xpath = XPathFactory.newInstance().newXPath();
 //            String expression = "//a";
             String expression = "//image[@id='fondo']";
