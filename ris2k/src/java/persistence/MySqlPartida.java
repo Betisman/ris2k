@@ -22,13 +22,15 @@ import java.util.Vector;
 import model.Jugador;
 import model.Partida;
 import persistence.MysqlJugador;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 /**
  *
  * @author Carlos
  */
 public class MySqlPartida {
-    
+    static Logger log = Logger.getLogger(MysqlJugador.class);    
     /** Creates a new instance of MySqlPartida */
     public MySqlPartida() {
     }
@@ -38,9 +40,10 @@ public class MySqlPartida {
         Statement stmt=null; 
         ResultSet rs = null; 	
         Connection conn= null;
-        if (partida == null)
+        if (partida == null){
+            log.warn("Se introdujo null en vez de una partida válida");
             throw new ris2kException("Se introdujo null en vez de una partida válida. (MySqlPartida.java)");
-        
+        }
         /*recogemos los valores de la partida a persistir*/
         String idPartida = partida.getIdPartida();
         String nombre = partida.getNombre();  
@@ -53,9 +56,10 @@ public class MySqlPartida {
 //        Score score = partida.getScore();
        
         //control de elementos nulos, los cuales no se pueden persistir
-        if ((nombre==null)||(owner==null)||(jugadores==null))
+        if ((nombre==null)||(owner==null)||(jugadores==null)){
+            log.warn("Se introdujeron valores nulos");
             throw new ris2kException("Se introdujeron valores nulos");
-       
+        }
         int contador=0;
         
         try {
@@ -71,6 +75,7 @@ public class MySqlPartida {
           conn =
           DriverManager.getConnection("jdbc:mysql://localhost/ris2k?user=prueba&password=prueba");          
         }catch(SQLException ex) {
+            log.error("Fallo en la conexión a la base de datos");
             throw new ris2kException("Fallo en la conexión a la base de datos");
         }       
         try{ //insertamos una nueva Partida
@@ -88,13 +93,17 @@ public class MySqlPartida {
                 }
                 System.out.println("debugging: " + strSQLPartida);
                 stmt.executeUpdate(strSQLPartida);
-                System.out.println("SE INSERTARON LOS DATOS");                		
+                //System.out.println("SE INSERTARON LOS DATOS");     
+                log.info("Se insertaron los datos relativos a la partida");
          } catch (SQLException ex) {
-             if (ex.getMessage().contains("Duplicate entry"))
+             if (ex.getMessage().contains("Duplicate entry")){
+                log.info("Ya existe una partida con ese nombre");
                 throw new ris2kException("Ya existe una partida llamada '" + partida.getNombre()
                     + "' en la Base de Datos");
-             else
+             }else{
+                 log.warn("Error en la consulta de inserción de una nueva partida.");
                  throw new ris2kException("Error en la consulta de inserción de una nueva partida.");
+             }
          }
         try{ //insertamos los jugadores de la Partida
                 stmt = conn.createStatement();
@@ -108,23 +117,30 @@ public class MySqlPartida {
                 for(Jugador j : jugadores){
                     String strSQLPartida = ("INSERT INTO partida_user VALUES (" + idPartida
                             + ",'" + j.getUser() +"')");
-                    System.out.println("debugging: " + strSQLPartida);
+                    //System.out.println("debugging: " + strSQLPartida);
+                    log.debug("debugging: " + strSQLPartida);
                     try{
                         stmt.executeUpdate(strSQLPartida);
                     }catch(SQLException ex){
                         if (ex.getMessage().contains("Duplicate entry"))
-                            System.out.println("Duplicación al asociar el jugador " + j.getUser() + " a la partida " + idPartida);
+                            log.info("Duplicación al asociar el jugador " + j.getUser() + " a la partida " + idPartida);
+                            //System.out.println("Duplicación al asociar el jugador " + j.getUser() + " a la partida " + idPartida);
                     }
                     System.out.println("Insertado " + j.toString() + " en la partida " + partida.getIdPartida());
                 }
-                System.out.println("SE INSERTARON LOS DATOS");
+                log.info("Se insertaron los datos relativos a la partida");
+                //System.out.println("SE INSERTARON LOS DATOS");
                 stmt.close();
                 return idPartida;                		
          } catch (SQLException ex) {
-             if (ex.getMessage().contains("Duplicate entry"))
-                throw new ris2kException("Usuario duplicado en la Base de Datos");
-             else
+             if (ex.getMessage().contains("Duplicate entry")){
+                 log.info("Usuario duplicado en la base de datos"); 
+                 throw new ris2kException("Usuario duplicado en la Base de Datos");
+             }
+             else{
+                 log.info("Error en la consulta de inserción de jugadores en la partida. " + ex.getMessage());
                  throw new ris2kException("Error en la consulta de inserción de jugadores en la partida. " + ex.getMessage());
+             }
          }    
    }
     
