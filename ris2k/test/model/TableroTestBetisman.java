@@ -30,9 +30,9 @@ import svgTablero.SVGTablero;
  *
  * @author Carlos
  */
-public class TableroTest extends TestCase {
+public class TableroTestBetisman extends TestCase {
     
-    public TableroTest(String testName) {
+    public TableroTestBetisman(String testName) {
         super(testName);
     }
 
