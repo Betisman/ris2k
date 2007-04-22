@@ -1,5 +1,5 @@
 /*
- * MySqlPartidaTest_bis.java
+ * MySqlPartidaTest.java
  * JUnit based test
  *
  * Created on 21 de abril de 2007, 19:05
@@ -27,10 +27,10 @@ import persistence.MysqlJugador;
  *
  * @author Ramon
  */
-public class MySqlPartidaTest_bis extends TestCase {
+public class MySqlPartidaTest extends TestCase {
     List<String> idPartidas = new ArrayList();
    
-    public MySqlPartidaTest_bis(String testName) {
+    public MySqlPartidaTest(String testName) {
         super(testName);
     }
 

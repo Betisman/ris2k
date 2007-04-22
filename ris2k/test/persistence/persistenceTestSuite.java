@@ -48,21 +48,21 @@ public class persistenceTestSuite extends TestCase {
         mysqljugadorSuite.addTest(new MysqlJugadorTest("testGetJugadorInexistente"));
         
         TestSuite mysqlpartidaSuite = new TestSuite("persistenceTestSuite");
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaValida"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaValidaMuchos"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaNull"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaSinOwner"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaSinJugadores"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaDuplicada"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testGetPartidaValida"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testGetPartidaInexistente"));
-/*        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest_bis("testPersistirPartidaSinNombre"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaValida"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaValidaMuchos"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaNull"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinOwner"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinJugadores"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaDuplicada"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testGetPartidaValida"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testGetPartidaInexistente"));
+/*        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
+        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
    */     
         
         
