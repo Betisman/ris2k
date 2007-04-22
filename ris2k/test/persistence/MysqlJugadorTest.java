@@ -558,7 +558,7 @@ public class MysqlJugadorTest extends TestCase {
  
         try {
         result = MysqlJugador.getJugador(jugador.getUser());
-        assertEquals(jugador.getColor(), result.getColor());
+        assertEquals(jugador.getUser(), result.getUser());
         return;
         }
         catch(Exception ex){

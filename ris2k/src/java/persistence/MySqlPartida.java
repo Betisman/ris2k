@@ -102,7 +102,7 @@ public class MySqlPartida {
                     + "' en la Base de Datos");
              }else{
                  log.warn("Error en la consulta de inserción de una nueva partida.");
-                 throw new ris2kException("Error en la consulta de inserción de una nueva partida.");
+                 throw new ris2kException("Error en la consulta de inserción de una nueva partida: "+ ex.getMessage());
              }
          }
         try{ //insertamos los jugadores de la Partida
@@ -202,6 +202,7 @@ public class MySqlPartida {
             System.out.println(partida.toString());
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
+
             log.warn("Error al obtener la partida de la base de datos");
             throw new ris2kException("Error al obtener la partida "+ idPartida + " de la base de datos.");
         }catch(ris2kException ex){
