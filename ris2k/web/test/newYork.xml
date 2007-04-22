@@ -86,7 +86,7 @@
             <limita>JerseyCity</limita>
             <limita>SouthManhattan</limita>
             <limita>UpperNewYorkBay</limita>
-            <!--<limita>PortRichmond</limita>-->
+            <limita>PortRichmond</limita>
         </territorio>
         <territorio id="Union" nombre="Union">
             <limita>Essex</limita>
@@ -141,7 +141,7 @@
             <limita>UpperNewYorkBay</limita>
             <limita>LowerNewYorkBay</limita>
             <limita>Union</limita>
-            <!--<limita>Hudson</limita>-->
+            <limita>Hudson</limita>
         </territorio>
         <territorio id="MarinersHarbor" nombre="Mariners Harbor">
             <limita>PortRichmond</limita>
@@ -151,99 +151,191 @@
             <limita>Union</limita>
         </territorio>
         <territorio id="NewSpringville" nombre="New Springville">
-            <limita></limita>
-            <limita></limita>
-            <limita></limita>
+            <limita>PortRichmond</limita>
+            <limita>MarinersHarbor</limita>
+            <limita>LaTourettePark</limita>
         </territorio>
         <territorio id="SouthBeach" nombre="South Beach">
-            <limita></limita>
-            <limita></limita>
-            <limita></limita>
-            <limita></limita>
+            <limita>PortRichmond</limita>
+            <limita>LaTourettePark</limita>
+            <limita>PrincessBay</limita>
+            <limita>LowNewYorkBay</limita>
         </territorio>
         <territorio id="LaTourettePark" nombre="La Tourette Park">
-            <limita></limita>
-            <limita></limita>
-            <limita></limita>
-            <limita></limita>
+            <limita>MarinersHarbor</limita>
+            <limita>NewSpringville</limita>
+            <limita>SouthBeach</limita>
+            <limita>PrincessBay</limita>
         </territorio>
         <territorio id="PrincessBay" nombre="Princess Bay">
-            <limita></limita>
-            <limita></limita>
-            <limita></limita>
-            <limita></limita><!--???-->
+            <limita>MarinersHarbor</limita>
+            <limita>LaTourettePark</limita>
+            <limita>SouthBeach</limita>
+            <limita>RockawayPeninsula</limita>
         </territorio>
     </continente>
     <continente id="Bronx" nombre="Bronx" numRefuerzos="1">
         <territorio id="VanCortlandPark" nombre="Van Cortlandt Park">
-            <limita></limita><!-- A poner -->
+            <limita>BronxRiver</limita>
+            <limita>Bergen</limita>
+            <limita>Harlem</limita>
         </territorio>
         <territorio id="BronxRiver" nombre="Bronx River">
-            <limita></limita><!-- A poner -->
+            <limita>VanCortlandPark</limita>
+            <limita>Harlem</limita>
+            <limita>RiskersIsland</limita>
+            <limita>ThrogsNeck</limita>
+            <limita>PolhamBay</limita>
         </territorio>
         <territorio id="PolhamBay" nombre="Polham Bay">
-            <limita></limita><!-- A poner -->
+            <limita>BronxRiver</limita>
+            <limita>ThrogsNeck</limita>
+            <limita>EastQueens</limita>
         </territorio>
         <territorio id="ThrogsNeck" nombre="Throgs Neck">
-            <limita></limita><!-- A poner -->
+            <limita>PolhamBay</limita>
+            <limita>BronxRiver</limita>
+            <limita>RiskersIsland</limita>
+            <limita>Flushing</limita>
         </territorio>
         <territorio id="RiskersIsland" nombre="Riskers Island">
-            <limita></limita><!-- A poner -->
+            <limita>Harlem</limita>
+            <limita>BronxRiver</limita>
+            <limita>ThrogsNeck</limita>
+            <limita>Flushing</limita>
+            <limita>LaGuardia</limita>
         </territorio>
     </continente>
     <continente id="Brooklyn" nombre="Brooklyn" numRefuerzos="1">
         <territorio id="LowerNewYorkBay" nombre="Lower New York Bay">
-            <limita></limita><!-- A poner -->
+            <limita>SouthBeach</limita>
+            <limita>PortRichmond</limita>
+            <limita>UpperNewYorkBay</limita>
+            <limita>BoroughPark</limita>
+            <limita>SheepsheadBay</limita>
+            <limita>RockawayPeninsula</limita>
         </territorio>
         <territorio id="UpperNewYorkBay" nombre="Upper New York Bay">
-            <limita></limita><!-- A poner -->
+            <limita>LowerNewYorkBay</limita>
+            <limita>SouthManhattan</limita>
+            <limita>BrooklynHeights</limita>
+            <limita>Kensington</limita>
+            <limita>BoroughPark</limita>
+            <limita>Hudson</limita>
+            <limita>PortRichmond</limita>
         </territorio>
         <territorio id="BrooklynHeights" nombre="Brooklyn Heights">
-            <limita></limita><!-- A poner -->
+            <limita>SouthManhattan</limita>
+            <limita>Greenpoint</limita>
+            <limita>Kensington</limita>
+            <limita>UpperNewYorkBay</limita>
         </territorio>
         <territorio id="Greenpoint" nombre="Greenpoint">
-            <limita></limita><!-- A poner -->
+            <limita>SouthManhattan</limita>
+            <limita>CentralPark</limita>
+            <limita>LongIslandCity</limita>
+            <limita>EastNewYork</limita>
+            <limita>Kensington</limita>
+            <limita>BrooklynHeights</limita>
         </territorio>
         <territorio id="Kensington" nombre="Kensington">
-            <limita></limita><!-- A poner -->
+            <limita>BrooklynHeights</limita>
+            <limita>Greenpoint</limita>
+            <limita>EastNewYork</limita>
+            <limita>BoroughPark</limita>
+            <limita>UpperNewYorkBay</limita>
         </territorio>
         <territorio id="EastNewYork" nombre="East New York">
-            <limita></limita><!-- A poner -->
+            <limita>Kensington</limita>
+            <limita>Greenpoint</limita>
+            <limita>LongIslandCity</limita>
+            <limita>Jamaica</limita>
+            <limita>JFK</limita>
+            <limita>JamaicaBay</limita>
+            <limita>SheepsheadBay</limita>
+            <limita>BoroughPark</limita>
         </territorio>
         <territorio id="BoroughPark" nombre="Borough Park">
-            <limita></limita><!-- A poner -->
+            <limita>Kensington</limita>
+            <limita>EastNewYork</limita>
+            <limita>SheepsheadBay</limita>
+            <limita>LowerNewYorkBay</limita>
+            <limita>UpperNewYorkBay</limita>
         </territorio>
         <territorio id="SheepsheadBay" nombre="Sheepshead Bay">
-            <limita></limita><!-- A poner -->
+            <limita>LowerNewYorkBay</limita>
+            <limita>BoroughPark</limita>
+            <limita>EastNewYorkBay</limita>
+            <limita>JamaicaBay</limita>
+            <limita>RockawayPeninsula</limita>
         </territorio>
         <territorio id="JamaicaBay" nombre="Jamaica Bay">
-            <limita></limita><!-- A poner -->
+            <limita>SheepsheadBay</limita>
+            <limita>EastNewYork</limita>
+            <limita>RockawayPeninsula</limita>
+            <limita>JFK</limita>
         </territorio>
     </continente>
     <continente id="Queens" nombre="Queens" numRefuerzos="1">
         <territorio id="LaGuardia" nombre="La Guardia Airport">
-            <limita></limita><!-- A poner -->
+            <limita>CentralPark</limita>
+            <limita>Harlem</limita>
+            <limita>RiskersIsland</limita>
+            <limita>Flushing</limita>
+            <limita>Jamiaca</limita>
+            <limita>LongIslandCity</limita>
+            <limita>JFK</limita>
+            <limita>Newark</limita>
         </territorio>
         <territorio id="LongIslandCity" nombre="Long Island City">
-            <limita></limita><!-- A poner -->
+            <limita>CentralPark</limita>
+            <limita>LaGuardia</limita>
+            <limita>Jamaica</limita>
+            <limita>EastNewYork</limita>
+            <limita>Greenpoint</limita>
         </territorio>
         <territorio id="Flushing" nombre="Flushing">
-            <limita></limita><!-- A poner -->
+            <limita>RiskersIsland</limita>
+            <limita>ThrogsNeck</limita>
+            <limita>EastQueens</limita>
+            <limita>Jamaica</limita>
+            <limita>LaGuardia</limita>
         </territorio>
         <territorio id="Jamaica" nombre="Jamaica">
-            <limita></limita><!-- A poner -->
+            <limita>LaGuardia</limita>
+            <limita>Flushing</limita>
+            <limita>EastQueens</limita>
+            <limita>QueensVillage</limita>
+            <limita>JFK</limita>
+            <limita>EastNewYork</limita>
+            <limita>LongIslandCity</limita>
         </territorio>
         <territorio id="EastQueens" nombre="East Queens">
-            <limita></limita><!-- A poner -->
+            <limita>PolhamBay</limita>
+            <limita>Flushing</limita>
+            <limita>Jamaica</limita>
+            <limita>QueensVillage</limita>
         </territorio>
         <territorio id="QueensVillage" nombre="Queens Village">
-            <limita></limita><!-- A poner -->
+            <limita>EastQueens</limita>
+            <limita>Jamaica</limita>
+            <limita>JFK</limita>
         </territorio>
         <territorio id="JFK" nombre="JFK Airport">
-            <limita></limita><!-- A poner -->
+            <limita>Jamaica</limita>
+            <limita>QueensVillage</limita>
+            <limita>RockawayPeninsula</limita>
+            <limita>JamaicaBay</limita>
+            <limita>EastNewYork</limita>
+            <limita>LaGuardia</limita>
+            <limita>Newark</limita>
         </territorio>
         <territorio id="RockawayPeninsula" nombre="Rockaway Peninsula">
-            <limita></limita><!-- A poner -->
+            <limita>JFK</limita>
+            <limita>JamaicaBay</limita>
+            <limita>SheepsheadBay</limita>
+            <limita>LowerNewYorkBay</limita>
+            <limita>PrincessBay</limita>
         </territorio>
     </continente>
 </root>
