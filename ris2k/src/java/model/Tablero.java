@@ -153,7 +153,7 @@ System.out.println("numero de continentes = "+String.valueOf(nodos.getLength()))
                     for(int i = 0; i < nodos.getLength(); i++){
                         Node n = (Node)nodos.item(i);
                         Territorio conex = new Territorio();
-                        t.getConexiones().add(this.getTerritorio(n.getNodeValue()));
+                        t.getConexiones().add(this.getTerritorio(n.getTextContent()));
                     }
                 }
             }
@@ -172,7 +172,7 @@ System.out.println("numero de continentes = "+String.valueOf(nodos.getLength()))
         Territorio objetivo = null;
         for(Continente c : continentes){
             for(Territorio t : c.getTerritorios()){
-                if (t.getId() == idTerritorio)
+                if (t.getId().equals(idTerritorio))
                     objetivo = t;
             }
         }
