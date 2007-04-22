@@ -150,6 +150,7 @@ public class Partida {
                  int pos = (int)(Math.round(Math.random()*(territorios.size()-1)));
                     Territorio t = territorios.remove(pos);
                     tablero.getTerritorio(t.getId()).setOwner(j);
+                    tablero.getTerritorio(t.getId()).setNumEjercitos(1);
                     i++; System.out.println(i + ". Territorio " + t.getNombre() + " asignado a " + j.getUser() + ".");
                 }
             }

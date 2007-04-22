@@ -130,7 +130,7 @@ public class SVGTablero {
     
     public void stringToSvgFile(String str, String ruta){
         /*** temporal */
-        ruta = "C:/universidad/Quinto/IS2/temp/ris2k/web/images/tablero.svg";
+//        ruta = "C:/universidad/Quinto/IS2/temp/ris2k/web/images/tablero.svg";
         /****/
         FileWriter svgFile = null;
         try {
@@ -167,26 +167,33 @@ public class SVGTablero {
         }
     }
     
-        public void setNumEjercitosTerritorio(Document document, Territorio territorio){
+    public Document setNumEjercitosTerritorio(Document document, Territorio territorio)
+    throws ris2kException{
         XPath xpath = XPathFactory.newInstance().newXPath();
         String expression = "/svg/g/text[@id='num"+territorio.getId()+"']/tspan";
         Node nodo = null;
         try {
             nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
+            if (nodo == null)
+                throw new ris2kException("nodo == null en num"+territorio.getId());
         } catch (XPathExpressionException ex) {
             ex.printStackTrace();
         }
         System.out.println(territorio.getId()+": " + nodo.getTextContent());
         nodo.setTextContent(String.valueOf(territorio.getNumEjercitos()));
         System.out.println(territorio.getId()+": " + nodo.getTextContent());
+        return document;
     }
     
-    public void setOwnerTerritorio(Document document, Territorio territorio){
+    public Document setOwnerTerritorio(Document document, Territorio territorio)
+    throws ris2kException{
         XPath xpath = XPathFactory.newInstance().newXPath();
         String expression = "//path[@id='ejercito"+territorio.getId()+"']";
         Node nodo = null;
         try {
             nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
+            if (nodo == null)
+                throw new ris2kException("nodo == null en ejercito"+territorio.getId());
         } catch (XPathExpressionException ex) {
             ex.printStackTrace();
         }
@@ -197,6 +204,7 @@ public class SVGTablero {
         style = cachitos[0]+";"+cachitos[1]+";"+cachitos[2]+";"+cachitos[3];
         System.out.println(style);
         nodo.getAttributes().getNamedItem("style").setTextContent(style);
+        return document;
     }
     
     public Document situarTodosEjercitos(Document document, List<Territorio> territorios)
@@ -204,11 +212,13 @@ public class SVGTablero {
         try{
             XPath xpath = XPathFactory.newInstance().newXPath();
             for (Territorio t : territorios){
-                setNumEjercitosTerritorio(document, t);
-                setOwnerTerritorio(document, t);
+                document = setNumEjercitosTerritorio(document, t);
+                document = setOwnerTerritorio(document, t);
             }
+        }catch(ris2kException ex){
+            System.out.println("ris2kException : " + ex.getMessage());
         }catch(Exception e){
-            System.out.println("Excepción generada");
+            System.out.println("Excepción generada en situarTodosEjercitos()");
             e.printStackTrace();
         }
         return document;
