@@ -78,11 +78,16 @@ public class altaServlet extends MiServlet {
             jugador.setEmail(email);
             try {
                 MysqlJugador.persistirJugador(jugador);
+                request.getSession().setAttribute("usuario", jugador);
             } catch (ris2kException ex) {
                 
                 request.getSession().setAttribute("errorRis2k",ex.getMessage());
                 gotoJSPPage(errorAltaForm,request,response);
+            } catch (Exception ex){
+                request.getSession().setAttribute("errorRis2k","Error inesperado: "+ex.getMessage());
+                gotoJSPPage(errorAltaForm,request,response);
             }
+            
                 Correo.enviarCorreo(jugador);
                 request.getSession().setAttribute("jugador","Bienvenido, "+user.toUpperCase());
                 gotoJSPPage(menuForm,request,response);
