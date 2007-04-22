@@ -36,7 +36,17 @@ public class TestTablero extends TestCase {
     public void testMostrar(){
         Tablero tablero = new Tablero();
 //        tablero.setMapa("web/test/dibujo.xml");
-        assert(tablero.mostrar());
+        try{
+            tablero.mostrar();
+        }
+        catch (ris2kException ex)
+        {
+            fail(ex.getMessage())
+        }
+        catch (Exception e)
+        {
+            fail("se encontró una excepción inesperada: "+ e.getMessage());
+        }
     }
     /*
     public void testCargarTerritorios(){
@@ -45,7 +55,7 @@ public class TestTablero extends TestCase {
      */
     
     public void testGetTerritorio(){
-        System.out.println(">>> getTerritorio()");
+        System.out.println(">>> testgetTerritorio()");
         Tablero tablero = new Tablero();
         Continente c1 = new Continente();
         Continente c2 = new Continente();
@@ -78,5 +88,5 @@ public class TestTablero extends TestCase {
         
         this.assertEquals(objetivo, tablero.getTerritorio("territorio4"));
     }
-
+ 
 }

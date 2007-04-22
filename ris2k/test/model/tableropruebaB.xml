@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : newYork.xml
+    Created on : 26 de febrero de 2007, 20:16
+    Author     : Carlos Jiménez Gómez
+    Description:
+        Purpose of the document follows.
+-->
+
+<root>
+    <continente id="NewJersey" nombre="New Jersey" numRefuerzos="1">
+        <territorio id="linkprueba?territorio=Ringwood" nombre="Ringwood">
+            <limita>Paterson</limita>
+            <limita>Morris</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=Paterson" nombre="Paterson">
+            <limita>Ringwood</limita>
+            <limita>Morris</limita>
+            <limita>Passaic</limita>
+            <limita>Bergen</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=Bergen" nombre="Bergen">
+            <limita>Paterson</limita>
+            <limita>Passaic</limita>
+            <limita>Hackensack</limita>
+            <limita>VanCortlandPark</limita>
+            <limita>Harlem</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=Morris" nombre="Morris">
+            <limita>Ringwood</limita>
+            <limita>Paterson</limita>
+            <limita>Passaic</limita>
+            <limita>Bloomfield</limita>
+            <limita>Essex</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=Passaic" nombre="Passaic">
+            <limita>Paterson</limita>
+            <limita>Bergen</limita>
+            <limita>Hackensack</limita>
+            <limita>Bloomfield</limita>
+            <limita>Morris</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=Hackensack" nombre="Hackensack">
+            <limita>Bergen</limita>
+            <limita>Passaic</limita>
+            <limita>Bloomfield</limita>
+            <limita>JerseyCity</limita>
+            <limita>Harlem</limita>
+            <limita>WestManhattan</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=Essex" nombre="Essex">
+            <limita>Morris</limita>
+            <limita>Bloomfield</limita>
+            <limita>NewarkAirport</limita>
+            <limita>Union</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=Bloomfield" nombre="Bloomfield">
+            <limita>Morris</limita>
+            <limita>Passaic</limita>
+            <limita>Hackensack</limita>
+            <limita>JerseyCity</limita>
+            <limita>Hudson</limita>
+            <limita>NewarkAirport</limita>
+            <limita>Essex</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=JerseyCity" nombre="Jersey City">
+            <limita>Hackensack</limita>
+            <limita>Bloomfield</limita>
+            <limita>Hudson</limita>
+            <limita>WestManhattan</limita>
+            <limita>SouthManhattan</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=NewarkAirport" nombre="Newark Airport">
+            <limita>Essex</limita>
+            <limita>Bloomfield</limita>
+            <limita>Hudson</limita>
+            <limita>Union</limita>
+            <limita>PortRichmond</limita>
+            <limita>JFKAirport</limita>
+            <limita>LaGuardiaAirport</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=Hudson" nombre="Hudson">
+            <limita>NewarkAirport</limita>
+            <limita>Bloomfield</limita>
+            <limita>JerseyCity</limita>
+            <limita>SouthManhattan</limita>
+            <limita>UpperNewYorkBay</limita>
+            <!--<limita>PortRichmond</limita>-->
+        </territorio>
+        <territorio id="linkprueba?territorio=Union" nombre="Union">
+            <limita>Essex</limita>
+            <limita>NewarkAirport</limita>
+            <limita>PortRichmond</limita>
+            <limita>MarinersHarbor</limita>
+        </territorio>
+    </continente>
+    <continente id="Manhattan" nombre="Manhattan" numRefuerzos="1">
+        <territorio id="linkprueba?territorio=Harlem" nombre="Harlem">
+            <limita>WestManhattan</limita>
+            <limita>CentralPark</limita>
+            <limita>Bergen</limita>
+            <limita>Hackensack</limita>
+            <limita>VanCortlandPark</limita>
+            <limita>BronxRiver</limita>
+            <limita>RiskersIslands</limita>
+            <limita>LaGuardiaAirport</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=WestManhattan" nombre="West Manhattan">
+            <limita>Harlem</limita>
+            <limita>CentralPark</limita>
+            <limita>SouthManhattan</limita>
+            <limita>Hackensack</limita>
+            <limita>JerseyCity</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=CentralPark" nombre="Central Park">
+            <limita>Harlem</limita>
+            <limita>WestManhattan</limita>
+            <limita>SouthManhattan</limita>
+            <limita>LaGuardiaAirport</limita>
+            <limita>LongIslandCity</limita>
+            <limita>Greenpoint</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=SouthManhattan" nombre="South Manhattan">
+            <limita>WestManhattan</limita>
+            <limita>CentralPark</limita>
+            <limita>JerseyCity</limita>
+            <limita>Hudson</limita>
+            <limita>UpperNewYorkBay</limita>
+            <limita>BrooklynHeights</limita>
+            <limita>Greenpoint</limita>
+        </territorio>
+    </continente>
+    <continente id="StatenIsland" nombre="Staten Island" numRefuerzos="1">
+        <territorio id="linkprueba?territorio=PortRichmond" nombre="Port Richmond">
+            <limita>MarinersHarbor</limita>
+            <limita>NewSpringville</limita>
+            <limita>LaTourettePark</limita>
+            <limita>SouthBeach</limita>
+            <limita>NewarkAirport</limita>
+            <limita>UpperNewYorkBay</limita>
+            <limita>LowerNewYorkBay</limita>
+            <limita>Union</limita>
+            <!--<limita>Hudson</limita>-->
+        </territorio>
+        <territorio id="linkprueba?territorio=MarinersHarbor" nombre="Mariners Harbor">
+            <limita>PortRichmond</limita>
+            <limita>NewSpringville</limita>
+            <limita>LaTourettePark</limita>
+            <limita>PrincessBay</limita>
+            <limita>Union</limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=NewSpringville" nombre="New Springville">
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=SouthBeach" nombre="South Beach">
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=LaTourettePark" nombre="La Tourette Park">
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+        </territorio>
+        <territorio id="linkprueba?territorio=PrincessBay" nombre="Princess Bay">
+            <limita></limita>
+            <limita></limita>
+            <limita></limita>
+            <limita></limita><!--???-->
+        </territorio>
+    </continente>
+    <continente id="Bronx" nombre="Bronx" numRefuerzos="1">
+        <territorio id="linkprueba?territorio=VanCortlandtPark" nombre="Van Cortlandt Park">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=BronxRiver" nombre="Bronx River">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=PolhamBayPark" nombre="Polham Bay Park">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=ThrogsNeck" nombre="Throgs Neck">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=RiskersIsland" nombre="Riskers Island">
+            <limita></limita><!-- A poner -->
+        </territorio>
+    </continente>
+    <continente id="linkprueba?territorio=Brooklyn" nombre="Brooklyn" numRefuerzos="1">
+        <territorio id="LowerNewYorkBay" nombre="Lower New York Bay">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=UpperNewYorkBay" nombre="Upper New York Bay">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=BrooklynHeights" nombre="Brooklyn Heights">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=GreenPoint" nombre="Greenpoint">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=Kensington" nombre="Kensington">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=EastNewYork" nombre="East New York">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=BoroughPark" nombre="Borough Park">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=SheepsheadBay" nombre="Sheepshead Bay">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=JamaicaBay" nombre="Jamaica Bay">
+            <limita></limita><!-- A poner -->
+        </territorio>
+    </continente>
+    <continente id="Queens" nombre="Queens" numRefuerzos="1">
+        <territorio id="linkprueba?territorio=LaGuardiaAirport" nombre="La Guardia Airport">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=LongIslandCity" nombre="Long Island City">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=Flushing" nombre="Flushing">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=Jamaica" nombre="Jamaica">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=EastQueens" nombre="East Queens">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=QueensVillage" nombre="Queens Village">
+            <limita></limita><!-- A poner -->
+        </territorio>
+        <territorio id="linkprueba?territorio=JFK Airport" nombre="JFK Airport">
+            <limita></limita><!-- A poner -->
+        </territorio> 
+    </continente>
+</root>

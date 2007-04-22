@@ -56,10 +56,10 @@ public class Tablero {
         this.continentes = continentes;
     }
     
-    public boolean mostrar(){
-        if (mapa == null){
-            return true;
-        }else return false;
+    public boolean mostrar()throws ris2kException{
+        if (mapa == null) return true;
+        else throw new ris2kException("No se pudo mostrar el tablero");
+        
     }
     
     public void cambiarLinksTerritorios(String newLink){
@@ -67,7 +67,7 @@ public class Tablero {
         try{
             System.out.println("Bienvenido a cambiarLinksTerritorios()");
             File f = new File(this.getMapa());
-System.out.println("ABSOLUTE ROUTA: " + f.getAbsolutePath());
+            System.out.println("ABSOLUTE ROUTA: " + f.getAbsolutePath());
             if (f.exists()){
                 System.out.println("existe el fichero del mapa... " + f.getPath());
             }else{

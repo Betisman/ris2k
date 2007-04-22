@@ -8,6 +8,8 @@
 package persistence;
 
 import junit.framework.*;
+import persistence.MySqlPartidaTest;
+import persistence.MysqlJugadorTest;
 
 /**
  *
@@ -31,43 +33,34 @@ public class persistenceTestSuite extends TestCase {
     public static Test suite() {
         TestSuite suite = new TestSuite("persistenceTestSuite");
         
-        TestSuite mysqljugadorSuite = new TestSuite("persistenceTestSuite");
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testPersistirJugadorValido"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testPersistirJugadorValidoMuchos"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testPersistirJugadorNulo"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testPersistirJugadorSinNombre"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testPersistirJugadorSinPassword"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testPersistirJugadorSinEmail"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testPersistirJugadorDuplicado"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testBorrarJugador"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testValidarJugadorValido"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testValidarJugadorInexistente"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testValidarJugadorPasswordErroneo"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testValidarJugadorVacio"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testGetJugadorValido"));
-        mysqljugadorSuite.addTest(new MysqlJugadorTest("testGetJugadorInexistente"));
+        //mysqljugador
+        suite.addTest(new MysqlJugadorTest("testPersistirJugadorValido"));
+        suite.addTest(new MysqlJugadorTest("testPersistirJugadorValidoMuchos"));
+        suite.addTest(new MysqlJugadorTest("testPersistirJugadorNulo"));
+        suite.addTest(new MysqlJugadorTest("testPersistirJugadorSinNombre"));
+        suite.addTest(new MysqlJugadorTest("testPersistirJugadorSinPassword"));
+        suite.addTest(new MysqlJugadorTest("testPersistirJugadorSinEmail"));
+        suite.addTest(new MysqlJugadorTest("testPersistirJugadorDuplicado"));
+        suite.addTest(new MysqlJugadorTest("testBorrarJugador"));
+        suite.addTest(new MysqlJugadorTest("testValidarJugadorValido"));
+        suite.addTest(new MysqlJugadorTest("testValidarJugadorInexistente"));
+        suite.addTest(new MysqlJugadorTest("testValidarJugadorPasswordErroneo"));
+        suite.addTest(new MysqlJugadorTest("testValidarJugadorVacio"));
+        suite.addTest(new MysqlJugadorTest("testGetJugadorValido"));
+        suite.addTest(new MysqlJugadorTest("testGetJugadorInexistente"));
         
-        TestSuite mysqlpartidaSuite = new TestSuite("persistenceTestSuite");
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaValida"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaValidaMuchos"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaNull"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinOwner"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinJugadores"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaDuplicada"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testGetPartidaValida"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testGetPartidaInexistente"));
-/*        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
-        mysqlpartidaSuite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
-   */     
+        //mysqlpartida
+        suite.addTest(new MySqlPartidaTest("testPersistirPartidaValida"));
+        suite.addTest(new MySqlPartidaTest("testPersistirPartidaValidaMuchos"));
+        suite.addTest(new MySqlPartidaTest("testPersistirPartidaNull"));
+        suite.addTest(new MySqlPartidaTest("testPersistirPartidaSinNombre"));
+        suite.addTest(new MySqlPartidaTest("testPersistirPartidaSinOwner"));
+        suite.addTest(new MySqlPartidaTest("testPersistirPartidaSinJugadores"));
+        suite.addTest(new MySqlPartidaTest("testPersistirPartidaDuplicada"));
+        suite.addTest(new MySqlPartidaTest("testGetPartidaValida"));
+        suite.addTest(new MySqlPartidaTest("testGetPartidaInexistente"));
         
         
- //       suite.addTest(mysqljugadorSuite);
-        suite.addTest(mysqlpartidaSuite);
         return suite;
     }
     

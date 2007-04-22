@@ -30,9 +30,9 @@ import svgTablero.SVGTablero;
  *
  * @author Carlos
  */
-public class TableroTestBetisman extends TestCase {
+public class TableroTest extends TestCase {
     
-    public TableroTestBetisman(String testName) {
+    public TableroTest(String testName) {
         super(testName);
     }
 
@@ -43,106 +43,72 @@ public class TableroTestBetisman extends TestCase {
     protected void tearDown() throws Exception {
     }
 
-    /**
-     * Test of getMapa method, of class model.Tablero.
-     */
-    public void testGetMapa() {
-        System.out.println("getMapa");
-        
-        Tablero instance = new Tablero();
-        
-        String expResult = "";
-        String result = instance.getMapa();
-        assertEquals(expResult, result);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+   
+    
 
-    /**
-     * Test of setMapa method, of class model.Tablero.
-     */
-    public void testSetMapa() {
-        System.out.println("setMapa");
-        
-        String mapa = "";
-        Tablero instance = new Tablero();
-        
-        instance.setMapa(mapa);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getContinentes method, of class model.Tablero.
-     */
-    public void testGetContinentes() {
-        System.out.println("getContinentes");
-        
-        Tablero instance = new Tablero();
-        
-        List<Continente> expResult = null;
-        List<Continente> result = instance.getContinentes();
-        assertEquals(expResult, result);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setContinentes method, of class model.Tablero.
-     */
-    public void testSetContinentes() {
-        System.out.println("setContinentes");
-        
-        List<Continente> continentes = null;
-        Tablero instance = new Tablero();
-        
-        instance.setContinentes(continentes);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
 
     /**
      * Test of mostrar method, of class model.Tablero.
      */
     public void testMostrar() {
-        System.out.println("mostrar");
+        System.out.println(">>> test mostrar");
         
         Tablero instance = new Tablero();
-        
-        boolean expResult = true;
-        boolean result;
-        try {
-            result = instance.mostrar();
-        } catch (ris2kException ex) {
-            fail(ex.getMessage());
+        try{
+            instance.mostrar();
         }
-        
+        catch (ris2kException r)
+        {
+            fail(r.getMessage());
+        }
+        catch (Exception e)
+        {
+            fail("se encontró una excepción inesperada: "+e.getMessage());
+        }
     }
 
     /**
      * Test of cambiarLinksTerritorios method, of class model.Tablero.
      */
     public void testCambiarLinksTerritorios() {
-        System.out.println("cambiarLinksTerritorios");
+        System.out.println(">>> testcambiarLinksTerritorios");
         
-        String newLink = "";
-        Tablero instance = new Tablero();
+        String newLink = "linkprueba";
+        Tablero result = new Tablero();
+        Tablero expected = new Tablero();
         
-        instance.cambiarLinksTerritorios(newLink);
+        try
+        {
+          result.cargarTerritorios("test/model/tableropruebaA.xml");
+        }
+        catch (Exception ex)
+        {
+           throw new Error("ERROR EN CARGAR TERRITORIOS");
+        }
         
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        try
+        {
+          expected.cargarTerritorios("test/model/tableropruebaB.xml");
+        }
+        catch (Exception ex)
+        {
+           throw new Error("ERROR EN CARGAR TERRITORIOS");
+        }
+
+ 
+        result.cambiarLinksTerritorios(newLink);
+        
+        assertEquals(expected,result);
+
+
     }
 
     /**
      * Test of cargarTerritorios method, of class model.Tablero.
      */
     public void testCargarTerritorios() {
-        System.out.println("cargarTerritorios");
+               System.out.println(">>> cargarTerritorios");
         
         String infoXml = "web/test/newYorkInfoTest1.xml";
         Tablero instance = new Tablero();
@@ -200,6 +166,7 @@ public class TableroTestBetisman extends TestCase {
         
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+    
     }
 
     /**
@@ -211,12 +178,29 @@ public class TableroTestBetisman extends TestCase {
         String idTerritorio = "";
         Tablero instance = new Tablero();
         
-        Territorio expResult = null;
-        Territorio result = instance.getTerritorio(idTerritorio);
+        try
+        {
+          instance.cargarTerritorios("test/model/tableropruebaA.xml");
+        }
+        catch (Exception ex)
+        {
+           throw new Error("ERROR EN CARGAR TERRITORIOS");
+        }
+        
+        
+        Territorio expResult = new Territorio();
+        expResult.setId("JFK Airport");
+        expResult.setNombre("JFK Airport");
+        expResult.setConexiones(null);
+        expResult.setNumEjercitos(0);
+        expResult.setOwner(null);
+        
+        Territorio result = new Territorio();
+        result = instance.getTerritorio("JFK Airport");
+        
+        
         assertEquals(expResult, result);
         
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
     public void testGetTodosLosTerritorios(){
@@ -234,6 +218,87 @@ public class TableroTestBetisman extends TestCase {
             for(Territorio tb : t.getConexiones())
                 System.out.println("\t"+tb.getNombre()+" ("+tb.getId()+")");       
         }
+    }
+
+    /**
+     * Test of toString method, of class model.Tablero.
+     */
+    public void testToString() {
+        System.out.println("toString");
+        
+        Tablero instance = new Tablero();
+        
+        String expResult = "";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of numTerritoriosTotal method, of class model.Tablero.
+     */
+    public void testNumTerritoriosTotal() {
+        System.out.println("numTerritoriosTotal");
+        
+        Tablero instance = new Tablero();
+        
+        int expResult = 0;
+        int result = instance.numTerritoriosTotal();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of numTerritoriosContinente method, of class model.Tablero.
+     */
+    public void testNumTerritoriosContinente() {
+        System.out.println("numTerritoriosContinente");
+        
+        Continente c = null;
+        Tablero instance = new Tablero();
+        
+        int expResult = 0;
+        int result = instance.numTerritoriosContinente(c);
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of numContinentes method, of class model.Tablero.
+     */
+    public void testNumContinentes() {
+        System.out.println("numContinentes");
+        
+        Tablero instance = new Tablero();
+        
+        int expResult = 0;
+        int result = instance.numContinentes();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getTodosTerritorios method, of class model.Tablero.
+     */
+    public void testGetTodosTerritorios() {
+        System.out.println("getTodosTerritorios");
+        
+        Tablero instance = new Tablero();
+        
+        List<Territorio> expResult = null;
+        List<Territorio> result = instance.getTodosTerritorios();
+        assertEquals(expResult, result);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }
