@@ -175,7 +175,7 @@
         </territorio>
     </continente>
     <continente id="Bronx" nombre="Bronx" numRefuerzos="1">
-        <territorio id="VanCortlandPark" nombre="Van Cortlandt Park">
+        <territorio id="VanCortlandPark" nombre="Van Cortland Park">
             <limita>BronxRiver</limita>
             <limita>Bergen</limita>
             <limita>Harlem</limita>
