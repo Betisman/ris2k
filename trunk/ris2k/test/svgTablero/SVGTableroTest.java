@@ -207,7 +207,7 @@ public class SVGTableroTest extends TestCase {
             svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
 
             // TODO review the generated test code and remove the default call to fail.
-            fail("The test case is a prototype.");
+//            fail("The test case is a prototype.");
         } catch (ris2kException ex) {
             System.out.println("ris2kException: "+ex.getMessage());
         }catch(Exception ex){

@@ -5,8 +5,11 @@
  * Created on 21 de abril de 2007, 18:34
  */
 
+
 import junit.framework.*;
+import model.modelTestSuite;
 import persistence.persistenceTestSuite;
+import svgTablero.SVGTableroTestSuite;
 
 /**
  *
@@ -29,7 +32,11 @@ public class GlobalSuite extends TestCase {
      */
     public static Test suite() {
         TestSuite suite = new TestSuite("GlobalSuite");
+        
         suite.addTest(new persistenceTestSuite("suite"));
+        suite.addTest(new modelTestSuite("suite"));
+        suite.addTest(new SVGTableroTestSuite("suite"));
+        
         return suite;
     }
     
