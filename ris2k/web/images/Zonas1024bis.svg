@@ -106,6 +106,8 @@
          d="M 211.36967,257.24685 L 207.61095,238.45324 L 223.58551,212.14219 L 230.16328,212.14219 L 224.52519,204.62475 L 233.922,203.68506 L 242.37912,194.28826 L 273.38858,188.65018 L 295.00123,189.58986 L 326.95037,205.56443 L 284.66474,276.98014 L 292.18219,276.98014 L 288.42347,295.77375 L 270.56954,289.19599 L 240.49976,295.77375 L 224.52519,292.01503 L 222.64584,280.73887 L 205.73159,280.73887 L 205.73159,276.04046 L 211.36967,257.24685 z "
          style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.54881418px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0"
          id="path10011" />
+<set attributeName="fill" from="#000000" to="#ffffff" begin="mouseover" end="mouseout"/>
+<set attributeName="fill-opacity" from="0" to="0.3" begin="mouseover" end="mouseout"/>
     </a>
     <a
        xlink:href="tableroMenu.jsp?territorio=Union"
@@ -444,7 +446,7 @@
        d="M 155.81035 65.919769 A 14.553714 11.129311 0 1 1  126.70292,65.919769 A 14.553714 11.129311 0 1 1  155.81035 65.919769 z"
        transform="translate(92.458879,47.941644)"
        style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       id="ejercitoPasaic" />
+       id="ejercitoPassaic" />
     <path
        d="M 155.81035 65.919769 A 14.553714 11.129311 0 1 1  126.70292,65.919769 A 14.553714 11.129311 0 1 1  155.81035 65.919769 z"
        transform="translate(-83.897885,187.48607)"
@@ -514,7 +516,7 @@
        d="M 155.81035 65.919769 A 14.553714 11.129311 0 1 1  126.70292,65.919769 A 14.553714 11.129311 0 1 1  155.81035 65.919769 z"
        transform="translate(319.32559,11.985407)"
        style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       id="ejercitoVanCrtlandPark" />
+       id="ejercitoVanCortlandPark" />
     <path
        d="M 155.81035 65.919769 A 14.553714 11.129311 0 1 1  126.70292,65.919769 A 14.553714 11.129311 0 1 1  155.81035 65.919769 z"
        transform="translate(367.26723,15.409811)"
@@ -661,7 +663,7 @@
        x="208.88858"
        y="34.244034"
        style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-       id="text2702"
+       id="numPaterson"
        xml:space="preserve"><tspan
          x="208.88858"
          y="34.244034"
@@ -805,7 +807,7 @@
        x="94.171082"
        y="648.0683"
        style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-       id="text2769"
+       id="numPrincessBay"
        xml:space="preserve"><tspan
          x="94.171082"
          y="648.0683"
@@ -850,7 +852,7 @@
        x="415.20889"
        y="433.18701"
        style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-       id="text2789"
+       id="numKensington"
        xml:space="preserve"><tspan
          x="415.20889"
          y="433.18701"
@@ -859,7 +861,7 @@
        x="391.23804"
        y="380.96484"
        style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-       id="numBrookynHeights"
+       id="numBrooklynHeights"
        xml:space="preserve"><tspan
          x="391.23804"
          y="380.96484"
