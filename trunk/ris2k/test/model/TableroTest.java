@@ -14,7 +14,6 @@ import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import java.io.File;
 import java.io.FileWriter;
-import java.util.Collection;
 import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -216,6 +215,23 @@ public class TableroTest extends TestCase {
         
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
+    }
+    
+    public void testGetTodosLosTerritorios(){
+        System.out.println("cargarTerritorios");
+        
+        String infoXml = "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/test/newYork.xml";
+        Tablero instance = new Tablero();
+        try {
+            instance.cargarTerritorios(infoXml);
+        } catch (ris2kException ex) {
+            ex.printStackTrace();
+        }
+        for(Territorio t : instance.getTodosTerritorios()){
+            System.out.println(t.getNombre()+" ("+t.getId()+") ["+String.valueOf(t.getConexiones().size()+"]:"));
+            for(Territorio tb : t.getConexiones())
+                System.out.println("\t"+tb.getNombre()+" ("+tb.getId()+")");       
+        }
     }
     
 }

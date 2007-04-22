@@ -62,7 +62,7 @@ public class Territorio {
         this.nombre = nombre;
     }
 
-    public Collection<Territorio> getConexiones() {
+    public List<Territorio> getConexiones() {
         return conexiones;
     }
 
