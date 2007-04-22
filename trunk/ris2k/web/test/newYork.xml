@@ -9,7 +9,7 @@
 -->
 
 <root>
-    <continente id="New Jersey" nombre="New Jersey" numRefuerzos="1">
+    <continente id="NewJersey" nombre="New Jersey" numRefuerzos="1">
         <territorio id="Ringwood" nombre="Ringwood">
             <limita>Paterson</limita>
             <limita>Morris</limita>
@@ -52,7 +52,7 @@
         <territorio id="Essex" nombre="Essex">
             <limita>Morris</limita>
             <limita>Bloomfield</limita>
-            <limita>NewarkAirport</limita>
+            <limita>Newark</limita>
             <limita>Union</limita>
         </territorio>
         <territorio id="Bloomfield" nombre="Bloomfield">
@@ -61,7 +61,7 @@
             <limita>Hackensack</limita>
             <limita>JerseyCity</limita>
             <limita>Hudson</limita>
-            <limita>NewarkAirport</limita>
+            <limita>Newark</limita>
             <limita>Essex</limita>
         </territorio>
         <territorio id="JerseyCity" nombre="Jersey City">
@@ -71,17 +71,17 @@
             <limita>WestManhattan</limita>
             <limita>SouthManhattan</limita>
         </territorio>
-        <territorio id="NewarkAirport" nombre="Newark Airport">
+        <territorio id="Newark" nombre="Newark Airport">
             <limita>Essex</limita>
             <limita>Bloomfield</limita>
             <limita>Hudson</limita>
             <limita>Union</limita>
             <limita>PortRichmond</limita>
-            <limita>JFKAirport</limita>
-            <limita>LaGuardiaAirport</limita>
+            <limita>JFK</limita>
+            <limita>LaGuardia</limita>
         </territorio>
         <territorio id="Hudson" nombre="Hudson">
-            <limita>NewarkAirport</limita>
+            <limita>Newark</limita>
             <limita>Bloomfield</limita>
             <limita>JerseyCity</limita>
             <limita>SouthManhattan</limita>
@@ -90,7 +90,7 @@
         </territorio>
         <territorio id="Union" nombre="Union">
             <limita>Essex</limita>
-            <limita>NewarkAirport</limita>
+            <limita>Newark</limita>
             <limita>PortRichmond</limita>
             <limita>MarinersHarbor</limita>
         </territorio>
@@ -104,7 +104,7 @@
             <limita>VanCortlandPark</limita>
             <limita>BronxRiver</limita>
             <limita>RiskersIslands</limita>
-            <limita>LaGuardiaAirport</limita>
+            <limita>LaGuardia</limita>
         </territorio>
         <territorio id="WestManhattan" nombre="West Manhattan">
             <limita>Harlem</limita>
@@ -117,7 +117,7 @@
             <limita>Harlem</limita>
             <limita>WestManhattan</limita>
             <limita>SouthManhattan</limita>
-            <limita>LaGuardiaAirport</limita>
+            <limita>LaGuardia</limita>
             <limita>LongIslandCity</limita>
             <limita>Greenpoint</limita>
         </territorio>
@@ -137,7 +137,7 @@
             <limita>NewSpringville</limita>
             <limita>LaTourettePark</limita>
             <limita>SouthBeach</limita>
-            <limita>NewarkAirport</limita>
+            <limita>Newark</limita>
             <limita>UpperNewYorkBay</limita>
             <limita>LowerNewYorkBay</limita>
             <limita>Union</limita>
@@ -175,13 +175,13 @@
         </territorio>
     </continente>
     <continente id="Bronx" nombre="Bronx" numRefuerzos="1">
-        <territorio id="VanCortlandtPark" nombre="Van Cortlandt Park">
+        <territorio id="VanCortlandPark" nombre="Van Cortlandt Park">
             <limita></limita><!-- A poner -->
         </territorio>
         <territorio id="BronxRiver" nombre="Bronx River">
             <limita></limita><!-- A poner -->
         </territorio>
-        <territorio id="PolhamBayPark" nombre="Polham Bay Park">
+        <territorio id="PolhamBay" nombre="Polham Bay">
             <limita></limita><!-- A poner -->
         </territorio>
         <territorio id="ThrogsNeck" nombre="Throgs Neck">
@@ -201,7 +201,7 @@
         <territorio id="BrooklynHeights" nombre="Brooklyn Heights">
             <limita></limita><!-- A poner -->
         </territorio>
-        <territorio id="GreenPoint" nombre="Greenpoint">
+        <territorio id="Greenpoint" nombre="Greenpoint">
             <limita></limita><!-- A poner -->
         </territorio>
         <territorio id="Kensington" nombre="Kensington">
@@ -221,7 +221,7 @@
         </territorio>
     </continente>
     <continente id="Queens" nombre="Queens" numRefuerzos="1">
-        <territorio id="LaGuardiaAirport" nombre="La Guardia Airport">
+        <territorio id="LaGuardia" nombre="La Guardia Airport">
             <limita></limita><!-- A poner -->
         </territorio>
         <territorio id="LongIslandCity" nombre="Long Island City">
@@ -239,8 +239,11 @@
         <territorio id="QueensVillage" nombre="Queens Village">
             <limita></limita><!-- A poner -->
         </territorio>
-        <territorio id="JFK Airport" nombre="JFK Airport">
+        <territorio id="JFK" nombre="JFK Airport">
             <limita></limita><!-- A poner -->
-        </territorio> 
+        </territorio>
+        <territorio id="RockawayPeninsula" nombre="Rockaway Peninsula">
+            <limita></limita><!-- A poner -->
+        </territorio>
     </continente>
 </root>
