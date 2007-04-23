@@ -50,7 +50,8 @@ public class CrearPartida extends MiServlet {
             
             /*ahora mismo tiramos con esto, pero hay que recordar que tenemos que cambia la
              *bd para adaptar las tablas a valores autonuméricos*/
-            tablero.setMapa("/web/test/newYork.xml"); //hay que cambiarlo para recogerlo como parámetro
+            //tablero.setMapa("/web/test/newYork.xml"); //hay que cambiarlo para recogerlo como parámetro
+            tablero.setMapa("/test/newYork.xml");
             tablero.cargarTerritorios(tablero.getMapa());
             partida.setTablero(tablero);
 //            partida.inicializar("", creador, t, 0); //para ponerle el idPartida

@@ -9,10 +9,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     </head>
     <body background="/ris2k/images/Fondo.jpg">
+        <%@ page import="model.Jugador" %>
+        <%@ page import="model.Partida" %>
+        
+        <%String idPartida = (String)request.getAttribute("idPartida");%>
+        <%Partida partida = (Partida)application.getAttribute("partida"+idPartida);%>
+        
         <div class="outerBorder">
             
             <div class="header">
-                <div class="banner" align="rigth">RIS2K</div>
+                <div class="banner" align="rigth">rIS2k</div>
                 <div class="subheader">
                     
                     <div>
@@ -118,7 +124,8 @@
         
                 <div class="content" style="height:700px">
                     <!--<EMBED SRC="../images/tablero.svg" WIDTH="100%" HEIGHT="100%" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
-                    <EMBED SRC="../images/Zonas1024bis.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
+                    <!--<EMBED SRC="../images/Zonas1024bis.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
+                    <EMBED SRC="../images/output.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
                    
                 </div> <!-- content -->
 

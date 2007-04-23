@@ -183,6 +183,10 @@
         <servlet-name>IrAMenu</servlet-name>
         <servlet-class>controller.IrAMenu</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InicioPartida</servlet-name>
+        <servlet-class>controller.InicioPartida</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/servlet/*</url-pattern>
@@ -238,6 +242,10 @@
     <servlet-mapping>
         <servlet-name>IrAMenu</servlet-name>
         <url-pattern>/IrAMenu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InicioPartida</servlet-name>
+        <url-pattern>/InicioPartida</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
