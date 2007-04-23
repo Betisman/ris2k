@@ -31,6 +31,8 @@ public class Partida {
     
     private Turno turno = new Turno();
     private Score score = new Score();
+    
+    private String estado = null;
  
     
     /** Creates a new instance of Partida */
@@ -104,7 +106,7 @@ public class Partida {
         return jugadores;
     }
 
-    public void setJugadores(Vector<Jugador> jugadores) {
+    public void setJugadores(List<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
 
@@ -179,5 +181,13 @@ public class Partida {
         if (color == null)
             throw new ris2kException("No se ha podido recoger el color del jugador " + jugador.getUser());
         return color;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }
