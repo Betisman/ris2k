@@ -328,11 +328,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>refresh</td>
-	<td></td>
-	<td></td>
-</tr>
-<tr>
 	<td>type</td>
 	<td>user</td>
 	<td>acceso</td>
@@ -345,11 +340,6 @@
 <tr>
 	<td>click</td>
 	<td>Submit3</td>
-	<td></td>
-</tr>
-<tr>
-	<td>refresh</td>
-	<td></td>
 	<td></td>
 </tr>
 <tr>
@@ -445,46 +435,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>user</td>
-	<td>acceso</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>password</td>
-	<td>acceso</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>Submit3</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//a/img</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>nombrePartida</td>
-	<td>partida_acceso3</td>
-</tr>
-<tr>
-	<td>select</td>
-	<td>numJugadores</td>
-	<td>label=3</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>btnCrearPartida</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>/ris2k/</td>
-	<td></td>
-</tr>
-<tr>
 	<td>clickAndWait</td>
 	<td>Submit2</td>
 	<td></td>
@@ -520,11 +470,16 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>partida_acceso_3</td>
+	<td>assertTextPresent</td>
+	<td>Partida</td>
 	<td></td>
 </tr>
 <!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
 
 </tbody></table>
 </body>
