@@ -24,8 +24,21 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         
         <%List<Partida> partidas = (List)request.getAttribute("partidas");%>
         
-    <h1>Lista de partidas creadas</h1>(<%=partidas.size()%>)
-        <table border="2">
+   <table width="100%" height="430" border="0">
+  <tr>
+    <td width="15%" height="112">&nbsp;</td>
+    <td width="73%"><div align="center">
+        <p><font size="+3" face="Georgia, Times New Roman, Times, serif"><strong>Lista 
+          de partidas creadas</strong></font></p>
+        <p><strong><font size="+1" face="Georgia, Times New Roman, Times, serif">Actualmente 
+          hay <%=partidas.size()%> partidas creadas</font></strong></p>
+      </div></td>
+    <td width="12%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+	<table border="2" bgcolor="#CCCCCC">
             <thead>
                 <tr>
                     <th>Nombre Partida</th>
@@ -47,6 +60,9 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                 <%}%>
             </tbody>
         </table> 
-        
-    </body>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
 </html>
