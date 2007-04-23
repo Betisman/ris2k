@@ -1,0 +1,531 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>test_accederpartida</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">test_accederpartida</td></tr>
+</thead><tbody>
+<!--//Previo a las pruebas, se introducen tres usuarios llamados acceso y una prueba llamada partida_acceso-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>acceso@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>accesobis</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>acceso@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>accesobisbis</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>acceso@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>nombrePartida</td>
+	<td>partida_acceso</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>numJugadores</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>btnCrearPartida</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//ACCESO OK 1: se debe recibir el mensaje "Lista de partidas creadas" y el nombre de la partida de prueba (partida_acceso)-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refresh</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//tr[4]/td[2]/div/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Unirse a la partida</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Partida: partida_acceso</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>btnJugar</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//ACCESO OK 2: los otros dos jugadores deberán acceder a la partida. el segundo deberá obtener la opción de poder entrar a jugar-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refresh</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>accesobis</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//tr[4]/td[2]/div/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Unirse a la partida</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Partida: partida_acceso</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>btnJugar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>accesobisbis</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//tr[4]/td[2]/div/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Unirse a la partida</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Partida: partida_acceso</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>btnJugar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>btnJugar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>RIS2K</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//La partida completa, ya no debe estar disponible-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refresh</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//tr[4]/td[2]/div/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>partida_acceso</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//ALTA VARIAS VECES EN LA MISMA PARTIDA: se crea una partida para dos jugadores, y tras un jugador intentar agregarse dos veces, no debe encontrar el botón JUGAR-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refresh</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refresh</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>nombrePartida</td>
+	<td>partida_acceso_2</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>numJugadores</td>
+	<td>label=2</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>btnCrearPartida</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//tr[4]/td[2]/div/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Unirse a la partida</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//tr[4]/td[2]/div/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Unirse a la partida</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>btnJugar</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//Un jugador se da de alta y accede directamente a una partida (sin usar servlet de acceso: directamente alta)-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>nombrePartida</td>
+	<td>partida_acceso3</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>numJugadores</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>btnCrearPartida</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>accesobisbisbis</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>prueba@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//tr[4]/td[2]/div/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Unirse a la partida</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>partida_acceso_3</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+</tbody></table>
+</body>
+</html>
