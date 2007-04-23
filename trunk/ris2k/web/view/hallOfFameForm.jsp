@@ -15,7 +15,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 <html>
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Usuario ingresado correctamente</title>
+<title>Hall of Fame</title>
 <style type="text/css">
 <!--
 .Estilo7 {font-family: Georgia, "Times New Roman", Times, serif; font-size: xx-large; font-weight: bold; }
@@ -23,7 +23,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 </style>
 </head>
 
-<body background="images/Fondo.jpg">
+<body background="/ris2k/images/Fondo.jpg">
 <div align="center"><strong></strong>
   <table width="777" border="0">
     <tr>

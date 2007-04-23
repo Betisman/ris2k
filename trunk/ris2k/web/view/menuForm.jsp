@@ -44,7 +44,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><div align="center"><a href="/ris2k/view/hallOfFame.jsp"><img src="/ris2k/images/caballeriapeq.gif" width="70" height="70" border="0"></a></div></td>
+      <td><div align="center"><a href="/ris2k/view/hallOfFameForm.jsp"><img src="/ris2k/images/caballeriapeq.gif" width="70" height="70" border="0"></a></div></td>
       <td colspan="3"><span class="Estilo7">HALL OF FAME </span></td>
     </tr>
     <tr>
@@ -59,10 +59,10 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td><div align="left"><a href="JugadoresEnLinea.java">Jugadores en l&iacute;nea </a></div></td>
+      <td><div align="left"><a href="/ris2k/view/jugadoresEnLinea.jsp">Jugadores en l&iacute;nea </a></div></td>
       <td>&nbsp;</td>
-      <td colspan="2"><div align="rigth"><a href="ayuda.jsp">Ayuda</a></div></td>
-      <td width="241"><div align="rigth"><a href="AcercaDeRIS2K.jsp">Acerca de R<em>IS2</em>K </a></div></td>
+      <td colspan="2"><div align="rigth"><a href="/ris2k/view/ayudaForm.jsp">Ayuda</a></div></td>
+      <td width="241"><div align="rigth"><a href="/ris2k/view/acercaDeForm.jsp">Acerca de R<em>IS2</em>K </a></div></td>
     </tr>
   </table>
   </div>
