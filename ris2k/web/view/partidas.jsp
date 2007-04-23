@@ -17,7 +17,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Partidas Creadas</title>
     </head>
-    <body>
+    <body background="/ris2k/images/Fondo.jpg">
         <%@page import ="java.util.*"%>
         <%@ page import="model.Jugador" %>
         <%@ page import="model.Partida" %>
