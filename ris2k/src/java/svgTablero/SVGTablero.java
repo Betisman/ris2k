@@ -218,7 +218,8 @@ public class SVGTablero {
         }catch(ris2kException ex){
             System.out.println("ris2kException : " + ex.getMessage());
         }catch(Exception e){
-            System.out.println("Excepción generada en situarTodosEjercitos()");
+            //System.out.println("Excepción generada en situarTodosEjercitos()");
+            log.error("Excepción generada en situarTodosEjercitos()");
             e.printStackTrace();
         }
         return document;
