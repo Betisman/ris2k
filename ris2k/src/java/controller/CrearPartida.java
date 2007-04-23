@@ -13,13 +13,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Vector;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import model.Jugador;
 import model.Partida;
 import model.Tablero;
 import persistence.MySqlPartida;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 /**
  *
@@ -27,7 +28,7 @@ import persistence.MySqlPartida;
  * @version
  */
 public class CrearPartida extends MiServlet {
-    
+    static Logger log = Logger.getLogger(CrearPartida.class);
     /** Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
      * @param response servlet response
@@ -40,7 +41,7 @@ public class CrearPartida extends MiServlet {
             int numJugadores = Integer.valueOf(request.getParameter("numJugadores"));
             Tablero tablero = new Tablero();
             //tablero.cargarTablero(request.getParameter("mapa"));
-            
+            log.info("Se entró en CrearPArtida");
             /* Creamos partida vacía nueva y la vamos rellenando */
             Partida partida = new Partida();
             /* Establecemos el creador de la partida */
@@ -77,8 +78,8 @@ public class CrearPartida extends MiServlet {
         context.setAttribute("partidasActivas", partidasActivas);
         
         List<Partida> test = (List)context.getAttribute("partidasActivas");
-        System.out.println("CREAR PARTIDA, partidasActivas.size() = " + String.valueOf(test.size()));
-        
+        //System.out.println("CREAR PARTIDA, partidasActivas.size() = " + String.valueOf(test.size()));
+        log.info("CREAR PARTIDA, partidasActivas.size() = " + String.valueOf(test.size()));
         request.setAttribute("partida", partida);
             gotoJSPPage("/view/partida.jsp", request, response);
 //        gotoJSPPage(partidas, request, response);
