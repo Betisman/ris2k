@@ -7,6 +7,7 @@
 
 package tablero;
 
+import Exceptions.ris2kException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -41,7 +42,7 @@ public class TestTablero extends TestCase {
         }
         catch (ris2kException ex)
         {
-            fail(ex.getMessage())
+            fail(ex.getMessage());
         }
         catch (Exception e)
         {

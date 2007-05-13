@@ -8,6 +8,28 @@
    width="1326"
    height="1291"
    id="svg2226">
+<!--***************************** SCRIPT ************************************************************-->
+<![CDATA[
+function sumarEjercito(evt)
+{
+	var a = evt.target;
+	var idlink = a.getAttribute("id");
+	var id = idlink.substring(4, idlink.length-1)
+
+   targetText=svgDocument.getElementById("num"+id);
+
+   var XPos = evt.getClientX();
+   var YPos = evt.getClientY();
+
+	var numEjercito = parseFloat(targetTex.getTextContent());
+
+   var ejercitoMasUno = numEjercito + 1;
+   var nuevoEjercitoText = svgDocument.createTextNode(ejercitoMasUno.toString());
+
+   targetText.replaceChild(nuevoEjercitoText,targetText.getFirstChild());
+}
+// ]]>
+<!--***************************** SCRIPT ************************************************************-->
   <defs
      id="defs2229" />
   <image
@@ -23,7 +45,7 @@
      style="display:inline"
      id="enlaces">
     <a
-       xlink:href="tableroMenu.jsp?territorio=Ringwood"
+       xlink:href=""
        xlink:title="Ringwood"
        id="linkRingwood">
       <path
@@ -34,7 +56,7 @@
 </path>
     </a>
     <a
-       xlink:href="tableroMenu.jsp?territorio=Morris"
+       xlink:href=""
        xlink:title="Morris"
        id="linkMorris">
       <path
@@ -45,7 +67,7 @@
 </path>
     </a>
     <a
-       xlink:href="tableroMenu.jsp?territorio=Paterson"
+       xlink:href=""
        xlink:title="Paterson"
        id="linkPaterson">
       <path
@@ -56,7 +78,7 @@
 </path>
     </a>
     <a
-       xlink:href="tableroMenu.jsp?territorio=Passaic"
+       xlink:href=""
        xlink:title="Passaic"
        id="linkPassaic">
       <path
@@ -104,10 +126,7 @@
          style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.54881418px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0"
          id="path9038" > <set attributeName="fill-opacity" from="0" to="0.3" begin="mouseover" end="mouseout"/> </path>
     </a>
-    <path
-       d="M 225.46487,289.19599 L 223.58551,280.73887 L 207.61095,280.73887"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.54881418px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       id="path10009" > <set attributeName="fill-opacity" from="0" to="0.3" begin="mouseover" end="mouseout"/> </path>
+    
     <a
        xlink:href="tableroMenu.jsp?territorio=JerseyCity"
        xlink:title="JerseyCity"
@@ -163,9 +182,9 @@
          id="path14870" > <set attributeName="fill-opacity" from="0" to="0.3" begin="mouseover" end="mouseout"/> </path>
     </a>
     <a
-       xlink:href="tableroMenu.jsp?territorio=PothamBay"
-       xlink:title="PothamBay"
-       id="linkPothamBay">
+       xlink:href="tableroMenu.jsp?territorio=PolhamBay"
+       xlink:title="PolhamBay"
+       id="linkPolhamBay">
       <path
          d="M 561.87051,128.51063 L 547.77527,128.51063 L 542.13719,129.45031 L 533.68007,127.57095 L 535.55943,106.89798 L 535.55943,106.89798 L 545.89591,95.621812 L 538.37847,74.009165 L 541.19751,62.732999 L 551.53398,54.275873 L 553.41333,43.939388 L 591.94025,56.155231 L 602.27673,64.612358 L 602.27673,76.828204 L 594.75929,82.466287 L 594.75929,94.682133 L 606.97513,128.51063 L 604.15609,132.26935 L 592.87993,116.29478 L 593.81961,108.77734 L 588.18153,99.380536 L 582.54346,114.41542 L 561.87051,88.10437 L 561.87051,79.647243 L 556.23237,79.647243 L 561.87051,128.51063 z "
          style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.54881418px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0"
