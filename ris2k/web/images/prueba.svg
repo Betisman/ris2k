@@ -1,0 +1,22 @@
+<svg width="400" height="400" onload="cree_event(evt)">
+<script><![CDATA[
+function alerte(evt){
+	objet=evt.target;
+	large=objet.getAttribute("width");
+	alert(large)
+}
+function cree_event(evt){
+	svgdoc=evt.target.ownerDocument;
+	node=svgdoc.createElement("rect");
+	node.setAttribute("x","50");node.setAttribute("y","50");
+	node.setAttribute("width","100");node.setAttribute("height","50");
+	node.setAttribute("style","fill:red");
+	node.addEventListener("mousemove",alerte,false);
+	ou=svgdoc.getElementById("affiche");
+	ou.appendChild(node)
+}
+]]></script>
+<g id="affiche">
+<text x="100" y="20" style="text-anchor:middle;font-size:15;font-family:Arial;fill:red">Move over red rectangle</text>
+</g>
+</svg>
