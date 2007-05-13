@@ -27,7 +27,10 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import model.Tablero;
 import model.Territorio;
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
@@ -225,4 +228,126 @@ public class SVGTablero {
         return document;
     }
     
+    public Document setMouseOver(Document document, String idTerritorio)
+    throws ris2kException{
+            XPath xpath = XPathFactory.newInstance().newXPath();
+        try{
+            /*quitamos el nodo set si lo hubiera*/
+            document = removeMouseOver(document, idTerritorio);
+        }catch(ris2kException ex){
+            System.out.println("ris2kException : " + ex.getMessage());
+        }
+        try{
+            /*Buscamos el nodo correspondiente al territorio*/
+            String expression = "/svg/g/path[@id='path"+idTerritorio+"']";
+            Node nodo = null;
+            try {
+                nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
+                if (nodo == null)
+                    throw new ris2kException("nodo == null en link"+idTerritorio);
+            } catch (XPathExpressionException ex) {
+                ex.printStackTrace();
+            }
+            Element setAtt = document.createElement("set");
+            /*creamos el nodo y lo rellenamos con sus atributos*/
+            setAtt.setAttribute("attributeName", "fill-opacity");
+            setAtt.setAttribute("from", "0");
+            setAtt.setAttribute("to", "0.3");
+            setAtt.setAttribute("begin", "mouseover");
+            setAtt.setAttribute("end", "mouseout");
+            nodo.appendChild(setAtt);
+        }catch(ris2kException ex){
+            System.out.println("ris2kException : " + ex.getMessage());
+        }catch(Exception e){
+            //System.out.println("Excepción generada en situarTodosEjercitos()");
+            log.error("Excepción generada en setMouseOver()");
+            e.printStackTrace();
+        }
+        return document;
+    }
+    
+    public Document removeMouseOver(Document document, String idTerritorio)
+    throws ris2kException{
+        try{
+            XPath xpath = XPathFactory.newInstance().newXPath();
+            /*Buscamos el nodo correspondiente al territorio*/
+            String expression = "/svg/g/path[@id='path"+idTerritorio+"']/set";
+            Node nodo = null;
+            try {
+                nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
+                if (nodo == null)
+                    throw new ris2kException("No existe nodo set en link"+idTerritorio);
+            } catch (XPathExpressionException ex) {
+                ex.printStackTrace();
+            }
+            Node papa = nodo.getParentNode();
+            papa.removeChild(nodo);
+        }catch(ris2kException ex){
+            System.out.println("ris2kException : " + ex.getMessage());
+        }catch(Exception e){
+            log.error("Excepción generada en removeMouseOver()");
+            e.printStackTrace();
+        }
+        return document;
+    }
+    
+    public Document setSumarEjercito(Document document, String idTerritorio)
+    throws ris2kException{
+            XPath xpath = XPathFactory.newInstance().newXPath();
+        try{
+            /*quitamos el atributo onclick si lo hubiera*/
+            document = removeSumarEjercito(document, idTerritorio);
+        }catch(ris2kException ex){
+            System.out.println("ris2kException : " + ex.getMessage());
+        }
+        try{
+            /*Buscamos el nodo correspondiente al territorio*/
+            String expression = "/svg/g/path[@id='path"+idTerritorio+"']";
+            Node nodo = null;
+            try {
+                nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
+                if (nodo == null)
+                    throw new ris2kException("nodo == null en link"+idTerritorio);
+            } catch (XPathExpressionException ex) {
+                ex.printStackTrace();
+            }
+            Element elem = (Element)nodo;
+            elem.setAttribute("onclick", "sumarEjercito(evt)");
+            nodo.getParentNode().replaceChild(elem, nodo);
+        }catch(ris2kException ex){
+            System.out.println("ris2kException : " + ex.getMessage());
+        }catch(Exception e){
+            //System.out.println("Excepción generada en situarTodosEjercitos()");
+            log.error("Excepción generada en setMouseOver()");
+            e.printStackTrace();
+        }
+        return document;
+    }
+    
+    public Document removeSumarEjercito(Document document, String idTerritorio)
+    throws ris2kException{
+        try{
+            XPath xpath = XPathFactory.newInstance().newXPath();
+            /*Buscamos el nodo correspondiente al territorio*/
+            String expression = "/svg/g/path[@id='path"+idTerritorio+"']";
+            Node nodo = null;
+            try {
+                nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
+                if (nodo == null)
+                    throw new ris2kException("No existe nodo set en link"+idTerritorio);
+            } catch (XPathExpressionException ex) {
+                ex.printStackTrace();
+            }
+            Node papa = nodo.getParentNode();
+            Element elem = (Element)nodo;
+            elem.removeAttribute("onclick");
+            papa.replaceChild(elem, nodo);
+        }catch(ris2kException ex){
+            System.out.println("ris2kException : " + ex.getMessage());
+        }catch(Exception e){
+            log.error("Excepción generada en removeMouseOver()");
+            e.printStackTrace();
+        }
+        return document;
+    }
 }

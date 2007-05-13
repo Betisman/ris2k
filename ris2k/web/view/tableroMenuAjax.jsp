@@ -14,6 +14,20 @@
         <%@page import="model.Partida" %>
         <%@page import="svgTablero.*"%>
         
+        <% File f = new File("/images/output.svg");
+                SVGTablero svg = new SVGTablero();
+                Document document = svg.parsearFichero(f);
+        Partida p = (Partida)application.getAttribute(request.getSession().getAttribute("partida"));
+           Jugador j = (Jugador)request.getSession().getAttribute("usuario");
+                for(Territorio c : p.getTablero().getTodosTerritorios()){
+                    if (c.getOwner().getUser().equals(j.getUser())){
+                        document = svg.setMouseOver(document, c.getId());
+                    }else{
+                        document = svg.removeMouseOver(document, c.getId());
+                    }
+                }
+                svg.stringToSvgFile(svg.serializar(document), "/images/output.svg");
+        %>
         
         <div class="outerBorder">
             
@@ -124,7 +138,8 @@
         
                 <div class="content" style="height:700px">
                     <!--<EMBED SRC="../images/tablero.svg" WIDTH="100%" HEIGHT="100%" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
-                    <EMBED SRC="../images/Zonas1024bisAjax.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
+                    <!--<EMBED SRC="../images/Zonas1024bisAjax.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
+                    <EMBED SRC="../images/output.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
                    
                 </div> <!-- content -->
 

@@ -66,6 +66,7 @@ public class InicioPartida extends MiServlet {
                 ServletConfig config = getServletConfig();
                 ServletContext context = config.getServletContext();
                 context.setAttribute("partidas"+partida.getIdPartida(), partida);
+                request.getSession().setAttribute("partida", "partidas"+partida.getIdPartida());
             } catch (ris2kException ex) {
                 request.getSession().setAttribute("errorRis2k",ex.getMessage());
                 gotoJSPPage(errorAltaForm,request,response);

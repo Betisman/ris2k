@@ -29,6 +29,7 @@ import model.Partida;
 import model.Tablero;
 import model.Territorio;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
@@ -216,4 +217,119 @@ public class SVGTableroTest extends TestCase {
         }
     }
     
+    public void testTtemporal() throws Exception {
+        System.out.println("Temporal");
+        try {
+            File f = new File("web/images/output2.svg");
+            List<Territorio> territorios = null;
+            Partida p = new Partida();
+            SVGTablero svg = new SVGTablero();
+            Document document = svg.parsearFichero(f);
+
+            Jugador j1 = new Jugador(); j1.setUser("jugador1"); j1.setColor("#0066cc");
+            Jugador j2 = new Jugador(); j2.setUser("jugador2"); j2.setColor("#33ff33");
+            Jugador j3 = new Jugador(); j3.setUser("jugador3"); j3.setColor("#ffff33");
+            Jugador j4 = new Jugador(); j4.setUser("jugador4"); j4.setColor("#ff00ff");
+            Jugador j5 = new Jugador(); j5.setUser("jugador5"); j5.setColor("#ff6600");
+            Jugador j6 = new Jugador(); j6.setUser("jugador6"); j6.setColor("#808080");
+            p.getJugadores().add(j1); p.getJugadores().add(j2); p.getJugadores().add(j3);
+            p.getJugadores().add(j4); p.getJugadores().add(j5); p.getJugadores().add(j6);
+        
+            p.getTablero().cargarTerritorios("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/test/newYork.xml");
+            p.repartirTerritorios();
+            
+            svg.situarTodosEjercitos(document, p.getTablero().getTodosTerritorios());
+            
+            Jugador j = new Jugador(); j = j1;
+            for(Territorio c : p.getTablero().getTodosTerritorios()){
+                if (c.getOwner().getUser().equals(j.getUser())){
+                    document = svg.setMouseOver(document, c.getId());
+                    document = svg.setSumarEjercito(document, c.getId());
+                    System.out.println(c.getId()+": setAtt");
+                }else{
+                    document = svg.removeMouseOver(document, c.getId());
+                    document = svg.removeSumarEjercito(document, c.getId());
+                    System.out.println(c.getId()+": off");
+                }
+            }
+            svg.stringToSvgFile(svg.serializar(document), "web/images/output2.svg");
+//            fail("The test case is a prototype.");
+        } catch (ris2kException ex) {
+            System.out.println("ris2kException: "+ex.getMessage());
+        }catch(Exception ex){
+            System.out.println("Saltó excepción");
+            ex.printStackTrace();
+        }
+    }
+    
+/*    public void testSoloAhora() throws Exception {
+        System.out.println("SoloAhora");
+        try {
+            File f = new File("web/images/output2.svg");
+            Partida p = new Partida();
+            SVGTablero svg = new SVGTablero();
+            Document document = svg.parsearFichero(f);
+            XPath xpath = XPathFactory.newInstance().newXPath();
+            p.getTablero().cargarTerritorios("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/test/newYork.xml");
+            for(Territorio c : p.getTablero().getTodosTerritorios()){
+                System.out.println("link"+c.getId());
+                String expression = "/svg/g/a[@id='link"+c.getId()+"']";
+                Node nodo = null;
+                try {
+                    nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
+                    if (nodo == null)
+                        throw new ris2kException("nodo == null en link"+c.getId());
+                } catch (XPathExpressionException ex) {
+                    ex.printStackTrace();
+                }
+                Element a = (Element)nodo;
+                NodeList nlist = a.getElementsByTagName("path");
+                System.out.println("length: "+nlist.getLength());
+                Element path = (Element)nlist.item(0);
+                path.setAttribute("id", "path"+c.getId());
+                Node papa = (Node)a.getParentNode();
+                papa.replaceChild(path, a);
+            }
+            svg.stringToSvgFile(svg.serializar(document), "web/images/output2.svg");
+        } catch (ris2kException ex) {
+            System.out.println("ris2kException: "+ex.getMessage());
+        }catch(Exception ex){
+            System.out.println("Saltó excepción");
+            ex.printStackTrace();
+        }
+    }
+ **/
+    
+    public void testSoloAhora() throws Exception {
+        System.out.println("SoloAhora");
+        try {
+            File f = new File("web/images/output3.svg");
+            Partida p = new Partida();
+            SVGTablero svg = new SVGTablero();
+            Document document = svg.parsearFichero(f);
+            XPath xpath = XPathFactory.newInstance().newXPath();
+            p.getTablero().cargarTerritorios("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/test/newYork.xml");
+            for(Territorio c : p.getTablero().getTodosTerritorios()){
+                System.out.println("link"+c.getId());
+                String expression = "//text[@id='num"+c.getId()+"']/tspan";
+                Node nodo = null;
+                try {
+                    nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
+                    if (nodo == null)
+                        throw new ris2kException("nodo == null en link"+c.getId());
+                } catch (XPathExpressionException ex) {
+                    ex.printStackTrace();
+                }
+                Element a = (Element)nodo;
+                Node papa = (Node)a.getParentNode();
+                papa.removeChild(a);
+            }
+            svg.stringToSvgFile(svg.serializar(document), "web/images/output3.svg");
+        } catch (ris2kException ex) {
+            System.out.println("ris2kException: "+ex.getMessage());
+        }catch(Exception ex){
+            System.out.println("Saltó excepción");
+            ex.printStackTrace();
+        }
+    }
 }
