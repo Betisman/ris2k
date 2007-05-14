@@ -45,7 +45,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
 
 <table width="90%" height="399" align="center">
     <tr>
-    <td height="79"><div align="center"><span class="Estilo14">Alta</span><span class="Estilo15"> de</span><span class="Estilo16"> un</span><span class="Estilo18"> Jugador </span></div></td>
+    <td height="79"><div align="center"><img src="/ris2k/images/altajugador.jpg" width="510" height="159"></div></td>
     </tr>
     <tr>
         <td height="172"><p>&nbsp;</p>
