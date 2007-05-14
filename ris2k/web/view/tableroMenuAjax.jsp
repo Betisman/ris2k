@@ -148,7 +148,8 @@
                 <div class="content" style="height:700px">
                     <!--<EMBED SRC="../images/tablero.svg" WIDTH="100%" HEIGHT="100%" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
                     <!--<EMBED SRC="../images/Zonas1024bisAjax.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
-                    <EMBED SRC="../images/output.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
+                    <!--<EMBED SRC="../images/output.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
+                    <EMBED SRC="/ris2k/images/output.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
                    
                 </div> <!-- content -->
 

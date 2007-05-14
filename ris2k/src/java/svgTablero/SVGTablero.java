@@ -50,18 +50,14 @@ public class SVGTablero {
     
     public Document parsearFichero(File f)
     throws ris2kException{ 
-        log.error("Problema al parsear el fichero SVG: "+f.getPath());
-        //System.out.println("en parsearFichero()");
-        //System.out.println(f.getPath());
+        log.info("Entramos en parsear el fichero SVG: "+f.getPath());
         try {
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document document = builder.parse(new InputSource(new FileInputStream(f.getPath())));
             if (document == null)
                 log.error("No existe el documento a parsear");
-                //System.out.println("DOCUMENT NULL en parsearFichero()");
             else
                 log.info("Documento válido a parsear");
-                //System.out.println("DOCUMENT ¡¡NOT!! NULL en parsearFichero()");
             return document;
         } catch (ParserConfigurationException ex) {
             ex.printStackTrace();
@@ -72,6 +68,10 @@ public class SVGTablero {
             throw new ris2kException("IOException al parsear el fichero " + f.getName());
         } catch (SAXException ex) {
             ex.printStackTrace();
+            return null;
+        }catch (Exception ex){
+            ex.printStackTrace();
+            log.error("Error desconocido al parsear el fichero. Error = "+ex.getMessage());
             return null;
         }
     }
