@@ -39,7 +39,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     <table border="0" align="center">
       <tr>
         <td height="58" valign="top"><p align="center" class="Estilo7"><img src="/ris2k/images/construccionpeq.gif" width="137" height="96" /></p>      </td>
-        <td height="58" colspan="2" valign="middle"><div align="center"><span class="Estilo7"><span class="Estilo1">R</span><span class="Estilo2">IS2</span><span class="Estilo4">K</span></span></div></td>
+        <td height="58" colspan="2" valign="middle"><div align="center"></div></td>
         <td height="58" align="left" valign="middle"><div align="left">
           <form id="form1" name="form1" method="post" action="/ris2k/index.jsp">
             <label></label>
@@ -52,7 +52,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
           </div></td>
       </tr>
       <tr>
-        <td height="21" colspan="4"><div align="center"><span class="Estilo6">REGLAS DEL JUEGO ( sujetas a modificaciones peri&oacute;dicas)</span></div></td>
+        <td height="21" colspan="4"><div align="center"><img src="/ris2k/images/reglasdeljuego.jpg" width="510" height="159"></div></td>
       </tr>
       <tr>
         <td width="26%" height="21">&nbsp;</td>

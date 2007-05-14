@@ -28,8 +28,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
   <tr>
     <td width="15%" height="112">&nbsp;</td>
     <td width="73%"><div align="center">
-        <p><font size="+3" face="Georgia, Times New Roman, Times, serif"><strong>Lista 
-          de partidas creadas</strong></font></p>
+        <p><img src="/ris2k/images/partidascreadas.jpg" width="510" height="159"></p>
         <p><strong><font size="+1" face="Georgia, Times New Roman, Times, serif">Actualmente 
           hay <%=partidas.size()%> partidas creadas</font></strong></p>
       </div></td>

@@ -30,7 +30,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
       <td colspan="5"><div align="right"><strong>${sessionScope["jugador"]} </strong><a href="Logout.java">logout</a></div></td>
     </tr>
     <tr>
-      <td colspan="5"><div align="center"><img src="images/titulo.gif" width="259" height="180"></div></td>
+      <td colspan="5"><div align="center"><img src="/ris2k/images/halloffame.jpg" width="510" height="159"></div></td>
     </tr>    
       <td>&nbsp;</td>
       <td colspan="2">&nbsp;</td>
