@@ -1,0 +1,399 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>test_crearpartida</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">test_crearpartida</td></tr>
+</thead><tbody>
+<!--//Previo a las pruebas, se introducen tres usuarios llamados acceso-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>acceso@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>accesobis</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>email</td>
+	<td>acceso@prueba.es</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//ACCESO OK 1: se debe recibir el mensaje "Bienvenid@" y el nombre del usuar (acceso)-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bienvenid@</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ACCESO</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//ACCESO OK 2: se debe recibir el mensaje "Bienvenid@" y el nombre del usuar (accesobis)-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>accesobis</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Bienvenid@</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ACCESOBIS</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//PASSWORD ERRONEO: se debe recibir el mensaje "ERROR" y el mensaje "Usuario y/o contraseña incorrectos"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>erroneo</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Usuario no válido en la Base de Datos</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//SIN PASSWORD: se debe recibir el mensaje "ERROR" y el mensaje "Usuario y/o contraseña incorrectos"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Usuario no válido en la Base de Datos</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//USUARIO ERRONEO se debe recibir el mensaje "ERROR" y el mensaje "Usuario y/o contraseña incorrectos"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>erroneo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>erroneo</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Usuario no válido en la Base de Datos</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//USUARIO EN BLANCO se debe recibir el mensaje "ERROR" y el mensaje "Usuario y/o contraseña incorrectos"-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Usuario no válido en la Base de Datos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--//PRUEBAS DEL BOTON VOLVER: tras cada uno de los errores anteriores, se debe volver al menú-->
+<tr>
+	<td>open</td>
+	<td>/ris2k/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>erroneo</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='VOLVER']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Acceso Jugador</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>acceso</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>ERROR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='VOLVER']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Acceso Jugador</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td>erroneo</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>erroneo</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='VOLVER']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Acceso Jugador</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='VOLVER']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Acceso Jugador</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>password</td>
+	<td>erroneo</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>Submit3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='VOLVER']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Acceso Jugador</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
