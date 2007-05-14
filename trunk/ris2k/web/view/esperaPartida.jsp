@@ -73,15 +73,13 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         
       </table> </td>
     <td>
-	<% Jugador j = (Jugador)request.getSession().getAttribute("usuario");%>
+	<% Jugador j = (Jugador)request.getSession().getAttribute("usuario");
+        request.getSession().setAttribute("partida", partida); %>
         
         <%if ((partida.estaJugador((Jugador)request.getSession().getAttribute("usuario"))) && (partida.getNumJugadores()==partida.getJugadores().size())){ %>
-        <form name="frmJugar" action="view/tableroMenu.jsp">
-              <div align="center">
-                
-          <input type="submit" value="  &iexcl;&iexcl;JUGAR!!  " name="btnJugar"/>
-              </div>
-            </form>
+        <form name="frmJugar" action="InicioPartida">
+            <input type="submit" value="Jugar!!"/>
+        </form>
         <%}%>
 
 	</td>

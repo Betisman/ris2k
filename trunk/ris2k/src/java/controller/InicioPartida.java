@@ -35,21 +35,18 @@ public class InicioPartida extends MiServlet {
     throws ServletException, IOException {
         System.out.println("InicioPartida Servlet");
         Partida partida = new Partida();
-        partida = (Partida)request.getAttribute("partida");
-        request.setAttribute("idPartida", partida.getIdPartida());
-        if (partida.getEstado().equals("jugando")){
-            gotoJSPPage("/view/tableroMenu.jsp", request, response);
+        partida = (Partida)request.getSession().getAttribute("partida");
+System.out.println("Cruzando los dedos...");
+System.out.println("idPartida"+partida.getIdPartida());
+        request.getSession().setAttribute("idPartida", partida.getIdPartida());
+/*        if (partida.getEstado().equals("jugando")){
+            gotoJSPPage("/view/tableroMenuAjax.jsp", request, response);
         }else{
-            try {
+  */          try {
+System.out.println("ENTRAMOS EN EL TRY");
                 partida.setEstado("jugando");
                 partida.repartirTerritorios();
 
-                File f = new File("/images/Zonas1024bisAjax.svg");
-                SVGTablero svg = new SVGTablero();
-                Document document = null;
-                document = svg.parsearFichero(f);
-                svg.situarTodosEjercitos(document, partida.getTablero().getTodosTerritorios());
-                svg.stringToSvgFile(svg.serializar(document), "/images/output.svg");
                 /*********************************esto no habría que hacerlo, pero por ahora, tiramos así*/
                 Vector<String> colores = new Vector();
                 colores.add("#ff00ff");colores.add("#ff55ff");colores.add("#ff0000");
@@ -60,19 +57,29 @@ public class InicioPartida extends MiServlet {
                     j.setColor(colores.remove(pos));
                     jugadoresColoreados.add(j);
                 }
+System.out.println("HEMOS HECHO LO DE LOS COLORES");
                 partida.setJugadores(jugadoresColoreados);
                 /*********************************/
-
+                
+                File f = new File("C:/Documents and Settings/CEU/Escritorio/Facultad/IS2/ris2k/web/images/Zonas1024bisAjax.svg");
+                SVGTablero svg = new SVGTablero();
+                Document document = null;
+                document = svg.parsearFichero(f);
+                svg.situarTodosEjercitos(document, partida.getTablero().getTodosTerritorios());
+                svg.stringToSvgFile(svg.serializar(document), "/images/output.svg");
+System.out.println("SERIALIZAMOS");
                 ServletConfig config = getServletConfig();
                 ServletContext context = config.getServletContext();
                 context.setAttribute("partidas"+partida.getIdPartida(), partida);
                 request.getSession().setAttribute("partida", "partidas"+partida.getIdPartida());
+System.out.println("AHORA NOS VAMOS...");
             } catch (ris2kException ex) {
                 request.getSession().setAttribute("errorRis2k",ex.getMessage());
                 gotoJSPPage(errorAltaForm,request,response);
             }
-            gotoJSPPage("/view/tableroMenu.jsp", request, response);
-        }
+System.out.println("AHORA SÍ QUE VAMOS tableroMenuAjax.jsp");
+            gotoJSPPage("/view/tableroMenuAjax.jsp", request, response);
+ //       }
         
     }
     
