@@ -55,11 +55,15 @@ public class MySqlPartidaTest extends TestCase {
         /* Eliminamos posibles partidas de prueba guardadas con anterioridad */
         try{
                 stmt = conn.createStatement();                 
-                String strSQL = ("DELETE FROM partida");
+                String strSQL = ("DELETE FROM partida_user;");
+                stmt.executeUpdate(strSQL);
+
+                stmt = conn.createStatement();                 
+                strSQL = ("DELETE FROM partida");
                 stmt.executeUpdate(strSQL);
                 		
                 stmt = conn.createStatement();                 
-                strSQL = ("DELETE FROM partida_user;");
+                strSQL = ("DELETE FROM user;");
                 stmt.executeUpdate(strSQL);
 
         } catch (Exception ex) {                
@@ -140,7 +144,6 @@ public class MySqlPartidaTest extends TestCase {
         
     }
 
-    /*prueba que un numero elevado de partidas, con distintos creadores se puedan persistir*/
     public void testPersistirPartidaValidaMuchos() throws Exception{
         System.out.println(">>> persistirPartidaValidaMuchos");
         Partida p = new Partida();
@@ -434,14 +437,24 @@ public class MySqlPartidaTest extends TestCase {
         Partida p = new Partida();
         Jugador j = new Jugador();
  
+      
         j.setEmail("jugador@jugador.com");
         j.setPassword("password");
-        j.setUser("Odonkor");
+        j.setUser("Benjamin");
         p.setNombre("pruebaPartida"+now.getTimeInMillis());
         idPartidas.add(p.getNombre());
+        p.setIdPartida(null);
         p.setNumJugadores(1);
         p.setOwner(j);
         p.getJugadores().add(j);
+        
+        try 
+            {   
+                MysqlJugador.persistirJugador(j);
+            }
+            catch (Exception ex) {
+                throw new Error("FALLO EN EL METODO PERSISTIR JUGADOR: " +ex.getMessage());
+            }
          
         
         try {
