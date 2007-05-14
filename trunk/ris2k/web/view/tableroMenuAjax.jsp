@@ -12,13 +12,22 @@
         <%@page import ="java.util.*"%>
         <%@page import="model.Jugador" %>
         <%@page import="model.Partida" %>
-        <%@page import="svgTablero.*"%>
+        <%@page import="model.Territorio"%>
+        <%@page import="org.w3c.dom.Document"%>
+        <%@page import="java.io.*"%>
+        <%@page import="javax.servlet.http.*"%>
+        <%@page import="svgTablero.SVGTablero"%>
         
-        <% File f = new File("/images/output.svg");
+        
+        <% File f = new File("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
                 SVGTablero svg = new SVGTablero();
                 Document document = svg.parsearFichero(f);
-        Partida p = (Partida)application.getAttribute(request.getSession().getAttribute("partida"));
-           Jugador j = (Jugador)request.getSession().getAttribute("usuario");
+                String idPartida = request.getSession().getAttribute("partida").toString();
+                System.out.println("IDPARTIDA: " + idPartida);
+                Partida p = (Partida)request.getSession().getAttribute(idPartida);
+                System.out.println("PARTIDA:... ");System.out.println("PARTIDA: "+p.getIdPartida());
+                Jugador j = (Jugador)request.getSession().getAttribute("usuario");
+                System.out.println("JUGADOR:... ");System.out.println("JUGADOR: "+j.getUser());
                 for(Territorio c : p.getTablero().getTodosTerritorios()){
                     if (c.getOwner().getUser().equals(j.getUser())){
                         document = svg.setMouseOver(document, c.getId());
@@ -26,7 +35,7 @@
                         document = svg.removeMouseOver(document, c.getId());
                     }
                 }
-                svg.stringToSvgFile(svg.serializar(document), "/images/output.svg");
+                svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
         %>
         
         <div class="outerBorder">

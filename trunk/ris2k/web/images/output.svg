@@ -169,7 +169,7 @@ if (ejercitosRestantes > 0){
     <text id="numCentralPark" style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" x="351.85742" xml:space="preserve" y="305.62802"><tspan id="tspan2871" x="351.85742" y="305.62802">1</tspan></text>
     <text id="numSouthManhattan" style="font-size:12px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" x="333.02319" xml:space="preserve" y="351.85745"><tspan id="tspan2875" x="333.02319" y="351.85745">1</tspan></text>
   </g>
-<g id="maxEjercitoLayer"/>
+<g id="maxEjercitoLayer">
 <text id="texto" style="font-size:12px;font-style:bold;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" x="632" xml:space="preserve" y="20">Ej.Restantes: </text>
 <text id="ejercitosRestantes" style="font-size:28px;font-style:bold;font-weight:normal;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" x="662" xml:space="preserve" y="50">10</text>
 </g>

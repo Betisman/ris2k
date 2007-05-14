@@ -61,18 +61,21 @@ System.out.println("HEMOS HECHO LO DE LOS COLORES");
                 partida.setJugadores(jugadoresColoreados);
                 /*********************************/
                 
-                File f = new File("C:/Documents and Settings/CEU/Escritorio/Facultad/IS2/ris2k/web/images/Zonas1024bisAjax.svg");
+                File f = new File("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/Zonas1024bisAjax.svg");
                 SVGTablero svg = new SVGTablero();
                 Document document = null;
                 document = svg.parsearFichero(f);
                 svg.situarTodosEjercitos(document, partida.getTablero().getTodosTerritorios());
-                svg.stringToSvgFile(svg.serializar(document), "/images/output.svg");
+                svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
 System.out.println("SERIALIZAMOS");
-                ServletConfig config = getServletConfig();
+/*                ServletConfig config = getServletConfig();
                 ServletContext context = config.getServletContext();
                 context.setAttribute("partidas"+partida.getIdPartida(), partida);
+*/
+                request.getSession().setAttribute("partidas"+partida.getIdPartida(), partida);
                 request.getSession().setAttribute("partida", "partidas"+partida.getIdPartida());
-System.out.println("AHORA NOS VAMOS...");
+                
+ System.out.println("Insertamos en el session:  "+"partidas"+partida.getIdPartida());
             } catch (ris2kException ex) {
                 request.getSession().setAttribute("errorRis2k",ex.getMessage());
                 gotoJSPPage(errorAltaForm,request,response);
