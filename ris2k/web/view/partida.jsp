@@ -65,7 +65,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         
         <%if ((partida.estaJugador((Jugador)request.getSession().getAttribute("usuario"))) && (partida.getNumJugadores()==partida.getJugadores().size())){ %>
         <!--<form name="frmJugar" action="view/tableroMenu.jsp">-->
-        <form name="frmJugar" action="/InicioPartida">
+        <form name="frmJugar" action="InicioPartida">
             <input type="submit" value="Jugar!!" name="btnJugar"/>
         </form>
         <%}%>
