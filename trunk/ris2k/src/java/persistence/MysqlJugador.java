@@ -56,8 +56,7 @@ public class MysqlJugador {
         try{
                 stmt_inser = conn.createStatement();                 
                 String strSQL = ("INSERT INTO user VALUES ('" + user + "','" + password + "','" + email +"') ");
-                stmt_inser.executeUpdate(strSQL);
-                System.out.println("SE INSERTARON LOS DATOS");
+                stmt_inser.executeUpdate(strSQL);                
                 log.info("Se insertaron los datos");
                 return true;
                 		
@@ -102,7 +101,7 @@ public class MysqlJugador {
                 while (rset.next()) {rows++;}
  
                 int resultcount = 0;                
-                System.out.println("ROWCOUNT: "+rows);
+                
                 if (rows != 0)                    
                 {
                     //System.out.println("USUARIO ACTUALMENTE VALIDO EN BD");
