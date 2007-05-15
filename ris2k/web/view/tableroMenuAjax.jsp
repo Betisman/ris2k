@@ -9,6 +9,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     </head>
     <body background="/ris2k/images/Fondo.jpg">
+        <%@ page import="model.Partida" %>
+        <% 
+        System.out.println("Estamos en tableroMenuAjax.jsp");
+        Partida partida = new Partida();
+        partida = (Partida)request.getSession().getAttribute("partida");
+        %>
        
         <div class="outerBorder">
             
@@ -95,6 +101,8 @@
                     <!--<EMBED SRC="../images/tablero.svg" WIDTH="100%" HEIGHT="100%" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
                     <!--<EMBED SRC="../images/Zonas1024bisAjax.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
                     <!--<EMBED SRC="../images/output.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
+                    <!--<EMBED SRC="/ris2k/images/output.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
+                    <!--<EMBED SRC="/ris2k/images/<%=partida.getIdPartida()%>.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>-->
                     <EMBED SRC="/ris2k/images/output.svg" WIDTH="100%" HEIGHT="100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"/>
                    
                 </div> <!-- content -->

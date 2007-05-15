@@ -38,7 +38,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <tr> 
             <td><p><font size="+1" color="#000000"><strong>Nombre: <font color= "#993333"><%=partida.getNombre()%> </font></strong></font></p>
             <p><strong><font color="#000000" size="+1">Creador: <font color= "#993333"><%=partida.getOwner().getUser()%></font></font></strong></p>
-            <p><strong><font color="#000000" size="+1">Mapa: <font color= "#993333"><%=partida.getTablero().getMapa()%></font></font></strong></p>
+            <p><strong><font color="#000000" size="+1">Mapa: <font color= "#993333">New York City (by Weil)</font></font></strong></p>
             <p><strong><font color="#000000" size="+1">N&uacute;mero m&aacute;ximo 
               de jugadores: <font color= "#993333"><%=partida.getNumJugadores()%></font></font></strong></p>
             <p><strong><font color="#000000" size="+1">Jugadores actualmente conectados 

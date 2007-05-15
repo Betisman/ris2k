@@ -53,11 +53,13 @@ public class AnadirJugadorAPartida extends MiServlet {
                 while(!ok){
                     int pos = (int)(Math.round(Math.random()*(colores.size()-1)));
                     jugadorActual.setColor(colores.remove(pos));
+                    ok = true;
                     for(Jugador j : partida.getJugadores()){
-                        if ((jugadorActual.getColor().equals(j.getColor())) || (jugadorActual.getUser().equals(j.getUser()))){
-                            ok = false;
+                        if (jugadorActual.getUser().equals(j.getUser())){
+                            //no hace nada
                         }else{
-                            ok = true;
+                            if (jugadorActual.getColor().equals(j.getColor()))
+                                ok = false;
                         }
                     }
                 }
@@ -66,7 +68,7 @@ public class AnadirJugadorAPartida extends MiServlet {
                 //System.out.println("Añadimos a la partida " + partida.getNombre() + " el jugador " + jugadorActual.getUser());
                 log.info("Añadimos a la partida " + partida.getNombre() + " el jugador " + jugadorActual.getUser());
                 MySqlPartida.persistirPartida(partida);
-            }                
+            }
             
             request.setAttribute("partida", partida);
             gotoJSPPage("/view/esperaPartida.jsp", request, response);
