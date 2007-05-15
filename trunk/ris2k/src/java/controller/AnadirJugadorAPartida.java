@@ -9,7 +9,9 @@ package controller;
 import Exceptions.ris2kException;
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import model.Jugador;
@@ -43,6 +45,23 @@ public class AnadirJugadorAPartida extends MiServlet {
             if (partida.estaJugador(jugadorActual)){
                 System.out.println("La partida " + partida.getNombre() + " ya contiene al jugador " + jugadorActual.getUser());
             }else{
+                /* asignamos un color al jugador. El código es precario, pero ya haremos refactoring. */
+                Vector<String> colores = new Vector();
+                colores.add("#00ff00");colores.add("#ff55ff");colores.add("#ff0000");
+                colores.add("#ffff00");colores.add("#f9966b");colores.add("#6688ff");
+                boolean ok = false;
+                while(!ok){
+                    int pos = (int)(Math.round(Math.random()*(colores.size()-1)));
+                    jugadorActual.setColor(colores.remove(pos));
+                    for(Jugador j : partida.getJugadores()){
+                        if ((jugadorActual.getColor().equals(j.getColor())) || (jugadorActual.getUser().equals(j.getUser()))){
+                            ok = false;
+                        }else{
+                            ok = true;
+                        }
+                    }
+                }
+                
                 partida.getJugadores().add(jugadorActual);
                 //System.out.println("Añadimos a la partida " + partida.getNombre() + " el jugador " + jugadorActual.getUser());
                 log.info("Añadimos a la partida " + partida.getNombre() + " el jugador " + jugadorActual.getUser());

@@ -46,7 +46,6 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         </p>
         <p align="center"><span class="Estilo6">Número de jugadores</span>  
           <select name="numJugadores">
-            <option>1</option>
             <option>2</option>
             <option>3</option>
             <option>4</option>

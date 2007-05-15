@@ -17,6 +17,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import model.Jugador;
 import model.Partida;
+import model.Tablero;
+import model.Territorio;
 import org.w3c.dom.Document;
 import svgTablero.SVGTablero;
 
@@ -43,14 +45,17 @@ System.out.println("idPartida"+partida.getIdPartida());
             gotoJSPPage("/view/tableroMenuAjax.jsp", request, response);
         }else{
   */          try {
-System.out.println("ENTRAMOS EN EL TRY");
-                partida.setEstado("jugando");
+//                partida.setEstado("jugando");
+                Tablero tablero = new Tablero();
+                tablero.cargarTerritorios("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/test/newYork.xml");
+                partida.setTablero(tablero);
+
                 partida.repartirTerritorios();
 
                 /*********************************esto no habría que hacerlo, pero por ahora, tiramos así*/
-                Vector<String> colores = new Vector();
+/*                Vector<String> colores = new Vector();
                 colores.add("#ff00ff");colores.add("#ff55ff");colores.add("#ff0000");
-                colores.add("#ff666");colores.add("#6600ff");colores.add("#6688ff");
+                colores.add("#ff6666");colores.add("#6600ff");colores.add("#6688ff");
                 List<Jugador> jugadoresColoreados = new ArrayList();
                 for(Jugador j : partida.getJugadores()){
                     int pos = (int)(Math.round(Math.random()*(colores.size()-1)));
@@ -58,14 +63,15 @@ System.out.println("ENTRAMOS EN EL TRY");
                     jugadoresColoreados.add(j);
                 }
 System.out.println("HEMOS HECHO LO DE LOS COLORES");
-                partida.setJugadores(jugadoresColoreados);
+                partida.setJugadores(jugadoresColoreados);*/
                 /*********************************/
                 
                 File f = new File("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/Zonas1024bisAjax.svg");
                 SVGTablero svg = new SVGTablero();
                 Document document = null;
                 document = svg.parsearFichero(f);
-                svg.situarTodosEjercitos(document, partida.getTablero().getTodosTerritorios());
+                List<Territorio> territorios = partida.getTablero().getTodosTerritorios();
+                svg.situarTodosEjercitos(document, territorios);
                 svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
 System.out.println("SERIALIZAMOS");
 /*                ServletConfig config = getServletConfig();

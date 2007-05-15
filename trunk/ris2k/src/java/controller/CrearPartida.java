@@ -45,16 +45,20 @@ public class CrearPartida extends MiServlet {
             /* Creamos partida vacía nueva y la vamos rellenando */
             Partida partida = new Partida();
             /* Establecemos el creador de la partida */
-            partida.setOwner((Jugador)request.getSession().getAttribute("usuario"));
+            Jugador jugador = (Jugador)request.getSession().getAttribute("usuario");
+            jugador.setColor("#00ff00");
+            partida.setOwner(jugador);
             /* Añadimos al creador de la partida como jugador de la misma */
             partida.getJugadores().add(partida.getOwner());
             
             /*ahora mismo tiramos con esto, pero hay que recordar que tenemos que cambia la
              *bd para adaptar las tablas a valores autonuméricos*/
             //tablero.setMapa("/web/test/newYork.xml"); //hay que cambiarlo para recogerlo como parámetro
-            tablero.setMapa("/test/newYork.xml");
+            tablero.setMapa("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/test/newYork.xml");
+/*            log.info("cargamos territorios de " + tablero.getMapa());
             tablero.cargarTerritorios(tablero.getMapa());
             partida.setTablero(tablero);
+ */
 //            partida.inicializar("", creador, t, 0); //para ponerle el idPartida
             /******************************************************/
             partida.setNombre(nombrePartida);
@@ -63,9 +67,9 @@ public class CrearPartida extends MiServlet {
 //        partida.setTablero();
 //        partida.setTurno();
             /****************/
-            System.out.println("partida = " + partida.getNombre());
-            System.out.println("idPartida = " + partida.getIdPartida());
-            System.out.println("numJugadores = " + String.valueOf(partida.getNumJugadores()));
+            log.info("partida = " + partida.getNombre());
+            log.info("idPartida = " + partida.getIdPartida());
+            log.info("numJugadores = " + String.valueOf(partida.getNumJugadores()));
             
             //Persistimos la partida y recogemos la id que se le da en la BD
             partida.setIdPartida(MySqlPartida.persistirPartida(partida));

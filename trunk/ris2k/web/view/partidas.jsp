@@ -37,7 +37,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
   <tr>
     <td>&nbsp;</td>
     <td>
-	<table border="2" bgcolor="#CCCCCC">
+	<table border="2" bgcolor="#CCCCCC" align="center">
             <thead>
                 <tr>
                     <th>Nombre Partida</th>
@@ -54,7 +54,6 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                         <td align="center"><%=partida.getJugadores().size()%>/<%=partida.getNumJugadores()%></td>
                         <td align="center"><a href="AnadirJugadorAPartida?partida=<%=partida.getIdPartida()%>">Unirse a la partida</a></td>
                         <td align="center"><a href="VerPartida?partida=<%=partida.getIdPartida()%>">Ver la partida</a></td>
-                        <td><a href="view/tableroMenu.jsp">Ir al tablero</a></td>
                     </tr>
                 <%}%>
             </tbody>
