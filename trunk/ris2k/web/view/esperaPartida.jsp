@@ -23,41 +23,29 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <%@ page import="model.Partida" %>
         
         <%Partida partida = (Partida)request.getAttribute("partida");%>
-		
-<table width="100%" height="462" border="0">
+		<table width="100%" height="430" border="0">
   <tr>
-    <td width="14%" height="92">&nbsp;</td>
-    <td width="69%"><div align="center"><font size="+3" face="Georgia, Times New Roman, Times, serif"><strong> 
-        Partida: <%=partida.getNombre()%></strong></font> </div></td>
-    <td width="17%">
-     </td>
-  </tr>
-  <tr>
-    <td height="198">&nbsp;</td>
-    <td bordercolor="#666666"> 
-      <table width="70%" height="141" border="2" align="center" bordercolor="#333333" bgcolor="#9999FF">
-        <tr>
-          
-          <td width="78%">
-		    <p><font size="+1">Nombre: <%=partida.getNombre()%></font></p>
-            <p><font size="+1">Creador: <%=partida.getOwner().getUser()%></font></p>
-            <p><font size="+1">Mapa: New York City (by Weil)</font></p>
-            <p><font size="+1">N&uacute;mero m&aacute;ximo de jugadores: 
-              <%=partida.getNumJugadores()%></font></p>
-            <p><font size="+1">Jugadores actualmente unidos a la partida: 
-              <%=partida.getJugadores().size()%></font></p></td>
-          
-        </tr>
-      </table>
-    </td>
-    <td>
-    </td>
+    <td width="15%" height="112">&nbsp;</td>
+    <td width="73%"><div align="center">
+        <p><font size="+1"><strong>Has creado una nueva partida</strong></font></p>
+        <p><font size="+4" face="Georgia, Times New Roman, Times, serif" color="#660099"><strong><%=partida.getNombre()%></strong></font></p>
+        </div></td>
+    <td width="12%">&nbsp;</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td><table width="100%" height="183" border="0">
-        <tr>
-          <td height="107">
+    <td><table width="80%" height="100%" border="0" align="center">
+        <tr> 
+            <td><p><font size="+1" color="#000000"><strong>Nombre: <font color= "#993333"><%=partida.getNombre()%> </font></strong></font></p>
+            <p><strong><font color="#000000" size="+1">Creador: <font color= "#993333"><%=partida.getOwner().getUser()%></font></font></strong></p>
+            <p><strong><font color="#000000" size="+1">Mapa: <font color= "#993333"><%=partida.getTablero().getMapa()%></font></font></strong></p>
+            <p><strong><font color="#000000" size="+1">N&uacute;mero m&aacute;ximo 
+              de jugadores: <font color= "#993333"><%=partida.getNumJugadores()%></font></font></strong></p>
+            <p><strong><font color="#000000" size="+1">Jugadores actualmente conectados 
+              a la partida: <font color= "#993333"><%=partida.getJugadores().size()%></font></font></strong></p></td>
+        </tr>
+        <tr> 
+          <td height="89">
 		 <table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#666666" width="100%">
           <%int i = 0; for(Jugador j : partida.getJugadores()){%>
             <tr>

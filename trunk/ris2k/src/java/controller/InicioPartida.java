@@ -38,33 +38,13 @@ public class InicioPartida extends MiServlet {
         System.out.println("InicioPartida Servlet");
         Partida partida = new Partida();
         partida = (Partida)request.getSession().getAttribute("partida");
-System.out.println("Cruzando los dedos...");
-System.out.println("idPartida"+partida.getIdPartida());
         request.getSession().setAttribute("idPartida", partida.getIdPartida());
-/*        if (partida.getEstado().equals("jugando")){
-            gotoJSPPage("/view/tableroMenuAjax.jsp", request, response);
-        }else{
-  */          try {
-//                partida.setEstado("jugando");
+        try {
                 Tablero tablero = new Tablero();
                 tablero.cargarTerritorios("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/test/newYork.xml");
                 partida.setTablero(tablero);
 
                 partida.repartirTerritorios();
-
-                /*********************************esto no habría que hacerlo, pero por ahora, tiramos así*/
-/*                Vector<String> colores = new Vector();
-                colores.add("#ff00ff");colores.add("#ff55ff");colores.add("#ff0000");
-                colores.add("#ff6666");colores.add("#6600ff");colores.add("#6688ff");
-                List<Jugador> jugadoresColoreados = new ArrayList();
-                for(Jugador j : partida.getJugadores()){
-                    int pos = (int)(Math.round(Math.random()*(colores.size()-1)));
-                    j.setColor(colores.remove(pos));
-                    jugadoresColoreados.add(j);
-                }
-System.out.println("HEMOS HECHO LO DE LOS COLORES");
-                partida.setJugadores(jugadoresColoreados);*/
-                /*********************************/
                 
                 File f = new File("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/Zonas1024bisAjax.svg");
                 SVGTablero svg = new SVGTablero();
@@ -73,20 +53,27 @@ System.out.println("HEMOS HECHO LO DE LOS COLORES");
                 List<Territorio> territorios = partida.getTablero().getTodosTerritorios();
                 svg.situarTodosEjercitos(document, territorios);
                 svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
-System.out.println("SERIALIZAMOS");
-/*                ServletConfig config = getServletConfig();
-                ServletContext context = config.getServletContext();
-                context.setAttribute("partidas"+partida.getIdPartida(), partida);
-*/
                 request.getSession().setAttribute("partidas"+partida.getIdPartida(), partida);
                 request.getSession().setAttribute("partida", "partidas"+partida.getIdPartida());
                 
- System.out.println("Insertamos en el session:  "+"partidas"+partida.getIdPartida());
+                /*Preparación del tablero - originalmente en tableroMenuAjax.jsp */
+                File f2 = new File("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
+                document = svg.parsearFichero(f2);
+                Jugador j = (Jugador)request.getSession().getAttribute("usuario");
+                for(Territorio c : partida.getTablero().getTodosTerritorios()){
+                    if (c.getOwner().getUser().equals(j.getUser())){
+                        document = svg.setMouseOver(document, c.getId());
+                        document = svg.setSumarEjercito(document, c.getId());
+                    }else{
+                        document = svg.removeMouseOver(document, c.getId());
+                        document = svg.removeSumarEjercito(document, c.getId());
+                    }
+                }
+                svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
             } catch (ris2kException ex) {
                 request.getSession().setAttribute("errorRis2k",ex.getMessage());
                 gotoJSPPage(errorAltaForm,request,response);
             }
-System.out.println("AHORA SÍ QUE VAMOS tableroMenuAjax.jsp");
             gotoJSPPage("/view/tableroMenuAjax.jsp", request, response);
  //       }
         
