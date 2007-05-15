@@ -9,37 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     </head>
     <body background="/ris2k/images/Fondo.jpg">
-        <%@page import ="java.util.*"%>
-        <%@page import="model.Jugador" %>
-        <%@page import="model.Partida" %>
-        <%@page import="model.Territorio"%>
-        <%@page import="org.w3c.dom.Document"%>
-        <%@page import="java.io.*"%>
-        <%@page import="javax.servlet.http.*"%>
-        <%@page import="svgTablero.SVGTablero"%>
-        
-        
-        <% File f = new File("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
-                SVGTablero svg = new SVGTablero();
-                Document document = svg.parsearFichero(f);
-                String idPartida = request.getSession().getAttribute("partida").toString();
-                System.out.println("IDPARTIDA: " + idPartida);
-                Partida p = (Partida)request.getSession().getAttribute(idPartida);
-                System.out.println("PARTIDA:... ");System.out.println("PARTIDA: "+p.getIdPartida());
-                Jugador j = (Jugador)request.getSession().getAttribute("usuario");
-                System.out.println("JUGADOR:... ");System.out.println("JUGADOR: "+j.getUser());
-                for(Territorio c : p.getTablero().getTodosTerritorios()){
-                    if (c.getOwner().getUser().equals(j.getUser())){
-                        document = svg.setMouseOver(document, c.getId());
-                        document = svg.setSumarEjercito(document, c.getId());
-                    }else{
-                        document = svg.removeMouseOver(document, c.getId());
-                        document = svg.removeSumarEjercito(document, c.getId());
-                    }
-                }
-                svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
-        %>
-        
+       
         <div class="outerBorder">
             
             <div class="header">
@@ -132,5 +102,6 @@
             </div> <!-- main -->
       
         </div> <!-- outerborder -->
+       
     </body>
 </html>

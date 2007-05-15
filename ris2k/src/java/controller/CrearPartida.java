@@ -85,7 +85,7 @@ public class CrearPartida extends MiServlet {
         //System.out.println("CREAR PARTIDA, partidasActivas.size() = " + String.valueOf(test.size()));
         log.info("CREAR PARTIDA, partidasActivas.size() = " + String.valueOf(test.size()));
         request.setAttribute("partida", partida);
-            gotoJSPPage("/view/partida.jsp", request, response);
+            gotoJSPPage("/view/esperaPartida.jsp", request, response);
 //        gotoJSPPage(partidas, request, response);
         } catch (ris2kException ex) {
             request.getSession().setAttribute("errorRis2k",ex.getMessage());
