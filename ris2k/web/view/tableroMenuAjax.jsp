@@ -31,8 +31,10 @@
                 for(Territorio c : p.getTablero().getTodosTerritorios()){
                     if (c.getOwner().getUser().equals(j.getUser())){
                         document = svg.setMouseOver(document, c.getId());
+                        document = svg.setSumarEjercito(document, c.getId());
                     }else{
                         document = svg.removeMouseOver(document, c.getId());
+                        document = svg.removeSumarEjercito(document, c.getId());
                     }
                 }
                 svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
@@ -63,32 +65,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <table border="1">
-                                <thead>
-                                    <tr>
-                                        <th bgcolor="#FF9933">COLOCAR EJÉRCITOS</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td bgcolor="#FFCC33">
-                                            Número total de ejércitos:
-                                            <strong>${sessionScope["Ejercitos"]} </strong>
-                                           
-                                            <form name="ColocacionForm" action="/ris2k/actualizacionJugada">
-                                                Colocar en territorio
-                                                <input type="text" name="Territorio" id="territorio" value="${param["territorio"]}"/>
-                                                
-                                                Número de ejércitos
-                                                <input type="text" name="NumEjercitos" id="numEjercitos" />
-                                                
-                                                <input type="submit" value="ENVIAR" name="enviarColocacion" />
-                                                
-                                            </form> 
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
                             <table border="1">
                                 <thead>
                                     <tr>

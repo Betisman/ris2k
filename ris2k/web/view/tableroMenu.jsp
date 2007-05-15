@@ -43,32 +43,6 @@
                             <table border="1">
                                 <thead>
                                     <tr>
-                                        <th bgcolor="#FF9933">COLOCAR EJÉRCITOS</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td bgcolor="#FFCC33">
-                                            Número total de ejércitos:
-                                            <strong>${sessionScope["Ejercitos"]} </strong>
-                                           
-                                            <form name="ColocacionForm" action="/ris2k/actualizacionJugada">
-                                                Colocar en territorio
-                                                <input type="text" name="Territorio" id="territorio" value="${param["territorio"]}"/>
-                                                
-                                                Número de ejércitos
-                                                <input type="text" name="NumEjercitos" id="numEjercitos" />
-                                                
-                                                <input type="submit" value="ENVIAR" name="enviarColocacion" />
-                                                
-                                            </form> 
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table border="1">
-                                <thead>
-                                    <tr>
                                         <th bgcolor="#339900">REALIZAR ATAQUE</th>
                                     </tr>
                                 </thead>

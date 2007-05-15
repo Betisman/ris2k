@@ -58,13 +58,13 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
     <td><table width="100%" height="183" border="0">
         <tr>
           <td height="107">
-		 <table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#666666" width="100%" bgcolor="#CCCCCC">
+		 <table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#666666" width="100%">
           <%int i = 0; for(Jugador j : partida.getJugadores()){%>
             <tr>
-            <td><%=i+1%>.</td>
-            <td><%=j.getUser()%></td>
-            <td><%=j.getEmail()%></td>
-            <td><%=j.getColor()%></td>
+            <td bgcolor="#CCCCCC"><%=i+1%>.</td>
+            <td bgcolor="#CCCCCC"><%=j.getUser()%></td>
+            <td bgcolor="#CCCCCC"><%=j.getEmail()%></td>
+            <td bgcolor="<%=j.getColor()%>" style=""><%=j.getColor()%></td>
           </tr>
           <%i++;}%>
         </table>

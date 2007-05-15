@@ -215,6 +215,7 @@ public class SVGTablero {
         try{
             XPath xpath = XPathFactory.newInstance().newXPath();
             for (Territorio t : territorios){
+                log.info("situando ejércitos en "+t.getId());
                 document = setNumEjercitosTerritorio(document, t);
                 document = setOwnerTerritorio(document, t);
             }
@@ -276,7 +277,7 @@ public class SVGTablero {
             try {
                 nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
                 if (nodo == null)
-                    throw new ris2kException("No existe nodo set en link"+idTerritorio);
+                    throw new ris2kException("No existe nodo set en path"+idTerritorio);
             } catch (XPathExpressionException ex) {
                 ex.printStackTrace();
             }
@@ -307,7 +308,7 @@ public class SVGTablero {
             try {
                 nodo = (Node) xpath.evaluate(expression, document, XPathConstants.NODE);
                 if (nodo == null)
-                    throw new ris2kException("nodo == null en link"+idTerritorio);
+                    throw new ris2kException("nodo == null en path"+idTerritorio);
             } catch (XPathExpressionException ex) {
                 ex.printStackTrace();
             }
