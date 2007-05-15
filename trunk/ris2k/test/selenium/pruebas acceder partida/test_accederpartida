@@ -279,11 +279,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>btnJugar</td>
-	<td></td>
-</tr>
-<tr>
 	<td>assertTitle</td>
 	<td>RIS2K</td>
 	<td></td>

@@ -46,19 +46,30 @@ public class InicioPartida extends MiServlet {
 
                 partida.repartirTerritorios();
                 
+                /****no tengo más remedio, porque si no lo borro, carga el creado para la partida creada con anterioridad*/
+                File old = new File("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
+                if (old.exists()){
+                    old.delete();
+                    if (old.exists()){
+                        System.out.println("InicioPartida: el fichero output NO se ha borrado correctamente.");
+                    }else{
+                        System.out.println("InicioPartida: el fichero output SÍ se ha borrado correctamente");
+                    }
+                }
+
+                
+                
                 File f = new File("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/Zonas1024bisAjax.svg");
                 SVGTablero svg = new SVGTablero();
                 Document document = null;
                 document = svg.parsearFichero(f);
                 List<Territorio> territorios = partida.getTablero().getTodosTerritorios();
-                svg.situarTodosEjercitos(document, territorios);
-                svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
-                request.getSession().setAttribute("partidas"+partida.getIdPartida(), partida);
-                request.getSession().setAttribute("partida", "partidas"+partida.getIdPartida());
+                document = svg.situarTodosEjercitos(document, territorios);
+//                svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
                 
                 /*Preparación del tablero - originalmente en tableroMenuAjax.jsp */
-                File f2 = new File("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
-                document = svg.parsearFichero(f2);
+//                File f2 = new File("C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
+//                document = svg.parsearFichero(f2);
                 Jugador j = (Jugador)request.getSession().getAttribute("usuario");
                 for(Territorio c : partida.getTablero().getTodosTerritorios()){
                     if (c.getOwner().getUser().equals(j.getUser())){
@@ -69,7 +80,14 @@ public class InicioPartida extends MiServlet {
                         document = svg.removeSumarEjercito(document, c.getId());
                     }
                 }
-                svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
+//                svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/output.svg");
+//                svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/web/images/"+partida.getIdPartida()+".svg");
+                svg.stringToSvgFile(svg.serializar(document), "C:/universidad/Quinto/IS2/Ris2k/ris2k/build/web/images/output.svg");
+                
+/*                request.getSession().setAttribute("partidas"+partida.getIdPartida(), partida);
+                request.getSession().setAttribute("partida", "partidas"+partida.getIdPartida());
+ */
+                request.getSession().setAttribute("partida", partida);
             } catch (ris2kException ex) {
                 request.getSession().setAttribute("errorRis2k",ex.getMessage());
                 gotoJSPPage(errorAltaForm,request,response);
