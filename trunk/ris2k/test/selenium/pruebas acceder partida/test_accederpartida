@@ -178,7 +178,7 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td>Partida: partida_acceso</td>
+	<td>partida_acceso</td>
 	<td></td>
 </tr>
 <tr>
@@ -225,7 +225,7 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td>Partida: partida_acceso</td>
+	<td>partida_acceso</td>
 	<td></td>
 </tr>
 <tr>
@@ -265,12 +265,17 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td>Partida: partida_acceso</td>
+	<td>partida_acceso</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyElementPresent</td>
 	<td>btnJugar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Jugar!!']</td>
 	<td></td>
 </tr>
 <tr>
@@ -471,7 +476,7 @@
 </tr>
 <tr>
 	<td>assertTextPresent</td>
-	<td>Partida</td>
+	<td>partida_acceso_2</td>
 	<td></td>
 </tr>
 <!--//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
