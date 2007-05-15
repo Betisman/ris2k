@@ -115,8 +115,14 @@ public class MySqlPartida {
                     partida.setIdPartida(String.valueOf(idPartida));
                 }
                 for(Jugador j : jugadores){
-                    String strSQLPartida = ("INSERT INTO partida_user VALUES (" + idPartida
-                            + ",'" + j.getUser() +"')");
+                    String strSQLPartida = new String();
+                    if (j.getColor() == null){
+                        strSQLPartida = ("INSERT INTO partida_user VALUES (" + idPartida
+                            + ",'" + j.getUser() +"',null)");
+                    }else{
+                        strSQLPartida = ("INSERT INTO partida_user VALUES (" + idPartida
+                            + ",'" + j.getUser() +"','"+j.getColor()+"')");
+                    }
                     //System.out.println("debugging: " + strSQLPartida);
                     log.debug("debugging: " + strSQLPartida);
                     try{
@@ -212,10 +218,13 @@ public class MySqlPartida {
         try{
             stmt = conn.createStatement();
             String strSQLPartida = null;
-            strSQLPartida = "SELECT idpartida, idjugador FROM partida_user WHERE idpartida = '" + idPartida + "'";
+            strSQLPartida = "SELECT idpartida, idjugador, color FROM partida_user WHERE idpartida = '" + idPartida + "'";
             rs = stmt.executeQuery(strSQLPartida);
             while(rs.next() != false){
-                partida.getJugadores().add(MysqlJugador.getJugador(rs.getString("idjugador")));
+                Jugador jugador = new Jugador();
+                jugador = MysqlJugador.getJugador(rs.getString("idjugador"));
+                jugador.setColor(rs.getString("color"));
+                partida.getJugadores().add(jugador);
 //                partida.getJugadores().add(MysqlJugador.getJugador(rs.getString(2)));
             }
         }catch(SQLException ex){

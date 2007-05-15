@@ -41,7 +41,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
           <td width="78%">
 		    <p><font size="+1">Nombre: <%=partida.getNombre()%></font></p>
             <p><font size="+1">Creador: <%=partida.getOwner().getUser()%></font></p>
-            <p><font size="+1">Mapa: <%=partida.getTablero().getMapa()%></font></p>
+            <p><font size="+1">Mapa: New York City (by Weil)</font></p>
             <p><font size="+1">N&uacute;mero m&aacute;ximo de jugadores: 
               <%=partida.getNumJugadores()%></font></p>
             <p><font size="+1">Jugadores actualmente unidos a la partida: 
@@ -64,7 +64,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
             <td bgcolor="#CCCCCC"><%=i+1%>.</td>
             <td bgcolor="#CCCCCC"><%=j.getUser()%></td>
             <td bgcolor="#CCCCCC"><%=j.getEmail()%></td>
-            <td bgcolor="<%=j.getColor()%>" style=""><%=j.getColor()%></td>
+            <td bgcolor="<%=j.getColor()%>" style=""><font color="<%=j.getColor()%>">.</font></td>
           </tr>
           <%i++;}%>
         </table>
